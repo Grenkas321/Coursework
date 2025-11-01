@@ -42,7 +42,7 @@ int main(int argc, char **argv)
         {
             sp::additionals::DAGPool::Batch batch;
             std::string algo_prefix_path = parsed_params.output_path + "/" + alg->label() + "_";
-            while (batch = parsed_params.data->nextBatch())
+            while ((batch = parsed_params.data->nextBatch()))
                 for (auto &graph : batch)
                 {
                     auto schedule = alg->schedule(graph);

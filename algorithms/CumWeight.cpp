@@ -1,4 +1,4 @@
-#include "CumWeight.h"
+﻿#include "CumWeight.h"
 
 namespace scheduling_problem::algorithms
 {

@@ -1,4 +1,4 @@
-#include "experiments.h"
+﻿#include "experiments.h"
 
 #include <filesystem>
 
@@ -231,7 +231,7 @@ namespace scheduling_problem::experiments
         unsigned common_iters = dag_pool.samplesNum() * common_dups * algorithms.size();
         additionals::ProgressBar progress(STANDARD_BAR_LEN, common_iters);
         SaveParams config;
-        while (batch = dag_pool.nextBatch())
+        while ((batch = dag_pool.nextBatch()))
             for (auto& alg : algorithms) {
                 std::string alg_output_path(output_path + "/" + alg->label());
                 std::filesystem::create_directory(alg_output_path);

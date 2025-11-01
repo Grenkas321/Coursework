@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/tutor/5_sem/Nauchka/Coursework
+CMAKE_SOURCE_DIR = /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build
+CMAKE_BINARY_DIR = /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build
 
 # Include any dependencies generated for this target.
 include additionals/CMakeFiles/additionals.dir/depend.make
@@ -70,88 +70,88 @@ include additionals/CMakeFiles/additionals.dir/progress.make
 include additionals/CMakeFiles/additionals.dir/flags.make
 
 additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o: additionals/CMakeFiles/additionals.dir/flags.make
-additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DAGGenerator.cpp
+additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DAGGenerator.cpp
 additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o: additionals/CMakeFiles/additionals.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o -MF CMakeFiles/additionals.dir/DAGGenerator.cpp.o.d -o CMakeFiles/additionals.dir/DAGGenerator.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DAGGenerator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o -MF CMakeFiles/additionals.dir/DAGGenerator.cpp.o.d -o CMakeFiles/additionals.dir/DAGGenerator.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DAGGenerator.cpp
 
 additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/additionals.dir/DAGGenerator.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DAGGenerator.cpp > CMakeFiles/additionals.dir/DAGGenerator.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DAGGenerator.cpp > CMakeFiles/additionals.dir/DAGGenerator.cpp.i
 
 additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/additionals.dir/DAGGenerator.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DAGGenerator.cpp -o CMakeFiles/additionals.dir/DAGGenerator.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DAGGenerator.cpp -o CMakeFiles/additionals.dir/DAGGenerator.cpp.s
 
 additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o: additionals/CMakeFiles/additionals.dir/flags.make
-additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DAGPool.cpp
+additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DAGPool.cpp
 additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o: additionals/CMakeFiles/additionals.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o -MF CMakeFiles/additionals.dir/DAGPool.cpp.o.d -o CMakeFiles/additionals.dir/DAGPool.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DAGPool.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o -MF CMakeFiles/additionals.dir/DAGPool.cpp.o.d -o CMakeFiles/additionals.dir/DAGPool.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DAGPool.cpp
 
 additionals/CMakeFiles/additionals.dir/DAGPool.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/additionals.dir/DAGPool.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DAGPool.cpp > CMakeFiles/additionals.dir/DAGPool.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DAGPool.cpp > CMakeFiles/additionals.dir/DAGPool.cpp.i
 
 additionals/CMakeFiles/additionals.dir/DAGPool.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/additionals.dir/DAGPool.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DAGPool.cpp -o CMakeFiles/additionals.dir/DAGPool.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DAGPool.cpp -o CMakeFiles/additionals.dir/DAGPool.cpp.s
 
 additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o: additionals/CMakeFiles/additionals.dir/flags.make
-additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DAGReader.cpp
+additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DAGReader.cpp
 additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o: additionals/CMakeFiles/additionals.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o -MF CMakeFiles/additionals.dir/DAGReader.cpp.o.d -o CMakeFiles/additionals.dir/DAGReader.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DAGReader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o -MF CMakeFiles/additionals.dir/DAGReader.cpp.o.d -o CMakeFiles/additionals.dir/DAGReader.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DAGReader.cpp
 
 additionals/CMakeFiles/additionals.dir/DAGReader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/additionals.dir/DAGReader.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DAGReader.cpp > CMakeFiles/additionals.dir/DAGReader.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DAGReader.cpp > CMakeFiles/additionals.dir/DAGReader.cpp.i
 
 additionals/CMakeFiles/additionals.dir/DAGReader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/additionals.dir/DAGReader.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DAGReader.cpp -o CMakeFiles/additionals.dir/DAGReader.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DAGReader.cpp -o CMakeFiles/additionals.dir/DAGReader.cpp.s
 
 additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o: additionals/CMakeFiles/additionals.dir/flags.make
-additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/GridDAGGenertor.cpp
+additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/GridDAGGenertor.cpp
 additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o: additionals/CMakeFiles/additionals.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o -MF CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o.d -o CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/GridDAGGenertor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o -MF CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o.d -o CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/GridDAGGenertor.cpp
 
 additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/additionals.dir/GridDAGGenertor.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/GridDAGGenertor.cpp > CMakeFiles/additionals.dir/GridDAGGenertor.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/GridDAGGenertor.cpp > CMakeFiles/additionals.dir/GridDAGGenertor.cpp.i
 
 additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/additionals.dir/GridDAGGenertor.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/GridDAGGenertor.cpp -o CMakeFiles/additionals.dir/GridDAGGenertor.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/GridDAGGenertor.cpp -o CMakeFiles/additionals.dir/GridDAGGenertor.cpp.s
 
 additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.o: additionals/CMakeFiles/additionals.dir/flags.make
-additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/ProgressBar.cpp
+additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/ProgressBar.cpp
 additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.o: additionals/CMakeFiles/additionals.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.o -MF CMakeFiles/additionals.dir/ProgressBar.cpp.o.d -o CMakeFiles/additionals.dir/ProgressBar.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/ProgressBar.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.o -MF CMakeFiles/additionals.dir/ProgressBar.cpp.o.d -o CMakeFiles/additionals.dir/ProgressBar.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/ProgressBar.cpp
 
 additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/additionals.dir/ProgressBar.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/ProgressBar.cpp > CMakeFiles/additionals.dir/ProgressBar.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/ProgressBar.cpp > CMakeFiles/additionals.dir/ProgressBar.cpp.i
 
 additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/additionals.dir/ProgressBar.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/ProgressBar.cpp -o CMakeFiles/additionals.dir/ProgressBar.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/ProgressBar.cpp -o CMakeFiles/additionals.dir/ProgressBar.cpp.s
 
 additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o: additionals/CMakeFiles/additionals.dir/flags.make
-additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/ScheduleChecker.cpp
+additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/ScheduleChecker.cpp
 additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o: additionals/CMakeFiles/additionals.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o -MF CMakeFiles/additionals.dir/ScheduleChecker.cpp.o.d -o CMakeFiles/additionals.dir/ScheduleChecker.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/ScheduleChecker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o -MF CMakeFiles/additionals.dir/ScheduleChecker.cpp.o.d -o CMakeFiles/additionals.dir/ScheduleChecker.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/ScheduleChecker.cpp
 
 additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/additionals.dir/ScheduleChecker.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/ScheduleChecker.cpp > CMakeFiles/additionals.dir/ScheduleChecker.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/ScheduleChecker.cpp > CMakeFiles/additionals.dir/ScheduleChecker.cpp.i
 
 additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/additionals.dir/ScheduleChecker.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/ScheduleChecker.cpp -o CMakeFiles/additionals.dir/ScheduleChecker.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/ScheduleChecker.cpp -o CMakeFiles/additionals.dir/ScheduleChecker.cpp.s
 
 # Object files for target additionals
 additionals_OBJECTS = \
@@ -173,19 +173,19 @@ additionals/libadditionals.a: additionals/CMakeFiles/additionals.dir/ProgressBar
 additionals/libadditionals.a: additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o
 additionals/libadditionals.a: additionals/CMakeFiles/additionals.dir/build.make
 additionals/libadditionals.a: additionals/CMakeFiles/additionals.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libadditionals.a"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals && $(CMAKE_COMMAND) -P CMakeFiles/additionals.dir/cmake_clean_target.cmake
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/additionals.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libadditionals.a"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals && $(CMAKE_COMMAND) -P CMakeFiles/additionals.dir/cmake_clean_target.cmake
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/additionals.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 additionals/CMakeFiles/additionals.dir/build: additionals/libadditionals.a
 .PHONY : additionals/CMakeFiles/additionals.dir/build
 
 additionals/CMakeFiles/additionals.dir/clean:
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals && $(CMAKE_COMMAND) -P CMakeFiles/additionals.dir/cmake_clean.cmake
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals && $(CMAKE_COMMAND) -P CMakeFiles/additionals.dir/cmake_clean.cmake
 .PHONY : additionals/CMakeFiles/additionals.dir/clean
 
 additionals/CMakeFiles/additionals.dir/depend:
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/tutor/5_sem/Nauchka/Coursework /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/additionals/CMakeFiles/additionals.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/additionals/CMakeFiles/additionals.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : additionals/CMakeFiles/additionals.dir/depend
 

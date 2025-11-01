@@ -1,4 +1,4 @@
-#include "FindSeriesParallel.h"
+﻿#include "FindSeriesParallel.h"
 // #include "additionals.h"
 
 #include <unordered_map>
@@ -150,9 +150,11 @@ namespace scheduling_problem::algorithms
 
         for (auto edge : boost::make_iterator_range(boost::edges(graph)))
         {
-            if (idom[edge.m_target] != edge.m_source && rev_idom[edge.m_source] != edge.m_target &&
-                edge.m_source != st_vertex && edge.m_target != end_vertex)
-            {
+            if (idom[edge.m_target] != static_cast<int>(edge.m_source) &&
+                        rev_idom[edge.m_source] != static_cast<int>(edge.m_target) &&
+                        static_cast<size_t>(edge.m_source) != static_cast<size_t>(st_vertex) &&
+                        static_cast<size_t>(edge.m_target) != static_cast<size_t>(end_vertex))
+            { 
                 // that's an edge, that has to be removed
                 auto cur_w = boost::get(boost::edge_weight_t(), graph, edge);
                 if (cur_w < min_edge_w)
@@ -172,7 +174,8 @@ namespace scheduling_problem::algorithms
 
     std::pair<Graph, Node *> find_sp_subgraph(Graph graph)
     {
-        int st_vertex, end_vertex;
+        int st_vertex = -1, end_vertex = -1;
+        bool have_vertices = false;
 
         std::map<std::pair<int, int>, int> edge_weights;
 
@@ -188,10 +191,12 @@ namespace scheduling_problem::algorithms
             if (!boost::in_degree(it, graph))
             {
                 st_vertex = it;
+                have_vertices = true;
             }
             if (!boost::out_degree(it, graph))
             {
                 end_vertex = it;
+                have_vertices = true;
             }
 
             vertex_weights[it] = boost::get(vertex_weight_t(), graph, it);
@@ -208,7 +213,7 @@ namespace scheduling_problem::algorithms
             Tree[{edge.m_source, edge.m_target}] = new_edge;
         }
 
-        int i = 1;
+
         while (boost::num_edges(graph) > 1)
         {
             int tmp = boost::num_edges(graph);
@@ -220,7 +225,10 @@ namespace scheduling_problem::algorithms
             if (boost::num_edges(graph) > 1)
             {
                 tmp = boost::num_edges(graph);
+                if (have_vertices)
+                {
                 delete_excess_edge(graph, st_vertex, end_vertex);
+                }
                 d2 = tmp - boost::num_edges(graph);
             }
 

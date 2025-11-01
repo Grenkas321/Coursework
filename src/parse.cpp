@@ -1,4 +1,4 @@
-#include "parse.h"
+﻿#include "parse.h"
 #include <fstream>
 #include "ConcurrentSAO.h"
 
@@ -178,7 +178,7 @@ namespace parse
         {
             data = new DAGReader(path, n_samples, batch_size);
         }
-        return std::move(std::unique_ptr<DAGPool>(data));
+        return std::unique_ptr<DAGPool>(data);
     }
 
     ParsedParams parseCommandLine(int argc, char **argv)

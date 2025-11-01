@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/tutor/5_sem/Nauchka/Coursework
+CMAKE_SOURCE_DIR = /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build
+CMAKE_BINARY_DIR = /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build
 
 # Include any dependencies generated for this target.
 include algorithms/CMakeFiles/algorithms.dir/depend.make
@@ -70,256 +70,256 @@ include algorithms/CMakeFiles/algorithms.dir/progress.make
 include algorithms/CMakeFiles/algorithms.dir/flags.make
 
 algorithms/CMakeFiles/algorithms.dir/AntColonySystem.cpp.o: algorithms/CMakeFiles/algorithms.dir/flags.make
-algorithms/CMakeFiles/algorithms.dir/AntColonySystem.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/AntColonySystem.cpp
+algorithms/CMakeFiles/algorithms.dir/AntColonySystem.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/AntColonySystem.cpp
 algorithms/CMakeFiles/algorithms.dir/AntColonySystem.cpp.o: algorithms/CMakeFiles/algorithms.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object algorithms/CMakeFiles/algorithms.dir/AntColonySystem.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/AntColonySystem.cpp.o -MF CMakeFiles/algorithms.dir/AntColonySystem.cpp.o.d -o CMakeFiles/algorithms.dir/AntColonySystem.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/AntColonySystem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object algorithms/CMakeFiles/algorithms.dir/AntColonySystem.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/AntColonySystem.cpp.o -MF CMakeFiles/algorithms.dir/AntColonySystem.cpp.o.d -o CMakeFiles/algorithms.dir/AntColonySystem.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/AntColonySystem.cpp
 
 algorithms/CMakeFiles/algorithms.dir/AntColonySystem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/algorithms.dir/AntColonySystem.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/AntColonySystem.cpp > CMakeFiles/algorithms.dir/AntColonySystem.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/AntColonySystem.cpp > CMakeFiles/algorithms.dir/AntColonySystem.cpp.i
 
 algorithms/CMakeFiles/algorithms.dir/AntColonySystem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/algorithms.dir/AntColonySystem.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/AntColonySystem.cpp -o CMakeFiles/algorithms.dir/AntColonySystem.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/AntColonySystem.cpp -o CMakeFiles/algorithms.dir/AntColonySystem.cpp.s
 
 algorithms/CMakeFiles/algorithms.dir/BaseOptimization.cpp.o: algorithms/CMakeFiles/algorithms.dir/flags.make
-algorithms/CMakeFiles/algorithms.dir/BaseOptimization.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/BaseOptimization.cpp
+algorithms/CMakeFiles/algorithms.dir/BaseOptimization.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/BaseOptimization.cpp
 algorithms/CMakeFiles/algorithms.dir/BaseOptimization.cpp.o: algorithms/CMakeFiles/algorithms.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object algorithms/CMakeFiles/algorithms.dir/BaseOptimization.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/BaseOptimization.cpp.o -MF CMakeFiles/algorithms.dir/BaseOptimization.cpp.o.d -o CMakeFiles/algorithms.dir/BaseOptimization.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/BaseOptimization.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object algorithms/CMakeFiles/algorithms.dir/BaseOptimization.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/BaseOptimization.cpp.o -MF CMakeFiles/algorithms.dir/BaseOptimization.cpp.o.d -o CMakeFiles/algorithms.dir/BaseOptimization.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/BaseOptimization.cpp
 
 algorithms/CMakeFiles/algorithms.dir/BaseOptimization.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/algorithms.dir/BaseOptimization.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/BaseOptimization.cpp > CMakeFiles/algorithms.dir/BaseOptimization.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/BaseOptimization.cpp > CMakeFiles/algorithms.dir/BaseOptimization.cpp.i
 
 algorithms/CMakeFiles/algorithms.dir/BaseOptimization.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/algorithms.dir/BaseOptimization.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/BaseOptimization.cpp -o CMakeFiles/algorithms.dir/BaseOptimization.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/BaseOptimization.cpp -o CMakeFiles/algorithms.dir/BaseOptimization.cpp.s
 
 algorithms/CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.o: algorithms/CMakeFiles/algorithms.dir/flags.make
-algorithms/CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ConcurrentSAO.cpp
+algorithms/CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ConcurrentSAO.cpp
 algorithms/CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.o: algorithms/CMakeFiles/algorithms.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object algorithms/CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.o -MF CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.o.d -o CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ConcurrentSAO.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object algorithms/CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.o -MF CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.o.d -o CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ConcurrentSAO.cpp
 
 algorithms/CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ConcurrentSAO.cpp > CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ConcurrentSAO.cpp > CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.i
 
 algorithms/CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ConcurrentSAO.cpp -o CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ConcurrentSAO.cpp -o CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.s
 
 algorithms/CMakeFiles/algorithms.dir/CorrectnessTester.cpp.o: algorithms/CMakeFiles/algorithms.dir/flags.make
-algorithms/CMakeFiles/algorithms.dir/CorrectnessTester.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/CorrectnessTester.cpp
+algorithms/CMakeFiles/algorithms.dir/CorrectnessTester.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/CorrectnessTester.cpp
 algorithms/CMakeFiles/algorithms.dir/CorrectnessTester.cpp.o: algorithms/CMakeFiles/algorithms.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object algorithms/CMakeFiles/algorithms.dir/CorrectnessTester.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/CorrectnessTester.cpp.o -MF CMakeFiles/algorithms.dir/CorrectnessTester.cpp.o.d -o CMakeFiles/algorithms.dir/CorrectnessTester.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/CorrectnessTester.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object algorithms/CMakeFiles/algorithms.dir/CorrectnessTester.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/CorrectnessTester.cpp.o -MF CMakeFiles/algorithms.dir/CorrectnessTester.cpp.o.d -o CMakeFiles/algorithms.dir/CorrectnessTester.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/CorrectnessTester.cpp
 
 algorithms/CMakeFiles/algorithms.dir/CorrectnessTester.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/algorithms.dir/CorrectnessTester.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/CorrectnessTester.cpp > CMakeFiles/algorithms.dir/CorrectnessTester.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/CorrectnessTester.cpp > CMakeFiles/algorithms.dir/CorrectnessTester.cpp.i
 
 algorithms/CMakeFiles/algorithms.dir/CorrectnessTester.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/algorithms.dir/CorrectnessTester.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/CorrectnessTester.cpp -o CMakeFiles/algorithms.dir/CorrectnessTester.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/CorrectnessTester.cpp -o CMakeFiles/algorithms.dir/CorrectnessTester.cpp.s
 
 algorithms/CMakeFiles/algorithms.dir/CumWeight.cpp.o: algorithms/CMakeFiles/algorithms.dir/flags.make
-algorithms/CMakeFiles/algorithms.dir/CumWeight.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/CumWeight.cpp
+algorithms/CMakeFiles/algorithms.dir/CumWeight.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/CumWeight.cpp
 algorithms/CMakeFiles/algorithms.dir/CumWeight.cpp.o: algorithms/CMakeFiles/algorithms.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object algorithms/CMakeFiles/algorithms.dir/CumWeight.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/CumWeight.cpp.o -MF CMakeFiles/algorithms.dir/CumWeight.cpp.o.d -o CMakeFiles/algorithms.dir/CumWeight.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/CumWeight.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object algorithms/CMakeFiles/algorithms.dir/CumWeight.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/CumWeight.cpp.o -MF CMakeFiles/algorithms.dir/CumWeight.cpp.o.d -o CMakeFiles/algorithms.dir/CumWeight.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/CumWeight.cpp
 
 algorithms/CMakeFiles/algorithms.dir/CumWeight.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/algorithms.dir/CumWeight.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/CumWeight.cpp > CMakeFiles/algorithms.dir/CumWeight.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/CumWeight.cpp > CMakeFiles/algorithms.dir/CumWeight.cpp.i
 
 algorithms/CMakeFiles/algorithms.dir/CumWeight.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/algorithms.dir/CumWeight.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/CumWeight.cpp -o CMakeFiles/algorithms.dir/CumWeight.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/CumWeight.cpp -o CMakeFiles/algorithms.dir/CumWeight.cpp.s
 
 algorithms/CMakeFiles/algorithms.dir/FindSeriesParallel.cpp.o: algorithms/CMakeFiles/algorithms.dir/flags.make
-algorithms/CMakeFiles/algorithms.dir/FindSeriesParallel.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/FindSeriesParallel.cpp
+algorithms/CMakeFiles/algorithms.dir/FindSeriesParallel.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/FindSeriesParallel.cpp
 algorithms/CMakeFiles/algorithms.dir/FindSeriesParallel.cpp.o: algorithms/CMakeFiles/algorithms.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object algorithms/CMakeFiles/algorithms.dir/FindSeriesParallel.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/FindSeriesParallel.cpp.o -MF CMakeFiles/algorithms.dir/FindSeriesParallel.cpp.o.d -o CMakeFiles/algorithms.dir/FindSeriesParallel.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/FindSeriesParallel.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object algorithms/CMakeFiles/algorithms.dir/FindSeriesParallel.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/FindSeriesParallel.cpp.o -MF CMakeFiles/algorithms.dir/FindSeriesParallel.cpp.o.d -o CMakeFiles/algorithms.dir/FindSeriesParallel.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/FindSeriesParallel.cpp
 
 algorithms/CMakeFiles/algorithms.dir/FindSeriesParallel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/algorithms.dir/FindSeriesParallel.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/FindSeriesParallel.cpp > CMakeFiles/algorithms.dir/FindSeriesParallel.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/FindSeriesParallel.cpp > CMakeFiles/algorithms.dir/FindSeriesParallel.cpp.i
 
 algorithms/CMakeFiles/algorithms.dir/FindSeriesParallel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/algorithms.dir/FindSeriesParallel.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/FindSeriesParallel.cpp -o CMakeFiles/algorithms.dir/FindSeriesParallel.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/FindSeriesParallel.cpp -o CMakeFiles/algorithms.dir/FindSeriesParallel.cpp.s
 
 algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.o: algorithms/CMakeFiles/algorithms.dir/flags.make
-algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/Greedy.cpp
+algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/Greedy.cpp
 algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.o: algorithms/CMakeFiles/algorithms.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.o -MF CMakeFiles/algorithms.dir/Greedy.cpp.o.d -o CMakeFiles/algorithms.dir/Greedy.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/Greedy.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.o -MF CMakeFiles/algorithms.dir/Greedy.cpp.o.d -o CMakeFiles/algorithms.dir/Greedy.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/Greedy.cpp
 
 algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/algorithms.dir/Greedy.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/Greedy.cpp > CMakeFiles/algorithms.dir/Greedy.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/Greedy.cpp > CMakeFiles/algorithms.dir/Greedy.cpp.i
 
 algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/algorithms.dir/Greedy.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/Greedy.cpp -o CMakeFiles/algorithms.dir/Greedy.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/Greedy.cpp -o CMakeFiles/algorithms.dir/Greedy.cpp.s
 
 algorithms/CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.o: algorithms/CMakeFiles/algorithms.dir/flags.make
-algorithms/CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/GreedyEdgeVertexInsertion.cpp
+algorithms/CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/GreedyEdgeVertexInsertion.cpp
 algorithms/CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.o: algorithms/CMakeFiles/algorithms.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object algorithms/CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.o -MF CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.o.d -o CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/GreedyEdgeVertexInsertion.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object algorithms/CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.o -MF CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.o.d -o CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/GreedyEdgeVertexInsertion.cpp
 
 algorithms/CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/GreedyEdgeVertexInsertion.cpp > CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/GreedyEdgeVertexInsertion.cpp > CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.i
 
 algorithms/CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/GreedyEdgeVertexInsertion.cpp -o CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/GreedyEdgeVertexInsertion.cpp -o CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.s
 
 algorithms/CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.o: algorithms/CMakeFiles/algorithms.dir/flags.make
-algorithms/CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/GreedyHeuristics.cpp
+algorithms/CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/GreedyHeuristics.cpp
 algorithms/CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.o: algorithms/CMakeFiles/algorithms.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object algorithms/CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.o -MF CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.o.d -o CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/GreedyHeuristics.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object algorithms/CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.o -MF CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.o.d -o CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/GreedyHeuristics.cpp
 
 algorithms/CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/GreedyHeuristics.cpp > CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/GreedyHeuristics.cpp > CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.i
 
 algorithms/CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/GreedyHeuristics.cpp -o CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/GreedyHeuristics.cpp -o CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.s
 
 algorithms/CMakeFiles/algorithms.dir/IterativeOptimization.cpp.o: algorithms/CMakeFiles/algorithms.dir/flags.make
-algorithms/CMakeFiles/algorithms.dir/IterativeOptimization.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/IterativeOptimization.cpp
+algorithms/CMakeFiles/algorithms.dir/IterativeOptimization.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/IterativeOptimization.cpp
 algorithms/CMakeFiles/algorithms.dir/IterativeOptimization.cpp.o: algorithms/CMakeFiles/algorithms.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object algorithms/CMakeFiles/algorithms.dir/IterativeOptimization.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/IterativeOptimization.cpp.o -MF CMakeFiles/algorithms.dir/IterativeOptimization.cpp.o.d -o CMakeFiles/algorithms.dir/IterativeOptimization.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/IterativeOptimization.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object algorithms/CMakeFiles/algorithms.dir/IterativeOptimization.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/IterativeOptimization.cpp.o -MF CMakeFiles/algorithms.dir/IterativeOptimization.cpp.o.d -o CMakeFiles/algorithms.dir/IterativeOptimization.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/IterativeOptimization.cpp
 
 algorithms/CMakeFiles/algorithms.dir/IterativeOptimization.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/algorithms.dir/IterativeOptimization.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/IterativeOptimization.cpp > CMakeFiles/algorithms.dir/IterativeOptimization.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/IterativeOptimization.cpp > CMakeFiles/algorithms.dir/IterativeOptimization.cpp.i
 
 algorithms/CMakeFiles/algorithms.dir/IterativeOptimization.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/algorithms.dir/IterativeOptimization.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/IterativeOptimization.cpp -o CMakeFiles/algorithms.dir/IterativeOptimization.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/IterativeOptimization.cpp -o CMakeFiles/algorithms.dir/IterativeOptimization.cpp.s
 
 algorithms/CMakeFiles/algorithms.dir/RandomSearch.cpp.o: algorithms/CMakeFiles/algorithms.dir/flags.make
-algorithms/CMakeFiles/algorithms.dir/RandomSearch.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/RandomSearch.cpp
+algorithms/CMakeFiles/algorithms.dir/RandomSearch.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/RandomSearch.cpp
 algorithms/CMakeFiles/algorithms.dir/RandomSearch.cpp.o: algorithms/CMakeFiles/algorithms.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object algorithms/CMakeFiles/algorithms.dir/RandomSearch.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/RandomSearch.cpp.o -MF CMakeFiles/algorithms.dir/RandomSearch.cpp.o.d -o CMakeFiles/algorithms.dir/RandomSearch.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/RandomSearch.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object algorithms/CMakeFiles/algorithms.dir/RandomSearch.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/RandomSearch.cpp.o -MF CMakeFiles/algorithms.dir/RandomSearch.cpp.o.d -o CMakeFiles/algorithms.dir/RandomSearch.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/RandomSearch.cpp
 
 algorithms/CMakeFiles/algorithms.dir/RandomSearch.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/algorithms.dir/RandomSearch.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/RandomSearch.cpp > CMakeFiles/algorithms.dir/RandomSearch.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/RandomSearch.cpp > CMakeFiles/algorithms.dir/RandomSearch.cpp.i
 
 algorithms/CMakeFiles/algorithms.dir/RandomSearch.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/algorithms.dir/RandomSearch.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/RandomSearch.cpp -o CMakeFiles/algorithms.dir/RandomSearch.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/RandomSearch.cpp -o CMakeFiles/algorithms.dir/RandomSearch.cpp.s
 
 algorithms/CMakeFiles/algorithms.dir/ScheduleCorrector.cpp.o: algorithms/CMakeFiles/algorithms.dir/flags.make
-algorithms/CMakeFiles/algorithms.dir/ScheduleCorrector.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ScheduleCorrector.cpp
+algorithms/CMakeFiles/algorithms.dir/ScheduleCorrector.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ScheduleCorrector.cpp
 algorithms/CMakeFiles/algorithms.dir/ScheduleCorrector.cpp.o: algorithms/CMakeFiles/algorithms.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object algorithms/CMakeFiles/algorithms.dir/ScheduleCorrector.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/ScheduleCorrector.cpp.o -MF CMakeFiles/algorithms.dir/ScheduleCorrector.cpp.o.d -o CMakeFiles/algorithms.dir/ScheduleCorrector.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ScheduleCorrector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object algorithms/CMakeFiles/algorithms.dir/ScheduleCorrector.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/ScheduleCorrector.cpp.o -MF CMakeFiles/algorithms.dir/ScheduleCorrector.cpp.o.d -o CMakeFiles/algorithms.dir/ScheduleCorrector.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ScheduleCorrector.cpp
 
 algorithms/CMakeFiles/algorithms.dir/ScheduleCorrector.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/algorithms.dir/ScheduleCorrector.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ScheduleCorrector.cpp > CMakeFiles/algorithms.dir/ScheduleCorrector.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ScheduleCorrector.cpp > CMakeFiles/algorithms.dir/ScheduleCorrector.cpp.i
 
 algorithms/CMakeFiles/algorithms.dir/ScheduleCorrector.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/algorithms.dir/ScheduleCorrector.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ScheduleCorrector.cpp -o CMakeFiles/algorithms.dir/ScheduleCorrector.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ScheduleCorrector.cpp -o CMakeFiles/algorithms.dir/ScheduleCorrector.cpp.s
 
 algorithms/CMakeFiles/algorithms.dir/ScheduleSPGraph.cpp.o: algorithms/CMakeFiles/algorithms.dir/flags.make
-algorithms/CMakeFiles/algorithms.dir/ScheduleSPGraph.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ScheduleSPGraph.cpp
+algorithms/CMakeFiles/algorithms.dir/ScheduleSPGraph.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ScheduleSPGraph.cpp
 algorithms/CMakeFiles/algorithms.dir/ScheduleSPGraph.cpp.o: algorithms/CMakeFiles/algorithms.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object algorithms/CMakeFiles/algorithms.dir/ScheduleSPGraph.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/ScheduleSPGraph.cpp.o -MF CMakeFiles/algorithms.dir/ScheduleSPGraph.cpp.o.d -o CMakeFiles/algorithms.dir/ScheduleSPGraph.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ScheduleSPGraph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object algorithms/CMakeFiles/algorithms.dir/ScheduleSPGraph.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/ScheduleSPGraph.cpp.o -MF CMakeFiles/algorithms.dir/ScheduleSPGraph.cpp.o.d -o CMakeFiles/algorithms.dir/ScheduleSPGraph.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ScheduleSPGraph.cpp
 
 algorithms/CMakeFiles/algorithms.dir/ScheduleSPGraph.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/algorithms.dir/ScheduleSPGraph.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ScheduleSPGraph.cpp > CMakeFiles/algorithms.dir/ScheduleSPGraph.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ScheduleSPGraph.cpp > CMakeFiles/algorithms.dir/ScheduleSPGraph.cpp.i
 
 algorithms/CMakeFiles/algorithms.dir/ScheduleSPGraph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/algorithms.dir/ScheduleSPGraph.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ScheduleSPGraph.cpp -o CMakeFiles/algorithms.dir/ScheduleSPGraph.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ScheduleSPGraph.cpp -o CMakeFiles/algorithms.dir/ScheduleSPGraph.cpp.s
 
 algorithms/CMakeFiles/algorithms.dir/SeriesParallel.cpp.o: algorithms/CMakeFiles/algorithms.dir/flags.make
-algorithms/CMakeFiles/algorithms.dir/SeriesParallel.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/SeriesParallel.cpp
+algorithms/CMakeFiles/algorithms.dir/SeriesParallel.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/SeriesParallel.cpp
 algorithms/CMakeFiles/algorithms.dir/SeriesParallel.cpp.o: algorithms/CMakeFiles/algorithms.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object algorithms/CMakeFiles/algorithms.dir/SeriesParallel.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/SeriesParallel.cpp.o -MF CMakeFiles/algorithms.dir/SeriesParallel.cpp.o.d -o CMakeFiles/algorithms.dir/SeriesParallel.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/SeriesParallel.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object algorithms/CMakeFiles/algorithms.dir/SeriesParallel.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/SeriesParallel.cpp.o -MF CMakeFiles/algorithms.dir/SeriesParallel.cpp.o.d -o CMakeFiles/algorithms.dir/SeriesParallel.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/SeriesParallel.cpp
 
 algorithms/CMakeFiles/algorithms.dir/SeriesParallel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/algorithms.dir/SeriesParallel.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/SeriesParallel.cpp > CMakeFiles/algorithms.dir/SeriesParallel.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/SeriesParallel.cpp > CMakeFiles/algorithms.dir/SeriesParallel.cpp.i
 
 algorithms/CMakeFiles/algorithms.dir/SeriesParallel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/algorithms.dir/SeriesParallel.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/SeriesParallel.cpp -o CMakeFiles/algorithms.dir/SeriesParallel.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/SeriesParallel.cpp -o CMakeFiles/algorithms.dir/SeriesParallel.cpp.s
 
 algorithms/CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.o: algorithms/CMakeFiles/algorithms.dir/flags.make
-algorithms/CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/SimulatedAnnealing.cpp
+algorithms/CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/SimulatedAnnealing.cpp
 algorithms/CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.o: algorithms/CMakeFiles/algorithms.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object algorithms/CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.o -MF CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.o.d -o CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/SimulatedAnnealing.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object algorithms/CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.o -MF CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.o.d -o CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/SimulatedAnnealing.cpp
 
 algorithms/CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/SimulatedAnnealing.cpp > CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/SimulatedAnnealing.cpp > CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.i
 
 algorithms/CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/SimulatedAnnealing.cpp -o CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/SimulatedAnnealing.cpp -o CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.s
 
 algorithms/CMakeFiles/algorithms.dir/ToEdgeMemory.cpp.o: algorithms/CMakeFiles/algorithms.dir/flags.make
-algorithms/CMakeFiles/algorithms.dir/ToEdgeMemory.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ToEdgeMemory.cpp
+algorithms/CMakeFiles/algorithms.dir/ToEdgeMemory.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ToEdgeMemory.cpp
 algorithms/CMakeFiles/algorithms.dir/ToEdgeMemory.cpp.o: algorithms/CMakeFiles/algorithms.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object algorithms/CMakeFiles/algorithms.dir/ToEdgeMemory.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/ToEdgeMemory.cpp.o -MF CMakeFiles/algorithms.dir/ToEdgeMemory.cpp.o.d -o CMakeFiles/algorithms.dir/ToEdgeMemory.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ToEdgeMemory.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object algorithms/CMakeFiles/algorithms.dir/ToEdgeMemory.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/ToEdgeMemory.cpp.o -MF CMakeFiles/algorithms.dir/ToEdgeMemory.cpp.o.d -o CMakeFiles/algorithms.dir/ToEdgeMemory.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ToEdgeMemory.cpp
 
 algorithms/CMakeFiles/algorithms.dir/ToEdgeMemory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/algorithms.dir/ToEdgeMemory.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ToEdgeMemory.cpp > CMakeFiles/algorithms.dir/ToEdgeMemory.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ToEdgeMemory.cpp > CMakeFiles/algorithms.dir/ToEdgeMemory.cpp.i
 
 algorithms/CMakeFiles/algorithms.dir/ToEdgeMemory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/algorithms.dir/ToEdgeMemory.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ToEdgeMemory.cpp -o CMakeFiles/algorithms.dir/ToEdgeMemory.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ToEdgeMemory.cpp -o CMakeFiles/algorithms.dir/ToEdgeMemory.cpp.s
 
 algorithms/CMakeFiles/algorithms.dir/ToOneSourceTarget.cpp.o: algorithms/CMakeFiles/algorithms.dir/flags.make
-algorithms/CMakeFiles/algorithms.dir/ToOneSourceTarget.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ToOneSourceTarget.cpp
+algorithms/CMakeFiles/algorithms.dir/ToOneSourceTarget.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ToOneSourceTarget.cpp
 algorithms/CMakeFiles/algorithms.dir/ToOneSourceTarget.cpp.o: algorithms/CMakeFiles/algorithms.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object algorithms/CMakeFiles/algorithms.dir/ToOneSourceTarget.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/ToOneSourceTarget.cpp.o -MF CMakeFiles/algorithms.dir/ToOneSourceTarget.cpp.o.d -o CMakeFiles/algorithms.dir/ToOneSourceTarget.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ToOneSourceTarget.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object algorithms/CMakeFiles/algorithms.dir/ToOneSourceTarget.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/ToOneSourceTarget.cpp.o -MF CMakeFiles/algorithms.dir/ToOneSourceTarget.cpp.o.d -o CMakeFiles/algorithms.dir/ToOneSourceTarget.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ToOneSourceTarget.cpp
 
 algorithms/CMakeFiles/algorithms.dir/ToOneSourceTarget.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/algorithms.dir/ToOneSourceTarget.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ToOneSourceTarget.cpp > CMakeFiles/algorithms.dir/ToOneSourceTarget.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ToOneSourceTarget.cpp > CMakeFiles/algorithms.dir/ToOneSourceTarget.cpp.i
 
 algorithms/CMakeFiles/algorithms.dir/ToOneSourceTarget.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/algorithms.dir/ToOneSourceTarget.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ToOneSourceTarget.cpp -o CMakeFiles/algorithms.dir/ToOneSourceTarget.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ToOneSourceTarget.cpp -o CMakeFiles/algorithms.dir/ToOneSourceTarget.cpp.s
 
 algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.o: algorithms/CMakeFiles/algorithms.dir/flags.make
-algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/TopologicalSort.cpp
+algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/TopologicalSort.cpp
 algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.o: algorithms/CMakeFiles/algorithms.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.o"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.o -MF CMakeFiles/algorithms.dir/TopologicalSort.cpp.o.d -o CMakeFiles/algorithms.dir/TopologicalSort.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/TopologicalSort.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.o"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.o -MF CMakeFiles/algorithms.dir/TopologicalSort.cpp.o.d -o CMakeFiles/algorithms.dir/TopologicalSort.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/TopologicalSort.cpp
 
 algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/algorithms.dir/TopologicalSort.cpp.i"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/TopologicalSort.cpp > CMakeFiles/algorithms.dir/TopologicalSort.cpp.i
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/TopologicalSort.cpp > CMakeFiles/algorithms.dir/TopologicalSort.cpp.i
 
 algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/algorithms.dir/TopologicalSort.cpp.s"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/TopologicalSort.cpp -o CMakeFiles/algorithms.dir/TopologicalSort.cpp.s
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/TopologicalSort.cpp -o CMakeFiles/algorithms.dir/TopologicalSort.cpp.s
 
 # Object files for target algorithms
 algorithms_OBJECTS = \
@@ -365,19 +365,19 @@ algorithms/libalgorithms.a: algorithms/CMakeFiles/algorithms.dir/ToOneSourceTarg
 algorithms/libalgorithms.a: algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.o
 algorithms/libalgorithms.a: algorithms/CMakeFiles/algorithms.dir/build.make
 algorithms/libalgorithms.a: algorithms/CMakeFiles/algorithms.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX static library libalgorithms.a"
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && $(CMAKE_COMMAND) -P CMakeFiles/algorithms.dir/cmake_clean_target.cmake
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/algorithms.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX static library libalgorithms.a"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && $(CMAKE_COMMAND) -P CMakeFiles/algorithms.dir/cmake_clean_target.cmake
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/algorithms.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 algorithms/CMakeFiles/algorithms.dir/build: algorithms/libalgorithms.a
 .PHONY : algorithms/CMakeFiles/algorithms.dir/build
 
 algorithms/CMakeFiles/algorithms.dir/clean:
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms && $(CMAKE_COMMAND) -P CMakeFiles/algorithms.dir/cmake_clean.cmake
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms && $(CMAKE_COMMAND) -P CMakeFiles/algorithms.dir/cmake_clean.cmake
 .PHONY : algorithms/CMakeFiles/algorithms.dir/clean
 
 algorithms/CMakeFiles/algorithms.dir/depend:
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/tutor/5_sem/Nauchka/Coursework /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/algorithms/CMakeFiles/algorithms.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/algorithms/CMakeFiles/algorithms.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : algorithms/CMakeFiles/algorithms.dir/depend
 

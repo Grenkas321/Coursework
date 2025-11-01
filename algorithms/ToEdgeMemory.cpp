@@ -1,4 +1,4 @@
-#include "ToEdgeMemory.h"
+﻿#include "ToEdgeMemory.h"
 
 #include <iostream>
 #include <vector>
@@ -16,14 +16,10 @@ namespace scheduling_problem::algorithms
       if (!boost::out_degree(vertex, graph))
       {
         last_vertex = vertex;
-
-        auto last_vertex_weight = boost::get(vertex_weight_t(), graph, last_vertex);
-
+        
         // need to add node with 0 weight
         auto new_last_vertex = boost::add_vertex(new_graph);
         boost::put(vertex_weight_t(), new_graph, new_last_vertex, 0);
-
-        auto new_edge = boost::add_edge(last_vertex, new_last_vertex, new_graph);
 
         last_vertex = new_last_vertex;
 
@@ -76,7 +72,7 @@ namespace scheduling_problem::algorithms
 
   ScheduleStatus clean_edge_weight_schedule(const Graph &graph, const ScheduleStatus &schedule)
   {
-    int num_vert = boost::num_vertices(graph);
+    size_t num_vert = boost::num_vertices(graph);
     ScheduleStatus clean_schedule(graph);
 
     for (auto job : schedule)

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "IterativeOptimization.h"
 #include "ScheduleStatus.h"

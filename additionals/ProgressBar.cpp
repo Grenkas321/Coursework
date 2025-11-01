@@ -1,4 +1,4 @@
-#include "ProgressBar.h"
+﻿#include "ProgressBar.h"
 #include <iostream>
 
 namespace scheduling_problem::additionals

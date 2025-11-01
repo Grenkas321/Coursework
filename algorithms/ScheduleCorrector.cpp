@@ -1,4 +1,4 @@
-#include "ScheduleCorrector.h"
+﻿#include "ScheduleCorrector.h"
 
 namespace scheduling_problem::algorithms
 {

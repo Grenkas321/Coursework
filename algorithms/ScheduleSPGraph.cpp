@@ -1,4 +1,4 @@
-#include "ScheduleSPGraph.h"
+﻿#include "ScheduleSPGraph.h"
 
 #include <unordered_set>
 #include <queue>
@@ -48,7 +48,10 @@ namespace scheduling_problem::algorithms
     {
         Graph linear_graph;
         std::map<int, int> node_nums;
-        Graph::vertex_descriptor first = -1, last, cur, prev;
+        Graph::vertex_descriptor first = boost::graph_traits<Graph>::null_vertex();
+        Graph::vertex_descriptor last  = boost::graph_traits<Graph>::null_vertex();
+        Graph::vertex_descriptor cur   = boost::graph_traits<Graph>::null_vertex();
+        Graph::vertex_descriptor prev  = boost::graph_traits<Graph>::null_vertex();
 
         // adding schedule1 tasks to graph
 
@@ -59,7 +62,7 @@ namespace scheduling_problem::algorithms
             node_nums[task.id] = cur;
             boost::put(vertex_num_t(), linear_graph, cur, task.id);
 
-            if (first == -1)
+            if (first == boost::graph_traits<Graph>::null_vertex())
             {
                 first = cur;
             }
@@ -73,7 +76,7 @@ namespace scheduling_problem::algorithms
         // adding schedul2 tasks to graph
         prev = first;
 
-        for (int i = 1; i < schedule2.size() - 1; ++i)
+        for (size_t i = 1; i < schedule2.size() - 1; ++i)
         {
             Job task = schedule2[i];
             cur = boost::add_vertex(linear_graph);
@@ -184,18 +187,18 @@ namespace scheduling_problem::algorithms
             }
         }
 
-        int scheduled_subtr{};
+        size_t scheduled_subtr = 0;
         std::vector<int> start(subschedules.size());
         std::vector<std::pair<int, int>> schedule;
 
         while (scheduled_subtr != subschedules.size())
         {
-            int max_hv{};
-            int max_hv_sch;
+            int max_hv = 0;
+            int max_hv_sch = 0;
 
-            for (int i = 0; i < hill_valley_segments.size(); ++i)
+            for (size_t i = 0; i < hill_valley_segments.size(); ++i)
             {
-                if (start[i] < hill_valley_segments[i].size())
+                if (static_cast<size_t>(start[i]) < hill_valley_segments[i].size())
                 {
 
                     int cur_hv = subschedules[i][hill_valley_segments[i][start[i]]].second - subschedules[i][hill_valley_segments[i][start[i] + 1]].second;
@@ -214,7 +217,7 @@ namespace scheduling_problem::algorithms
             schedule.insert(schedule.end(), subschedules[max_hv_sch].begin() + l_shift, subschedules[max_hv_sch].begin() + r_shift + 1);
             start[max_hv_sch] += 2;
 
-            if (start[max_hv_sch] >= hill_valley_segments[max_hv_sch].size())
+            if (static_cast<size_t>(start[max_hv_sch]) >= hill_valley_segments[max_hv_sch].size())
             {
                 scheduled_subtr++;
             }
@@ -229,7 +232,7 @@ namespace scheduling_problem::algorithms
             match[boost::get(vertex_num_t(), g, it)] = it;
         }
 
-        for (int pos = 0; pos < schedule.size(); ++pos)
+        for (size_t pos = 0; pos < schedule.size(); ++pos)
         {
             int w = boost::get(vertex_weight_t(), g, match[schedule[pos].first]);
 
@@ -312,7 +315,8 @@ namespace scheduling_problem::algorithms
             }
         }
 
-        Graph::vertex_descriptor root_s, root_t;
+        Graph::vertex_descriptor root_s = boost::graph_traits<Graph>::null_vertex();
+        Graph::vertex_descriptor root_t = boost::graph_traits<Graph>::null_vertex();
 
         // find roots of both trees
 

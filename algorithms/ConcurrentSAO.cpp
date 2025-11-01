@@ -1,4 +1,4 @@
-#include "ConcurrentSAO.h"
+﻿#include "ConcurrentSAO.h"
 #include "ScheduleChecker.h"
 #include "RandomSearch.h"
 #include "additionals.h"

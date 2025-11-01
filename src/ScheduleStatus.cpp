@@ -1,4 +1,4 @@
-#include "ScheduleStatus.h"
+﻿#include "ScheduleStatus.h"
 
 namespace scheduling_problem
 {

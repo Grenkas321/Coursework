@@ -1,4 +1,4 @@
-#include "CorrectnessTester.h"
+﻿#include "CorrectnessTester.h"
 #include <iostream>
 
 namespace scheduling_problem::algorithms
@@ -6,7 +6,7 @@ namespace scheduling_problem::algorithms
     bool test_correctness(const Graph &graph, const ScheduleStatus &schedule, bool &fl, Graph::edge_descriptor &bad_edge)
     {
         // check if number of tasks is cottect
-        int n = boost::num_vertices(graph);
+        //int n = boost::num_vertices(graph);
 
         std::vector<bool> visited_tasks(boost::num_vertices(graph) + 1);
 

@@ -1,4 +1,4 @@
-#include "IterativeOptimization.h"
+﻿#include "IterativeOptimization.h"
 
 namespace scheduling_problem::algorithms
 {

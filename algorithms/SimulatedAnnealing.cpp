@@ -1,4 +1,4 @@
-#include "SimulatedAnnealing.h"
+﻿#include "SimulatedAnnealing.h"
 
 namespace scheduling_problem::algorithms
 {

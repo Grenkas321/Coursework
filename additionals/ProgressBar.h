@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "general_types.h"
 #include <iostream>

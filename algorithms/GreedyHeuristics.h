@@ -1,4 +1,4 @@
-#include "general_types.h"
+﻿#include "general_types.h"
 #include "additionals.h"
 #include "CorrectnessTester.h"
 #include "ScheduleStatus.h"

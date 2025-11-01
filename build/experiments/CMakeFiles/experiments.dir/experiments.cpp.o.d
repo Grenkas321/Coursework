@@ -1,7 +1,7 @@
 experiments/CMakeFiles/experiments.dir/experiments.cpp.o: \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/experiments/experiments.cpp \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/experiments/experiments.cpp \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/experiments/experiments.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/experiments/experiments.h \
  /usr/include/c++/13/mutex /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -96,7 +96,7 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: \
  /usr/include/c++/13/ext/atomicity.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h \
  /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DAGPool.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DAGPool.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_algobase.h \
  /usr/include/c++/13/debug/debug.h \
  /usr/include/c++/13/bits/predefined_ops.h /usr/include/c++/13/bit \
@@ -117,8 +117,21 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: \
  /usr/include/c++/13/bits/vector.tcc \
  /usr/include/c++/13/bits/memory_resource.h /usr/include/c++/13/cstddef \
  /usr/include/c++/13/bits/uses_allocator_args.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/include/general_types.h \
- /usr/include/c++/13/string /usr/include/c++/13/bits/stringfwd.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/include/general_types.h \
+ /usr/include/c++/13/unordered_set \
+ /usr/include/c++/13/bits/unordered_set.h \
+ /usr/include/c++/13/bits/hashtable.h \
+ /usr/include/c++/13/bits/hashtable_policy.h \
+ /usr/include/c++/13/ext/aligned_buffer.h \
+ /usr/include/c++/13/bits/enable_special_members.h \
+ /usr/include/c++/13/bits/node_handle.h \
+ /usr/include/c++/13/bits/erase_if.h /usr/include/c++/13/unordered_map \
+ /usr/include/c++/13/bits/unordered_map.h /usr/include/c++/13/set \
+ /usr/include/c++/13/bits/stl_tree.h /usr/include/c++/13/bits/stl_set.h \
+ /usr/include/c++/13/bits/stl_multiset.h /usr/include/c++/13/map \
+ /usr/include/c++/13/bits/stl_map.h \
+ /usr/include/c++/13/bits/stl_multimap.h /usr/include/c++/13/string \
+ /usr/include/c++/13/bits/stringfwd.h \
  /usr/include/c++/13/bits/char_traits.h \
  /usr/include/c++/13/bits/postypes.h /usr/include/c++/13/cwchar \
  /usr/include/wchar.h /usr/include/x86_64-linux-gnu/bits/floatn.h \
@@ -609,15 +622,7 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: \
  /usr/include/boost/preprocessor/seq/limits/enum_256.hpp \
  /usr/include/boost/concept/detail/concept_undef.hpp \
  /usr/include/boost/concept_archetype.hpp /usr/include/c++/13/functional \
- /usr/include/c++/13/bits/std_function.h \
- /usr/include/c++/13/unordered_map \
- /usr/include/c++/13/bits/unordered_map.h \
- /usr/include/c++/13/bits/hashtable.h \
- /usr/include/c++/13/bits/hashtable_policy.h \
- /usr/include/c++/13/ext/aligned_buffer.h \
- /usr/include/c++/13/bits/enable_special_members.h \
- /usr/include/c++/13/bits/node_handle.h \
- /usr/include/c++/13/bits/erase_if.h /usr/include/c++/13/array \
+ /usr/include/c++/13/bits/std_function.h /usr/include/c++/13/array \
  /usr/include/c++/13/bits/stl_algo.h \
  /usr/include/c++/13/bits/algorithmfwd.h \
  /usr/include/c++/13/bits/stl_heap.h \
@@ -689,9 +694,6 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: \
  /usr/include/boost/utility/detail/result_of_variadic.hpp \
  /usr/include/boost/graph/subgraph.hpp /usr/include/c++/13/list \
  /usr/include/c++/13/bits/stl_list.h /usr/include/c++/13/bits/list.tcc \
- /usr/include/c++/13/map /usr/include/c++/13/bits/stl_tree.h \
- /usr/include/c++/13/bits/stl_map.h \
- /usr/include/c++/13/bits/stl_multimap.h \
  /usr/include/boost/graph/graph_mutability_traits.hpp \
  /usr/include/boost/iterator/indirect_iterator.hpp \
  /usr/include/boost/pointee.hpp \
@@ -700,8 +702,6 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: \
  /usr/include/boost/indirect_reference.hpp \
  /usr/include/boost/graph/dominator_tree.hpp /usr/include/c++/13/deque \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
- /usr/include/c++/13/set /usr/include/c++/13/bits/stl_set.h \
- /usr/include/c++/13/bits/stl_multiset.h \
  /usr/include/boost/graph/depth_first_search.hpp \
  /usr/include/boost/graph/graph_concepts.hpp \
  /usr/include/boost/graph/numeric_values.hpp \
@@ -1456,8 +1456,6 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: \
  /usr/include/boost/unordered/unordered_map.hpp \
  /usr/include/boost/unordered/detail/map.hpp \
  /usr/include/boost/unordered/unordered_map_fwd.hpp \
- /usr/include/c++/13/unordered_set \
- /usr/include/c++/13/bits/unordered_set.h \
  /usr/include/boost/graph/detail/adjacency_list.hpp \
  /usr/include/boost/range/irange.hpp \
  /usr/include/boost/range/iterator_range.hpp \
@@ -1493,15 +1491,15 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: \
  /usr/include/boost/range/detail/safe_bool.hpp \
  /usr/include/boost/range/iterator_range_io.hpp \
  /usr/include/boost/graph/detail/adj_list_edge_iterator.hpp \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/ProgressBar.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/ProgressBar.h \
  /usr/include/c++/13/iostream \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/IterativeOptimization.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/IterativeOptimization.h \
  /usr/include/c++/13/random /usr/include/c++/13/bits/random.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h \
  /usr/include/c++/13/bits/random.tcc /usr/include/c++/13/numeric \
  /usr/include/c++/13/bits/stl_numeric.h \
  /usr/include/c++/13/pstl/glue_numeric_defs.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/BaseOptimization.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/BaseOptimization.h \
  /usr/include/c++/13/chrono /usr/include/c++/13/bits/chrono_io.h \
  /usr/include/c++/13/iomanip /usr/include/c++/13/locale \
  /usr/include/c++/13/bits/locale_facets_nonio.h \
@@ -1512,8 +1510,8 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: \
  /usr/include/c++/13/bits/locale_conv.h \
  /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/format \
  /usr/include/c++/13/charconv /usr/include/c++/13/span \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/include/Schedule.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/json/json.hpp \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/include/Schedule.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/json/json.hpp \
  /usr/include/c++/13/forward_list /usr/include/c++/13/bits/forward_list.h \
  /usr/include/c++/13/bits/forward_list.tcc /usr/include/c++/13/valarray \
  /usr/include/c++/13/bits/valarray_array.h \
@@ -1528,10 +1526,10 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: \
  /usr/include/c++/13/bits/fs_fwd.h /usr/include/c++/13/bits/fs_path.h \
  /usr/include/c++/13/codecvt /usr/include/c++/13/bits/fs_dir.h \
  /usr/include/c++/13/bits/fs_ops.h /usr/include/c++/13/any \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/include/parameter.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/Greedy.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/include/ScheduleStatus.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ConcurrentSAO.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/include/parameter.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/Greedy.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/include/ScheduleStatus.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ConcurrentSAO.h \
  /usr/include/c++/13/future /usr/include/c++/13/condition_variable \
  /usr/include/c++/13/stop_token /usr/include/c++/13/atomic \
  /usr/include/c++/13/bits/std_thread.h /usr/include/c++/13/semaphore \
@@ -1541,11 +1539,11 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: \
  /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/semaphore.h \
  /usr/include/x86_64-linux-gnu/bits/semaphore.h \
  /usr/include/c++/13/bits/atomic_futex.h /usr/include/c++/13/thread \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/SimulatedAnnealing.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/ScheduleCorrector.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/ThreadPool.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/SimulatedAnnealing.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/ScheduleCorrector.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/ThreadPool.h \
  /usr/include/c++/13/queue /usr/include/c++/13/bits/stl_queue.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DataFrame.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DataFrame.h \
  /usr/include/c++/13/fstream \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
@@ -1815,4 +1813,4 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: \
  /usr/include/boost/format/parsing.hpp \
  /usr/include/boost/format/free_funcs.hpp \
  /usr/include/boost/format/detail/unset_macros.hpp \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/include/additionals.h
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/include/additionals.h

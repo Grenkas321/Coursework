@@ -1,4 +1,4 @@
-#include "GreedyEdgeVertexInsertion.h"
+﻿#include "GreedyEdgeVertexInsertion.h"
 
 extern int first_peak_mem;
 
@@ -234,7 +234,7 @@ namespace scheduling_problem::algorithms
                 bool bad_edge_fl{0};
                 Graph::edge_descriptor bad_edge;
 
-                for (int s = source_pos - schedule.begin(); s < schedule.size(); ++s)
+                for (size_t s = static_cast<size_t>(source_pos - schedule.begin()); s < schedule.size(); ++s)
                 {
                     if (source_succ.find(schedule[s].id) != source_succ.end())
                     {
@@ -280,7 +280,7 @@ namespace scheduling_problem::algorithms
                             new_schedule.insert(job, new_schedule.size(), graph);
                         }
 
-                        for (int i = source_pos - schedule.begin(); i < schedule.size(); ++i)
+                        for (size_t i = static_cast<size_t>(source_pos - schedule.begin()); i < schedule.size(); ++i)
                         {
                             if (i > s ||
                                 source_succ.find(schedule[i].id) == source_succ.end())
@@ -382,7 +382,7 @@ namespace scheduling_problem::algorithms
      */
     ScheduleStatus add_vertex(const Graph &graph, Graph &sp_graph, const ScheduleStatus &schedule, int vertex, int parent)
     {
-        int min_mem_usage = INT_MAX;
+        
         ScheduleStatus best_schedule(graph);
 
         if (parent == -1)
@@ -398,7 +398,7 @@ namespace scheduling_problem::algorithms
             auto pred_pos = schedule.loc(parent);
 
             auto w = boost::get(boost::edge_weight_t(), graph, boost::edge(parent, vertex, graph).first);
-            auto new_e = boost::add_edge(parent, vertex, {w}, sp_graph);
+            boost::add_edge(parent, vertex, {w}, sp_graph);
             boost::put(vertex_weight_t(), sp_graph, vertex, w);
 
             // compute shedule where task inserted with one ingoing edge
@@ -420,7 +420,7 @@ namespace scheduling_problem::algorithms
 
         for (auto in_e : boost::make_iterator_range(boost::in_edges(vertex, graph)))
         {
-            if (in_e.m_source == parent || !schedule.contains(in_e.m_source))
+            if (static_cast<long unsigned>(in_e.m_source) == static_cast<long unsigned>(parent) || !schedule.contains(in_e.m_source))
             {
                 continue;
             }

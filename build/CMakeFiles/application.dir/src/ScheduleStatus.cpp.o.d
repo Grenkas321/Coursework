@@ -1,9 +1,12 @@
 CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/ScheduleStatus.cpp \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/ScheduleStatus.cpp \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/include/ScheduleStatus.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/include/Schedule.h \
- /usr/include/c++/13/vector /usr/include/c++/13/bits/requires_hosted.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/include/ScheduleStatus.h \
+ /usr/include/boost/range/iterator_range.hpp \
+ /usr/include/boost/range/iterator_range_core.hpp \
+ /usr/include/boost/config.hpp /usr/include/boost/config/user.hpp \
+ /usr/include/boost/config/detail/select_compiler_config.hpp \
+ /usr/include/boost/config/compiler/gcc.hpp /usr/include/c++/13/cstddef \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -15,92 +18,40 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
  /usr/include/c++/13/pstl/pstl_config.h \
- /usr/include/c++/13/bits/stl_algobase.h \
- /usr/include/c++/13/bits/functexcept.h \
- /usr/include/c++/13/bits/exception_defines.h \
- /usr/include/c++/13/bits/cpp_type_traits.h \
- /usr/include/c++/13/ext/type_traits.h \
- /usr/include/c++/13/ext/numeric_traits.h \
- /usr/include/c++/13/bits/stl_pair.h /usr/include/c++/13/type_traits \
- /usr/include/c++/13/bits/move.h /usr/include/c++/13/bits/utility.h \
- /usr/include/c++/13/compare /usr/include/c++/13/concepts \
- /usr/include/c++/13/bits/stl_iterator_base_types.h \
- /usr/include/c++/13/bits/iterator_concepts.h \
- /usr/include/c++/13/bits/ptr_traits.h \
- /usr/include/c++/13/bits/ranges_cmp.h \
- /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
- /usr/include/c++/13/bits/concept_check.h \
- /usr/include/c++/13/debug/assertions.h \
- /usr/include/c++/13/bits/stl_iterator.h /usr/include/c++/13/new \
- /usr/include/c++/13/bits/exception.h \
- /usr/include/c++/13/bits/stl_construct.h \
- /usr/include/c++/13/debug/debug.h \
- /usr/include/c++/13/bits/predefined_ops.h /usr/include/c++/13/bit \
- /usr/include/c++/13/bits/allocator.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h \
- /usr/include/c++/13/bits/new_allocator.h \
- /usr/include/c++/13/bits/memoryfwd.h \
- /usr/include/c++/13/bits/stl_uninitialized.h \
- /usr/include/c++/13/ext/alloc_traits.h \
- /usr/include/c++/13/bits/alloc_traits.h \
- /usr/include/c++/13/bits/stl_vector.h \
- /usr/include/c++/13/initializer_list \
- /usr/include/c++/13/bits/stl_bvector.h \
- /usr/include/c++/13/bits/functional_hash.h \
- /usr/include/c++/13/bits/hash_bytes.h /usr/include/c++/13/bits/refwrap.h \
- /usr/include/c++/13/bits/invoke.h \
- /usr/include/c++/13/bits/stl_function.h \
- /usr/include/c++/13/backward/binders.h \
- /usr/include/c++/13/bits/range_access.h \
- /usr/include/c++/13/bits/vector.tcc \
- /usr/include/c++/13/bits/memory_resource.h /usr/include/c++/13/cstddef \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
- /usr/include/c++/13/bits/uses_allocator.h \
- /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
- /usr/include/c++/13/bits/ranges_util.h \
- /usr/include/c++/13/bits/ranges_base.h \
- /usr/include/c++/13/bits/max_size_type.h /usr/include/c++/13/numbers \
- /usr/include/c++/13/string /usr/include/c++/13/bits/stringfwd.h \
- /usr/include/c++/13/bits/char_traits.h \
- /usr/include/c++/13/bits/postypes.h /usr/include/c++/13/cwchar \
- /usr/include/wchar.h \
- /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
- /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
- /usr/include/x86_64-linux-gnu/bits/wchar.h \
- /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
- /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
- /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/x86_64-linux-gnu/bits/wchar2-decl.h \
- /usr/include/x86_64-linux-gnu/bits/wchar2.h \
- /usr/include/c++/13/bits/localefwd.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h \
- /usr/include/c++/13/clocale /usr/include/locale.h \
- /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/13/iosfwd \
- /usr/include/c++/13/cctype /usr/include/ctype.h \
+ /usr/include/boost/config/detail/select_stdlib_config.hpp \
+ /usr/include/c++/13/version \
+ /usr/include/boost/config/stdlib/libstdcpp3.hpp /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/types.h \
  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
  /usr/include/x86_64-linux-gnu/bits/time64.h \
- /usr/include/x86_64-linux-gnu/bits/endian.h \
- /usr/include/x86_64-linux-gnu/bits/endianness.h \
- /usr/include/c++/13/bits/ostream_insert.h \
- /usr/include/c++/13/bits/cxxabi_forced.h \
- /usr/include/c++/13/bits/basic_string.h /usr/include/c++/13/string_view \
- /usr/include/c++/13/bits/string_view.tcc \
- /usr/include/c++/13/ext/string_conversions.h /usr/include/c++/13/cstdlib \
- /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd-decl.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+ /usr/include/linux/close_range.h \
+ /usr/include/boost/config/detail/select_platform_config.hpp \
+ /usr/include/boost/config/platform/linux.hpp /usr/include/c++/13/cstdlib \
+ /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+ /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/x86_64-linux-gnu/sys/types.h \
  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endianness.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
  /usr/include/x86_64-linux-gnu/sys/select.h \
@@ -120,27 +71,50 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
- /usr/include/c++/13/bits/std_abs.h /usr/include/c++/13/cstdio \
- /usr/include/stdio.h /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
- /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
- /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/x86_64-linux-gnu/bits/stdio2-decl.h \
- /usr/include/x86_64-linux-gnu/bits/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/c++/13/cerrno \
- /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
- /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
- /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
- /usr/include/c++/13/bits/charconv.h \
- /usr/include/c++/13/bits/basic_string.tcc \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/include/general_types.h \
- /usr/include/boost/graph/reverse_graph.hpp \
- /usr/include/boost/graph/adjacency_iterator.hpp \
- /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h \
+ /usr/include/c++/13/bits/std_abs.h \
+ /usr/include/boost/config/detail/posix_features.hpp \
+ /usr/include/boost/config/detail/suffix.hpp \
+ /usr/include/boost/config/helper_macros.hpp \
+ /usr/include/boost/config/detail/cxx_composite.hpp \
+ /usr/include/boost/detail/workaround.hpp \
+ /usr/include/boost/config/workaround.hpp /usr/include/boost/assert.hpp \
+ /usr/include/assert.h /usr/include/boost/iterator/iterator_traits.hpp \
+ /usr/include/c++/13/iterator \
+ /usr/include/c++/13/bits/stl_iterator_base_types.h \
+ /usr/include/c++/13/type_traits \
+ /usr/include/c++/13/bits/iterator_concepts.h \
+ /usr/include/c++/13/concepts /usr/include/c++/13/bits/ptr_traits.h \
+ /usr/include/c++/13/bits/move.h /usr/include/c++/13/bits/ranges_cmp.h \
+ /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/13/bits/concept_check.h \
+ /usr/include/c++/13/debug/assertions.h \
+ /usr/include/c++/13/bits/stl_iterator.h \
+ /usr/include/c++/13/bits/cpp_type_traits.h \
+ /usr/include/c++/13/ext/type_traits.h /usr/include/c++/13/compare \
+ /usr/include/c++/13/new /usr/include/c++/13/bits/exception.h \
+ /usr/include/c++/13/bits/exception_defines.h \
+ /usr/include/c++/13/bits/stl_construct.h \
+ /usr/include/c++/13/bits/stream_iterator.h /usr/include/c++/13/iosfwd \
+ /usr/include/c++/13/bits/requires_hosted.h \
+ /usr/include/c++/13/bits/stringfwd.h \
+ /usr/include/c++/13/bits/memoryfwd.h /usr/include/c++/13/bits/postypes.h \
+ /usr/include/c++/13/cwchar /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar2-decl.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar2.h \
+ /usr/include/c++/13/debug/debug.h \
  /usr/include/c++/13/bits/streambuf_iterator.h \
- /usr/include/c++/13/streambuf /usr/include/c++/13/bits/ios_base.h \
+ /usr/include/c++/13/streambuf /usr/include/c++/13/bits/localefwd.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h \
+ /usr/include/c++/13/clocale /usr/include/locale.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/13/cctype \
+ /usr/include/ctype.h /usr/include/c++/13/bits/ios_base.h \
  /usr/include/c++/13/ext/atomicity.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h \
@@ -157,7 +131,50 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h \
  /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
- /usr/include/c++/13/bits/locale_classes.h \
+ /usr/include/c++/13/bits/locale_classes.h /usr/include/c++/13/string \
+ /usr/include/c++/13/bits/char_traits.h \
+ /usr/include/c++/13/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h \
+ /usr/include/c++/13/bits/new_allocator.h \
+ /usr/include/c++/13/bits/functexcept.h \
+ /usr/include/c++/13/bits/ostream_insert.h \
+ /usr/include/c++/13/bits/cxxabi_forced.h \
+ /usr/include/c++/13/bits/stl_function.h \
+ /usr/include/c++/13/backward/binders.h \
+ /usr/include/c++/13/ext/numeric_traits.h \
+ /usr/include/c++/13/bits/stl_algobase.h \
+ /usr/include/c++/13/bits/stl_pair.h /usr/include/c++/13/bits/utility.h \
+ /usr/include/c++/13/bits/predefined_ops.h /usr/include/c++/13/bit \
+ /usr/include/c++/13/bits/refwrap.h /usr/include/c++/13/bits/invoke.h \
+ /usr/include/c++/13/bits/range_access.h \
+ /usr/include/c++/13/initializer_list \
+ /usr/include/c++/13/bits/basic_string.h \
+ /usr/include/c++/13/ext/alloc_traits.h \
+ /usr/include/c++/13/bits/alloc_traits.h /usr/include/c++/13/string_view \
+ /usr/include/c++/13/bits/functional_hash.h \
+ /usr/include/c++/13/bits/hash_bytes.h \
+ /usr/include/c++/13/bits/ranges_base.h \
+ /usr/include/c++/13/bits/max_size_type.h /usr/include/c++/13/numbers \
+ /usr/include/c++/13/bits/string_view.tcc \
+ /usr/include/c++/13/ext/string_conversions.h /usr/include/c++/13/cstdio \
+ /usr/include/stdio.h /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2-decl.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/c++/13/cerrno \
+ /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
+ /usr/include/c++/13/bits/charconv.h \
+ /usr/include/c++/13/bits/basic_string.tcc \
+ /usr/include/c++/13/bits/memory_resource.h \
+ /usr/include/c++/13/bits/uses_allocator.h \
+ /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
+ /usr/include/c++/13/bits/ranges_util.h \
  /usr/include/c++/13/bits/locale_classes.tcc \
  /usr/include/c++/13/system_error \
  /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
@@ -166,52 +183,23 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/c++/13/bits/cxxabi_init_exception.h \
  /usr/include/c++/13/typeinfo /usr/include/c++/13/bits/nested_exception.h \
  /usr/include/c++/13/bits/streambuf.tcc \
- /usr/include/boost/iterator/iterator_adaptor.hpp \
- /usr/include/boost/static_assert.hpp /usr/include/boost/config.hpp \
- /usr/include/boost/config/user.hpp \
- /usr/include/boost/config/detail/select_compiler_config.hpp \
- /usr/include/boost/config/compiler/gcc.hpp \
- /usr/include/boost/config/detail/select_stdlib_config.hpp \
- /usr/include/c++/13/version \
- /usr/include/boost/config/stdlib/libstdcpp3.hpp /usr/include/unistd.h \
- /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
- /usr/include/x86_64-linux-gnu/bits/environments.h \
- /usr/include/x86_64-linux-gnu/bits/confname.h \
- /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
- /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
- /usr/include/x86_64-linux-gnu/bits/unistd.h \
- /usr/include/x86_64-linux-gnu/bits/unistd-decl.h \
- /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
- /usr/include/linux/close_range.h \
- /usr/include/boost/config/detail/select_platform_config.hpp \
- /usr/include/boost/config/platform/linux.hpp \
- /usr/include/boost/config/detail/posix_features.hpp \
- /usr/include/boost/config/detail/suffix.hpp \
- /usr/include/boost/config/helper_macros.hpp \
- /usr/include/boost/config/detail/cxx_composite.hpp \
- /usr/include/boost/detail/workaround.hpp \
- /usr/include/boost/config/workaround.hpp \
- /usr/include/boost/core/use_default.hpp \
- /usr/include/boost/iterator/iterator_categories.hpp \
- /usr/include/boost/iterator/detail/config_def.hpp \
- /usr/include/boost/mpl/eval_if.hpp /usr/include/boost/mpl/if.hpp \
- /usr/include/boost/mpl/aux_/value_wknd.hpp \
- /usr/include/boost/mpl/aux_/static_cast.hpp \
- /usr/include/boost/mpl/aux_/config/workaround.hpp \
- /usr/include/boost/mpl/aux_/config/integral.hpp \
- /usr/include/boost/mpl/aux_/config/msvc.hpp \
- /usr/include/boost/mpl/aux_/config/eti.hpp \
- /usr/include/boost/mpl/aux_/na_spec.hpp \
- /usr/include/boost/mpl/lambda_fwd.hpp \
- /usr/include/boost/mpl/void_fwd.hpp \
+ /usr/include/boost/iterator/iterator_facade.hpp \
+ /usr/include/boost/iterator/interoperable.hpp \
+ /usr/include/boost/mpl/bool.hpp /usr/include/boost/mpl/bool_fwd.hpp \
  /usr/include/boost/mpl/aux_/adl_barrier.hpp \
  /usr/include/boost/mpl/aux_/config/adl.hpp \
+ /usr/include/boost/mpl/aux_/config/msvc.hpp \
  /usr/include/boost/mpl/aux_/config/intel.hpp \
  /usr/include/boost/mpl/aux_/config/gcc.hpp \
- /usr/include/boost/mpl/aux_/na.hpp /usr/include/boost/mpl/bool.hpp \
- /usr/include/boost/mpl/bool_fwd.hpp \
+ /usr/include/boost/mpl/aux_/config/workaround.hpp \
  /usr/include/boost/mpl/integral_c_tag.hpp \
  /usr/include/boost/mpl/aux_/config/static_constant.hpp \
+ /usr/include/boost/mpl/or.hpp \
+ /usr/include/boost/mpl/aux_/config/use_preprocessed.hpp \
+ /usr/include/boost/mpl/aux_/nested_type_wknd.hpp \
+ /usr/include/boost/mpl/aux_/na_spec.hpp \
+ /usr/include/boost/mpl/lambda_fwd.hpp \
+ /usr/include/boost/mpl/void_fwd.hpp /usr/include/boost/mpl/aux_/na.hpp \
  /usr/include/boost/mpl/aux_/na_fwd.hpp \
  /usr/include/boost/mpl/aux_/config/ctps.hpp \
  /usr/include/boost/mpl/aux_/config/lambda.hpp \
@@ -220,6 +208,7 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/boost/mpl/aux_/nttp_decl.hpp \
  /usr/include/boost/mpl/aux_/config/nttp.hpp \
  /usr/include/boost/mpl/aux_/integral_wrapper.hpp \
+ /usr/include/boost/mpl/aux_/static_cast.hpp \
  /usr/include/boost/preprocessor/cat.hpp \
  /usr/include/boost/preprocessor/config/config.hpp \
  /usr/include/boost/mpl/aux_/lambda_arity_param.hpp \
@@ -300,26 +289,13 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/boost/preprocessor/arithmetic/detail/is_minimum_number.hpp \
  /usr/include/boost/preprocessor/logical/not.hpp \
  /usr/include/boost/preprocessor/arithmetic/sub.hpp \
+ /usr/include/boost/mpl/aux_/config/eti.hpp \
  /usr/include/boost/mpl/aux_/config/overload_resolution.hpp \
  /usr/include/boost/mpl/aux_/lambda_support.hpp \
- /usr/include/boost/mpl/identity.hpp \
- /usr/include/boost/mpl/placeholders.hpp /usr/include/boost/mpl/arg.hpp \
- /usr/include/boost/mpl/arg_fwd.hpp \
- /usr/include/boost/mpl/aux_/na_assert.hpp \
- /usr/include/boost/mpl/assert.hpp /usr/include/boost/mpl/not.hpp \
- /usr/include/boost/mpl/aux_/nested_type_wknd.hpp \
- /usr/include/boost/mpl/aux_/yes_no.hpp \
- /usr/include/boost/mpl/aux_/config/arrays.hpp \
- /usr/include/boost/mpl/aux_/config/gpu.hpp \
- /usr/include/boost/mpl/aux_/config/pp_counter.hpp \
- /usr/include/boost/mpl/aux_/arity_spec.hpp \
- /usr/include/boost/mpl/aux_/arg_typedef.hpp \
- /usr/include/boost/mpl/aux_/config/use_preprocessed.hpp \
  /usr/include/boost/mpl/aux_/include_preprocessed.hpp \
  /usr/include/boost/mpl/aux_/config/compiler.hpp \
  /usr/include/boost/preprocessor/stringize.hpp \
- /usr/include/boost/mpl/aux_/preprocessed/gcc/arg.hpp \
- /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/or.hpp \
  /usr/include/boost/type_traits/is_convertible.hpp \
  /usr/include/boost/type_traits/intrinsics.hpp \
  /usr/include/boost/type_traits/detail/config.hpp \
@@ -337,20 +313,34 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/boost/type_traits/detail/is_function_cxx_11.hpp \
  /usr/include/boost/type_traits/detail/yes_no_type.hpp \
  /usr/include/boost/type_traits/is_array.hpp \
+ /usr/include/boost/static_assert.hpp \
  /usr/include/boost/type_traits/is_arithmetic.hpp \
  /usr/include/boost/type_traits/is_integral.hpp \
  /usr/include/boost/type_traits/is_floating_point.hpp \
  /usr/include/boost/type_traits/is_abstract.hpp \
  /usr/include/boost/type_traits/add_lvalue_reference.hpp \
  /usr/include/boost/type_traits/add_reference.hpp \
+ /usr/include/boost/iterator/detail/config_def.hpp \
  /usr/include/boost/iterator/detail/config_undef.hpp \
- /usr/include/boost/iterator/iterator_facade.hpp \
- /usr/include/boost/iterator/interoperable.hpp \
- /usr/include/boost/mpl/or.hpp \
- /usr/include/boost/mpl/aux_/preprocessed/gcc/or.hpp \
- /usr/include/boost/iterator/iterator_traits.hpp \
+ /usr/include/boost/iterator/iterator_categories.hpp \
+ /usr/include/boost/mpl/eval_if.hpp /usr/include/boost/mpl/if.hpp \
+ /usr/include/boost/mpl/aux_/value_wknd.hpp \
+ /usr/include/boost/mpl/aux_/config/integral.hpp \
+ /usr/include/boost/mpl/identity.hpp \
+ /usr/include/boost/mpl/placeholders.hpp /usr/include/boost/mpl/arg.hpp \
+ /usr/include/boost/mpl/arg_fwd.hpp \
+ /usr/include/boost/mpl/aux_/na_assert.hpp \
+ /usr/include/boost/mpl/assert.hpp /usr/include/boost/mpl/not.hpp \
+ /usr/include/boost/mpl/aux_/yes_no.hpp \
+ /usr/include/boost/mpl/aux_/config/arrays.hpp \
+ /usr/include/boost/mpl/aux_/config/gpu.hpp \
+ /usr/include/boost/mpl/aux_/config/pp_counter.hpp \
+ /usr/include/boost/mpl/aux_/arity_spec.hpp \
+ /usr/include/boost/mpl/aux_/arg_typedef.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/arg.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp \
  /usr/include/boost/iterator/detail/facade_iterator_category.hpp \
- /usr/include/boost/mpl/and.hpp \
+ /usr/include/boost/core/use_default.hpp /usr/include/boost/mpl/and.hpp \
  /usr/include/boost/mpl/aux_/preprocessed/gcc/and.hpp \
  /usr/include/boost/type_traits/is_same.hpp \
  /usr/include/boost/type_traits/is_const.hpp \
@@ -407,30 +397,169 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/boost/mpl/aux_/preprocessed/gcc/template_arity.hpp \
  /usr/include/boost/mpl/aux_/preprocessed/gcc/full_lambda.hpp \
  /usr/include/boost/mpl/aux_/preprocessed/gcc/apply.hpp \
- /usr/include/boost/graph/graph_traits.hpp /usr/include/c++/13/utility \
- /usr/include/c++/13/bits/stl_relops.h /usr/include/boost/tuple/tuple.hpp \
- /usr/include/boost/ref.hpp /usr/include/boost/core/ref.hpp \
+ /usr/include/boost/type_traits/is_base_and_derived.hpp \
+ /usr/include/boost/range/functions.hpp \
+ /usr/include/boost/range/begin.hpp /usr/include/boost/range/config.hpp \
+ /usr/include/boost/range/iterator.hpp \
+ /usr/include/boost/range/range_fwd.hpp \
+ /usr/include/boost/range/mutable_iterator.hpp \
+ /usr/include/boost/range/detail/extract_optional_type.hpp \
+ /usr/include/c++/13/utility /usr/include/c++/13/bits/stl_relops.h \
+ /usr/include/boost/range/detail/msvc_has_iterator_workaround.hpp \
+ /usr/include/boost/range/const_iterator.hpp \
+ /usr/include/boost/range/end.hpp \
+ /usr/include/boost/range/detail/implementation_help.hpp \
+ /usr/include/boost/range/detail/common.hpp \
+ /usr/include/boost/range/detail/sfinae.hpp /usr/include/string.h \
+ /usr/include/strings.h \
+ /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
+ /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
+ /usr/include/boost/range/size.hpp /usr/include/boost/range/size_type.hpp \
+ /usr/include/boost/range/difference_type.hpp \
+ /usr/include/boost/range/has_range_iterator.hpp \
+ /usr/include/boost/utility/enable_if.hpp \
  /usr/include/boost/core/enable_if.hpp \
+ /usr/include/boost/range/concepts.hpp \
+ /usr/include/boost/concept_check.hpp \
+ /usr/include/boost/concept/assert.hpp \
+ /usr/include/boost/concept/detail/general.hpp \
+ /usr/include/boost/concept/detail/backward_compatibility.hpp \
+ /usr/include/boost/concept/detail/has_constraints.hpp \
+ /usr/include/boost/type_traits/conditional.hpp \
+ /usr/include/boost/type_traits/conversion_traits.hpp \
+ /usr/include/boost/concept/usage.hpp \
+ /usr/include/boost/concept/detail/concept_def.hpp \
+ /usr/include/boost/preprocessor/seq/for_each_i.hpp \
+ /usr/include/boost/preprocessor/repetition/for.hpp \
+ /usr/include/boost/preprocessor/repetition/detail/for.hpp \
+ /usr/include/boost/preprocessor/repetition/detail/limits/for_256.hpp \
+ /usr/include/boost/preprocessor/repetition/limits/for_256.hpp \
+ /usr/include/boost/preprocessor/seq/seq.hpp \
+ /usr/include/boost/preprocessor/seq/elem.hpp \
+ /usr/include/boost/preprocessor/seq/limits/elem_256.hpp \
+ /usr/include/boost/preprocessor/seq/size.hpp \
+ /usr/include/boost/preprocessor/seq/limits/size_256.hpp \
+ /usr/include/boost/preprocessor/seq/detail/is_empty.hpp \
+ /usr/include/boost/preprocessor/seq/enum.hpp \
+ /usr/include/boost/preprocessor/seq/limits/enum_256.hpp \
+ /usr/include/boost/concept/detail/concept_undef.hpp \
+ /usr/include/boost/iterator/iterator_concepts.hpp \
+ /usr/include/boost/limits.hpp /usr/include/c++/13/limits \
+ /usr/include/c++/13/algorithm /usr/include/c++/13/bits/stl_algo.h \
+ /usr/include/c++/13/bits/algorithmfwd.h \
+ /usr/include/c++/13/bits/stl_heap.h \
+ /usr/include/c++/13/bits/uniform_int_dist.h \
+ /usr/include/c++/13/bits/stl_tempbuf.h \
+ /usr/include/c++/13/bits/ranges_algo.h \
+ /usr/include/c++/13/bits/ranges_algobase.h \
+ /usr/include/c++/13/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/13/pstl/execution_defs.h \
+ /usr/include/boost/range/value_type.hpp \
+ /usr/include/boost/range/detail/misc_concept.hpp \
+ /usr/include/boost/type_traits/make_unsigned.hpp \
+ /usr/include/boost/type_traits/is_signed.hpp /usr/include/c++/13/climits \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
+ /usr/include/boost/type_traits/is_unsigned.hpp \
+ /usr/include/boost/type_traits/add_volatile.hpp \
+ /usr/include/boost/range/detail/has_member_size.hpp \
+ /usr/include/boost/cstdint.hpp \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
+ /usr/include/boost/utility.hpp \
+ /usr/include/boost/utility/base_from_member.hpp \
+ /usr/include/boost/preprocessor/repetition/enum_binary_params.hpp \
+ /usr/include/boost/preprocessor/repetition/repeat_from_to.hpp \
+ /usr/include/boost/utility/binary.hpp \
+ /usr/include/boost/preprocessor/control/deduce_d.hpp \
+ /usr/include/boost/preprocessor/seq/cat.hpp \
+ /usr/include/boost/preprocessor/seq/fold_left.hpp \
+ /usr/include/boost/preprocessor/seq/limits/fold_left_256.hpp \
+ /usr/include/boost/preprocessor/seq/transform.hpp \
+ /usr/include/boost/preprocessor/arithmetic/mod.hpp \
+ /usr/include/boost/preprocessor/arithmetic/detail/div_base.hpp \
+ /usr/include/boost/preprocessor/comparison/less_equal.hpp \
+ /usr/include/boost/preprocessor/arithmetic/detail/is_1_number.hpp \
+ /usr/include/boost/utility/identity_type.hpp \
+ /usr/include/boost/type_traits/function_traits.hpp \
+ /usr/include/boost/core/checked_delete.hpp \
+ /usr/include/boost/core/noncopyable.hpp \
+ /usr/include/boost/range/distance.hpp \
+ /usr/include/boost/iterator/distance.hpp \
+ /usr/include/boost/range/empty.hpp /usr/include/boost/range/rbegin.hpp \
+ /usr/include/boost/range/reverse_iterator.hpp \
+ /usr/include/boost/iterator/reverse_iterator.hpp \
+ /usr/include/boost/iterator/iterator_adaptor.hpp \
+ /usr/include/boost/range/rend.hpp \
+ /usr/include/boost/range/algorithm/equal.hpp \
+ /usr/include/boost/range/detail/safe_bool.hpp \
+ /usr/include/boost/next_prior.hpp \
+ /usr/include/boost/type_traits/has_plus.hpp \
+ /usr/include/boost/type_traits/detail/has_binary_operator.hpp \
+ /usr/include/boost/type_traits/make_void.hpp \
+ /usr/include/boost/type_traits/has_plus_assign.hpp \
+ /usr/include/boost/type_traits/has_minus.hpp \
+ /usr/include/boost/type_traits/has_minus_assign.hpp \
+ /usr/include/boost/iterator/is_iterator.hpp \
+ /usr/include/boost/type_traits/negation.hpp \
+ /usr/include/boost/type_traits/conjunction.hpp \
+ /usr/include/boost/iterator/advance.hpp \
+ /usr/include/boost/range/iterator_range_io.hpp \
+ /usr/include/c++/13/ostream /usr/include/c++/13/ios \
+ /usr/include/c++/13/bits/basic_ios.h \
+ /usr/include/c++/13/bits/locale_facets.h /usr/include/c++/13/cwctype \
+ /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h \
+ /usr/include/c++/13/bits/locale_facets.tcc \
+ /usr/include/c++/13/bits/basic_ios.tcc \
+ /usr/include/c++/13/bits/ostream.tcc \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/include/Schedule.h \
+ /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
+ /usr/include/c++/13/bits/stl_vector.h \
+ /usr/include/c++/13/bits/stl_bvector.h \
+ /usr/include/c++/13/bits/vector.tcc \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/include/general_types.h \
+ /usr/include/c++/13/unordered_set \
+ /usr/include/c++/13/bits/unordered_set.h \
+ /usr/include/c++/13/bits/hashtable.h \
+ /usr/include/c++/13/bits/hashtable_policy.h \
+ /usr/include/c++/13/ext/aligned_buffer.h \
+ /usr/include/c++/13/bits/enable_special_members.h \
+ /usr/include/c++/13/bits/node_handle.h \
+ /usr/include/c++/13/bits/erase_if.h /usr/include/c++/13/unordered_map \
+ /usr/include/c++/13/bits/unordered_map.h /usr/include/c++/13/set \
+ /usr/include/c++/13/bits/stl_tree.h /usr/include/c++/13/bits/stl_set.h \
+ /usr/include/c++/13/bits/stl_multiset.h /usr/include/c++/13/map \
+ /usr/include/c++/13/bits/stl_map.h \
+ /usr/include/c++/13/bits/stl_multimap.h \
+ /usr/include/boost/graph/reverse_graph.hpp \
+ /usr/include/boost/graph/adjacency_iterator.hpp \
+ /usr/include/boost/graph/graph_traits.hpp \
+ /usr/include/boost/tuple/tuple.hpp /usr/include/boost/ref.hpp \
+ /usr/include/boost/core/ref.hpp \
  /usr/include/boost/tuple/detail/tuple_basic.hpp \
  /usr/include/boost/type_traits/cv_traits.hpp \
- /usr/include/boost/type_traits/add_volatile.hpp \
  /usr/include/boost/type_traits/add_cv.hpp \
  /usr/include/boost/type_traits/remove_volatile.hpp \
- /usr/include/boost/type_traits/function_traits.hpp \
  /usr/include/boost/utility/swap.hpp /usr/include/boost/core/swap.hpp \
  /usr/include/boost/pending/property.hpp \
- /usr/include/boost/utility/enable_if.hpp \
  /usr/include/boost/type_traits.hpp \
  /usr/include/boost/type_traits/aligned_storage.hpp \
  /usr/include/boost/type_traits/alignment_of.hpp \
  /usr/include/boost/type_traits/type_with_alignment.hpp \
- /usr/include/boost/type_traits/conditional.hpp \
  /usr/include/boost/type_traits/common_type.hpp \
  /usr/include/boost/type_traits/decay.hpp \
  /usr/include/boost/type_traits/remove_bounds.hpp \
  /usr/include/boost/type_traits/remove_extent.hpp \
  /usr/include/boost/type_traits/detail/mp_defer.hpp \
- /usr/include/boost/type_traits/conjunction.hpp \
  /usr/include/boost/type_traits/copy_cv.hpp \
  /usr/include/boost/type_traits/copy_cv_ref.hpp \
  /usr/include/boost/type_traits/copy_reference.hpp \
@@ -439,8 +568,6 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/boost/type_traits/extent.hpp \
  /usr/include/boost/type_traits/floating_point_promotion.hpp \
  /usr/include/boost/type_traits/has_bit_and.hpp \
- /usr/include/boost/type_traits/detail/has_binary_operator.hpp \
- /usr/include/boost/type_traits/make_void.hpp \
  /usr/include/boost/type_traits/has_bit_and_assign.hpp \
  /usr/include/boost/type_traits/has_bit_or.hpp \
  /usr/include/boost/type_traits/has_bit_or_assign.hpp \
@@ -461,8 +588,6 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/boost/type_traits/has_logical_and.hpp \
  /usr/include/boost/type_traits/has_logical_not.hpp \
  /usr/include/boost/type_traits/has_logical_or.hpp \
- /usr/include/boost/type_traits/has_minus.hpp \
- /usr/include/boost/type_traits/has_minus_assign.hpp \
  /usr/include/boost/type_traits/has_modulus.hpp \
  /usr/include/boost/type_traits/has_modulus_assign.hpp \
  /usr/include/boost/type_traits/has_multiplies.hpp \
@@ -480,8 +605,6 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/boost/type_traits/is_destructible.hpp \
  /usr/include/boost/type_traits/has_nothrow_destructor.hpp \
  /usr/include/boost/type_traits/has_trivial_destructor.hpp \
- /usr/include/boost/type_traits/has_plus.hpp \
- /usr/include/boost/type_traits/has_plus_assign.hpp \
  /usr/include/boost/type_traits/has_post_decrement.hpp \
  /usr/include/boost/type_traits/detail/has_postfix_operator.hpp \
  /usr/include/boost/type_traits/has_post_increment.hpp \
@@ -497,7 +620,6 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/boost/type_traits/has_unary_minus.hpp \
  /usr/include/boost/type_traits/has_unary_plus.hpp \
  /usr/include/boost/type_traits/has_virtual_destructor.hpp \
- /usr/include/boost/type_traits/is_base_and_derived.hpp \
  /usr/include/boost/type_traits/is_base_of.hpp \
  /usr/include/boost/type_traits/is_complex.hpp \
  /usr/include/c++/13/complex /usr/include/c++/13/cmath \
@@ -510,8 +632,7 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
- /usr/include/c++/13/bits/specfun.h /usr/include/c++/13/limits \
- /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/bits/specfun.h /usr/include/c++/13/tr1/gamma.tcc \
  /usr/include/c++/13/tr1/special_function_util.h \
  /usr/include/c++/13/tr1/bessel_function.tcc \
  /usr/include/c++/13/tr1/beta_function.tcc \
@@ -523,16 +644,7 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc /usr/include/c++/13/sstream \
- /usr/include/c++/13/istream /usr/include/c++/13/ios \
- /usr/include/c++/13/bits/basic_ios.h \
- /usr/include/c++/13/bits/locale_facets.h /usr/include/c++/13/cwctype \
- /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h \
- /usr/include/c++/13/bits/locale_facets.tcc \
- /usr/include/c++/13/bits/basic_ios.tcc /usr/include/c++/13/ostream \
- /usr/include/c++/13/bits/ostream.tcc \
- /usr/include/c++/13/bits/istream.tcc \
+ /usr/include/c++/13/istream /usr/include/c++/13/bits/istream.tcc \
  /usr/include/c++/13/bits/sstream.tcc \
  /usr/include/boost/type_traits/is_compound.hpp \
  /usr/include/boost/type_traits/is_fundamental.hpp \
@@ -550,25 +662,13 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/boost/type_traits/is_object.hpp \
  /usr/include/boost/type_traits/is_polymorphic.hpp \
  /usr/include/boost/type_traits/is_scoped_enum.hpp \
- /usr/include/boost/type_traits/negation.hpp \
- /usr/include/boost/type_traits/is_signed.hpp /usr/include/c++/13/climits \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h \
- /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
- /usr/include/x86_64-linux-gnu/bits/local_lim.h \
- /usr/include/linux/limits.h \
- /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
- /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
- /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
  /usr/include/boost/type_traits/is_stateless.hpp \
  /usr/include/boost/type_traits/is_swappable.hpp \
  /usr/include/boost/type_traits/is_trivially_copyable.hpp \
  /usr/include/boost/type_traits/is_union.hpp \
  /usr/include/boost/type_traits/is_unscoped_enum.hpp \
- /usr/include/boost/type_traits/is_unsigned.hpp \
  /usr/include/boost/type_traits/is_virtual_base_of.hpp \
  /usr/include/boost/type_traits/make_signed.hpp \
- /usr/include/boost/type_traits/make_unsigned.hpp \
  /usr/include/boost/type_traits/rank.hpp \
  /usr/include/boost/type_traits/remove_all_extents.hpp \
  /usr/include/boost/type_traits/remove_cv_ref.hpp \
@@ -577,45 +677,10 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/boost/type_traits/promote.hpp \
  /usr/include/boost/pending/detail/property.hpp \
  /usr/include/boost/type_traits/same_traits.hpp \
- /usr/include/boost/graph/properties.hpp /usr/include/boost/assert.hpp \
- /usr/include/assert.h /usr/include/boost/property_map/property_map.hpp \
- /usr/include/boost/concept/assert.hpp \
- /usr/include/boost/concept/detail/general.hpp \
- /usr/include/boost/concept/detail/backward_compatibility.hpp \
- /usr/include/boost/concept/detail/has_constraints.hpp \
- /usr/include/boost/concept_check.hpp \
- /usr/include/boost/type_traits/conversion_traits.hpp \
- /usr/include/boost/concept/usage.hpp \
- /usr/include/boost/concept/detail/concept_def.hpp \
- /usr/include/boost/preprocessor/seq/for_each_i.hpp \
- /usr/include/boost/preprocessor/repetition/for.hpp \
- /usr/include/boost/preprocessor/repetition/detail/for.hpp \
- /usr/include/boost/preprocessor/repetition/detail/limits/for_256.hpp \
- /usr/include/boost/preprocessor/repetition/limits/for_256.hpp \
- /usr/include/boost/preprocessor/seq/seq.hpp \
- /usr/include/boost/preprocessor/seq/elem.hpp \
- /usr/include/boost/preprocessor/seq/limits/elem_256.hpp \
- /usr/include/boost/preprocessor/seq/size.hpp \
- /usr/include/boost/preprocessor/seq/limits/size_256.hpp \
- /usr/include/boost/preprocessor/seq/detail/is_empty.hpp \
- /usr/include/boost/preprocessor/seq/enum.hpp \
- /usr/include/boost/preprocessor/seq/limits/enum_256.hpp \
- /usr/include/boost/concept/detail/concept_undef.hpp \
+ /usr/include/boost/graph/properties.hpp \
+ /usr/include/boost/property_map/property_map.hpp \
  /usr/include/boost/concept_archetype.hpp /usr/include/c++/13/functional \
- /usr/include/c++/13/bits/std_function.h \
- /usr/include/c++/13/unordered_map \
- /usr/include/c++/13/bits/unordered_map.h \
- /usr/include/c++/13/bits/hashtable.h \
- /usr/include/c++/13/bits/hashtable_policy.h \
- /usr/include/c++/13/ext/aligned_buffer.h \
- /usr/include/c++/13/bits/enable_special_members.h \
- /usr/include/c++/13/bits/node_handle.h \
- /usr/include/c++/13/bits/erase_if.h /usr/include/c++/13/array \
- /usr/include/c++/13/bits/stl_algo.h \
- /usr/include/c++/13/bits/algorithmfwd.h \
- /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/uniform_int_dist.h \
- /usr/include/c++/13/bits/stl_tempbuf.h \
+ /usr/include/c++/13/bits/std_function.h /usr/include/c++/13/array \
  /usr/include/boost/property_map/vector_property_map.hpp \
  /usr/include/boost/smart_ptr/shared_ptr.hpp \
  /usr/include/boost/smart_ptr/detail/requires_cxx11.hpp \
@@ -627,13 +692,9 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/boost/smart_ptr/detail/sp_has_sync_intrinsics.hpp \
  /usr/include/boost/smart_ptr/detail/sp_counted_base_gcc_atomic.hpp \
  /usr/include/boost/smart_ptr/detail/sp_typeinfo_.hpp \
- /usr/include/boost/cstdint.hpp \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
  /usr/include/boost/smart_ptr/detail/sp_counted_impl.hpp \
  /usr/include/boost/smart_ptr/detail/sp_noexcept.hpp \
- /usr/include/boost/core/checked_delete.hpp /usr/include/c++/13/memory \
+ /usr/include/c++/13/memory \
  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
  /usr/include/c++/13/bits/align.h /usr/include/c++/13/bits/unique_ptr.h \
  /usr/include/c++/13/bits/shared_ptr.h \
@@ -651,17 +712,12 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/c++/13/bits/std_mutex.h \
  /usr/include/c++/13/backward/auto_ptr.h \
  /usr/include/c++/13/bits/ranges_uninitialized.h \
- /usr/include/c++/13/bits/ranges_algobase.h \
  /usr/include/c++/13/pstl/glue_memory_defs.h \
- /usr/include/c++/13/pstl/execution_defs.h \
  /usr/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp \
  /usr/include/boost/throw_exception.hpp \
  /usr/include/boost/exception/exception.hpp \
  /usr/include/boost/assert/source_location.hpp \
  /usr/include/boost/current_function.hpp /usr/include/c++/13/cstring \
- /usr/include/string.h /usr/include/strings.h \
- /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
  /usr/include/c++/13/source_location \
  /usr/include/boost/smart_ptr/detail/sp_convertible.hpp \
  /usr/include/boost/smart_ptr/detail/sp_nullptr_t.hpp \
@@ -673,22 +729,16 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/boost/core/detail/sp_thread_pause.hpp \
  /usr/include/boost/core/detail/sp_thread_yield.hpp \
  /usr/include/boost/core/detail/sp_thread_sleep.hpp \
- /usr/include/c++/13/algorithm /usr/include/c++/13/bits/ranges_algo.h \
- /usr/include/c++/13/pstl/glue_algorithm_defs.h \
  /usr/include/boost/smart_ptr/detail/operator_bool.hpp \
  /usr/include/boost/smart_ptr/detail/local_sp_deleter.hpp \
  /usr/include/boost/smart_ptr/detail/local_counted_base.hpp \
  /usr/include/boost/graph/property_maps/constant_property_map.hpp \
  /usr/include/boost/graph/property_maps/null_property_map.hpp \
- /usr/include/boost/limits.hpp \
  /usr/include/boost/iterator/transform_iterator.hpp \
  /usr/include/boost/utility/result_of.hpp \
  /usr/include/boost/utility/detail/result_of_variadic.hpp \
  /usr/include/boost/graph/subgraph.hpp /usr/include/c++/13/list \
  /usr/include/c++/13/bits/stl_list.h /usr/include/c++/13/bits/list.tcc \
- /usr/include/c++/13/map /usr/include/c++/13/bits/stl_tree.h \
- /usr/include/c++/13/bits/stl_map.h \
- /usr/include/c++/13/bits/stl_multimap.h \
  /usr/include/boost/graph/graph_mutability_traits.hpp \
  /usr/include/boost/iterator/indirect_iterator.hpp \
  /usr/include/boost/pointee.hpp \
@@ -697,8 +747,6 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/boost/indirect_reference.hpp \
  /usr/include/boost/graph/dominator_tree.hpp /usr/include/c++/13/deque \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
- /usr/include/c++/13/set /usr/include/c++/13/bits/stl_set.h \
- /usr/include/c++/13/bits/stl_multiset.h \
  /usr/include/boost/graph/depth_first_search.hpp \
  /usr/include/boost/graph/graph_concepts.hpp \
  /usr/include/boost/graph/numeric_values.hpp \
@@ -713,10 +761,6 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/boost/preprocessor/library.hpp \
  /usr/include/boost/preprocessor/arithmetic.hpp \
  /usr/include/boost/preprocessor/arithmetic/div.hpp \
- /usr/include/boost/preprocessor/arithmetic/detail/div_base.hpp \
- /usr/include/boost/preprocessor/comparison/less_equal.hpp \
- /usr/include/boost/preprocessor/arithmetic/detail/is_1_number.hpp \
- /usr/include/boost/preprocessor/arithmetic/mod.hpp \
  /usr/include/boost/preprocessor/arithmetic/mul.hpp \
  /usr/include/boost/preprocessor/array.hpp \
  /usr/include/boost/preprocessor/array/enum.hpp \
@@ -725,7 +769,6 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/boost/preprocessor/array/detail/get_data.hpp \
  /usr/include/boost/preprocessor/facilities/is_1.hpp \
  /usr/include/boost/preprocessor/facilities/is_empty.hpp \
- /usr/include/boost/preprocessor/control/deduce_d.hpp \
  /usr/include/boost/preprocessor/array/pop_back.hpp \
  /usr/include/boost/preprocessor/repetition/enum.hpp \
  /usr/include/boost/preprocessor/repetition/deduce_z.hpp \
@@ -794,7 +837,6 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/boost/preprocessor/tuple/enum.hpp \
  /usr/include/boost/preprocessor/repetition.hpp \
  /usr/include/boost/preprocessor/repetition/deduce_r.hpp \
- /usr/include/boost/preprocessor/repetition/enum_binary_params.hpp \
  /usr/include/boost/preprocessor/repetition/enum_params_with_a_default.hpp \
  /usr/include/boost/preprocessor/repetition/enum_params_with_defaults.hpp \
  /usr/include/boost/preprocessor/repetition/enum_shifted.hpp \
@@ -802,14 +844,10 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/boost/preprocessor/repetition/enum_shifted_params.hpp \
  /usr/include/boost/preprocessor/repetition/enum_trailing.hpp \
  /usr/include/boost/preprocessor/repetition/enum_trailing_binary_params.hpp \
- /usr/include/boost/preprocessor/repetition/repeat_from_to.hpp \
  /usr/include/boost/preprocessor/selection.hpp \
  /usr/include/boost/preprocessor/selection/max.hpp \
  /usr/include/boost/preprocessor/selection/min.hpp \
  /usr/include/boost/preprocessor/seq.hpp \
- /usr/include/boost/preprocessor/seq/cat.hpp \
- /usr/include/boost/preprocessor/seq/fold_left.hpp \
- /usr/include/boost/preprocessor/seq/limits/fold_left_256.hpp \
  /usr/include/boost/preprocessor/seq/filter.hpp \
  /usr/include/boost/preprocessor/seq/first_n.hpp \
  /usr/include/boost/preprocessor/seq/detail/split.hpp \
@@ -833,7 +871,6 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/boost/preprocessor/seq/detail/binary_transform.hpp \
  /usr/include/boost/preprocessor/variadic/detail/is_single_return.hpp \
  /usr/include/boost/preprocessor/seq/to_tuple.hpp \
- /usr/include/boost/preprocessor/seq/transform.hpp \
  /usr/include/boost/preprocessor/seq/variadic_seq_to_seq.hpp \
  /usr/include/boost/preprocessor/slot.hpp \
  /usr/include/boost/preprocessor/tuple.hpp \
@@ -1355,7 +1392,6 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/boost/multi_index/detail/adl_swap.hpp \
  /usr/include/boost/multi_index/detail/allocator_traits.hpp \
  /usr/include/boost/multi_index/detail/auto_space.hpp \
- /usr/include/boost/core/noncopyable.hpp \
  /usr/include/boost/multi_index/detail/bucket_array.hpp \
  /usr/include/boost/multi_index/detail/hash_index_node.hpp \
  /usr/include/boost/multi_index/detail/raw_ptr.hpp \
@@ -1441,56 +1477,17 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/boost/multi_index/detail/index_matcher.hpp \
  /usr/include/boost/multi_index/detail/converter.hpp \
  /usr/include/boost/multi_index/detail/has_tag.hpp \
- /usr/include/boost/utility/base_from_member.hpp \
  /usr/include/boost/multi_index/detail/archive_constructed.hpp \
  /usr/include/boost/multi_index/detail/serialization_version.hpp \
  /usr/include/boost/pending/container_traits.hpp \
- /usr/include/boost/next_prior.hpp \
- /usr/include/boost/iterator/is_iterator.hpp \
- /usr/include/boost/iterator/advance.hpp \
- /usr/include/boost/iterator/reverse_iterator.hpp \
  /usr/include/boost/unordered_map.hpp \
  /usr/include/boost/unordered/unordered_map.hpp \
  /usr/include/boost/unordered/detail/map.hpp \
  /usr/include/boost/unordered/unordered_map_fwd.hpp \
- /usr/include/c++/13/unordered_set \
- /usr/include/c++/13/bits/unordered_set.h \
  /usr/include/boost/graph/detail/adjacency_list.hpp \
  /usr/include/boost/range/irange.hpp \
- /usr/include/boost/range/iterator_range.hpp \
- /usr/include/boost/range/iterator_range_core.hpp \
- /usr/include/boost/range/functions.hpp \
- /usr/include/boost/range/begin.hpp /usr/include/boost/range/config.hpp \
- /usr/include/boost/range/iterator.hpp \
- /usr/include/boost/range/range_fwd.hpp \
- /usr/include/boost/range/mutable_iterator.hpp \
- /usr/include/boost/range/detail/extract_optional_type.hpp \
- /usr/include/boost/range/detail/msvc_has_iterator_workaround.hpp \
- /usr/include/boost/range/const_iterator.hpp \
- /usr/include/boost/range/end.hpp \
- /usr/include/boost/range/detail/implementation_help.hpp \
- /usr/include/boost/range/detail/common.hpp \
- /usr/include/boost/range/detail/sfinae.hpp \
- /usr/include/boost/range/size.hpp /usr/include/boost/range/size_type.hpp \
- /usr/include/boost/range/difference_type.hpp \
- /usr/include/boost/range/has_range_iterator.hpp \
- /usr/include/boost/range/concepts.hpp \
- /usr/include/boost/iterator/iterator_concepts.hpp \
- /usr/include/boost/range/value_type.hpp \
- /usr/include/boost/range/detail/misc_concept.hpp \
- /usr/include/boost/range/detail/has_member_size.hpp \
- /usr/include/boost/utility.hpp /usr/include/boost/utility/binary.hpp \
- /usr/include/boost/utility/identity_type.hpp \
- /usr/include/boost/range/distance.hpp \
- /usr/include/boost/iterator/distance.hpp \
- /usr/include/boost/range/empty.hpp /usr/include/boost/range/rbegin.hpp \
- /usr/include/boost/range/reverse_iterator.hpp \
- /usr/include/boost/range/rend.hpp \
- /usr/include/boost/range/algorithm/equal.hpp \
- /usr/include/boost/range/detail/safe_bool.hpp \
- /usr/include/boost/range/iterator_range_io.hpp \
  /usr/include/boost/graph/detail/adj_list_edge_iterator.hpp \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/json/json.hpp \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/json/json.hpp \
  /usr/include/c++/13/numeric /usr/include/c++/13/bits/stl_numeric.h \
  /usr/include/c++/13/pstl/glue_numeric_defs.h \
  /usr/include/c++/13/forward_list /usr/include/c++/13/bits/forward_list.h \

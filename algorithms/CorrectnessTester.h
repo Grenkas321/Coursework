@@ -1,4 +1,4 @@
-#include "general_types.h"
+﻿#include "general_types.h"
 #include "ScheduleStatus.h"
 
 namespace scheduling_problem::algorithms

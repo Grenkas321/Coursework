@@ -1,7 +1,7 @@
 additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o: \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DAGPool.cpp \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DAGPool.cpp \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DAGPool.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DAGPool.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -59,8 +59,21 @@ additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o: \
  /usr/include/c++/13/bits/ranges_util.h \
  /usr/include/c++/13/bits/ranges_base.h \
  /usr/include/c++/13/bits/max_size_type.h /usr/include/c++/13/numbers \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/include/general_types.h \
- /usr/include/c++/13/string /usr/include/c++/13/bits/stringfwd.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/include/general_types.h \
+ /usr/include/c++/13/unordered_set \
+ /usr/include/c++/13/bits/unordered_set.h \
+ /usr/include/c++/13/bits/hashtable.h \
+ /usr/include/c++/13/bits/hashtable_policy.h \
+ /usr/include/c++/13/ext/aligned_buffer.h \
+ /usr/include/c++/13/bits/enable_special_members.h \
+ /usr/include/c++/13/bits/node_handle.h \
+ /usr/include/c++/13/bits/erase_if.h /usr/include/c++/13/unordered_map \
+ /usr/include/c++/13/bits/unordered_map.h /usr/include/c++/13/set \
+ /usr/include/c++/13/bits/stl_tree.h /usr/include/c++/13/bits/stl_set.h \
+ /usr/include/c++/13/bits/stl_multiset.h /usr/include/c++/13/map \
+ /usr/include/c++/13/bits/stl_map.h \
+ /usr/include/c++/13/bits/stl_multimap.h /usr/include/c++/13/string \
+ /usr/include/c++/13/bits/stringfwd.h \
  /usr/include/c++/13/bits/char_traits.h \
  /usr/include/c++/13/bits/postypes.h /usr/include/c++/13/cwchar \
  /usr/include/wchar.h \
@@ -601,15 +614,7 @@ additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o: \
  /usr/include/boost/preprocessor/seq/limits/enum_256.hpp \
  /usr/include/boost/concept/detail/concept_undef.hpp \
  /usr/include/boost/concept_archetype.hpp /usr/include/c++/13/functional \
- /usr/include/c++/13/bits/std_function.h \
- /usr/include/c++/13/unordered_map \
- /usr/include/c++/13/bits/unordered_map.h \
- /usr/include/c++/13/bits/hashtable.h \
- /usr/include/c++/13/bits/hashtable_policy.h \
- /usr/include/c++/13/ext/aligned_buffer.h \
- /usr/include/c++/13/bits/enable_special_members.h \
- /usr/include/c++/13/bits/node_handle.h \
- /usr/include/c++/13/bits/erase_if.h /usr/include/c++/13/array \
+ /usr/include/c++/13/bits/std_function.h /usr/include/c++/13/array \
  /usr/include/c++/13/bits/stl_algo.h \
  /usr/include/c++/13/bits/algorithmfwd.h \
  /usr/include/c++/13/bits/stl_heap.h \
@@ -685,9 +690,6 @@ additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o: \
  /usr/include/boost/utility/detail/result_of_variadic.hpp \
  /usr/include/boost/graph/subgraph.hpp /usr/include/c++/13/list \
  /usr/include/c++/13/bits/stl_list.h /usr/include/c++/13/bits/list.tcc \
- /usr/include/c++/13/map /usr/include/c++/13/bits/stl_tree.h \
- /usr/include/c++/13/bits/stl_map.h \
- /usr/include/c++/13/bits/stl_multimap.h \
  /usr/include/boost/graph/graph_mutability_traits.hpp \
  /usr/include/boost/iterator/indirect_iterator.hpp \
  /usr/include/boost/pointee.hpp \
@@ -696,8 +698,6 @@ additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o: \
  /usr/include/boost/indirect_reference.hpp \
  /usr/include/boost/graph/dominator_tree.hpp /usr/include/c++/13/deque \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
- /usr/include/c++/13/set /usr/include/c++/13/bits/stl_set.h \
- /usr/include/c++/13/bits/stl_multiset.h \
  /usr/include/boost/graph/depth_first_search.hpp \
  /usr/include/boost/graph/graph_concepts.hpp \
  /usr/include/boost/graph/numeric_values.hpp \
@@ -1452,8 +1452,6 @@ additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o: \
  /usr/include/boost/unordered/unordered_map.hpp \
  /usr/include/boost/unordered/detail/map.hpp \
  /usr/include/boost/unordered/unordered_map_fwd.hpp \
- /usr/include/c++/13/unordered_set \
- /usr/include/c++/13/bits/unordered_set.h \
  /usr/include/boost/graph/detail/adjacency_list.hpp \
  /usr/include/boost/range/irange.hpp \
  /usr/include/boost/range/iterator_range.hpp \

@@ -1,7 +1,7 @@
 CMakeFiles/application.dir/src/parameter.cpp.o: \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/parameter.cpp \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/parameter.cpp \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/include/parameter.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/include/parameter.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

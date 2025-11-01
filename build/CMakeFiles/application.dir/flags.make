@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB
 
-CXX_INCLUDES = -I/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/include -I/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms -I/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals -I/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/experiments -I/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/json
+CXX_INCLUDES = -I/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/include -I/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms -I/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals -I/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/experiments -I/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/json
 
 CXX_FLAGS = -Wall -Wextra -O2 -Wno-reorder -std=gnu++20
 

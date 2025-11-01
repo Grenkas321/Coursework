@@ -1,7 +1,7 @@
 additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o: \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DAGGenerator.cpp \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DAGGenerator.cpp \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DAGGenerator.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DAGGenerator.h \
  /usr/include/c++/13/tuple /usr/include/c++/13/bits/stl_pair.h \
  /usr/include/c++/13/type_traits \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -172,7 +172,13 @@ additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o: \
  /usr/include/c++/13/bits/enable_special_members.h \
  /usr/include/c++/13/bits/node_handle.h \
  /usr/include/c++/13/bits/erase_if.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/include/general_types.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/include/general_types.h \
+ /usr/include/c++/13/unordered_map \
+ /usr/include/c++/13/bits/unordered_map.h /usr/include/c++/13/set \
+ /usr/include/c++/13/bits/stl_tree.h /usr/include/c++/13/bits/stl_set.h \
+ /usr/include/c++/13/bits/stl_multiset.h /usr/include/c++/13/map \
+ /usr/include/c++/13/bits/stl_map.h \
+ /usr/include/c++/13/bits/stl_multimap.h \
  /usr/include/boost/graph/reverse_graph.hpp \
  /usr/include/boost/graph/adjacency_iterator.hpp \
  /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h \
@@ -617,9 +623,7 @@ additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o: \
  /usr/include/boost/preprocessor/seq/limits/enum_256.hpp \
  /usr/include/boost/concept/detail/concept_undef.hpp \
  /usr/include/boost/concept_archetype.hpp /usr/include/c++/13/functional \
- /usr/include/c++/13/bits/std_function.h \
- /usr/include/c++/13/unordered_map \
- /usr/include/c++/13/bits/unordered_map.h /usr/include/c++/13/array \
+ /usr/include/c++/13/bits/std_function.h /usr/include/c++/13/array \
  /usr/include/c++/13/bits/stl_algo.h \
  /usr/include/c++/13/bits/algorithmfwd.h \
  /usr/include/c++/13/bits/stl_heap.h \
@@ -690,9 +694,6 @@ additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o: \
  /usr/include/boost/utility/detail/result_of_variadic.hpp \
  /usr/include/boost/graph/subgraph.hpp /usr/include/c++/13/list \
  /usr/include/c++/13/bits/stl_list.h /usr/include/c++/13/bits/list.tcc \
- /usr/include/c++/13/map /usr/include/c++/13/bits/stl_tree.h \
- /usr/include/c++/13/bits/stl_map.h \
- /usr/include/c++/13/bits/stl_multimap.h \
  /usr/include/boost/graph/graph_mutability_traits.hpp \
  /usr/include/boost/iterator/indirect_iterator.hpp \
  /usr/include/boost/pointee.hpp \
@@ -701,8 +702,6 @@ additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o: \
  /usr/include/boost/indirect_reference.hpp \
  /usr/include/boost/graph/dominator_tree.hpp /usr/include/c++/13/deque \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
- /usr/include/c++/13/set /usr/include/c++/13/bits/stl_set.h \
- /usr/include/c++/13/bits/stl_multiset.h \
  /usr/include/boost/graph/depth_first_search.hpp \
  /usr/include/boost/graph/graph_concepts.hpp \
  /usr/include/boost/graph/numeric_values.hpp \
@@ -1492,4 +1491,4 @@ additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o: \
  /usr/include/boost/range/detail/safe_bool.hpp \
  /usr/include/boost/range/iterator_range_io.hpp \
  /usr/include/boost/graph/detail/adj_list_edge_iterator.hpp \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DAGPool.h
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DAGPool.h

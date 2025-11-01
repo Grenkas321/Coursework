@@ -1,4 +1,4 @@
-#include "RandomSearch.h"
+﻿#include "RandomSearch.h"
 #include "ScheduleCorrector.h"
 
 namespace scheduling_problem::algorithms

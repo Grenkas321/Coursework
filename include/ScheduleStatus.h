@@ -1,5 +1,6 @@
-#pragma once
+﻿#pragma once
 
+#include <boost/range/iterator_range.hpp>
 #include "Schedule.h"
 
 namespace scheduling_problem
@@ -38,6 +39,8 @@ namespace scheduling_problem
          * @param other Schedule to copy from
          */
         ScheduleStatus(const ScheduleStatus &other);
+
+        ScheduleStatus& operator=(const ScheduleStatus&) = default;
 
         /**
          * @param curr_vid %Node number in the graph

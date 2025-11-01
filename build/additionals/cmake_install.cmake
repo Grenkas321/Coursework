@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals
+# Install script for directory: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,4 +1,4 @@
-#include "BaseOptimization.h"
+﻿#include "BaseOptimization.h"
 
 namespace scheduling_problem::algorithms
 {

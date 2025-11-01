@@ -1,4 +1,4 @@
-#include <vector>
+﻿#include <vector>
 #include <future>
 #include <thread>
 #include "SimulatedAnnealing.h"

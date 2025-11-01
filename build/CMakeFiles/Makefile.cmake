@@ -7,13 +7,13 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/CMakeLists.txt"
-  "/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/CMakeLists.txt"
-  "/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/CMakeLists.txt"
+  "/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/CMakeLists.txt"
+  "/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/CMakeLists.txt"
+  "/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/CMakeLists.txt"
   "CMakeFiles/3.28.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeSystem.cmake"
-  "/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/experiments/CMakeLists.txt"
+  "/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/experiments/CMakeLists.txt"
   "/usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfigVersion.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.83.0.cmake"

@@ -1,4 +1,4 @@
-#include "GreedyHeuristics.h"
+﻿#include "GreedyHeuristics.h"
 
 namespace scheduling_problem::algorithms
 {
@@ -45,16 +45,16 @@ namespace scheduling_problem::algorithms
             }
         }
 
-        for (int k = 0; k < source_pos - target_pos - visited.size(); ++k)
+        for (size_t k = 0; k < source_pos - target_pos - visited.size(); ++k)
         {
             cur_schedule.clear();
             // insert prefix
-            for (int i = 0; i < target_pos; ++i)
+            for (size_t i = 0; i < target_pos; ++i)
             {
                 cur_schedule.insert(schedule[i].id, cur_schedule.size(), graph);
             }
             // insert source predecessors
-            for (int i = target_pos; i < source_pos; ++i)
+            for (size_t i = target_pos; i < source_pos; ++i)
             {
                 if (visited.find(schedule[i].id) != visited.end())
                 {
@@ -62,7 +62,7 @@ namespace scheduling_problem::algorithms
                 }
             }
             // insert k nodes before (source, target) pair
-            for (int i = 0; i < k; ++i)
+            for (size_t i = 0; i < k; ++i)
             {
                 int pos = target_pos + 1 + i;
                 if (visited.find(schedule[pos].id) == visited.end())
@@ -74,7 +74,7 @@ namespace scheduling_problem::algorithms
             cur_schedule.insert(schedule[source_pos].id, cur_schedule.size(), graph);
             cur_schedule.insert(schedule[target_pos].id, cur_schedule.size(), graph);
             // insert remaining nodes from between source and target
-            for (int i = k; i < source_pos - target_pos - visited.size(); ++i)
+            for (size_t i = k; i < source_pos - target_pos - visited.size(); ++i)
             {
                 int pos = target_pos + 1 + i;
                 if (visited.find(schedule[pos].id) == visited.end())
@@ -83,7 +83,7 @@ namespace scheduling_problem::algorithms
                 }
             }
             // insert suffix nodes that were after source
-            for (int i = source_pos + 1; i < schedule.size(); ++i)
+            for (size_t i = source_pos + 1; i < schedule.size(); ++i)
             {
                 cur_schedule.insert(schedule[i].id, cur_schedule.size(), graph);
             }

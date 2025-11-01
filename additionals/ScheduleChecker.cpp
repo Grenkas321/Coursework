@@ -1,4 +1,4 @@
-#include "ScheduleChecker.h"
+﻿#include "ScheduleChecker.h"
 #include <iostream>
 #include <fstream>
 #include "ScheduleStatus.h"

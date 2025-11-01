@@ -1,4 +1,4 @@
-#include <vector>
+﻿#include <vector>
 #include <tuple>
 #include <memory>
 #include "SimulatedAnnealing.h"

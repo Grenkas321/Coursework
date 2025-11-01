@@ -1,4 +1,4 @@
-#include "GridDAGGenerator.h"
+﻿#include "GridDAGGenerator.h"
 
 namespace scheduling_problem::additionals
 {
@@ -53,7 +53,7 @@ namespace scheduling_problem::additionals
                                  std::mt19937 &rng,
                                  const std::string &name)
     {
-        size_t nb_vertex;
+        size_t nb_vertex = 0;
         switch (grid_type)
         {
         case GridType::TRIANGLE:
@@ -62,6 +62,8 @@ namespace scheduling_problem::additionals
         case GridType::RECTANGLE:
             nb_vertex = nb_columns * nb_columns;
             break;
+        default:
+            throw std::runtime_error("Unknown GridType");
         }
         std::vector<weight_t> weights(nb_vertex);
         uniform_weight_t weights_dist(weights_minmax.first, weights_minmax.second);

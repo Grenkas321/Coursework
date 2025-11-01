@@ -1,4 +1,4 @@
-#include "DAGGenerator.h"
+﻿#include "DAGGenerator.h"
 
 namespace scheduling_problem::additionals
 {

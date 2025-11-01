@@ -1,7 +1,7 @@
 algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.o: \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/Greedy.cpp \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/Greedy.cpp \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/Greedy.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/Greedy.h \
  /usr/include/c++/13/unordered_map \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -61,7 +61,7 @@ algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.o: \
  /usr/include/c++/13/bits/memory_resource.h /usr/include/c++/13/cstddef \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
  /usr/include/c++/13/bits/uses_allocator_args.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/algorithms/BaseOptimization.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/algorithms/BaseOptimization.h \
  /usr/include/c++/13/chrono /usr/include/c++/13/bits/chrono.h \
  /usr/include/c++/13/ratio /usr/include/c++/13/cstdint \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
@@ -206,7 +206,13 @@ algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.o: \
  /usr/include/c++/13/array /usr/include/c++/13/charconv \
  /usr/include/c++/13/optional /usr/include/c++/13/span \
  /usr/include/c++/13/variant /usr/include/c++/13/bits/ranges_algobase.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/include/general_types.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/include/general_types.h \
+ /usr/include/c++/13/unordered_set \
+ /usr/include/c++/13/bits/unordered_set.h /usr/include/c++/13/set \
+ /usr/include/c++/13/bits/stl_tree.h /usr/include/c++/13/bits/stl_set.h \
+ /usr/include/c++/13/bits/stl_multiset.h /usr/include/c++/13/map \
+ /usr/include/c++/13/bits/stl_map.h \
+ /usr/include/c++/13/bits/stl_multimap.h \
  /usr/include/boost/graph/reverse_graph.hpp \
  /usr/include/boost/graph/adjacency_iterator.hpp \
  /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h \
@@ -696,9 +702,6 @@ algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.o: \
  /usr/include/boost/utility/detail/result_of_variadic.hpp \
  /usr/include/boost/graph/subgraph.hpp /usr/include/c++/13/list \
  /usr/include/c++/13/bits/stl_list.h /usr/include/c++/13/bits/list.tcc \
- /usr/include/c++/13/map /usr/include/c++/13/bits/stl_tree.h \
- /usr/include/c++/13/bits/stl_map.h \
- /usr/include/c++/13/bits/stl_multimap.h \
  /usr/include/boost/graph/graph_mutability_traits.hpp \
  /usr/include/boost/iterator/indirect_iterator.hpp \
  /usr/include/boost/pointee.hpp \
@@ -707,8 +710,6 @@ algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.o: \
  /usr/include/boost/indirect_reference.hpp \
  /usr/include/boost/graph/dominator_tree.hpp /usr/include/c++/13/deque \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
- /usr/include/c++/13/set /usr/include/c++/13/bits/stl_set.h \
- /usr/include/c++/13/bits/stl_multiset.h \
  /usr/include/boost/graph/depth_first_search.hpp \
  /usr/include/boost/graph/graph_concepts.hpp \
  /usr/include/boost/graph/numeric_values.hpp \
@@ -1462,8 +1463,6 @@ algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.o: \
  /usr/include/boost/unordered/unordered_map.hpp \
  /usr/include/boost/unordered/detail/map.hpp \
  /usr/include/boost/unordered/unordered_map_fwd.hpp \
- /usr/include/c++/13/unordered_set \
- /usr/include/c++/13/bits/unordered_set.h \
  /usr/include/boost/graph/detail/adjacency_list.hpp \
  /usr/include/boost/range/irange.hpp \
  /usr/include/boost/range/iterator_range.hpp \
@@ -1499,8 +1498,8 @@ algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.o: \
  /usr/include/boost/range/detail/safe_bool.hpp \
  /usr/include/boost/range/iterator_range_io.hpp \
  /usr/include/boost/graph/detail/adj_list_edge_iterator.hpp \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/include/Schedule.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/json/json.hpp \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/include/Schedule.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/json/json.hpp \
  /usr/include/c++/13/numeric /usr/include/c++/13/bits/stl_numeric.h \
  /usr/include/c++/13/pstl/glue_numeric_defs.h \
  /usr/include/c++/13/forward_list /usr/include/c++/13/bits/forward_list.h \
@@ -1517,7 +1516,7 @@ algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.o: \
  /usr/include/c++/13/bits/fs_fwd.h /usr/include/c++/13/bits/fs_path.h \
  /usr/include/c++/13/codecvt /usr/include/c++/13/bits/fs_dir.h \
  /usr/include/c++/13/bits/fs_ops.h /usr/include/c++/13/any \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/include/parameter.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/include/parameter.h \
  /usr/include/c++/13/iostream \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/include/ScheduleStatus.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/include/ScheduleStatus.h \
  /usr/include/boost/range/adaptor/reversed.hpp

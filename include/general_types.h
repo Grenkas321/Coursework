@@ -1,5 +1,9 @@
-#pragma once
+﻿#pragma once
 
+#include <unordered_set>
+#include <unordered_map>
+#include <set>
+#include <map>
 #include <string>
 #include <boost/graph/reverse_graph.hpp>
 #include <boost/graph/subgraph.hpp>

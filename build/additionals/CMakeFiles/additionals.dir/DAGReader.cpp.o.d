@@ -1,7 +1,7 @@
 additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o: \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DAGReader.cpp \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DAGReader.cpp \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DAGReader.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DAGReader.h \
  /usr/include/c++/13/set /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -200,11 +200,15 @@ additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o: \
  /usr/include/c++/13/bits/hashtable.h \
  /usr/include/c++/13/bits/hashtable_policy.h \
  /usr/include/c++/13/bits/enable_special_members.h \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/additionals/DAGPool.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/additionals/DAGPool.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/include/general_types.h \
+ /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/include/general_types.h \
+ /usr/include/c++/13/unordered_set \
+ /usr/include/c++/13/bits/unordered_set.h /usr/include/c++/13/map \
+ /usr/include/c++/13/bits/stl_map.h \
+ /usr/include/c++/13/bits/stl_multimap.h \
  /usr/include/boost/graph/reverse_graph.hpp \
  /usr/include/boost/graph/adjacency_iterator.hpp \
  /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h \
@@ -700,8 +704,6 @@ additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o: \
  /usr/include/boost/utility/detail/result_of_variadic.hpp \
  /usr/include/boost/graph/subgraph.hpp /usr/include/c++/13/list \
  /usr/include/c++/13/bits/stl_list.h /usr/include/c++/13/bits/list.tcc \
- /usr/include/c++/13/map /usr/include/c++/13/bits/stl_map.h \
- /usr/include/c++/13/bits/stl_multimap.h \
  /usr/include/boost/graph/graph_mutability_traits.hpp \
  /usr/include/boost/iterator/indirect_iterator.hpp \
  /usr/include/boost/pointee.hpp \
@@ -1464,8 +1466,6 @@ additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o: \
  /usr/include/boost/unordered/unordered_map.hpp \
  /usr/include/boost/unordered/detail/map.hpp \
  /usr/include/boost/unordered/unordered_map_fwd.hpp \
- /usr/include/c++/13/unordered_set \
- /usr/include/c++/13/bits/unordered_set.h \
  /usr/include/boost/graph/detail/adjacency_list.hpp \
  /usr/include/boost/range/irange.hpp \
  /usr/include/boost/range/iterator_range.hpp \

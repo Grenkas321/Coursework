@@ -1,4 +1,4 @@
-#include "additionals.h"
+﻿#include "additionals.h"
 #include <stack>
 #include <numeric>
 #include <fstream>

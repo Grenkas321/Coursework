@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/tutor/5_sem/Nauchka/Coursework
+CMAKE_SOURCE_DIR = /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build
+CMAKE_BINARY_DIR = /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/application.dir/depend.make
@@ -70,88 +70,88 @@ include CMakeFiles/application.dir/progress.make
 include CMakeFiles/application.dir/flags.make
 
 CMakeFiles/application.dir/main.cpp.o: CMakeFiles/application.dir/flags.make
-CMakeFiles/application.dir/main.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/main.cpp
+CMakeFiles/application.dir/main.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/main.cpp
 CMakeFiles/application.dir/main.cpp.o: CMakeFiles/application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/application.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/main.cpp.o -MF CMakeFiles/application.dir/main.cpp.o.d -o CMakeFiles/application.dir/main.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/application.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/main.cpp.o -MF CMakeFiles/application.dir/main.cpp.o.d -o CMakeFiles/application.dir/main.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/main.cpp
 
 CMakeFiles/application.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/application.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/main.cpp > CMakeFiles/application.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/main.cpp > CMakeFiles/application.dir/main.cpp.i
 
 CMakeFiles/application.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/application.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/main.cpp -o CMakeFiles/application.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/main.cpp -o CMakeFiles/application.dir/main.cpp.s
 
 CMakeFiles/application.dir/src/Schedule.cpp.o: CMakeFiles/application.dir/flags.make
-CMakeFiles/application.dir/src/Schedule.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/Schedule.cpp
+CMakeFiles/application.dir/src/Schedule.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/Schedule.cpp
 CMakeFiles/application.dir/src/Schedule.cpp.o: CMakeFiles/application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/application.dir/src/Schedule.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/Schedule.cpp.o -MF CMakeFiles/application.dir/src/Schedule.cpp.o.d -o CMakeFiles/application.dir/src/Schedule.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/Schedule.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/application.dir/src/Schedule.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/Schedule.cpp.o -MF CMakeFiles/application.dir/src/Schedule.cpp.o.d -o CMakeFiles/application.dir/src/Schedule.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/Schedule.cpp
 
 CMakeFiles/application.dir/src/Schedule.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/application.dir/src/Schedule.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/Schedule.cpp > CMakeFiles/application.dir/src/Schedule.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/Schedule.cpp > CMakeFiles/application.dir/src/Schedule.cpp.i
 
 CMakeFiles/application.dir/src/Schedule.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/application.dir/src/Schedule.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/Schedule.cpp -o CMakeFiles/application.dir/src/Schedule.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/Schedule.cpp -o CMakeFiles/application.dir/src/Schedule.cpp.s
 
 CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: CMakeFiles/application.dir/flags.make
-CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/ScheduleStatus.cpp
+CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/ScheduleStatus.cpp
 CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: CMakeFiles/application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/application.dir/src/ScheduleStatus.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/ScheduleStatus.cpp.o -MF CMakeFiles/application.dir/src/ScheduleStatus.cpp.o.d -o CMakeFiles/application.dir/src/ScheduleStatus.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/ScheduleStatus.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/application.dir/src/ScheduleStatus.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/ScheduleStatus.cpp.o -MF CMakeFiles/application.dir/src/ScheduleStatus.cpp.o.d -o CMakeFiles/application.dir/src/ScheduleStatus.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/ScheduleStatus.cpp
 
 CMakeFiles/application.dir/src/ScheduleStatus.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/application.dir/src/ScheduleStatus.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/ScheduleStatus.cpp > CMakeFiles/application.dir/src/ScheduleStatus.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/ScheduleStatus.cpp > CMakeFiles/application.dir/src/ScheduleStatus.cpp.i
 
 CMakeFiles/application.dir/src/ScheduleStatus.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/application.dir/src/ScheduleStatus.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/ScheduleStatus.cpp -o CMakeFiles/application.dir/src/ScheduleStatus.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/ScheduleStatus.cpp -o CMakeFiles/application.dir/src/ScheduleStatus.cpp.s
 
 CMakeFiles/application.dir/src/additionals.cpp.o: CMakeFiles/application.dir/flags.make
-CMakeFiles/application.dir/src/additionals.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/additionals.cpp
+CMakeFiles/application.dir/src/additionals.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/additionals.cpp
 CMakeFiles/application.dir/src/additionals.cpp.o: CMakeFiles/application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/application.dir/src/additionals.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/additionals.cpp.o -MF CMakeFiles/application.dir/src/additionals.cpp.o.d -o CMakeFiles/application.dir/src/additionals.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/additionals.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/application.dir/src/additionals.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/additionals.cpp.o -MF CMakeFiles/application.dir/src/additionals.cpp.o.d -o CMakeFiles/application.dir/src/additionals.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/additionals.cpp
 
 CMakeFiles/application.dir/src/additionals.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/application.dir/src/additionals.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/additionals.cpp > CMakeFiles/application.dir/src/additionals.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/additionals.cpp > CMakeFiles/application.dir/src/additionals.cpp.i
 
 CMakeFiles/application.dir/src/additionals.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/application.dir/src/additionals.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/additionals.cpp -o CMakeFiles/application.dir/src/additionals.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/additionals.cpp -o CMakeFiles/application.dir/src/additionals.cpp.s
 
 CMakeFiles/application.dir/src/parameter.cpp.o: CMakeFiles/application.dir/flags.make
-CMakeFiles/application.dir/src/parameter.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/parameter.cpp
+CMakeFiles/application.dir/src/parameter.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/parameter.cpp
 CMakeFiles/application.dir/src/parameter.cpp.o: CMakeFiles/application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/application.dir/src/parameter.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/parameter.cpp.o -MF CMakeFiles/application.dir/src/parameter.cpp.o.d -o CMakeFiles/application.dir/src/parameter.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/parameter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/application.dir/src/parameter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/parameter.cpp.o -MF CMakeFiles/application.dir/src/parameter.cpp.o.d -o CMakeFiles/application.dir/src/parameter.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/parameter.cpp
 
 CMakeFiles/application.dir/src/parameter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/application.dir/src/parameter.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/parameter.cpp > CMakeFiles/application.dir/src/parameter.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/parameter.cpp > CMakeFiles/application.dir/src/parameter.cpp.i
 
 CMakeFiles/application.dir/src/parameter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/application.dir/src/parameter.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/parameter.cpp -o CMakeFiles/application.dir/src/parameter.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/parameter.cpp -o CMakeFiles/application.dir/src/parameter.cpp.s
 
 CMakeFiles/application.dir/src/parse.cpp.o: CMakeFiles/application.dir/flags.make
-CMakeFiles/application.dir/src/parse.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/parse.cpp
+CMakeFiles/application.dir/src/parse.cpp.o: /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/parse.cpp
 CMakeFiles/application.dir/src/parse.cpp.o: CMakeFiles/application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/application.dir/src/parse.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/parse.cpp.o -MF CMakeFiles/application.dir/src/parse.cpp.o.d -o CMakeFiles/application.dir/src/parse.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/parse.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/application.dir/src/parse.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/parse.cpp.o -MF CMakeFiles/application.dir/src/parse.cpp.o.d -o CMakeFiles/application.dir/src/parse.cpp.o -c /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/parse.cpp
 
 CMakeFiles/application.dir/src/parse.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/application.dir/src/parse.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/parse.cpp > CMakeFiles/application.dir/src/parse.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/parse.cpp > CMakeFiles/application.dir/src/parse.cpp.i
 
 CMakeFiles/application.dir/src/parse.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/application.dir/src/parse.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/src/parse.cpp -o CMakeFiles/application.dir/src/parse.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/src/parse.cpp -o CMakeFiles/application.dir/src/parse.cpp.s
 
 # Object files for target application
 application_OBJECTS = \
@@ -176,9 +176,10 @@ application: algorithms/libalgorithms.a
 application: additionals/libadditionals.a
 application: experiments/libexperiments.a
 application: /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.83.0
+application: algorithms/libalgorithms.a
 application: additionals/libadditionals.a
 application: CMakeFiles/application.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable application"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable application"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/application.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -190,6 +191,6 @@ CMakeFiles/application.dir/clean:
 .PHONY : CMakeFiles/application.dir/clean
 
 CMakeFiles/application.dir/depend:
-	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/tutor/5_sem/Nauchka/Coursework /mnt/c/Users/tutor/5_sem/Nauchka/Coursework /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/build/CMakeFiles/application.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build /mnt/c/Users/tutor/5_sem/Nauchka/Coursework/Coursework/build/CMakeFiles/application.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/application.dir/depend
 
