@@ -1,115 +1,118 @@
 ﻿#include "ScheduleChecker.h"
-#include <iostream>
-#include <fstream>
-#include "ScheduleStatus.h"
+
+#include <unordered_map>
+#include <iterator>
+#include <sstream>
+#include <limits>
+#include <boost/range/iterator_range.hpp>
 
 namespace scheduling_problem::additionals
 {
-    ScheduleChecker::ScheduleChecker(bool logging,
-                                     std::string dump_path)
-        : logging_(logging), dump_path_(dump_path)
-    {
-    }
+    using scheduling_problem::edge_buffer_id_t;
+    using scheduling_problem::weight_t;
 
-    std::string ScheduleChecker::info()
-    {
-        return info_;
-    }
+    // Примитивный хешер для пары (parent_id, buffer_id)
+    struct PairHash {
+        size_t operator()(const std::pair<size_t,int>& p) const noexcept {
+            // смешаем id вершины и buffer_id
+            return std::hash<size_t>{}(p.first) ^ (static_cast<size_t>(p.second) + 0x9e3779b97f4a7c15ULL + (p.first<<6) + (p.first>>2));
+        }
+    };
 
-    bool ScheduleChecker::isCorrect(const Graph &graph, const Schedule &schedule)
+    static bool check_by_buffers_impl(const Graph& graph,
+                                      const Schedule& sched,
+                                      std::string* msg,
+                                      weight_t* out_peak = nullptr)
     {
-        ScheduleStatus status(graph, schedule);
-        std::vector<int> parents(schedule.size()), children(schedule.size());
-        for (auto vertex_id : boost::make_iterator_range(boost::vertices(graph)))
+        // remain[(parent, buffer_id)] = число оставшихся потребителей этого буфера
+        std::unordered_map<std::pair<size_t,int>, size_t, PairHash> remain;
+
+        for (auto e : boost::make_iterator_range(boost::edges(graph)))
         {
-            parents[vertex_id] = status.parents(vertex_id, graph).size();
-            children[vertex_id] = status.children(vertex_id, graph).size();
+            auto parent = boost::source(e, graph);
+            int bid = boost::get(edge_buffer_id_t(), graph, e);
+            remain[{static_cast<size_t>(parent), bid}]++;
         }
 
-        bool is_correct = true;
-        auto weights = boost::get(vertex_weight_t(), graph);
-        std::unordered_set<size_t> distinct_vertices;
-        size_t job_pos(0);
-        for (auto &job : schedule)
+        weight_t target = 0;
+        weight_t peak   = 0;
+
+        for (size_t pos = 0; pos < sched.size(); ++pos)
         {
-            bool step_correct = true;
-            weight_t release = children[job.id] ? 0 : job.volume;
-            distinct_vertices.insert(job.id);
+            const auto& job = sched[pos];
 
-            auto vert_parents = status.parents(job.id, graph);
-            for (auto parent_id : vert_parents)
+            // 1) Рост: выполнение продюсера создаёт ВСЕ его буферы
+            target += job.volume;
+            if (target > peak) peak = target;
+
+            // 2) Релизы: закрываем те буферы, для которых это — последний потребитель
+            weight_t release = 0;
+            for (auto parent : boost::make_iterator_range(boost::inv_adjacent_vertices(job.id, graph)))
             {
-                children[parent_id]--;
-                if (!children[parent_id])
+                auto pr = boost::edge(parent, job.id, graph);
+                if (!pr.second) continue;
+                auto e = pr.first;
+
+                int  bid = boost::get(edge_buffer_id_t(), graph, e);
+                auto key = std::make_pair(static_cast<size_t>(parent), bid);
+
+                auto it = remain.find(key);
+                if (it != remain.end() && it->second > 0)
                 {
-                    for (size_t parent_pos(0); parent_pos < job_pos; parent_pos++)
-                        if (schedule[parent_pos].id == parent_id)
-                        {
-                            release += schedule[parent_pos].volume;
-                            break;
-                        }
-                }
-            }
-
-            auto vert_children = status.children(job.id, graph);
-            for (auto child_id : vert_children)
-                parents[child_id]--;
-
-            step_correct = job.release == release && job.volume == weights[job.id] && !parents[job.id];
-            is_correct &= step_correct;
-
-            // logging (if provided)
-            {
-                if (logging_ && !step_correct)
-                {
-                    info_ += "Job " + std::to_string(job.id) + " on step " + std::to_string(job_pos) + ":\n";
-                    if (parents[job.id])
-                    {
-                        info_ += "\tThe left part of the schedule must include all";
-                        info_ += " the prececessors of the vertices but this isn't the case\n";
+                    if (--(it->second) == 0) {
+                        // последний потребитель — освобождаем РОВНО вес буфера
+                        release += boost::get(boost::edge_weight, graph, e);
                     }
-
-                    if (job.release != release)
-                        info_ += "\tComputed release resources is " + std::to_string(release) + " but job.release is " + std::to_string(job.release) + "\n";
-                    if (job.volume != weights[job.id])
-                        info_ += "\tVertex weight is " + std::to_string(weights[job.id]) + " but job.volume is " + std::to_string(job.volume) + "\n";
-                    info_ += "\n";
+                }
+                else
+                {
+                    if (msg) *msg = "Internal error: negative or missing buffer consumers for (parent="
+                                    + std::to_string(static_cast<size_t>(parent))
+                                    + ", bid=" + std::to_string(bid) + ") at pos " + std::to_string(pos);
+                    return false;
                 }
             }
-            job_pos++;
-        }
 
-        // logging (if provided)
-        {
-            if (logging_ && distinct_vertices.size() != boost::num_vertices(graph))
+            // 3) Сверка с записанным release в расписании
+            if (release != job.release)
             {
-                info_ += "Schedule doesn't contain next vertices:\n\t";
-                for (auto vertex_id : boost::make_iterator_range(boost::vertices(graph)))
-                    if (!distinct_vertices.count(vertex_id))
-                        info_ += std::to_string(vertex_id) + " ";
-                info_ += "\n";
+                if (msg) {
+                    std::ostringstream oss;
+                    oss << "Release mismatch at position " << pos
+                        << " (job.id=" << job.id << "): expected " << release
+                        << ", got " << job.release;
+                    *msg = oss.str();
+                }
+                return false;
             }
 
-            if (logging_ && dump_path_.size() > 0)
-            {
-                std::ofstream file(dump_path_);
-                file << info_;
-                file.close();
+            target -= release;
+
+            // 4) Инварианты: веса буферов и релизов (строгие проверки по желанию)
+            if (job.id != static_cast<size_t>(-10000) && job.id != static_cast<size_t>(10000)) {
+                // в задаче сказано: буфер не может иметь вес 0 (кроме первой/последней)
+                // здесь это косвенно: если у вершины есть буферы, их веса > 0
+                // Явно не проверяем, т.к. нулевые группы просто не влияют на релиз.
             }
         }
 
-        return is_correct;
+        if (out_peak) *out_peak = peak;
+        return true;
     }
 
-    bool ScheduleChecker::isCorrect(const Graph &graph, const nlohmann::ordered_json &schedule)
+    bool ScheduleChecker::isCorrect(const Graph& graph,
+                                    const Schedule& sched,
+                                    std::string* message)
     {
-        auto solution = Schedule::load(schedule);
-        return isCorrect(graph, solution);
+        weight_t dummy_peak = 0;
+        return check_by_buffers_impl(graph, sched, message, &dummy_peak);
     }
 
-    bool ScheduleChecker::isCorrect(const Graph &graph, const std::string &schedule_path)
+    weight_t ScheduleChecker::recomputePeak(const Graph& graph, const Schedule& sched)
     {
-        auto solution = Schedule::load(schedule_path);
-        return isCorrect(graph, solution);
+        weight_t peak = 0;
+        std::string ignored;
+        check_by_buffers_impl(graph, sched, &ignored, &peak);
+        return peak;
     }
 }

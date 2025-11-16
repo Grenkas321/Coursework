@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/maxbig/Sheduler_final/Coursework/build/cmake_install.cmake",
+		"/Users/maxbig/Sheduler_final/Coursework/build/algorithms/cmake_install.cmake",
+		"/Users/maxbig/Sheduler_final/Coursework/build/additionals/cmake_install.cmake",
+		"/Users/maxbig/Sheduler_final/Coursework/build/experiments/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -58,6 +58,11 @@ namespace scheduling_problem
         typedef boost::edge_property_tag kind;
     };
 
+    struct edge_buffer_id_t
+    {
+        typedef boost::edge_property_tag kind;
+    };
+
     /**
      * Possible kinds of edges
      */
@@ -84,10 +89,12 @@ namespace scheduling_problem
     /**
      * Edge weight defined
      */
-    typedef boost::property<boost::edge_weight_t,
-                            weight_t,
-                            EdgeKindProperty>
-        EdgeProperties;
+    typedef boost::property<edge_buffer_id_t,
+                        int,
+                        boost::property<boost::edge_weight_t,
+                                        weight_t,
+                                        EdgeKindProperty>>
+    EdgeProperties;
 
     /**
      * %Graph structure defined
@@ -152,7 +159,15 @@ namespace scheduling_problem
          */
         void addImEdge(size_t parent, size_t child)
         {
-            boost::add_edge(parent, child, EdgeProperties(0, EdgeKind::Imaginary), *this);
+            // добавляем ребро без свойств
+            auto res = boost::add_edge(parent, child, *this);
+            if (res.second) {
+                auto e = res.first;
+                // устанавливаем свойства ЯВНО:
+                boost::put(edge_buffer_id_t(), *this, e, 0);           // фиктивному ребру — buffer_id=0
+                boost::put(boost::edge_weight, *this, e, 0);            // вес 0 для Imaginary
+                boost::put(edge_kind_t(),      *this, e, EdgeKind::Imaginary);
+            }
         }
         /**
          * Assignment operator for graphs

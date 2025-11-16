@@ -362,7 +362,13 @@ namespace scheduling_problem::algorithms
                 {
                     auto w = boost::get(boost::edge_weight_t(), graph, it);
 
-                    boost::add_edge(it.m_source, it.m_target, {w}, sub_g);
+                    auto res = boost::add_edge(it.m_source, it.m_target, sub_g);
+                    if (res.second) {
+                        auto e = res.first;
+                        boost::put(edge_buffer_id_t(), sub_g, e, 0);   // локально не используем группы — ставим 0
+                        boost::put(boost::edge_weight,  sub_g, e, w);  // сюда идёт реальный вес (long long)
+                        boost::put(edge_kind_t(),       sub_g, e, EdgeKind::Real);
+                    }
                 }
             }
             else
@@ -398,7 +404,13 @@ namespace scheduling_problem::algorithms
             auto pred_pos = schedule.loc(parent);
 
             auto w = boost::get(boost::edge_weight_t(), graph, boost::edge(parent, vertex, graph).first);
-            boost::add_edge(parent, vertex, {w}, sp_graph);
+            auto res = boost::add_edge(parent, vertex, sp_graph);
+            if (res.second) {
+                auto e = res.first;
+                boost::put(edge_buffer_id_t(), sp_graph, e, 0);   // локально не используем группы — ставим 0
+                boost::put(boost::edge_weight,  sp_graph, e, w);  // сюда идёт реальный вес (long long)
+                boost::put(edge_kind_t(),       sp_graph, e, EdgeKind::Real);
+            }
             boost::put(vertex_weight_t(), sp_graph, vertex, w);
 
             // compute shedule where task inserted with one ingoing edge
@@ -446,7 +458,13 @@ namespace scheduling_problem::algorithms
 
             auto w = boost::get(boost::edge_weight_t(), graph, next);
 
-            boost::add_edge(next.m_source, next.m_target, {w}, sp_graph);
+            auto res = boost::add_edge(next.m_source, next.m_target, sp_graph);
+            if (res.second) {
+                auto e = res.first;
+                boost::put(edge_buffer_id_t(), sp_graph, e, 0);   // локально не используем группы — ставим 0
+                boost::put(boost::edge_weight,  sp_graph, e, w);  // сюда идёт реальный вес (long long)
+                boost::put(edge_kind_t(),       sp_graph, e, EdgeKind::Real);
+            }
 
             best_schedule = add_edge(sp_graph, best_schedule, next.m_source, next.m_target);
 
@@ -512,7 +530,13 @@ namespace scheduling_problem::algorithms
 
             auto w = boost::get(boost::edge_weight_t(), graph, next);
 
-            boost::add_edge(next.m_source, next.m_target, {w}, sp_graph);
+            auto res = boost::add_edge(next.m_source, next.m_target, sp_graph);
+            if (res.second) {
+                auto e = res.first;
+                boost::put(edge_buffer_id_t(), sp_graph, e, 0);   // локально не используем группы — ставим 0
+                boost::put(boost::edge_weight,  sp_graph, e, w);  // сюда идёт реальный вес (long long)
+                boost::put(edge_kind_t(),       sp_graph, e, EdgeKind::Real);
+            }
 
             new_schedule = add_edge(sp_graph, new_schedule, next.m_source, next.m_target);
 

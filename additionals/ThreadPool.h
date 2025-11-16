@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include <functional>
 #include <vector>
@@ -67,6 +67,7 @@ namespace scheduling_problem::additionals
         template <class TCallBack>
         decltype(auto) enqueue(TCallBack &&func)
         {
+            std::cout << "enqueue start" << std::endl;
             using ReturnType = decltype(func());
             auto promise = std::shared_ptr<std::promise<ReturnType>>(new std::promise<ReturnType>());
             auto result = promise->get_future();
@@ -79,7 +80,7 @@ namespace scheduling_problem::additionals
             }
 
             cond_.notify_one();
-
+            std::cout << "enqueue stop" << std::endl;
             return result;
         }
         /**
@@ -131,7 +132,12 @@ namespace scheduling_problem::additionals
 
                         lock.unlock();
 
-                        task();
+                        try {
+                            task();
+                        }
+                        catch (...) {
+                            std::cout<<"EXCEPTION"<<std::endl;
+                        }
                     }
                     else
                         lock.unlock();

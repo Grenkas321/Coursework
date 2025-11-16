@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.6)
 project(additionals)
 
 include_directories(${PROJECT_SOURCE_DIR})

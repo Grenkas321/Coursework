@@ -1,78 +1,57 @@
-﻿#include <vector>
+﻿#pragma once
+#include "BaseOptimization.h"
+#include "RandomSearch.h"
+#include "Greedy.h"
+#include "SimulatedAnnealing.h" // для ReductionRules
 #include <future>
-#include <thread>
-#include "SimulatedAnnealing.h"
+#include <unordered_map>
+#include <memory>
 
-namespace scheduling_problem::algorithms
-{
-    /**
-     * Implements simulated anealing in concurrent manner
-     */
-    class ConcurrentSAO : public BaseOptimization
-    {
-    public:
-        /**
-         * Cooling laws (temperature reduction rules).
-         */
-        typedef SimulatedAnnealing::ReductionRules ReductionRules;
-        /**
-         * Adjacency matrix for the task graph
-         */
-        typedef std::vector<std::vector<bool>> AdjacencyMatrix;
+namespace scheduling_problem::algorithms {
 
-    private:
-        unsigned partitions_count_, rsearch_iters_;
-        bool warm_start_, subareas_;
-        randgen rng_;
-        ParamSet algo_params_;
+class ConcurrentSAO : public BaseOptimization {
+public:
+    std::vector<std::vector<long long>> conveyor;
 
-    public:
-        std::vector<std::vector<weight_t>> conveyor;
+    using ParamSet = std::unordered_map<std::string, parameter>;
 
-    public:
-        /**
-         * Class constructor
-         */
-        ConcurrentSAO(unsigned partitions_count = std::thread::hardware_concurrency(),
-                      unsigned rsearch_iters = 1000,
-                      bool warm_start = true,
-                      bool subareas = true,
-                      double min_temp = 1,
-                      double max_temp = 13,
-                      ReductionRules reduction_rule = ReductionRules::boltzmann,
-                      unsigned saturation = 0,
-                      double improvement = 0,
-                      unsigned seed = 42,
-                      const std::string &label = "csao");
-        /**
-         * Copy function
-         */
-        virtual std::unique_ptr<BaseOptimization> copy() const override;
-        /**
-         * Get the internal algorithm parameters
-         */
-        virtual ParamSet getParams() const;
-        /**
-         * Sets internal parameters
-         */
-        virtual void setParams(const ParamSet &params);
-        /**
-         * Create partitions on a given graph and return vector of subgraphs corresponding to partitions
-         */
-        std::vector<Graph> makePartitions(const Graph &graph);
+    ConcurrentSAO(unsigned partitions_count,
+                  unsigned rsearch_iters,
+                  bool warm_start,
+                  bool subareas,
+                  double min_temp,
+                  double max_temp,
+                  SimulatedAnnealing::ReductionRules reduction_rule,
+                  unsigned saturation,
+                  double improvement,
+                  unsigned seed,
+                  const std::string& label = "CSAO");
 
-    protected:
-        /**
-         * Constructs a schedule for a given graph
-         */
-        virtual Schedule schedule_(const Graph &graph);
-        /**
-         * Create adjacency matrix from the given graph
-         */
-        AdjacencyMatrix makeAdjacencyMatrix(const Graph &graph);
-        /**
-         * Find the subarea according to adjacency matrix
-         */
-        std::pair<size_t, size_t> subarea(const AdjacencyMatrix &adjacency_matrix);
-    };
-}
+    ConcurrentSAO();
+
+    ~ConcurrentSAO() override;
+
+    std::unique_ptr<BaseOptimization> copy() const override;
+    void setParams(const ParamSet& params) override;
+    ParamSet getParams() const override;
+
+protected:
+    Schedule schedule_(const Graph& graph) override;
+
+private:
+    std::vector<ScheduleStatus> wave_(const Graph& graph,
+                                      std::shared_ptr<std::vector<Schedule>> baselines,
+                                      unsigned keep_top);
+
+private:
+    unsigned partitions_count_ = 3;
+    unsigned rsearch_iters_    = 20;
+    bool     warm_start_       = true;
+    bool     subareas_         = true;
+
+    ParamSet algo_params_; // min_temp, max_temp, reduction_rule, saturation, improvement, ...
+
+    randgen rng_{42};
+};
+
+} // namespace scheduling_problem::algorithms

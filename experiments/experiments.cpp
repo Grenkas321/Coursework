@@ -1,4 +1,4 @@
-﻿#include "experiments.h"
+#include "experiments.h"
 
 #include <filesystem>
 
@@ -54,6 +54,8 @@ namespace scheduling_problem::experiments
                     std::mutex& threads_sync,
                     const SaveParams& save_params)
     {
+        // runOnBatch(graphs, alg->copy(), alg_output_path, duplicates, progress, threads_sync,save_params);
+        std::cout << "runOnBatch start" << std::endl;
         auto columns = makeDFColumns(optimizer, duplicates);
         additionals::DataFrame<std::string, std::string, size_t> dataframe(columns);
         bool is_iterative = dynamic_cast<IterativeOptimization*>(optimizer.get()) ? 1 : 0;
@@ -80,9 +82,11 @@ namespace scheduling_problem::experiments
             // processing
             for (unsigned step(1); step <= duplicates; step++) {
                 auto solution = optimizer->schedule(graph);
+                // std::cout << "is_iterative" << std::endl;
                 if (!best_solution.size() || best_solution.cost() > solution.cost()) {
                     best_solution = solution;
                     if (is_iterative) {
+                        std::cout << "is_iterative" << std::endl;
                         auto iterative_opt = dynamic_cast<IterativeOptimization*>(optimizer.get());
                         best_dynamics = iterative_opt->costDynamics();
                         if (dynamic_cast<algorithms::SimulatedAnnealing*>(iterative_opt)) {
@@ -92,6 +96,7 @@ namespace scheduling_problem::experiments
                         }
                     }
                     if (dynamic_cast<algorithms::ConcurrentSAO*>(optimizer.get())) {
+                        std::cout << "dynamic_cast<algorithms::ConcurrentSAO*>(optimizer.get())" << std::endl;
                         best_conveyor = dynamic_cast<algorithms::ConcurrentSAO*>(optimizer.get())->conveyor;
                     }
                 }
@@ -100,6 +105,7 @@ namespace scheduling_problem::experiments
                 {
                     auto strstep = std::to_string(step);
                     if (save_params.make_tables) {
+                        std::cout << "save_params.make_tables" << std::endl;
                         row["cost_" + strstep] = solution.cost();
                         row["time_" + strstep] = optimizer->duration();
                         if (is_iterative)
@@ -166,6 +172,7 @@ namespace scheduling_problem::experiments
                                    + "_batch_" + std::to_string(batch.id()) + ".csv";
             dataframe.toCsv(dumppath);
         }
+        std::cout << "runOnBatch stop" << std::endl;
     }
 
     /**
@@ -181,11 +188,15 @@ namespace scheduling_problem::experiments
         additionals::DAGPool::Batch graphs;
         additionals::ThreadPool thread_pool(n_threads);
         unsigned common_iters = dag_pool.samplesNum() * duplicates * algorithms.size();
+        std::cout << common_iters << std::endl;
         additionals::ProgressBar progress(STANDARD_BAR_LEN, common_iters);
         std::mutex threads_sync;
+        std::cout << "qwerty" << std::endl;
         while ((graphs = dag_pool.nextBatch())) {
+            std::cout << "astfdydftfu" << std::endl;
             for (auto& alg : algorithms) {
                 std::string alg_output_path(output_path);
+                std::cout << alg_output_path << std::endl;
                 if (save_params.make_dirs) {
                     alg_output_path += "/" + alg->label();
                     std::filesystem::create_directory(alg_output_path);
@@ -205,14 +216,11 @@ namespace scheduling_problem::experiments
                 if (dynamic_cast<algorithms::ConcurrentSAO*>(alg.get())) {
                     std::filesystem::create_directories(alg_output_path + "/conveyor/best");
                 }
-                thread_pool.enqueue([graphs, alg_output_path, &alg, &threads_sync, &progress, duplicates, save_params]
-                    {
-                        runOnBatch(graphs, alg->copy(), alg_output_path,
+                runOnBatch(graphs, alg->copy(), alg_output_path,
                             duplicates, progress, threads_sync,save_params);
-                    }
-                );
             }
         }
+        std::cout << "STOP" << std::endl;
     }
 
     /**

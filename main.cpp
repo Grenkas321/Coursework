@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include "parse.h"
 #include "experiments.h"
 #include "RandomSearch.h"
@@ -42,21 +42,28 @@ int main(int argc, char **argv)
         {
             sp::additionals::DAGPool::Batch batch;
             std::string algo_prefix_path = parsed_params.output_path + "/" + alg->label() + "_";
+            std::cout << parsed_params.output_path + "/" + alg->label() + "_" << std::endl;
             while ((batch = parsed_params.data->nextBatch()))
                 for (auto &graph : batch)
                 {
                     auto schedule = alg->schedule(graph);
                     schedule.dump(algo_prefix_path + graph.name() + ".json");
+                    std::cout << algo_prefix_path + graph.name() + ".json" << std::endl;
                 }
         }
         break;
     case parse::Command::RUN:
+        std::cout << "parse::Command::RUN: start" << std::endl;
+        
+        std::cout << parsed_params.data->batch_size() << ' ' << parsed_params.data->samplesNum() << std::endl;
+        
         sp::experiments::runOnPool(parsed_params.algorithms,
                                    *parsed_params.data,
                                    parsed_params.output_path,
                                    parsed_params.duplicates,
                                    parsed_params.n_threads,
                                    config);
+        std::cout << "parse::Command::RUN: stop" << std::endl;
         break;
     case parse::Command::STABILITY:
         sp::experiments::stabilityByRunsOnPool(parsed_params.algorithms,

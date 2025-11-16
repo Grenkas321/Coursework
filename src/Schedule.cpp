@@ -63,26 +63,53 @@ namespace scheduling_problem
      */
     weight_t Schedule::cost(const Graph &graph)
     {
-        target_ = cost_ = 0;
-        std::vector<unsigned> child_remain(size());
-        for (auto &job : *this)
-        {
-            child_remain[job.id] = boost::out_degree(job.id, graph);
-            target_ += job.volume;
-            if (target_ > cost_)
-                cost_ = target_;
+    target_ = cost_ = 0;
 
-            job.release = child_remain[job.id] ? 0 : boost::get(vertex_weight_t(), graph, job.id);
-            for (const auto &parent_id : boost::make_iterator_range(boost::inv_adjacent_vertices(job.id, graph)))
-            {
-                child_remain[parent_id]--;
-                if (!child_remain[parent_id])
-                    job.release += boost::get(vertex_weight_t(), graph, parent_id);
-            }
-            target_ -= job.release;
+    // Считаем для каждой группы (parent, buffer_id) сколько потребителей у этого буфера осталось
+    struct PairHash {
+        size_t operator()(const std::pair<size_t,int>& p) const noexcept {
+            // простая смесь
+            return std::hash<size_t>{}(p.first) ^ (static_cast<size_t>(p.second) + 0x9e3779b97f4a7c15ULL + (p.first<<6) + (p.first>>2));
         }
-        return cost_;
+    };
+    std::unordered_map<std::pair<size_t,int>, size_t, PairHash> remain;
+
+    for (auto e : boost::make_iterator_range(boost::edges(graph))) {
+        auto parent = boost::source(e, graph);
+        int bid = boost::get(edge_buffer_id_t(), graph, e);
+        remain[{static_cast<size_t>(parent), bid}]++;
     }
+
+    // Проход по расписанию
+    for (auto &job : *this)
+    {
+        // рост памяти — выполняем producer, создаём все его буферы
+        target_ += job.volume;
+        if (target_ > cost_) cost_ = target_;
+
+        // релиз за счёт закрывающихся буферов (последние потребители)
+        weight_t release = 0;
+        for (auto parent : boost::make_iterator_range(boost::inv_adjacent_vertices(job.id, graph)))
+        {
+            auto pr = boost::edge(parent, job.id, graph);
+            if (!pr.second) continue;
+            auto e = pr.first;
+            int bid = boost::get(edge_buffer_id_t(), graph, e);
+            auto key = std::make_pair(static_cast<size_t>(parent), bid);
+            auto it = remain.find(key);
+            if (it != remain.end() && it->second > 0) {
+                if (--(it->second) == 0) {
+                    // освобождаем ровно вес буфера
+                    release += boost::get(boost::edge_weight, graph, e);
+                }
+            }
+        }
+        job.release = release;
+        target_ -= release;
+    }
+    return cost_;
+    }
+
 
     /**
      * @brief Returns pre-calculated goal function

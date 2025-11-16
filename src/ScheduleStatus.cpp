@@ -136,33 +136,32 @@ namespace scheduling_problem
      * @brief Get task parents (excluding imaginary edges)
      */
     std::vector<size_t> ScheduleStatus::parents(size_t curr_vid, const Graph &graph) const
-    {
-        auto p = boost::make_iterator_range(boost::inv_adjacent_vertices(curr_vid, graph));
-        std::vector<size_t> fp;
-        for (const auto &vid : p)
-        {
-            auto type = static_cast<const EdgeProperties *>(boost::edge(vid, curr_vid, graph).first.get_property())->m_base.m_value;
-            if (type == EdgeKind::Real)
-                fp.push_back(vid);
+{
+    std::vector<size_t> res;
+    for (auto e : boost::make_iterator_range(boost::in_edges(curr_vid, graph))) {
+        auto kind = boost::get(edge_kind_t(), graph, e);   // <-- ВАЖНО: берём edge_kind
+        if (kind == EdgeKind::Real) {
+            res.push_back(boost::source(e, graph));
         }
-        return fp;
     }
+    return res;
+}
 
     /**
      * @brief Get task children (excluding imaginary edges)
      */
     std::vector<size_t> ScheduleStatus::children(size_t curr_vid, const Graph &graph) const
-    {
-        auto c = boost::make_iterator_range(boost::adjacent_vertices(curr_vid, graph));
-        std::vector<size_t> fc;
-        for (const auto &vid : c)
-        {
-            auto type = static_cast<const EdgeProperties *>(boost::edge(curr_vid, vid, graph).first.get_property())->m_base.m_value;
-            if (type == EdgeKind::Real)
-                fc.push_back(vid);
+{
+    std::vector<size_t> res;
+    for (auto e : boost::make_iterator_range(boost::out_edges(curr_vid, graph))) {
+        auto kind = boost::get(edge_kind_t(), graph, e);   // <-- ВАЖНО
+        if (kind == EdgeKind::Real) {
+            res.push_back(boost::target(e, graph));
         }
-        return fc;
     }
+    return res;
+}
+
 
     /**
      * @brief Get task parents (including imaginary edges)
@@ -196,52 +195,30 @@ namespace scheduling_problem
     void ScheduleStatus::insert(size_t curr_vid, size_t pos, const Graph &graph)
     {
         auto weights = boost::get(vertex_weight_t(), graph);
-        size_t curr_release = boost::out_degree(curr_vid, graph) ? 0 : weights[curr_vid];
+        weight_t curr_release = 0; // релизы теперь посчитает cost(true)
         std::vector<Job>::insert(begin() + pos, Job(curr_vid, weights[curr_vid], curr_release));
         for (size_t curr_pos(pos); curr_pos < size(); curr_pos++)
+        {
             positions_[operator[](curr_pos).id] = curr_pos;
-
-        if (use_external_mem_)
-        {
-            for (const auto &parent : parentsf(curr_vid, graph))
-            {
-                child_remain_[parent]--;
-                if (!release_on_[parent] || pos > *release_on_[parent])
-                    release_on_[parent] = &positions_[curr_vid];
-                if (!child_remain_[parent])
-                    operator[](*release_on_[parent]).release += weights[parent];
-            }
-        }
-        else
-        {
-            size_t release_pos;
-            bool is_released;
-            for (const auto &parent : parentsf(curr_vid, graph))
-            {
-                std::tie(is_released, release_pos) = releasePosition(parent, graph);
-                if (is_released)
-                    operator[](release_pos).release += weights[parent];
-            }
         }
 
-        cost(true); // recompute cost
+        cost(true); // ВСЕГДА полный пересчёт с новой логикой буферов
     }
-
     /**
      * @brief Moves the task to another position
      */
-    weight_t ScheduleStatus::move(size_t curr_vid, size_t tpos, const Graph &graph)
+    weight_t ScheduleStatus::move(size_t curr_vid, size_t tpos, const Graph &)
     {
-        bool recompute(true);
-        size_t curr_pos(positions_[curr_vid]);
-        if (curr_pos < tpos)
-            rmove(curr_vid, curr_pos, tpos, graph);
-        else if (curr_pos > tpos)
-            lmove(curr_vid, curr_pos, tpos, graph);
-        else
-            recompute = false;
+        size_t curr_pos = positions_[curr_vid];
+        if (curr_pos == tpos) return cost(false);
 
-        return cost(recompute); // recompute cost
+        if (curr_pos < tpos)
+            std::rotate(begin() + curr_pos, begin() + curr_pos + 1, begin() + tpos + 1);
+        else
+            std::rotate(begin() + tpos, begin() + curr_pos, begin() + curr_pos + 1);
+
+        updatePositions(std::min(curr_pos, tpos), std::max(curr_pos, tpos));
+        return cost(true); // ВСЕГДА пересчитываем
     }
 
     /**

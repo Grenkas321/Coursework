@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/algorithms.dir/AntColonySystem.cpp.o.d"
   "CMakeFiles/algorithms.dir/BaseOptimization.cpp.o"
   "CMakeFiles/algorithms.dir/BaseOptimization.cpp.o.d"
+  "CMakeFiles/algorithms.dir/Baseline.cpp.o"
+  "CMakeFiles/algorithms.dir/Baseline.cpp.o.d"
   "CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.o"
   "CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.o.d"
   "CMakeFiles/algorithms.dir/CorrectnessTester.cpp.o"

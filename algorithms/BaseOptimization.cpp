@@ -1,4 +1,4 @@
-﻿#include "BaseOptimization.h"
+#include "BaseOptimization.h"
 
 namespace scheduling_problem::algorithms
 {
@@ -16,9 +16,9 @@ namespace scheduling_problem::algorithms
     Schedule BaseOptimization::schedule(const Graph &graph)
     {
         auto start = currentTime();
-
+        std::cout << "this->schedule_(graph) start" << std::endl;
         auto solution = this->schedule_(graph);
-
+        std::cout << "this->schedule_(graph) stop" << std::endl;
         auto stop = currentTime();
         duration({start, stop});
         return solution;
