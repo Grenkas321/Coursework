@@ -1,6 +1,6 @@
 CMakeFiles/application.dir/src/parameter.cpp.o: \
-  /Users/maxbig/Sheduler_final/Coursework/src/parameter.cpp \
-  /Users/maxbig/Sheduler_final/Coursework/include/parameter.h \
+  /Users/maxbig/Coursework/src/parameter.cpp \
+  /Users/maxbig/Coursework/include/parameter.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__assert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \

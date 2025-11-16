@@ -79,11 +79,11 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel ..."
 				}
 			],
 			"type" : "STRING",
-			"value" : "Debug"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_CACHEFILE_DIR",
@@ -95,7 +95,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/maxbig/Sheduler_final/Coursework/build"
+			"value" : "/Users/maxbig/Coursework/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -502,12 +502,16 @@
 			"properties" : 
 			[
 				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "Enable/Disable output of compile commands during generation."
 				}
 			],
 			"type" : "BOOL",
-			"value" : "TRUE"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_EXTRA_GENERATOR",
@@ -531,7 +535,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/maxbig/Sheduler_final/Coursework/build/CMakeFiles/pkgRedirects"
+			"value" : "/Users/maxbig/Coursework/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -591,7 +595,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/maxbig/Sheduler_final/Coursework"
+			"value" : "/Users/maxbig/Coursework"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -1279,7 +1283,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/maxbig/Sheduler_final/Coursework/build"
+			"value" : "/Users/maxbig/Coursework/build"
 		},
 		{
 			"name" : "SchedulingProblem_IS_TOP_LEVEL",
@@ -1303,7 +1307,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/maxbig/Sheduler_final/Coursework"
+			"value" : "/Users/maxbig/Coursework"
 		},
 		{
 			"name" : "additionals_BINARY_DIR",
@@ -1315,7 +1319,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/maxbig/Sheduler_final/Coursework/build/additionals"
+			"value" : "/Users/maxbig/Coursework/build/additionals"
 		},
 		{
 			"name" : "additionals_IS_TOP_LEVEL",
@@ -1339,7 +1343,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/maxbig/Sheduler_final/Coursework/additionals"
+			"value" : "/Users/maxbig/Coursework/additionals"
 		},
 		{
 			"name" : "algorithms_BINARY_DIR",
@@ -1351,7 +1355,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/maxbig/Sheduler_final/Coursework/build/algorithms"
+			"value" : "/Users/maxbig/Coursework/build/algorithms"
 		},
 		{
 			"name" : "algorithms_IS_TOP_LEVEL",
@@ -1375,7 +1379,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/maxbig/Sheduler_final/Coursework/algorithms"
+			"value" : "/Users/maxbig/Coursework/algorithms"
 		},
 		{
 			"name" : "boost_headers_DIR",
@@ -1419,7 +1423,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/maxbig/Sheduler_final/Coursework/build/experiments"
+			"value" : "/Users/maxbig/Coursework/build/experiments"
 		},
 		{
 			"name" : "experiments_IS_TOP_LEVEL",
@@ -1455,7 +1459,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/maxbig/Sheduler_final/Coursework/experiments"
+			"value" : "/Users/maxbig/Coursework/experiments"
 		}
 	],
 	"kind" : "cache",

@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/maxbig/Sheduler_final/Coursework
+CMAKE_SOURCE_DIR = /Users/maxbig/Coursework
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/maxbig/Sheduler_final/Coursework/build
+CMAKE_BINARY_DIR = /Users/maxbig/Coursework/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/application.dir/depend.make
@@ -73,88 +73,88 @@ CMakeFiles/application.dir/codegen:
 .PHONY : CMakeFiles/application.dir/codegen
 
 CMakeFiles/application.dir/main.cpp.o: CMakeFiles/application.dir/flags.make
-CMakeFiles/application.dir/main.cpp.o: /Users/maxbig/Sheduler_final/Coursework/main.cpp
+CMakeFiles/application.dir/main.cpp.o: /Users/maxbig/Coursework/main.cpp
 CMakeFiles/application.dir/main.cpp.o: CMakeFiles/application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Sheduler_final/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/application.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/main.cpp.o -MF CMakeFiles/application.dir/main.cpp.o.d -o CMakeFiles/application.dir/main.cpp.o -c /Users/maxbig/Sheduler_final/Coursework/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/application.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/main.cpp.o -MF CMakeFiles/application.dir/main.cpp.o.d -o CMakeFiles/application.dir/main.cpp.o -c /Users/maxbig/Coursework/main.cpp
 
 CMakeFiles/application.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/application.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Sheduler_final/Coursework/main.cpp > CMakeFiles/application.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Coursework/main.cpp > CMakeFiles/application.dir/main.cpp.i
 
 CMakeFiles/application.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/application.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Sheduler_final/Coursework/main.cpp -o CMakeFiles/application.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Coursework/main.cpp -o CMakeFiles/application.dir/main.cpp.s
 
 CMakeFiles/application.dir/src/Schedule.cpp.o: CMakeFiles/application.dir/flags.make
-CMakeFiles/application.dir/src/Schedule.cpp.o: /Users/maxbig/Sheduler_final/Coursework/src/Schedule.cpp
+CMakeFiles/application.dir/src/Schedule.cpp.o: /Users/maxbig/Coursework/src/Schedule.cpp
 CMakeFiles/application.dir/src/Schedule.cpp.o: CMakeFiles/application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Sheduler_final/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/application.dir/src/Schedule.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/Schedule.cpp.o -MF CMakeFiles/application.dir/src/Schedule.cpp.o.d -o CMakeFiles/application.dir/src/Schedule.cpp.o -c /Users/maxbig/Sheduler_final/Coursework/src/Schedule.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/application.dir/src/Schedule.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/Schedule.cpp.o -MF CMakeFiles/application.dir/src/Schedule.cpp.o.d -o CMakeFiles/application.dir/src/Schedule.cpp.o -c /Users/maxbig/Coursework/src/Schedule.cpp
 
 CMakeFiles/application.dir/src/Schedule.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/application.dir/src/Schedule.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Sheduler_final/Coursework/src/Schedule.cpp > CMakeFiles/application.dir/src/Schedule.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Coursework/src/Schedule.cpp > CMakeFiles/application.dir/src/Schedule.cpp.i
 
 CMakeFiles/application.dir/src/Schedule.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/application.dir/src/Schedule.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Sheduler_final/Coursework/src/Schedule.cpp -o CMakeFiles/application.dir/src/Schedule.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Coursework/src/Schedule.cpp -o CMakeFiles/application.dir/src/Schedule.cpp.s
 
 CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: CMakeFiles/application.dir/flags.make
-CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: /Users/maxbig/Sheduler_final/Coursework/src/ScheduleStatus.cpp
+CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: /Users/maxbig/Coursework/src/ScheduleStatus.cpp
 CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: CMakeFiles/application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Sheduler_final/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/application.dir/src/ScheduleStatus.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/ScheduleStatus.cpp.o -MF CMakeFiles/application.dir/src/ScheduleStatus.cpp.o.d -o CMakeFiles/application.dir/src/ScheduleStatus.cpp.o -c /Users/maxbig/Sheduler_final/Coursework/src/ScheduleStatus.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/application.dir/src/ScheduleStatus.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/ScheduleStatus.cpp.o -MF CMakeFiles/application.dir/src/ScheduleStatus.cpp.o.d -o CMakeFiles/application.dir/src/ScheduleStatus.cpp.o -c /Users/maxbig/Coursework/src/ScheduleStatus.cpp
 
 CMakeFiles/application.dir/src/ScheduleStatus.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/application.dir/src/ScheduleStatus.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Sheduler_final/Coursework/src/ScheduleStatus.cpp > CMakeFiles/application.dir/src/ScheduleStatus.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Coursework/src/ScheduleStatus.cpp > CMakeFiles/application.dir/src/ScheduleStatus.cpp.i
 
 CMakeFiles/application.dir/src/ScheduleStatus.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/application.dir/src/ScheduleStatus.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Sheduler_final/Coursework/src/ScheduleStatus.cpp -o CMakeFiles/application.dir/src/ScheduleStatus.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Coursework/src/ScheduleStatus.cpp -o CMakeFiles/application.dir/src/ScheduleStatus.cpp.s
 
 CMakeFiles/application.dir/src/additionals.cpp.o: CMakeFiles/application.dir/flags.make
-CMakeFiles/application.dir/src/additionals.cpp.o: /Users/maxbig/Sheduler_final/Coursework/src/additionals.cpp
+CMakeFiles/application.dir/src/additionals.cpp.o: /Users/maxbig/Coursework/src/additionals.cpp
 CMakeFiles/application.dir/src/additionals.cpp.o: CMakeFiles/application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Sheduler_final/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/application.dir/src/additionals.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/additionals.cpp.o -MF CMakeFiles/application.dir/src/additionals.cpp.o.d -o CMakeFiles/application.dir/src/additionals.cpp.o -c /Users/maxbig/Sheduler_final/Coursework/src/additionals.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/application.dir/src/additionals.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/additionals.cpp.o -MF CMakeFiles/application.dir/src/additionals.cpp.o.d -o CMakeFiles/application.dir/src/additionals.cpp.o -c /Users/maxbig/Coursework/src/additionals.cpp
 
 CMakeFiles/application.dir/src/additionals.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/application.dir/src/additionals.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Sheduler_final/Coursework/src/additionals.cpp > CMakeFiles/application.dir/src/additionals.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Coursework/src/additionals.cpp > CMakeFiles/application.dir/src/additionals.cpp.i
 
 CMakeFiles/application.dir/src/additionals.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/application.dir/src/additionals.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Sheduler_final/Coursework/src/additionals.cpp -o CMakeFiles/application.dir/src/additionals.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Coursework/src/additionals.cpp -o CMakeFiles/application.dir/src/additionals.cpp.s
 
 CMakeFiles/application.dir/src/parameter.cpp.o: CMakeFiles/application.dir/flags.make
-CMakeFiles/application.dir/src/parameter.cpp.o: /Users/maxbig/Sheduler_final/Coursework/src/parameter.cpp
+CMakeFiles/application.dir/src/parameter.cpp.o: /Users/maxbig/Coursework/src/parameter.cpp
 CMakeFiles/application.dir/src/parameter.cpp.o: CMakeFiles/application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Sheduler_final/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/application.dir/src/parameter.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/parameter.cpp.o -MF CMakeFiles/application.dir/src/parameter.cpp.o.d -o CMakeFiles/application.dir/src/parameter.cpp.o -c /Users/maxbig/Sheduler_final/Coursework/src/parameter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/application.dir/src/parameter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/parameter.cpp.o -MF CMakeFiles/application.dir/src/parameter.cpp.o.d -o CMakeFiles/application.dir/src/parameter.cpp.o -c /Users/maxbig/Coursework/src/parameter.cpp
 
 CMakeFiles/application.dir/src/parameter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/application.dir/src/parameter.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Sheduler_final/Coursework/src/parameter.cpp > CMakeFiles/application.dir/src/parameter.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Coursework/src/parameter.cpp > CMakeFiles/application.dir/src/parameter.cpp.i
 
 CMakeFiles/application.dir/src/parameter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/application.dir/src/parameter.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Sheduler_final/Coursework/src/parameter.cpp -o CMakeFiles/application.dir/src/parameter.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Coursework/src/parameter.cpp -o CMakeFiles/application.dir/src/parameter.cpp.s
 
 CMakeFiles/application.dir/src/parse.cpp.o: CMakeFiles/application.dir/flags.make
-CMakeFiles/application.dir/src/parse.cpp.o: /Users/maxbig/Sheduler_final/Coursework/src/parse.cpp
+CMakeFiles/application.dir/src/parse.cpp.o: /Users/maxbig/Coursework/src/parse.cpp
 CMakeFiles/application.dir/src/parse.cpp.o: CMakeFiles/application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Sheduler_final/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/application.dir/src/parse.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/parse.cpp.o -MF CMakeFiles/application.dir/src/parse.cpp.o.d -o CMakeFiles/application.dir/src/parse.cpp.o -c /Users/maxbig/Sheduler_final/Coursework/src/parse.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/application.dir/src/parse.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/application.dir/src/parse.cpp.o -MF CMakeFiles/application.dir/src/parse.cpp.o.d -o CMakeFiles/application.dir/src/parse.cpp.o -c /Users/maxbig/Coursework/src/parse.cpp
 
 CMakeFiles/application.dir/src/parse.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/application.dir/src/parse.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Sheduler_final/Coursework/src/parse.cpp > CMakeFiles/application.dir/src/parse.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Coursework/src/parse.cpp > CMakeFiles/application.dir/src/parse.cpp.i
 
 CMakeFiles/application.dir/src/parse.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/application.dir/src/parse.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Sheduler_final/Coursework/src/parse.cpp -o CMakeFiles/application.dir/src/parse.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Coursework/src/parse.cpp -o CMakeFiles/application.dir/src/parse.cpp.s
 
 # Object files for target application
 application_OBJECTS = \
@@ -182,7 +182,7 @@ application: /Users/maxbig/anaconda/anaconda3/lib/libboost_program_options.dylib
 application: algorithms/libalgorithms.a
 application: additionals/libadditionals.a
 application: CMakeFiles/application.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/maxbig/Sheduler_final/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable application"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/maxbig/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable application"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/application.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -194,6 +194,6 @@ CMakeFiles/application.dir/clean:
 .PHONY : CMakeFiles/application.dir/clean
 
 CMakeFiles/application.dir/depend:
-	cd /Users/maxbig/Sheduler_final/Coursework/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/maxbig/Sheduler_final/Coursework /Users/maxbig/Sheduler_final/Coursework /Users/maxbig/Sheduler_final/Coursework/build /Users/maxbig/Sheduler_final/Coursework/build /Users/maxbig/Sheduler_final/Coursework/build/CMakeFiles/application.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/maxbig/Coursework/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/maxbig/Coursework /Users/maxbig/Coursework /Users/maxbig/Coursework/build /Users/maxbig/Coursework/build /Users/maxbig/Coursework/build/CMakeFiles/application.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/application.dir/depend
 

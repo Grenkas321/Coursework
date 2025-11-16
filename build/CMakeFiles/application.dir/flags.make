@@ -4,9 +4,9 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB
 
-CXX_INCLUDES = -I/Users/maxbig/Sheduler_final/Coursework/include -I/Users/maxbig/Sheduler_final/Coursework/algorithms -I/Users/maxbig/Sheduler_final/Coursework/additionals -I/Users/maxbig/Sheduler_final/Coursework/experiments -I/Users/maxbig/Sheduler_final/Coursework/json -isystem /Users/maxbig/anaconda/anaconda3/include
+CXX_INCLUDES = -I/Users/maxbig/Coursework/include -I/Users/maxbig/Coursework/algorithms -I/Users/maxbig/Coursework/additionals -I/Users/maxbig/Coursework/experiments -I/Users/maxbig/Coursework/json -isystem /Users/maxbig/anaconda/anaconda3/include
 
-CXX_FLAGSarm64 = -Wall -Wextra -g -O0 -Wall -Wextra -pg -Wno-reorder -std=gnu++20 -arch arm64
+CXX_FLAGSarm64 = -Wall -Wextra -O2 -Wno-reorder -std=gnu++20 -arch arm64
 
-CXX_FLAGS = -Wall -Wextra -g -O0 -Wall -Wextra -pg -Wno-reorder -std=gnu++20 -arch arm64
+CXX_FLAGS = -Wall -Wextra -O2 -Wno-reorder -std=gnu++20 -arch arm64
 

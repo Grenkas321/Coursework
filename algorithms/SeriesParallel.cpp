@@ -24,6 +24,79 @@ using namespace scheduling_problem;
 using namespace std;
 
 
+int goal_function(const std::vector<int>& part_sched, 
+                  const std::map<int, std::vector<std::pair<int, std::set<int>>>>& old_dct) {
+    int f_hp = 0;
+    for (size_t k = 0; k < part_sched.size(); k++) {
+        int f_hp_k = 0;
+        
+        // Первая часть: суммирование всех buf[0]
+        for (size_t i = 0; i <= k; i++) {
+            int vertex = part_sched[i];
+            const auto& buffers = old_dct.at(vertex);
+            for (const auto& buf : buffers) {
+                f_hp_k += buf.first;
+            }
+        }
+        
+        // Вторая часть: вычитание buf[0] при выполнении условий
+        for (size_t i = 0; i < k; i++) {
+            int vertex = part_sched[i];
+            const auto& cur_list = old_dct.at(vertex);
+            for (const auto& buf : cur_list) {
+                bool all_in_schedule = true;
+                for (int descendant : buf.second) {
+                    bool found = false;
+                    for (size_t j = 0; j < k; j++) {
+                        if (part_sched[j] == descendant) {
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found) {
+                        all_in_schedule = false;
+                        break;
+                    }
+                }
+                if (all_in_schedule) {
+                    f_hp_k -= buf.first;
+                }
+            }
+        }
+        
+        f_hp = std::max(f_hp, f_hp_k);
+    }
+    return f_hp;
+}
+
+void print_old_dct(const std::map<int, std::vector<std::pair<int, std::set<int>>>>& old_dct) {
+    std::cout << "{";
+    for (auto it = old_dct.begin(); it != old_dct.end(); ++it) {
+        if (it != old_dct.begin()) {
+            std::cout << ", ";
+        }
+        std::cout << it->first << ": [";
+        for (size_t i = 0; i < it->second.size(); i++) {
+            const auto& buf = it->second[i];
+            std::cout << "[" << buf.first << ", {";
+            size_t j = 0;
+            for (int descendant : buf.second) {
+                std::cout << descendant;
+                if (j < buf.second.size() - 1) {
+                    std::cout << " ";
+                }
+                j++;
+            }
+            std::cout << "}]";
+            if (i < it->second.size() - 1) {
+                std::cout << ", ";
+            }
+        }
+        std::cout << "]";
+    }
+    std::cout << "}" << std::endl;
+}
+
 vector<string> graphToContentFormatted(const auto& graph) {
     vector<string> content;
     
@@ -861,9 +934,125 @@ namespace scheduling_problem::algorithms
             std::cout << item[0] << ' ' << item[1] << ' ' << item[2] << std::endl;
         }
         
+        
+        std::map<int, std::vector<std::pair<int, std::set<int>>>> old_dct;
+    
+        for (size_t i = 0; i < content.size(); i++) {
+            // Получаем текущую вершину
+            std::istringstream iss(content[i]);
+            int cur_v;
+            iss >> cur_v;
+            
+            // Получаем оставшуюся часть строки
+            std::string rest;
+            std::getline(iss, rest);
+            
+            // Убираем начальные пробелы
+            rest.erase(0, rest.find_first_not_of(" "));
+            
+            // Разбиваем по запятым
+            std::vector<std::pair<int, std::set<int>>> buffers;
+            std::istringstream rest_stream(rest);
+            std::string token;
+            
+            while (std::getline(rest_stream, token, ',')) {
+                // Убираем пробелы вокруг токена
+                token.erase(0, token.find_first_not_of(" "));
+                token.erase(token.find_last_not_of(" ") + 1);
+                
+                std::istringstream token_stream(token);
+                std::string first_part;
+                token_stream >> first_part;
+                
+                // Убираем двоеточие из конца первого числа
+                if (!first_part.empty() && first_part.back() == ':') {
+                    first_part.pop_back();
+                }
+                
+                int value = std::stoi(first_part);
+                std::set<int> descendants;
+                
+                int descendant;
+                while (token_stream >> descendant) {
+                    descendants.insert(descendant);
+                }
+                
+                buffers.push_back(std::make_pair(value, descendants));
+            }
+            
+            old_dct[cur_v] = buffers;
+        }
+        
+        // Вызов goal_function и вывод результата
+        int result2 = goal_function(schedule, old_dct);
+        std::cout << "[";
+        for (size_t i = 0; i < schedule.size(); i++) {
+            std::cout << schedule[i];
+            if (i < schedule.size() - 1) {
+                std::cout << " ";
+            }
+        }
+        std::cout << "] " << result2 << std::endl;
+        
+        // Вторая часть кода
+        std::vector<int> incr_mas = {0};
+        std::vector<int> decr_mas;
+        
+        for (size_t k = 0; k < schedule.size(); k++) {
+            int f_hp_k = 0;
+            
+            // Вычисление incr_mas
+            for (size_t i = 0; i <= k; i++) {
+                int vertex = schedule[i];
+                const auto& buffers = old_dct.at(vertex);
+                for (const auto& buf : buffers) {
+                    f_hp_k += buf.first;
+                }
+            }
+            incr_mas.push_back(f_hp_k);
+            
+            // Вычисление decr_mas
+            int decr = 0;
+            for (size_t i = 0; i < k; i++) {
+                int vertex = schedule[i];
+                const auto& cur_list = old_dct.at(vertex);
+                for (const auto& buf : cur_list) {
+                    bool all_in_schedule = true;
+                    for (int descendant : buf.second) {
+                        bool found = false;
+                        for (size_t j = 0; j < k; j++) {
+                            if (schedule[j] == descendant) {
+                                found = true;
+                                break;
+                            }
+                        }
+                        if (!found) {
+                            all_in_schedule = false;
+                            break;
+                        }
+                    }
+                    if (all_in_schedule) {
+                        decr += buf.first;
+                    }
+                }
+            }
+            decr_mas.push_back(decr);
+        }
+        
+        decr_mas.push_back(incr_mas.back());
+        
+        // Вывод результатов
+        for (size_t i = 0; i < schedule.size(); i++) {
+            std::cout << schedule[i] << " " 
+                      << incr_mas[i + 1] - incr_mas[i] << " " 
+                      << decr_mas[i + 1] - decr_mas[i] << std::endl;
+        }
+        
+        
+        
         Schedule out(0, graph.name());
-        for (const auto& item : schedule_pord) {
-            out.push(item[0], item[1], item[2]);
+        for (size_t i = 0; i < schedule.size(); i++) {
+            out.push(schedule[i], incr_mas[i + 1] - incr_mas[i], decr_mas[i + 1] - decr_mas[i]);
         }
         out.cost(true);
         return out;

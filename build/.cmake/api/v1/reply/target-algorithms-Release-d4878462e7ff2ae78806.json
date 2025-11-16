@@ -71,30 +71,30 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-Wall -Wextra -g -O0 -Wall -Wextra -pg -Wno-reorder -std=gnu++20 -arch arm64"
+					"fragment" : "-Wall -Wextra -O2 -Wno-reorder -std=gnu++20 -arch arm64"
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 3,
-					"path" : "/Users/maxbig/Sheduler_final/Coursework/include"
+					"path" : "/Users/maxbig/Coursework/include"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/Users/maxbig/Sheduler_final/Coursework/algorithms"
+					"path" : "/Users/maxbig/Coursework/algorithms"
 				},
 				{
 					"backtrace" : 5,
-					"path" : "/Users/maxbig/Sheduler_final/Coursework/additionals"
+					"path" : "/Users/maxbig/Coursework/additionals"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/Users/maxbig/Sheduler_final/Coursework/experiments"
+					"path" : "/Users/maxbig/Coursework/experiments"
 				},
 				{
 					"backtrace" : 7,
-					"path" : "/Users/maxbig/Sheduler_final/Coursework/json"
+					"path" : "/Users/maxbig/Coursework/json"
 				}
 			],
 			"language" : "CXX",
