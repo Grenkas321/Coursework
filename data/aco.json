@@ -1,0 +1,16 @@
+{
+  "aco": {
+    "baseline": "greedy",
+    "evaporation": 0.1,
+    "phe_decay": 0.2,
+    "phe_influence": 0.4,
+    "heu_influence": 0.6,
+    "epochs_count": 600,
+    "ants_count": 10,
+    "threshold": 0.9,
+    "improvement": 0.5,
+    "saturation": 200,
+    "seed": 42,
+    "label": "aco"
+  }
+}

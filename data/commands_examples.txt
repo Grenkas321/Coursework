@@ -1,0 +1,2 @@
+./application --command run --algo greedy --algo ../data/aco.json --input <input_path> --output <output_path> --threads 23 --dups 10 --sample 10 --batch 5
+./application --command run --algo ../data/sao.json --input <input_path> --output <output_path> --threads 4

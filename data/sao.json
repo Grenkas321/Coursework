@@ -1,0 +1,10 @@
+{
+  "sao": {
+    "baseline": "greedy",
+    "min_temp": 0.8,
+    "max_temp": 16,
+    "saturation": 7000,
+    "seed": 42,
+    "label": "sao"
+  }
+}
