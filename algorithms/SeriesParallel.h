@@ -1,4 +1,4 @@
-﻿#include "BaseOptimization.h"
+#include "BaseOptimization.h"
 #include "ScheduleStatus.h"
 #include "ToOneSourceTarget.h"
 #include "ToEdgeMemory.h"
@@ -19,6 +19,7 @@ namespace scheduling_problem::algorithms
     {
 
     public:
+        std::string label;
         /**
          * Constructor to create empty instance of algorithm
          * \param label Name of the algorithm
