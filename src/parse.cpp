@@ -1,4 +1,4 @@
-﻿#include "parse.h"
+#include "parse.h"
 #include <fstream>
 #include "ConcurrentSAO.h"
 
@@ -121,7 +121,9 @@ namespace parse
                 else if (alg == "greedy")
                     optimizer = std::unique_ptr<Greedy>(new Greedy());
                 else if (alg == "sp")
-                    optimizer = std::unique_ptr<SeriesParallel>(new SeriesParallel());
+                    optimizer = std::unique_ptr<SeriesParallel>(new SeriesParallel("sp"));
+                else if (alg == "sp0")
+                    optimizer = std::unique_ptr<SeriesParallel>(new SeriesParallel("sp0"));
 
                 algorithms.push_back(std::move(optimizer));
             }

@@ -1,4 +1,4 @@
-﻿#include "AntColonySystem.h"
+#include "AntColonySystem.h"
 #include <algorithm>
 #include <numeric>
 #include <cmath>

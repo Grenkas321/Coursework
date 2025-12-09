@@ -799,7 +799,7 @@ void parse_input(const std::vector<std::string>& content,
 namespace scheduling_problem::algorithms
 {
     SeriesParallel::SeriesParallel(const std::string &label) : BaseOptimization(label) {
-        //this->label = label;
+        this->label = label;
         }
 
     std::unique_ptr<BaseOptimization> SeriesParallel::copy() const
@@ -809,7 +809,7 @@ namespace scheduling_problem::algorithms
 
     Schedule SeriesParallel::schedule_(const Graph &graph)
     {
-        std::cout << "SeriesParallel::schedule_" << std::endl;
+        // std::cout << "SeriesParallel::schedule_" << std::endl;
         
         vector<string> content = graphToContentFormatted(graph);
         
@@ -924,7 +924,7 @@ namespace scheduling_problem::algorithms
             f += cumulative_dct[i];
             max_f = std::max(max_f, f);
         }
-        
+        /*
         // Вывод результатов
         std::cout << "Schedule: ";
         for (int v : schedule) {
@@ -935,14 +935,15 @@ namespace scheduling_problem::algorithms
         for (const auto& item : schedule_pord) {
             std::cout << item[0] << ' ' << item[1] << ' ' << item[2] << std::endl;
         }
-        
+        */
+        /*
         Schedule out(0, graph.name());
         for (const auto& item : schedule_pord) {
             out.push(item[0], item[1], item[2]);
         }
         out.cost(true);
         return out;
-        /*
+        */
         if (this->label == "sp") {
             Schedule out(0, graph.name());
             for (const auto& item : schedule_pord) {
@@ -1002,6 +1003,7 @@ namespace scheduling_problem::algorithms
         
         // Вызов goal_function и вывод результата
         int result2 = goal_function(schedule, old_dct);
+        /*
         std::cout << "[";
         for (size_t i = 0; i < schedule.size(); i++) {
             std::cout << schedule[i];
@@ -1010,7 +1012,7 @@ namespace scheduling_problem::algorithms
             }
         }
         std::cout << "] " << result2 << std::endl;
-        
+        */
         // Вторая часть кода
         std::vector<int> incr_mas = {0};
         std::vector<int> decr_mas;
@@ -1057,14 +1059,14 @@ namespace scheduling_problem::algorithms
         }
         
         decr_mas.push_back(incr_mas.back());
-        
+        /*
         // Вывод результатов
         for (size_t i = 0; i < schedule.size(); i++) {
             std::cout << schedule[i] << " " 
                       << incr_mas[i + 1] - incr_mas[i] << " " 
                       << decr_mas[i + 1] - decr_mas[i] << std::endl;
         }
-        
+        */
         
         
         Schedule out(0, graph.name());
@@ -1073,6 +1075,6 @@ namespace scheduling_problem::algorithms
         }
         out.cost(true);
         return out;
-        */
+        
     }
 }

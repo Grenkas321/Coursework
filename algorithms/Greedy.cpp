@@ -141,8 +141,9 @@ string trim(const string& str) {
 }
 
 // Функция целевой функции
-long long goal_function(const std::vector<int>& part_sched) {
-    long long f_hp = 0;
+long long goal_function(const std::vector<int>& part_sched, int kk = -1) {
+    long long f_hp = 0, f_hp_kk = 0;
+    // kk = -1;
     for (size_t k = 0; k < part_sched.size(); k++) {
         long long f_hp_k = 0;
         
@@ -178,8 +179,13 @@ long long goal_function(const std::vector<int>& part_sched) {
                 }
             }
         }
-        
+        if (k >= kk and kk != -1) {
+            f_hp_kk = std::max(f_hp_kk, f_hp_k);
+        }
         f_hp = std::max(f_hp, f_hp_k);
+    }
+    if (kk != -1) {
+        return f_hp_kk;
     }
     return f_hp;
 }
@@ -423,7 +429,13 @@ Schedule Greedy::schedule_(const Graph &graph) {
         for (size_t d = l_k; d <= schedule.size(); d++) {
             std::vector<int> test_schedule = schedule;
             test_schedule.insert(test_schedule.begin() + d, cur_v);
-            long long f_value = goal_function(test_schedule);
+            long long f_value;
+            if (d < schedule.size()) {
+                f_value = goal_function(test_schedule, l_k);
+            }
+            else {
+                f_value = goal_function(test_schedule);
+            }
             
             if (best_schedule.empty()) {
                 best_schedule = test_schedule;
