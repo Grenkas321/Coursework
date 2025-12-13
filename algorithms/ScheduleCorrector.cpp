@@ -10,7 +10,8 @@ namespace scheduling_problem::algorithms
      */
     ScheduleCorrector::ScheduleCorrector(unsigned seed,
                                          bool track_trail)
-        : rng_(seed), moved_vid_(-1), last_pos_(-1), track_trail_(track_trail), trail_()
+        : rng_(seed), moved_vid_(kInvalid), last_pos_(kInvalid), track_trail_(track_trail)
+
     {
     }
 
@@ -31,6 +32,9 @@ namespace scheduling_problem::algorithms
             trail_.clear();
 
         auto [moved_vid, tpos] = choice(graph, status);
+        if (moved_vid == kInvalid)
+            return status.cost();
+
         if (status.contains(moved_vid))
         {
             last_pos_ = status.loc(moved_vid);
@@ -50,12 +54,25 @@ namespace scheduling_problem::algorithms
      * @param status  Schedule to modify in place.
      * @return        Current schedule cost after the revert (or no-op).
      */
-    weight_t ScheduleCorrector::invtransform(const Graph &graph, ScheduleStatus &status)
+        weight_t ScheduleCorrector::invtransform(const Graph &graph, ScheduleStatus &status)
     {
-        if (status.contains(moved_vid_) && last_pos_ < status.upper(moved_vid_, graph))
-            status.move(moved_vid_, last_pos_, graph);
+        if (moved_vid_ == kInvalid || last_pos_ == kInvalid)
+            return status.cost();
+        if (moved_vid_ == 0 || !status.contains(moved_vid_))
+            return status.cost();
+
+        const size_t lower = status.lower(moved_vid_, graph);
+        size_t upper = status.upper(moved_vid_, graph);
+        if (upper >= status.size())
+            upper = status.size() - 1;
+
+        if (last_pos_ < lower || last_pos_ > upper)
+            return status.cost();
+
+        status.move(moved_vid_, last_pos_, graph);
         return status.cost();
     }
+
 
     /**
      * Randomly select a movable vertex and a different feasible target position.
@@ -72,22 +89,41 @@ namespace scheduling_problem::algorithms
     std::pair<size_t, size_t> ScheduleCorrector::choice(const Graph &graph, const ScheduleStatus &status)
     {
         std::vector<size_t> moveables;
+        moveables.reserve(status.size());
 
-        for (const auto &job : status)
-            if (status.upper(job.id, graph) > status.lower(job.id, graph) + 1)
-                moveables.push_back(job.id);
+        const size_t sz = status.size();
+        if (sz == 0)
+            return {kInvalid, kInvalid};
 
-        if (!moveables.size())
-            return {-1, -1};
+        for (const auto& job : status)
+        {
+            auto vid = job.id;
+            const size_t lower = status.lower(vid, graph);
+            size_t upper = status.upper(vid, graph);
+            if (upper >= sz) upper = sz - 1; // для move нельзя выходить за последний индекс
+            if (upper > lower)
+                moveables.push_back(vid);
+        }
 
-        auto index = std::uniform_int_distribution<size_t>(0, moveables.size() - 1)(rng_);
-        auto vid = moveables[index];
-        auto curr_pos = status.loc(vid);
-        auto tpos = curr_pos;
-        auto lower(status.lower(vid, graph)), upper(status.upper(vid, graph));
-        while (tpos == curr_pos)
-            tpos = std::uniform_int_distribution<size_t>(lower, upper - 1)(rng_);
+        if (moveables.empty())
+            return {kInvalid, kInvalid};
 
-        return {vid, tpos};
+        std::uniform_int_distribution<size_t> dist_vid(0, moveables.size() - 1);
+        const size_t moved_vid = moveables[dist_vid(rng_)];
+
+        const size_t lower = status.lower(moved_vid, graph);
+        size_t upper = status.upper(moved_vid, graph);
+        if (upper >= sz) upper = sz - 1;
+
+        if (upper <= lower)
+            return {kInvalid, kInvalid};
+
+        std::uniform_int_distribution<size_t> dist_pos(lower, upper);
+        size_t tpos = dist_pos(rng_);
+        while (tpos == status.loc(moved_vid))
+            tpos = dist_pos(rng_);
+
+        return {moved_vid, tpos};
     }
+
 }
