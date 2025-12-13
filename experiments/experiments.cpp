@@ -102,13 +102,20 @@ namespace scheduling_problem::experiments
                         auto iterative_opt = dynamic_cast<IterativeOptimization*>(optimizer.get());
                         best_dynamics = iterative_opt->costDynamics();
                         if (dynamic_cast<algorithms::SimulatedAnnealing*>(iterative_opt)) {
-                            best_temp_dynamic = dynamic_cast<algorithms::SimulatedAnnealing*>(iterative_opt)->temp_dynamic;
+                            best_temp_dynamic = dynamic_cast<algorithms::SimulatedAnnealing*>(iterative_opt)->temps_dynamic;
                             best_probs_dynamic = dynamic_cast<algorithms::SimulatedAnnealing*>(iterative_opt)->probs_dynamic;
                             best_lambda_dynamic = dynamic_cast<algorithms::SimulatedAnnealing*>(iterative_opt)->lambda_dynamic;
                         }
                     }
                     if (dynamic_cast<algorithms::ConcurrentSAO*>(optimizer.get())) {
-                        best_conveyor = dynamic_cast<algorithms::ConcurrentSAO*>(optimizer.get())->conveyor;
+                        auto* csao = dynamic_cast<algorithms::ConcurrentSAO*>(optimizer.get());
+                        best_conveyor.clear();
+                        best_conveyor.reserve(csao->conveyor.size());
+                        for (const auto& pr : csao->conveyor)
+                        {
+                            best_conveyor.push_back({ (long long)pr.first, (long long)pr.second });
+                        }
+
                     }
                 }
 

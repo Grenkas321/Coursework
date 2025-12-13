@@ -1,7 +1,7 @@
 algorithms/CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.o: \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/algorithms/ConcurrentSAO.cpp \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/ConcurrentSAO.cpp \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/algorithms/ConcurrentSAO.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/ConcurrentSAO.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -217,8 +217,8 @@ algorithms/CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/semaphore.h \
  /usr/include/c++/13/bits/atomic_futex.h \
  /usr/include/c++/13/bits/std_function.h /usr/include/c++/13/thread \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/algorithms/SimulatedAnnealing.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/algorithms/ScheduleCorrector.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/SimulatedAnnealing.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/ScheduleCorrector.h \
  /usr/include/c++/13/random /usr/include/c++/13/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -248,7 +248,7 @@ algorithms/CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.o: \
  /usr/include/c++/13/bits/stl_numeric.h \
  /usr/include/c++/13/pstl/glue_numeric_defs.h \
  /usr/include/c++/13/pstl/execution_defs.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/general_types.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/general_types.h \
  /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/unordered_set.h \
  /usr/include/c++/13/bits/hashtable.h \
@@ -1506,9 +1506,9 @@ algorithms/CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.o: \
  /usr/include/boost/range/detail/safe_bool.hpp \
  /usr/include/boost/range/iterator_range_io.hpp \
  /usr/include/boost/graph/detail/adj_list_edge_iterator.hpp \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/ScheduleStatus.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/Schedule.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/json/json.hpp \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/ScheduleStatus.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/Schedule.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/json/json.hpp \
  /usr/include/c++/13/forward_list /usr/include/c++/13/bits/forward_list.h \
  /usr/include/c++/13/bits/forward_list.tcc /usr/include/c++/13/valarray \
  /usr/include/c++/13/bits/valarray_array.h \
@@ -1531,12 +1531,12 @@ algorithms/CMakeFiles/algorithms.dir/ConcurrentSAO.cpp.o: \
  /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/codecvt \
  /usr/include/c++/13/bits/fs_dir.h /usr/include/c++/13/bits/fs_ops.h \
  /usr/include/c++/13/any \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/algorithms/IterativeOptimization.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/algorithms/BaseOptimization.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/IterativeOptimization.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/BaseOptimization.h \
  /usr/include/c++/13/chrono /usr/include/c++/13/bits/chrono_io.h \
  /usr/include/c++/13/format /usr/include/c++/13/charconv \
  /usr/include/c++/13/span \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/parameter.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/parameter.h \
  /usr/include/c++/13/iostream \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/algorithms/Greedy.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/additionals.h
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/Greedy.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/additionals.h

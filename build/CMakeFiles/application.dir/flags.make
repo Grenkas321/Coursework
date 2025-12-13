@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB
 
-CXX_INCLUDES = -I/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include -I/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/algorithms -I/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/additionals -I/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/experiments -I/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/json
+CXX_INCLUDES = -I/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include -I/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms -I/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/additionals -I/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/experiments -I/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/json
 
 CXX_FLAGS = -Wall -Wextra -O2 -Wno-reorder -std=gnu++20
 

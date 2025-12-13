@@ -1,7 +1,7 @@
 CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/src/ScheduleStatus.cpp \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/src/ScheduleStatus.cpp \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/ScheduleStatus.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/ScheduleStatus.h \
  /usr/include/boost/range/iterator_range.hpp \
  /usr/include/boost/range/iterator_range_core.hpp \
  /usr/include/boost/config.hpp /usr/include/boost/config/user.hpp \
@@ -521,12 +521,12 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/c++/13/bits/locale_facets.tcc \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/Schedule.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/Schedule.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/general_types.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/general_types.h \
  /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/unordered_set.h \
  /usr/include/c++/13/bits/hashtable.h \
@@ -1487,7 +1487,7 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/boost/graph/detail/adjacency_list.hpp \
  /usr/include/boost/range/irange.hpp \
  /usr/include/boost/graph/detail/adj_list_edge_iterator.hpp \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/json/json.hpp \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/json/json.hpp \
  /usr/include/c++/13/numeric /usr/include/c++/13/bits/stl_numeric.h \
  /usr/include/c++/13/pstl/glue_numeric_defs.h \
  /usr/include/c++/13/forward_list /usr/include/c++/13/bits/forward_list.h \

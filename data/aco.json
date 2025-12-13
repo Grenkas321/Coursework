@@ -9,8 +9,7 @@
     "ants_count": 10,
     "threshold": 0.9,
     "improvement": 0.5,
-    "saturation": 200,
-    "seed": 42,
+    "saturation": 400,
     "label": "aco"
   }
 }

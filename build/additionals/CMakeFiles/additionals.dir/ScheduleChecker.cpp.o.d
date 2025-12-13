@@ -1,7 +1,7 @@
 additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o: \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/additionals/ScheduleChecker.cpp \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/additionals/ScheduleChecker.cpp \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/additionals/ScheduleChecker.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/additionals/ScheduleChecker.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -130,7 +130,7 @@ additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o: \
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
  /usr/include/c++/13/bits/ranges_util.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/general_types.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/general_types.h \
  /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/unordered_set.h \
  /usr/include/c++/13/bits/hashtable.h \
@@ -1487,8 +1487,8 @@ additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o: \
  /usr/include/boost/range/detail/safe_bool.hpp \
  /usr/include/boost/range/iterator_range_io.hpp \
  /usr/include/boost/graph/detail/adj_list_edge_iterator.hpp \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/Schedule.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/json/json.hpp \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/Schedule.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/json/json.hpp \
  /usr/include/c++/13/numeric /usr/include/c++/13/bits/stl_numeric.h \
  /usr/include/c++/13/pstl/glue_numeric_defs.h \
  /usr/include/c++/13/forward_list /usr/include/c++/13/bits/forward_list.h \

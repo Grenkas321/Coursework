@@ -1,7 +1,7 @@
 CMakeFiles/application.dir/src/parameter.cpp.o: \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/src/parameter.cpp \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/src/parameter.cpp \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/parameter.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/parameter.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

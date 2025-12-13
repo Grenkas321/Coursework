@@ -1,8 +1,8 @@
 additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.o: \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/additionals/ProgressBar.cpp \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/additionals/ProgressBar.cpp \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/additionals/ProgressBar.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/general_types.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/additionals/ProgressBar.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/general_types.h \
  /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \

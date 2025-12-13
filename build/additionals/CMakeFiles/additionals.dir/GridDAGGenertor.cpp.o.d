@@ -1,7 +1,7 @@
 additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o: \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/additionals/GridDAGGenertor.cpp \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/additionals/GridDAGGenertor.cpp \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/additionals/GridDAGGenerator.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/additionals/GridDAGGenerator.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -167,7 +167,7 @@ additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o: \
  /usr/include/c++/13/bits/stl_numeric.h \
  /usr/include/c++/13/pstl/glue_numeric_defs.h \
  /usr/include/c++/13/pstl/execution_defs.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/general_types.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/general_types.h \
  /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/unordered_set.h \
  /usr/include/c++/13/bits/hashtable.h \
@@ -1493,4 +1493,4 @@ additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o: \
  /usr/include/boost/range/detail/safe_bool.hpp \
  /usr/include/boost/range/iterator_range_io.hpp \
  /usr/include/boost/graph/detail/adj_list_edge_iterator.hpp \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/additionals/DAGPool.h
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/additionals/DAGPool.h

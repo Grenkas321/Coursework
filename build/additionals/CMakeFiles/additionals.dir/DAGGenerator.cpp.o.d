@@ -1,7 +1,7 @@
 additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o: \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/additionals/DAGGenerator.cpp \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/additionals/DAGGenerator.cpp \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/additionals/DAGGenerator.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/additionals/DAGGenerator.h \
  /usr/include/c++/13/tuple /usr/include/c++/13/bits/stl_pair.h \
  /usr/include/c++/13/type_traits \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -172,7 +172,7 @@ additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o: \
  /usr/include/c++/13/bits/enable_special_members.h \
  /usr/include/c++/13/bits/node_handle.h \
  /usr/include/c++/13/bits/erase_if.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/general_types.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/general_types.h \
  /usr/include/c++/13/unordered_map \
  /usr/include/c++/13/bits/unordered_map.h /usr/include/c++/13/set \
  /usr/include/c++/13/bits/stl_tree.h /usr/include/c++/13/bits/stl_set.h \
@@ -1491,4 +1491,4 @@ additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o: \
  /usr/include/boost/range/detail/safe_bool.hpp \
  /usr/include/boost/range/iterator_range_io.hpp \
  /usr/include/boost/graph/detail/adj_list_edge_iterator.hpp \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/additionals/DAGPool.h
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/additionals/DAGPool.h

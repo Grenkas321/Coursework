@@ -1,7 +1,7 @@
 algorithms/CMakeFiles/algorithms.dir/IterativeOptimization.cpp.o: \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/algorithms/IterativeOptimization.cpp \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/IterativeOptimization.cpp \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/algorithms/IterativeOptimization.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/IterativeOptimization.h \
  /usr/include/c++/13/random /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -165,7 +165,7 @@ algorithms/CMakeFiles/algorithms.dir/IterativeOptimization.cpp.o: \
  /usr/include/c++/13/bits/stl_numeric.h \
  /usr/include/c++/13/pstl/glue_numeric_defs.h \
  /usr/include/c++/13/pstl/execution_defs.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/algorithms/BaseOptimization.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/BaseOptimization.h \
  /usr/include/c++/13/chrono /usr/include/c++/13/bits/chrono.h \
  /usr/include/c++/13/ratio /usr/include/c++/13/ctime /usr/include/time.h \
  /usr/include/x86_64-linux-gnu/bits/time.h \
@@ -235,7 +235,7 @@ algorithms/CMakeFiles/algorithms.dir/IterativeOptimization.cpp.o: \
  /usr/include/c++/13/bits/hashtable_policy.h \
  /usr/include/c++/13/bits/node_handle.h \
  /usr/include/c++/13/bits/erase_if.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/general_types.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/general_types.h \
  /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/unordered_set.h /usr/include/c++/13/set \
  /usr/include/c++/13/bits/stl_tree.h /usr/include/c++/13/bits/stl_set.h \
@@ -1505,8 +1505,8 @@ algorithms/CMakeFiles/algorithms.dir/IterativeOptimization.cpp.o: \
  /usr/include/boost/range/detail/safe_bool.hpp \
  /usr/include/boost/range/iterator_range_io.hpp \
  /usr/include/boost/graph/detail/adj_list_edge_iterator.hpp \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/Schedule.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/json/json.hpp \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/Schedule.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/json/json.hpp \
  /usr/include/c++/13/forward_list /usr/include/c++/13/bits/forward_list.h \
  /usr/include/c++/13/bits/forward_list.tcc /usr/include/c++/13/valarray \
  /usr/include/c++/13/bits/valarray_array.h \
@@ -1521,7 +1521,7 @@ algorithms/CMakeFiles/algorithms.dir/IterativeOptimization.cpp.o: \
  /usr/include/c++/13/bits/fs_fwd.h /usr/include/c++/13/bits/fs_path.h \
  /usr/include/c++/13/codecvt /usr/include/c++/13/bits/fs_dir.h \
  /usr/include/c++/13/bits/fs_ops.h /usr/include/c++/13/any \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/parameter.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/parameter.h \
  /usr/include/c++/13/iostream \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/algorithms/Greedy.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/ScheduleStatus.h
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/Greedy.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/ScheduleStatus.h

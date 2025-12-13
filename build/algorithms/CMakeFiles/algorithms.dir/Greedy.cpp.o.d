@@ -1,7 +1,7 @@
 algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.o: \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/algorithms/Greedy.cpp \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/Greedy.cpp \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/algorithms/Greedy.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/Greedy.h \
  /usr/include/c++/13/unordered_map \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -61,7 +61,7 @@ algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.o: \
  /usr/include/c++/13/bits/memory_resource.h /usr/include/c++/13/cstddef \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
  /usr/include/c++/13/bits/uses_allocator_args.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/algorithms/BaseOptimization.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/BaseOptimization.h \
  /usr/include/c++/13/chrono /usr/include/c++/13/bits/chrono.h \
  /usr/include/c++/13/ratio /usr/include/c++/13/cstdint \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
@@ -206,7 +206,7 @@ algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.o: \
  /usr/include/c++/13/array /usr/include/c++/13/charconv \
  /usr/include/c++/13/optional /usr/include/c++/13/span \
  /usr/include/c++/13/variant /usr/include/c++/13/bits/ranges_algobase.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/general_types.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/general_types.h \
  /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/unordered_set.h /usr/include/c++/13/set \
  /usr/include/c++/13/bits/stl_tree.h /usr/include/c++/13/bits/stl_set.h \
@@ -1498,8 +1498,8 @@ algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.o: \
  /usr/include/boost/range/detail/safe_bool.hpp \
  /usr/include/boost/range/iterator_range_io.hpp \
  /usr/include/boost/graph/detail/adj_list_edge_iterator.hpp \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/Schedule.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/json/json.hpp \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/Schedule.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/json/json.hpp \
  /usr/include/c++/13/numeric /usr/include/c++/13/bits/stl_numeric.h \
  /usr/include/c++/13/pstl/glue_numeric_defs.h \
  /usr/include/c++/13/forward_list /usr/include/c++/13/bits/forward_list.h \
@@ -1516,7 +1516,7 @@ algorithms/CMakeFiles/algorithms.dir/Greedy.cpp.o: \
  /usr/include/c++/13/bits/fs_fwd.h /usr/include/c++/13/bits/fs_path.h \
  /usr/include/c++/13/codecvt /usr/include/c++/13/bits/fs_dir.h \
  /usr/include/c++/13/bits/fs_ops.h /usr/include/c++/13/any \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/parameter.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/parameter.h \
  /usr/include/c++/13/iostream \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/include/ScheduleStatus.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/ScheduleStatus.h \
  /usr/include/boost/range/adaptor/reversed.hpp

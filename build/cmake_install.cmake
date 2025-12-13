@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework
+# Install script for directory: /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,17 +44,17 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/build/algorithms/cmake_install.cmake")
+  include("/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/build/algorithms/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/build/additionals/cmake_install.cmake")
+  include("/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/build/additionals/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/build/experiments/cmake_install.cmake")
+  include("/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/build/experiments/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -65,5 +65,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework/algorithms
+# Install script for directory: /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
