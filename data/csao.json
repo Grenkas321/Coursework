@@ -6,7 +6,7 @@
     "min_temp": 1,
     "max_temp": 5,
     "reduction_rule": 0,
-    "saturation": 70700,
+    "saturation": 700,
     "seed": 42,
     "label": "csao"
   }

@@ -1,2 +1,0 @@
-/usr/bin/ar qc libadditionals.a CMakeFiles/additionals.dir/DAGGenerator.cpp.o CMakeFiles/additionals.dir/DAGPool.cpp.o CMakeFiles/additionals.dir/DAGReader.cpp.o CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o CMakeFiles/additionals.dir/ProgressBar.cpp.o CMakeFiles/additionals.dir/ScheduleChecker.cpp.o
-/usr/bin/ranlib libadditionals.a

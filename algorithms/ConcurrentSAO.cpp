@@ -1,10 +1,26 @@
 ﻿#include "ConcurrentSAO.h"
 #include "additionals.h"
+#include "Greedy.h"
 
 #include <algorithm>
 #include <cmath>
 #include <unordered_set>
 #include <random>
+#include <future>
+#include <chrono>
+#include <cstddef>
+
+namespace {
+
+    // Всегда получаем новый seed для каждого запуска (и для каждой волны SAO внутри CSAO).
+    static unsigned runtime_seed(unsigned salt = 0u)
+    {
+        std::random_device rd;
+        const unsigned t = (unsigned)std::chrono::high_resolution_clock::now().time_since_epoch().count();
+        return rd() ^ (t + 0x9e3779b9u + (salt << 6) + (salt >> 2));
+    }
+
+}
 
 namespace scheduling_problem::algorithms
 {
@@ -26,39 +42,92 @@ namespace scheduling_problem::algorithms
           subareas_(subareas),
           rng_(seed)
     {
-        // Параметры, которые пойдут внутрь SimulatedAnnealing
         algo_params_ = {
             {"min_temp", min_temp},
             {"max_temp", max_temp},
             {"reduction_rule", (unsigned)reduction_rule},
             {"saturation", saturation},
             {"improvement", improvement},
-            {"seed", seed} // важно: чтобы SAO внутри CSAO имел тот же seed
+            {"seed", seed}
         };
     }
-
-    // ---- Главная функция: сейчас просто обёртка над SimulatedAnnealing ----
 
     Schedule ConcurrentSAO::schedule_(const Graph &graph)
     {
         conveyor.clear();
 
-        // Создаём наш обычный SAO
-        SimulatedAnnealing sao;
-        sao.setParams(algo_params_);
+        // RNG CSAO: каждый запуск CSAO должен быть стохастическим.
+        const unsigned csao_seed = runtime_seed();
+        rng_.seed(csao_seed);
+        algo_params_["seed"] = csao_seed;
 
-        // ВАЖНО: вызываем базовый BaseOptimization::schedule(graph),
-        // а не sao.schedule(graph), которого нет.
-        BaseOptimization &base = sao;
-        Schedule best = base.schedule(graph);
+        // 1) Стартовое решение: Greedy
+        Greedy greedy;
+        Schedule bestOverall = greedy.schedule(graph);
 
-        // Чисто для истории – сохраним конечную стоимость
-        conveyor.push_back({best.cost()});
+        unsigned noImprove = 0;
+        const unsigned saturation = (unsigned)algo_params_["saturation"];
 
-        return best;
+        // Снимем параметры SAO в локальные значения (чтобы не читать map из потоков).
+        const double min_temp = (double)algo_params_["min_temp"];
+        const double max_temp = (double)algo_params_["max_temp"];
+        const ReductionRules rule = (ReductionRules)(unsigned)algo_params_["reduction_rule"];
+        const unsigned sao_saturation = (unsigned)algo_params_["saturation"];
+        const double improvement = (double)algo_params_["improvement"];
+
+        // 2) Конвейер: волны из 6 параллельных SAO, каждый стартует с лучшего прошлого результата.
+        while (noImprove < saturation)
+        {
+            const Schedule wave_base = bestOverall; // фиксируем старт волны
+
+            std::vector<std::future<Schedule>> futs;
+            futs.reserve(6);
+
+            for (unsigned i = 0; i < 6; ++i)
+            {
+                // у каждого SAO свой seed (дополнительно солим номером i)
+                const unsigned local_seed = runtime_seed(i + 1);
+
+                futs.emplace_back(std::async(std::launch::async,
+                                             [&, local_seed, wave_base, min_temp, max_temp, rule, sao_saturation, improvement]() -> Schedule
+                {
+                    SimulatedAnnealing sao(
+                        BASELINE,
+                        min_temp,
+                        max_temp,
+                        rule,
+                        sao_saturation,
+                        improvement,
+                        local_seed,
+                        "csao_sao");
+
+                    return sao.schedule(graph, wave_base);
+                }));
+            }
+
+            std::vector<Schedule> results;
+            results.reserve(6);
+            for (auto &f : futs)
+                results.push_back(f.get());
+
+            auto bestIt = std::min_element(
+                results.begin(), results.end(),
+                [](const Schedule &a, const Schedule &b)
+                { return a.cost() < b.cost(); });
+
+            if (bestIt != results.end() && bestIt->cost() < bestOverall.cost())
+            {
+                bestOverall = *bestIt;
+                noImprove = 0;
+            }
+            else
+            {
+                ++noImprove;
+            }
+        }
+
+        return bestOverall;
     }
-
-    // ---- Вспомогательные функции разбиения (на будущее, сейчас schedule_ их не использует) ----
 
     ConcurrentSAO::AdjacencyMatrix ConcurrentSAO::makeAdjacencyMatrix(const Graph &graph)
     {
@@ -72,9 +141,6 @@ namespace scheduling_problem::algorithms
         return adjacency_matrix;
     }
 
-    /**
-     * Check if there is a path in the directed graph between two given nodes.
-     */
     bool isDirectedPathExist(size_t source,
                              size_t target,
                              const ConcurrentSAO::AdjacencyMatrix &adjacency_matrix,
@@ -94,9 +160,6 @@ namespace scheduling_problem::algorithms
         return is_exist;
     }
 
-    /**
-     * Check if two nodes are adjacent in the graph.
-     */
     bool isRelated(size_t source,
                    size_t target,
                    const ConcurrentSAO::AdjacencyMatrix &adjacency_matrix)
@@ -157,8 +220,6 @@ namespace scheduling_problem::algorithms
         return data;
     }
 
-    // ---- Служебные методы ----
-
     std::unique_ptr<BaseOptimization> ConcurrentSAO::copy() const
     {
         return std::unique_ptr<BaseOptimization>(new ConcurrentSAO(*this));
@@ -166,7 +227,7 @@ namespace scheduling_problem::algorithms
 
     ParamSet ConcurrentSAO::getParams() const
     {
-        auto params = algo_params_; // сюда уже входит "seed"
+        auto params = algo_params_;
         params["rsearch_iters"] = rsearch_iters_;
         params["partitions_count"] = partitions_count_;
         params["warm_start"] = warm_start_;
@@ -205,7 +266,6 @@ namespace scheduling_problem::algorithms
             }
             else
             {
-                // label и прочие глобальные параметры BaseOptimization
                 algo_params_[param] = val;
                 BaseOptimization::setParams({{param, val}});
             }

@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 ;cost_1;n_edges;n_vertex;time_1
 gener_sp_150_new;0;150;93;408044
+=======
+;cost_1;cost_10;cost_2;cost_3;cost_4;cost_5;cost_6;cost_7;cost_8;cost_9;n_edges;n_vertex;time_1;time_10;time_2;time_3;time_4;time_5;time_6;time_7;time_8;time_9
+dag1_new;2886001;2886001;2886001;2886001;2886001;2886001;2886001;2886001;2886001;2886001;132;88;30430;30668;29572;30306;30963;30071;30759;31093;29948;29339
+>>>>>>> 34e5c84c (Add randomize in SAO/ACO and fix CSAO)
