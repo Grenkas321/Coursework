@@ -4,6 +4,8 @@
 #include <vector>
 #include "general_types.h"
 #include "ScheduleStatus.h"
+#include <limits>
+
 
 namespace scheduling_problem::algorithms
 {
@@ -17,6 +19,8 @@ namespace scheduling_problem::algorithms
      */
     class ScheduleCorrector
     {
+        static constexpr size_t kInvalid = std::numeric_limits<size_t>::max();
+
     protected:
         /** Pseudorandom generator used for move selection. */
         std::mt19937 rng_;

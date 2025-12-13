@@ -28,17 +28,25 @@ ScheduleStatus AntColonySystem::ArtificialAnt::makeRoute(
     double threshold,
     randgen &rng)
 {
-    auto num_vertices = boost::num_vertices(graph);
-    ScheduleStatus status(graph);
-    status.insert(0, 0, graph);
-    for (size_t curr_vid(1); curr_vid < num_vertices; curr_vid++)
-    {
-        auto pos = choice(graph, matrix, status, curr_vid,
-                          phe_influence, heu_influence,
-                          threshold, rng);
-        status.insert(curr_vid, pos, graph);
-    }
-    return status;
+auto num_vertices = boost::num_vertices(graph);
+ScheduleStatus status(graph);
+
+// Строим маршрут в ТОПОЛОГИЧЕСКОМ порядке, чтобы все предки были вставлены раньше потомка.
+auto topo = scheduling_problem::topo_sort(graph);
+if (topo.empty()) return status;
+
+status.insert(static_cast<size_t>(topo[0]), 0, graph);
+
+for (size_t step = 1; step < topo.size(); ++step)
+{
+    const size_t curr_vid = static_cast<size_t>(topo[step]);
+    auto pos = choice(graph, matrix, status, curr_vid,
+                      phe_influence, heu_influence,
+                      threshold, rng);
+    status.insert(curr_vid, pos, graph);
+}
+return status;
+
 }
 
 size_t AntColonySystem::ArtificialAnt::choice(
@@ -52,18 +60,29 @@ size_t AntColonySystem::ArtificialAnt::choice(
     randgen &rng)
 {
     auto desirability = heuInfo(graph, status, curr_vid);
+    const size_t lower = status.lower(curr_vid, graph);
+    size_t upper = status.upper(curr_vid, graph);
+    if (upper < lower) upper = lower; // защитный случай
+
+    for (auto it = desirability.begin(); it != desirability.end(); ) {
+        if (it->first < lower || it->first > upper) it = desirability.erase(it);
+        else ++it;
+    }
+    if (desirability.empty())
+        return lower;
 
     for (auto &[pos, heu_val] : desirability)
     {
         double phe_val = 1.0;
-        for (size_t prev_vid = 0; prev_vid < curr_vid; ++prev_vid)
+        for (const auto &job : status)
         {
+            const size_t prev_vid = job.id;
             if (status.loc(prev_vid) < pos)
-                phe_val *= matrix[prev_vid][curr_vid];
-            else
                 phe_val *= matrix[curr_vid][prev_vid];
+            else
+                phe_val *= matrix[prev_vid][curr_vid];
         }
-        heu_val = std::pow(phe_val, phe_influence) * std::pow(heu_val, heu_influence);
+
     }
 
     std::uniform_real_distribution<double> uid(0, 1);

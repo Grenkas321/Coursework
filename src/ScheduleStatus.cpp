@@ -222,8 +222,35 @@ void ScheduleStatus::insert(size_t curr_vid, size_t pos, const Graph &graph)
 
 weight_t ScheduleStatus::move(size_t curr_vid, size_t tpos, const Graph &graph)
 {
+    // IMPORTANT: keep schedule topologically valid.
+    // NOTE: upper(curr_vid) is an *insertion* upper bound (place BEFORE the earliest child).
+    // For MOVE to the right, putting a parent at the child's index makes it end up AFTER the child.
+    if (!contains(curr_vid))
+        return cost(false);
+
     size_t curr_pos = positions_[curr_vid];
-    if (curr_pos == tpos) return cost(false);
+    const size_t lb = lower(curr_vid, graph);
+
+    const size_t ub_raw = upper(curr_vid, graph);
+    size_t ub = ub_raw;
+    if (ub >= size())
+        ub = size() ? size() - 1 : 0;
+
+    // Moving right: must be STRICTLY before earliest child (if any child exists).
+    if (curr_pos < tpos && ub_raw < size())
+    {
+        if (ub_raw == 0)
+            tpos = 0;
+        else if (tpos >= ub_raw)
+            tpos = ub_raw - 1;
+    }
+
+    // Clamp into feasible window.
+    if (tpos < lb) tpos = lb;
+    if (tpos > ub) tpos = ub;
+
+    if (curr_pos == tpos)
+        return cost(false);
 
     if (curr_pos < tpos)
         std::rotate(begin() + curr_pos, begin() + curr_pos + 1, begin() + tpos + 1);
@@ -233,6 +260,7 @@ weight_t ScheduleStatus::move(size_t curr_vid, size_t tpos, const Graph &graph)
     updatePositions(std::min(curr_pos, tpos), std::max(curr_pos, tpos));
     return cost(graph);
 }
+
 
 // =========================================================
 // updatePositions
