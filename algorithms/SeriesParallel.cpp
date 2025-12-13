@@ -809,7 +809,7 @@ namespace scheduling_problem::algorithms
 
     Schedule SeriesParallel::schedule_(const Graph &graph)
     {
-        // std::cout << "SeriesParallel::schedule_" << std::endl;
+        std::cout << "SeriesParallel::schedule_" << std::endl;
         
         vector<string> content = graphToContentFormatted(graph);
         
@@ -870,7 +870,6 @@ namespace scheduling_problem::algorithms
                 ));
             }
         }
-        
         // Топологическая сортировка
         std::vector<int> topo_sort;
         auto vertexes_with_ancestors_copy = vertexes_with_ancestors;
@@ -898,9 +897,11 @@ namespace scheduling_problem::algorithms
             std::to_string(topo_sort[0]) + "_start",
             std::to_string(topo_sort.back()) + "_stop"
         );
-        
+        std::cout << "SeriesParallel::schedule_2" << std::endl;
         auto result = SP_Schedule(G);
         auto pi = result.first;
+        
+        std::cout << "SeriesParallel::schedule_3" << std::endl;
         
         // Вычисление результатов - ИСПРАВЛЕННАЯ ЧАСТЬ согласно Python коду
         int max_f = 0;
@@ -924,7 +925,7 @@ namespace scheduling_problem::algorithms
             f += cumulative_dct[i];
             max_f = std::max(max_f, f);
         }
-        /*
+        
         // Вывод результатов
         std::cout << "Schedule: ";
         for (int v : schedule) {
@@ -935,7 +936,7 @@ namespace scheduling_problem::algorithms
         for (const auto& item : schedule_pord) {
             std::cout << item[0] << ' ' << item[1] << ' ' << item[2] << std::endl;
         }
-        */
+        
         /*
         Schedule out(0, graph.name());
         for (const auto& item : schedule_pord) {
