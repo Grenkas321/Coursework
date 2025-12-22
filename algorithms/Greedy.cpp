@@ -117,7 +117,8 @@ vector<string> graphToContentFormatted(const auto& graph) {
 // dct[vertex] = vector<pair<int, set<int>>> где:
 // - первый элемент пары - вес буфера
 // - второй элемент - множество потомков
-map<int, vector<pair<int, set<int>>>> dct;
+map<int, vector<tuple<int, set<int>, int>>> dct;
+map<int, long long> tot_sum;
 
 // Вспомогательная функция для разделения строки
 vector<string> split(const string& s, char delimiter) {
@@ -141,6 +142,7 @@ string trim(const string& str) {
 }
 
 // Функция целевой функции
+/*
 long long goal_function(const std::vector<int>& part_sched, int kk = -1) {
     long long f_hp = 0, f_hp_kk = 0;
     // kk = -1;
@@ -151,7 +153,7 @@ long long goal_function(const std::vector<int>& part_sched, int kk = -1) {
         for (size_t i = 0; i <= k; i++) {
             int vertex = part_sched[i];
             for (const auto& buf : dct[vertex]) {
-                f_hp_k += buf.first;
+                f_hp_k += get<0>(buf);
             }
         }
         
@@ -161,7 +163,7 @@ long long goal_function(const std::vector<int>& part_sched, int kk = -1) {
             const auto& cur_list = dct[vertex];
             for (const auto& buf : cur_list) {
                 bool all_in_schedule = true;
-                for (int desc : buf.second) {
+                for (int desc : get<1>(buf)) {
                     bool found = false;
                     for (size_t idx = 0; idx < k; idx++) {
                         if (part_sched[idx] == desc) {
@@ -175,7 +177,7 @@ long long goal_function(const std::vector<int>& part_sched, int kk = -1) {
                     }
                 }
                 if (all_in_schedule) {
-                    f_hp_k -= buf.first;
+                    f_hp_k -= get<0>(buf);
                 }
             }
         }
@@ -184,6 +186,81 @@ long long goal_function(const std::vector<int>& part_sched, int kk = -1) {
         }
         f_hp = std::max(f_hp, f_hp_k);
     }
+    if (kk != -1) {
+        return f_hp_kk;
+    }
+    return f_hp;
+}
+*/
+
+long long goal_function(const std::vector<int>& part_sched, int kk = -1) {
+    std::vector<int> part_sched_copy = part_sched;
+    long long f_hp_kk = 0;
+    long long f_hp = 0;
+    long long sum_k = 0;
+    long long decr_k = 0;
+    
+    // Вектор для хранения элементов decr_lst
+    // Каждый элемент: [buf[0], buf[1], buf[2]]
+    std::vector<std::tuple<long long, std::set<int>, int>> decr_lst;
+    
+    size_t ln1 = part_sched.size();
+    
+    for (size_t k = 0; k < ln1; k++) {
+        int v = part_sched[k];
+        sum_k += tot_sum[v];
+        long long f_hp_k = sum_k;
+        
+        // Обработка decr_lst: удаляем part_sched[k-1] из всех множеств
+        if (k > 0) {
+            int prev_vertex = part_sched[k - 1];
+            size_t ln2 = decr_lst.size();
+            size_t i = 0;
+            
+            while (i < ln2) {
+                // Удаляем предыдущую вершину из множества
+                auto& current_set = std::get<1>(decr_lst[i]);
+                current_set.erase(prev_vertex);
+                
+                // Если множество стало пустым
+                if (current_set.empty()) {
+                    decr_k += std::get<0>(decr_lst[i]); // Добавляем значение
+                    // Удаляем элемент из вектора
+                    decr_lst.erase(decr_lst.begin() + i);
+                    ln2--;
+                } else {
+                    i++;
+                }
+            }
+        }
+        
+        // Добавляем новые элементы в decr_lst из dct[part_sched[k-1]]
+        if (k > 0) {
+            int prev_vertex = part_sched[k - 1];
+            const auto& cur_list = dct[prev_vertex];
+            
+            for (const auto& buf : cur_list) {
+                // Создаем копию множества
+                std::set<int> buf_set = std::get<1>(buf);
+                // Добавляем в decr_lst: [buf[0], buf[1].copy(), buf[2]]
+                decr_lst.emplace_back(
+                    std::get<0>(buf), 
+                    buf_set, 
+                    std::get<2>(buf)
+                );
+            }
+        }
+        
+        // Вычитаем decr_k
+        f_hp_k -= decr_k;
+        
+        // Обновляем максимумы
+        f_hp = std::max(f_hp, f_hp_k);
+        if (static_cast<int>(k) >= kk && kk != -1) {
+            f_hp_kk = std::max(f_hp_kk, f_hp_k);
+        }
+    }
+    
     if (kk != -1) {
         return f_hp_kk;
     }
@@ -303,7 +380,7 @@ Schedule Greedy::schedule_(const Graph &graph) {
         }
         lst.push_back(rest);
         
-        std::vector<std::pair<int, std::set<int>>> buffers;
+        std::vector<tuple<int, set<int>, int>> buffers;
         
         for (const auto& buf_str : lst) {
             std::stringstream buf_ss(buf_str);
@@ -342,7 +419,7 @@ Schedule Greedy::schedule_(const Graph &graph) {
                 }
             }
             
-            buffers.push_back({num, descendants});
+            buffers.push_back({num, descendants, descendants.size()});
         }
         
         dct[cur_v] = buffers;
@@ -361,6 +438,22 @@ Schedule Greedy::schedule_(const Graph &graph) {
         std::cout << "}" << std::endl;
     }
     */
+    
+    tot_sum.clear(); // Очищаем на случай повторной инициализации
+    
+    for (const auto& entry : dct) {
+        int v = entry.first;
+        const auto& dct_v = entry.second;
+        long long sum_val = 0;
+        
+        // Суммируем первый элемент каждого кортежа
+        for (const auto& tuple_item : dct_v) {
+            sum_val += std::get<0>(tuple_item); // buf[0]
+        }
+        
+        tot_sum[v] = sum_val;
+    }
+    
     // Копируем для использования позже
     auto dct2 = vertexes_with_ancestors;
 
@@ -467,7 +560,7 @@ Schedule Greedy::schedule_(const Graph &graph) {
         for (size_t i = 0; i <= k; i++) {
             int vertex = part_sched[i];
             for (const auto& buf : dct[vertex]) {
-                f_hp_k += buf.first;
+                f_hp_k += get<0>(buf);
             }
         }
         incr_mas.push_back(f_hp_k);
@@ -478,7 +571,7 @@ Schedule Greedy::schedule_(const Graph &graph) {
             const auto& cur_list = dct[vertex];
             for (const auto& buf : cur_list) {
                 bool all_in_schedule = true;
-                for (int desc : buf.second) {
+                for (int desc : get<1>(buf)) {
                     bool found = false;
                     for (size_t idx = 0; idx < k; idx++) {
                         if (part_sched[idx] == desc) {
@@ -492,7 +585,7 @@ Schedule Greedy::schedule_(const Graph &graph) {
                     }
                 }
                 if (all_in_schedule) {
-                    decr += buf.first;
+                    decr += get<0>(buf);
                 }
             }
         }
