@@ -809,7 +809,7 @@ namespace scheduling_problem::algorithms
 
     Schedule SeriesParallel::schedule_(const Graph &graph)
     {
-        std::cout << "SeriesParallel::schedule_" << std::endl;
+        // std::cout << "SeriesParallel::schedule_" << std::endl;
         
         vector<string> content = graphToContentFormatted(graph);
         
@@ -897,11 +897,11 @@ namespace scheduling_problem::algorithms
             std::to_string(topo_sort[0]) + "_start",
             std::to_string(topo_sort.back()) + "_stop"
         );
-        std::cout << "SeriesParallel::schedule_2" << std::endl;
+        // std::cout << "SeriesParallel::schedule_2" << std::endl;
         auto result = SP_Schedule(G);
         auto pi = result.first;
         
-        std::cout << "SeriesParallel::schedule_3" << std::endl;
+        // std::cout << "SeriesParallel::schedule_3" << std::endl;
         
         // Вычисление результатов - ИСПРАВЛЕННАЯ ЧАСТЬ согласно Python коду
         int max_f = 0;

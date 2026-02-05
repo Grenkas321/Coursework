@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/maxbig/Coursework/build/cmake_install.cmake",
+		"/Users/maxbig/Coursework/build/algorithms/cmake_install.cmake",
+		"/Users/maxbig/Coursework/build/additionals/cmake_install.cmake",
+		"/Users/maxbig/Coursework/build/experiments/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
