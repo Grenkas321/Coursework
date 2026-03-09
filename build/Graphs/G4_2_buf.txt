@@ -1,0 +1,9 @@
+prog_id prog_time weight_1: child_1 ... child_n, weight_2: child_1 ... child_n, ...
+1		5		10: 2 3 4
+2		10		10: 5
+3		5		20: 6
+4		15		10: 7
+5		20		5: 8
+6		5		10: 8
+7		10		15: 8
+8		10		0:
