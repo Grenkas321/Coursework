@@ -23,8 +23,13 @@ namespace scheduling_problem
      *
      * @param other  Schedule to copy.
      */
-    Schedule::Schedule(const Schedule &other) : Schedule(other.size(), other.name_) {
-        for (auto &job : other) push(job);
+    Schedule::Schedule(const Schedule &other)
+        : std::vector<Job>(other),
+          cost_(other.cost_),
+          target_(other.target_),
+          name_(other.name_),
+          placement_(other.placement_)
+    {
     }
 
     /**
@@ -33,12 +38,15 @@ namespace scheduling_problem
      *
      * @param other  Schedule to move from.
      */
-    Schedule::Schedule(Schedule &&other) noexcept : std::vector<Job>(other.size())
+    Schedule::Schedule(Schedule &&other) noexcept
+        : std::vector<Job>(std::move(other)),
+          cost_(other.cost_),
+          target_(other.target_),
+          name_(std::move(other.name_)),
+          placement_(std::move(other.placement_))
     {
-        cost_ = other.cost_;
-        target_ = other.target_;
-        name_ = std::move(other.name_);
-        std::move(other.begin(), other.end(), this->begin());
+        other.cost_ = 0;
+        other.target_ = 0;
     }
 
     /**
@@ -135,6 +143,40 @@ namespace scheduling_problem
     weight_t Schedule::cost() const { return cost_; }
 
     /**
+     * Override cached schedule cost/objective value.
+     *
+     * @param value  New cached objective value.
+     */
+    void Schedule::setCost(weight_t value)
+    {
+        cost_ = value;
+    }
+
+    /**
+     * Save processor-time placement metadata for one job.
+     */
+    void Schedule::setPlacement(size_t id, unsigned processor, weight_t start, weight_t finish)
+    {
+        placement_[id] = JobPlacement{processor, start, finish};
+    }
+
+    /**
+     * Access all placement metadata.
+     */
+    const std::map<size_t, JobPlacement> &Schedule::placement() const
+    {
+        return placement_;
+    }
+
+    /**
+     * Remove all placement metadata.
+     */
+    void Schedule::clearPlacement()
+    {
+        placement_.clear();
+    }
+
+    /**
      * Append a job by its components.
      * Updates internal invariants (cost_/target_) as if the job were executed next.
      *
@@ -191,7 +233,18 @@ namespace scheduling_problem
         j[name_]["cost"] = cost_;
         j[name_]["size"] = size();
         for (auto &job : *this)
+        {
             j[name_]["schedule"][std::to_string(job.id)] = {job.volume, job.release};
+            auto pit = placement_.find(job.id);
+            if (pit != placement_.end())
+            {
+                j[name_]["placement"][std::to_string(job.id)] = {
+                    {"processor", pit->second.processor},
+                    {"start", pit->second.start},
+                    {"finish", pit->second.finish}
+                };
+            }
+        }
         return j;
     }
 
@@ -224,13 +277,11 @@ namespace scheduling_problem
     scheduling_problem::Schedule::operator=(const Schedule &other)
     {
         if (this != &other) {
-            this->clear();
-            cost_   = 0;
-            target_ = 0;
-            name_   = other.name_;
-            for (const auto &job : other) {
-                this->push(job);
-            }
+            std::vector<Job>::operator=(other);
+            cost_ = other.cost_;
+            target_ = other.target_;
+            name_ = other.name_;
+            placement_ = other.placement_;
         }
         return *this;
     }
@@ -250,6 +301,9 @@ namespace scheduling_problem
             cost_   = other.cost_;
             target_ = other.target_;
             name_   = std::move(other.name_);
+            placement_ = std::move(other.placement_);
+            other.cost_ = 0;
+            other.target_ = 0;
         }
         return *this;
     }
@@ -288,6 +342,77 @@ namespace scheduling_problem
             weight_t release = elem.value()[1];
             s.push(job_id, volume, release);
         }
+
+        if (j[name].contains("placement") && j[name]["placement"].is_object())
+        {
+            for (auto &elem : j[name]["placement"].items())
+            {
+                size_t job_id = 0;
+                std::stringstream ss(elem.key());
+                ss >> job_id;
+                if (!elem.value().is_object())
+                    continue;
+                unsigned processor = elem.value().value("processor", 0u);
+                weight_t start = elem.value().value("start", 0LL);
+                weight_t finish = elem.value().value("finish", start);
+                s.setPlacement(job_id, processor, start, finish);
+            }
+        }
+
         return s;
+    }
+
+    /**
+     * Build JSON output with optional full schedule and optional placement.
+     */
+    nlohmann::ordered_json Schedule::jsonRepresentation(bool with_schedule) const
+    {
+        nlohmann::ordered_json j;
+        j["name"] = name_;
+        j["cost"] = cost_;
+        j["size"] = size();
+
+        if (with_schedule)
+        {
+            for (const auto &job : *this)
+            {
+                nlohmann::ordered_json item;
+                item["id"] = job.id;
+                item["volume"] = job.volume;
+                item["release"] = job.release;
+
+                auto pit = placement_.find(job.id);
+                if (pit != placement_.end())
+                {
+                    item["processor"] = pit->second.processor;
+                    item["start"] = pit->second.start;
+                    item["finish"] = pit->second.finish;
+                }
+                j["schedule"].push_back(item);
+            }
+        }
+
+        if (!placement_.empty() && !with_schedule)
+        {
+            for (const auto &[id, plc] : placement_)
+            {
+                j["placement"][std::to_string(id)] = {
+                    {"processor", plc.processor},
+                    {"start", plc.start},
+                    {"finish", plc.finish}
+                };
+            }
+        }
+
+        return j;
+    }
+
+    /**
+     * Save extended JSON representation to file.
+     */
+    void Schedule::save(const std::string &file_name) const
+    {
+        std::ofstream file(file_name);
+        file << jsonRepresentation(true).dump();
     }
 }

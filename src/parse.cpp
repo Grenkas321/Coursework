@@ -1,5 +1,7 @@
 #include "parse.h"
+#include <algorithm>
 #include <fstream>
+#include <stdexcept>
 #include "ConcurrentSAO.h"
 
 namespace parse
@@ -13,6 +15,19 @@ namespace parse
      * @return Vector of polymorphic optimizers ready to be used in experiments.
      */
     Algorithms makeOptimizers(const std::vector<std::string> &algs);
+
+    namespace
+    {
+        unsigned parseUnsigned(const nlohmann::json &value, const std::string &name)
+        {
+            if (!value.is_number_integer() && !value.is_number_unsigned())
+                throw std::invalid_argument("Expected unsigned integer for '" + name + "'");
+            const auto raw = value.get<long long>();
+            if (raw < 0)
+                throw std::invalid_argument("Expected non-negative value for '" + name + "'");
+            return static_cast<unsigned>(raw);
+        }
+    }
 
     /**
      * @brief Convert a JSON scalar to a @c scheduling_problem::parameter.
@@ -66,7 +81,14 @@ namespace parse
                 auto val = data[key];
 
                 if (key == "baseline")
-                    baseline = std::move(makeOptimizers({val})[0]);
+                {
+                    if (!val.is_string())
+                        throw std::invalid_argument("Field 'baseline' must be a string in " + alg_json);
+                    auto baseline_opt = makeOptimizers({val.get<std::string>()});
+                    if (baseline_opt.empty() || !baseline_opt[0])
+                        throw std::invalid_argument("Unknown baseline algorithm: " + val.get<std::string>());
+                    baseline = std::move(baseline_opt[0]);
+                }
                 else
                     params[key] = fromJsonValue(val);
             }
@@ -83,7 +105,13 @@ namespace parse
                 algorithms.push_back(std::move(algo));
                 continue;
             }
+            else
+            {
+                throw std::invalid_argument("Unsupported optimizer label in JSON: " + alg_label);
+            }
 
+            if (!optimizer)
+                throw std::invalid_argument("Failed to build optimizer for label: " + alg_label);
             optimizer->setParams(params);
 
             algorithms.push_back(std::move(optimizer));
@@ -125,6 +153,8 @@ namespace parse
                 else if (alg == "sp0")
                     optimizer = std::unique_ptr<SeriesParallel>(new SeriesParallel("sp0"));
 
+                if (!optimizer)
+                    throw std::invalid_argument("Unsupported algorithm: " + alg);
                 algorithms.push_back(std::move(optimizer));
             }
         }
@@ -149,7 +179,7 @@ namespace parse
     readGraphParams(const std::string &path)
     {
         std::vector<std::pair<weight_t, weight_t>> vertedge_map;
-        std::pair<scheduling_problem::weight_t, scheduling_problem::weight_t> weights;
+        std::pair<scheduling_problem::weight_t, scheduling_problem::weight_t> weights{1, 1};
         std::string prefix("dag");
         unsigned seed(42);
         auto json = nlohmann::json::parse(std::ifstream(path));
@@ -160,17 +190,26 @@ namespace parse
             {
                 for (auto &val : values.items())
                 {
-                    unsigned n_vertices = fromJsonValue(val.key());
-                    unsigned n_edges = fromJsonValue(val.value());
+                    const auto n_vertices = static_cast<unsigned>(std::stoull(val.key()));
+                    const auto n_edges = parseUnsigned(val.value(), "vertex_edge_map");
                     vertedge_map.push_back({n_vertices, n_edges});
                 }
             }
             else if (item.key() == "prefix")
                 prefix = (std::string)fromJsonValue(values);
             else if (item.key() == "weights")
-                weights = std::make_pair((weight_t)values[0], (weight_t)values[1]);
+            {
+                if (!values.is_array() || values.size() < 2)
+                    throw std::invalid_argument("'weights' must be an array with 2 elements");
+                weights = std::make_pair(static_cast<weight_t>(values[0].get<long long>()),
+                                         static_cast<weight_t>(values[1].get<long long>()));
+            }
             else if (item.key() == "seed")
-                seed = fromJsonValue(values[0]);
+            {
+                if (!values.is_array() || values.empty())
+                    throw std::invalid_argument("'seed' must be a non-empty array");
+                seed = parseUnsigned(values[0], "seed");
+            }
         }
         return std::make_tuple(vertedge_map, weights, prefix, seed);
     }
@@ -217,7 +256,7 @@ namespace parse
                                           unsigned batch_size)
     {
         DAGPool *data;
-        if (path.substr(path.size() - 5, 5) == ".json")
+        if (path.size() >= 5 && path.substr(path.size() - 5, 5) == ".json")
         {
             auto params = readGraphParams(path);
             auto vertedge_map = std::get<0>(params);
@@ -267,6 +306,10 @@ namespace parse
              "Specify algorithms for experiment; you may use algorithms with default parameters "
              "(specify 'aco', 'sao', 'base', 'greedy') or specify algorithm and parameters in the json file"
              "(see examples of json files in /data)") //
+            ("processors,p", bpo::value<unsigned>(&params.processors)->default_value(1),
+             "Specify number of processors in multiprocessor model; default is 1") //
+            ("memory,m", bpo::value<weight_t>(&params.memory_limit)->default_value(std::numeric_limits<weight_t>::max()),
+             "Specify hard memory limit M in model units; default is unlimited") //
             ("threads,t", bpo::value<unsigned>()->default_value(1),
              "Specify number of threads for experiment; every algorithm-batch pair will be "
              "executed in a separate thread; default is 1");
@@ -291,6 +334,7 @@ namespace parse
                       << run_desc
                       << std::endl
                       << stability_desc << std::endl;
+            params.help_requested = true;
             return params;
         }
         else
@@ -310,6 +354,10 @@ namespace parse
                 params.command = Command::STABILITY;
                 general_desc.add(stability_desc);
             }
+            else
+            {
+                throw std::invalid_argument("Unknown command: " + command);
+            }
         }
 
         parsed = bpo::command_line_parser(argc, argv).options(general_desc).run();
@@ -318,10 +366,19 @@ namespace parse
 
         /* Make structures for experiments */
         params.algorithms = makeOptimizers(vm["algo"].as<std::vector<std::string>>());
+        if (params.algorithms.empty())
+            throw std::invalid_argument("No algorithms selected");
+        scheduling_problem::algorithms::ParamSet shared_params{
+            {"processors", params.processors},
+            {"memory_limit", static_cast<double>(params.memory_limit)}
+        };
+        for (auto &alg : params.algorithms)
+            if (alg)
+                alg->setParams(shared_params);
         params.data = makeDataPool(vm["input"].as<std::string>(),
                                    vm["samples"].as<unsigned>(),
                                    vm["batch"].as<unsigned>());
-        params.n_threads = vm["threads"].as<unsigned>();
+        params.n_threads = std::max(1u, vm["threads"].as<unsigned>());
         switch (params.command)
         {
         case Command::RUN:

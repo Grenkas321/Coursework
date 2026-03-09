@@ -26,6 +26,8 @@ namespace scheduling_problem::additionals
         std::string directory_;
         /** @brief Collected file paths (sorted). */
         std::vector<std::filesystem::path> paths_;
+        /** @brief Number of successfully emitted DAG samples. */
+        unsigned emitted_samples_ = 0;
 
     public:
         /**

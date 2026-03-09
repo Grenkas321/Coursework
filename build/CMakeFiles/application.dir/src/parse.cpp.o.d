@@ -210,9 +210,9 @@ CMakeFiles/application.dir/src/parse.cpp.o: \
  /usr/include/c++/13/bits/ranges_uninitialized.h \
  /usr/include/c++/13/bits/ranges_algobase.h \
  /usr/include/c++/13/pstl/glue_memory_defs.h \
- /usr/include/c++/13/pstl/execution_defs.h \
+ /usr/include/c++/13/pstl/execution_defs.h /usr/include/c++/13/limits \
  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/SimulatedAnnealing.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/ScheduleCorrector.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/IterativeOptimization.h \
  /usr/include/c++/13/random /usr/include/c++/13/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -223,8 +223,7 @@ CMakeFiles/application.dir/src/parse.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
- /usr/include/c++/13/bits/specfun.h /usr/include/c++/13/limits \
- /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/bits/specfun.h /usr/include/c++/13/tr1/gamma.tcc \
  /usr/include/c++/13/tr1/special_function_util.h \
  /usr/include/c++/13/tr1/bessel_function.tcc \
  /usr/include/c++/13/tr1/beta_function.tcc \
@@ -242,15 +241,35 @@ CMakeFiles/application.dir/src/parse.cpp.o: \
  /usr/include/c++/13/bits/random.tcc /usr/include/c++/13/numeric \
  /usr/include/c++/13/bits/stl_numeric.h \
  /usr/include/c++/13/pstl/glue_numeric_defs.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/general_types.h \
- /usr/include/c++/13/unordered_set \
- /usr/include/c++/13/bits/unordered_set.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/BaseOptimization.h \
+ /usr/include/c++/13/chrono /usr/include/c++/13/bits/chrono.h \
+ /usr/include/c++/13/ratio /usr/include/c++/13/ctime \
+ /usr/include/c++/13/bits/parse_numbers.h /usr/include/c++/13/sstream \
+ /usr/include/c++/13/istream /usr/include/c++/13/bits/istream.tcc \
+ /usr/include/c++/13/bits/sstream.tcc /usr/include/c++/13/bits/stl_algo.h \
+ /usr/include/c++/13/bits/algorithmfwd.h \
+ /usr/include/c++/13/bits/stl_heap.h /usr/include/c++/13/bits/chrono_io.h \
+ /usr/include/c++/13/iomanip /usr/include/c++/13/locale \
+ /usr/include/c++/13/bits/locale_facets_nonio.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/13/bits/codecvt.h \
+ /usr/include/c++/13/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/13/bits/locale_conv.h \
+ /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/format \
+ /usr/include/c++/13/array /usr/include/c++/13/charconv \
+ /usr/include/c++/13/optional \
+ /usr/include/c++/13/bits/enable_special_members.h \
+ /usr/include/c++/13/span /usr/include/c++/13/variant \
+ /usr/include/c++/13/unordered_map \
+ /usr/include/c++/13/bits/unordered_map.h \
  /usr/include/c++/13/bits/hashtable.h \
  /usr/include/c++/13/bits/hashtable_policy.h \
- /usr/include/c++/13/bits/enable_special_members.h \
  /usr/include/c++/13/bits/node_handle.h \
- /usr/include/c++/13/bits/erase_if.h /usr/include/c++/13/unordered_map \
- /usr/include/c++/13/bits/unordered_map.h /usr/include/c++/13/set \
+ /usr/include/c++/13/bits/erase_if.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/general_types.h \
+ /usr/include/c++/13/unordered_set \
+ /usr/include/c++/13/bits/unordered_set.h /usr/include/c++/13/set \
  /usr/include/c++/13/bits/stl_tree.h /usr/include/c++/13/bits/stl_set.h \
  /usr/include/c++/13/bits/stl_multiset.h /usr/include/c++/13/map \
  /usr/include/c++/13/bits/stl_map.h \
@@ -583,9 +602,7 @@ CMakeFiles/application.dir/src/parse.cpp.o: \
  /usr/include/boost/type_traits/is_base_and_derived.hpp \
  /usr/include/boost/type_traits/is_base_of.hpp \
  /usr/include/boost/type_traits/is_complex.hpp \
- /usr/include/c++/13/complex /usr/include/c++/13/sstream \
- /usr/include/c++/13/istream /usr/include/c++/13/bits/istream.tcc \
- /usr/include/c++/13/bits/sstream.tcc \
+ /usr/include/c++/13/complex \
  /usr/include/boost/type_traits/is_compound.hpp \
  /usr/include/boost/type_traits/is_fundamental.hpp \
  /usr/include/boost/type_traits/is_copy_assignable.hpp \
@@ -646,10 +663,7 @@ CMakeFiles/application.dir/src/parse.cpp.o: \
  /usr/include/boost/preprocessor/seq/limits/enum_256.hpp \
  /usr/include/boost/concept/detail/concept_undef.hpp \
  /usr/include/boost/concept_archetype.hpp /usr/include/c++/13/functional \
- /usr/include/c++/13/bits/std_function.h /usr/include/c++/13/array \
- /usr/include/c++/13/bits/stl_algo.h \
- /usr/include/c++/13/bits/algorithmfwd.h \
- /usr/include/c++/13/bits/stl_heap.h \
+ /usr/include/c++/13/bits/std_function.h \
  /usr/include/boost/property_map/vector_property_map.hpp \
  /usr/include/boost/smart_ptr/shared_ptr.hpp \
  /usr/include/boost/smart_ptr/detail/requires_cxx11.hpp \
@@ -1193,9 +1207,8 @@ CMakeFiles/application.dir/src/parse.cpp.o: \
  /usr/include/boost/container_hash/detail/hash_mix.hpp \
  /usr/include/boost/container_hash/detail/hash_range.hpp \
  /usr/include/boost/container_hash/detail/mulx.hpp \
- /usr/include/c++/13/typeindex /usr/include/c++/13/optional \
- /usr/include/c++/13/variant /usr/include/c++/13/bits/parse_numbers.h \
- /usr/include/boost/move/move.hpp /usr/include/boost/move/iterator.hpp \
+ /usr/include/c++/13/typeindex /usr/include/boost/move/move.hpp \
+ /usr/include/boost/move/iterator.hpp \
  /usr/include/boost/move/detail/iterator_traits.hpp \
  /usr/include/boost/move/algorithm.hpp \
  /usr/include/boost/move/algo/move.hpp \
@@ -1494,7 +1507,6 @@ CMakeFiles/application.dir/src/parse.cpp.o: \
  /usr/include/boost/range/detail/safe_bool.hpp \
  /usr/include/boost/range/iterator_range_io.hpp \
  /usr/include/boost/graph/detail/adj_list_edge_iterator.hpp \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/ScheduleStatus.h \
  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/Schedule.h \
  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/json/json.hpp \
  /usr/include/c++/13/forward_list /usr/include/c++/13/bits/forward_list.h \
@@ -1508,26 +1520,13 @@ CMakeFiles/application.dir/src/parse.cpp.o: \
  /usr/include/c++/13/bits/gslice_array.h \
  /usr/include/c++/13/bits/mask_array.h \
  /usr/include/c++/13/bits/indirect_array.h /usr/include/c++/13/filesystem \
- /usr/include/c++/13/bits/fs_fwd.h /usr/include/c++/13/bits/chrono.h \
- /usr/include/c++/13/ratio /usr/include/c++/13/ctime \
- /usr/include/c++/13/bits/fs_path.h /usr/include/c++/13/locale \
- /usr/include/c++/13/bits/locale_facets_nonio.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
- /usr/include/libintl.h /usr/include/c++/13/bits/codecvt.h \
- /usr/include/c++/13/bits/locale_facets_nonio.tcc \
- /usr/include/c++/13/bits/locale_conv.h /usr/include/c++/13/iomanip \
- /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/codecvt \
- /usr/include/c++/13/bits/fs_dir.h /usr/include/c++/13/bits/fs_ops.h \
- /usr/include/c++/13/any \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/IterativeOptimization.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/BaseOptimization.h \
- /usr/include/c++/13/chrono /usr/include/c++/13/bits/chrono_io.h \
- /usr/include/c++/13/format /usr/include/c++/13/charconv \
- /usr/include/c++/13/span \
+ /usr/include/c++/13/bits/fs_fwd.h /usr/include/c++/13/bits/fs_path.h \
+ /usr/include/c++/13/codecvt /usr/include/c++/13/bits/fs_dir.h \
+ /usr/include/c++/13/bits/fs_ops.h /usr/include/c++/13/any \
  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/parameter.h \
  /usr/include/c++/13/iostream \
  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/Greedy.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/ScheduleStatus.h \
  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/AntColonySystem.h \
  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/RandomSearch.h \
  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/SeriesParallel.h \

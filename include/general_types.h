@@ -27,6 +27,15 @@ namespace scheduling_problem
     };
 
     /**
+     * Vertex property tag: task execution time.
+     * Use with boost::get(vertex_exec_time_t(), graph, v).
+     */
+    struct vertex_exec_time_t
+    {
+        typedef boost::vertex_property_tag kind;
+    };
+
+    /**
      * Vertex property tag: an auxiliary numeric label for a vertex.
      * Use with boost::get(vertex_num_t(), graph, v).
      */
@@ -48,12 +57,14 @@ namespace scheduling_problem
     /**
      * Composite vertex property:
      * - vertex_weight_t -> weight_t
+     * - vertex_exec_time_t -> weight_t
      * - vertex_num_t    -> num_t
      * - vertex_index_t  -> std::size_t (required by Boost.Graph)
      */
     typedef boost::property<vertex_weight_t, weight_t,
-                            boost::property<vertex_num_t, num_t,
-                                            boost::property<boost::vertex_index_t, std::size_t>>>
+                            boost::property<vertex_exec_time_t, weight_t,
+                                            boost::property<vertex_num_t, num_t,
+                                                            boost::property<boost::vertex_index_t, std::size_t>>>>
         VertexProperty;
 
     /**
@@ -196,12 +207,15 @@ namespace scheduling_problem
          * Copy assignment: copies structure and name.
          *
          * @param other  Source graph.
-         * @return Copied graph (by value).
+         * @return Reference to this graph.
          */
-        Graph operator=(const Graph &other)
+        Graph &operator=(const Graph &other)
         {
-            name_ = other.name();
-            DiGraph::operator=(other);
+            if (this != &other)
+            {
+                name_ = other.name();
+                DiGraph::operator=(other);
+            }
             return *this;
         }
     };

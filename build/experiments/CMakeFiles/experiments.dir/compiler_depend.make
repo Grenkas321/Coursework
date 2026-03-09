@@ -10,7 +10,6 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: /mnt/c/Users/tutor/MSU
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/ConcurrentSAO.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/Greedy.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/IterativeOptimization.h \
-  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/ScheduleCorrector.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/SimulatedAnnealing.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/experiments/experiments.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/Schedule.h \
@@ -2517,6 +2516,8 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: /mnt/c/Users/tutor/MSU
 
 /usr/include/boost/type_traits/has_nothrow_destructor.hpp:
 
+/usr/include/boost/type_traits/has_nothrow_assign.hpp:
+
 /usr/include/boost/type_traits/has_not_equal_to.hpp:
 
 /usr/include/boost/type_traits/has_multiplies_assign.hpp:
@@ -3281,10 +3282,6 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: /mnt/c/Users/tutor/MSU
 
 /usr/include/boost/mp11/set.hpp:
 
-/usr/include/boost/type_traits/has_nothrow_assign.hpp:
-
-/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/ScheduleCorrector.h:
-
 /usr/include/c++/13/functional:
 
 /usr/include/boost/predef/library/std/dinkumware.h:
@@ -3498,6 +3495,10 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: /mnt/c/Users/tutor/MSU
 /usr/include/boost/fusion/view/iterator_range/detail/at_impl.hpp:
 
 /usr/include/boost/mpl/vector/aux_/begin_end.hpp:
+
+/usr/include/boost/mpl/aux_/iter_apply.hpp:
+
+/usr/include/boost/fusion/view/detail/strictest_traversal.hpp:
 
 /usr/include/boost/preprocessor/facilities/empty.hpp:
 
@@ -3905,40 +3906,6 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: /mnt/c/Users/tutor/MSU
 
 /usr/include/boost/mpl/O1_size_fwd.hpp:
 
-/usr/include/boost/container_hash/is_described_class.hpp:
-
-/usr/include/boost/preprocessor/repetition/deduce_r.hpp:
-
-/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/IterativeOptimization.h:
-
-/usr/include/boost/mpl/bool.hpp:
-
-/usr/include/boost/mpl/vector/vector20.hpp:
-
-/usr/include/c++/13/bits/std_function.h:
-
-/usr/include/boost/mpl/distance_fwd.hpp:
-
-/usr/include/boost/multi_index/detail/index_matcher.hpp:
-
-/usr/include/boost/predef/architecture/sys370.h:
-
-/usr/include/boost/describe/detail/cx_streq.hpp:
-
-/usr/include/boost/type_traits/add_lvalue_reference.hpp:
-
-/usr/include/boost/fusion/view/single_view/detail/next_impl.hpp:
-
-/usr/include/boost/format/detail/workarounds_gcc-2_95.hpp:
-
-/usr/include/boost/assert/source_location.hpp:
-
-/usr/include/c++/13/cstddef:
-
-/usr/include/boost/fusion/container/vector/detail/at_impl.hpp:
-
-/usr/include/boost/fusion/adapted/boost_tuple/detail/build_cons.hpp:
-
 /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/additionals/ThreadPool.h:
 
 /usr/include/boost/preprocessor/repeat.hpp:
@@ -3957,11 +3924,11 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: /mnt/c/Users/tutor/MSU
 
 /usr/include/boost/mpl/deref.hpp:
 
-/usr/include/boost/fusion/iterator/segmented_iterator.hpp:
+/usr/include/boost/current_function.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/stdio2.h:
+/usr/include/boost/preprocessor/variadic/to_seq.hpp:
 
-/usr/include/boost/predef/compiler/kai.h:
+/usr/include/boost/function_types/is_member_function_pointer.hpp:
 
 /usr/include/boost/iterator/iterator_facade.hpp:
 
@@ -4006,6 +3973,40 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: /mnt/c/Users/tutor/MSU
 /usr/include/boost/move/detail/type_traits.hpp:
 
 /usr/include/boost/preprocessor/control/deduce_d.hpp:
+
+/usr/include/c++/13/bits/std_function.h:
+
+/usr/include/boost/mpl/distance_fwd.hpp:
+
+/usr/include/boost/multi_index/detail/index_matcher.hpp:
+
+/usr/include/boost/predef/architecture/sys370.h:
+
+/usr/include/boost/describe/detail/cx_streq.hpp:
+
+/usr/include/boost/type_traits/add_lvalue_reference.hpp:
+
+/usr/include/boost/fusion/view/single_view/detail/next_impl.hpp:
+
+/usr/include/boost/format/detail/workarounds_gcc-2_95.hpp:
+
+/usr/include/boost/assert/source_location.hpp:
+
+/usr/include/boost/container_hash/is_described_class.hpp:
+
+/usr/include/boost/preprocessor/repetition/deduce_r.hpp:
+
+/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/IterativeOptimization.h:
+
+/usr/include/boost/mpl/bool.hpp:
+
+/usr/include/boost/mpl/vector/vector20.hpp:
+
+/usr/include/c++/13/cstddef:
+
+/usr/include/boost/fusion/container/vector/detail/at_impl.hpp:
+
+/usr/include/boost/fusion/adapted/boost_tuple/detail/build_cons.hpp:
 
 /usr/include/boost/graph/detail/d_ary_heap.hpp:
 
@@ -4111,54 +4112,6 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: /mnt/c/Users/tutor/MSU
 
 /usr/include/boost/mpl/void_fwd.hpp:
 
-/usr/include/boost/fusion/sequence/intrinsic/has_key.hpp:
-
-/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/BaseOptimization.h:
-
-/usr/include/linux/close_range.h:
-
-/usr/include/boost/fusion/container/list/detail/equal_to_impl.hpp:
-
-/usr/include/c++/13/any:
-
-/usr/include/boost/mpl/aux_/config/gcc.hpp:
-
-/usr/include/boost/fusion/container/vector/detail/value_at_impl.hpp:
-
-/usr/include/boost/move/detail/to_raw_pointer.hpp:
-
-/usr/include/boost/move/detail/config_begin.hpp:
-
-/usr/include/boost/mpl/long_fwd.hpp:
-
-/usr/include/boost/type_traits/remove_extent.hpp:
-
-/usr/include/boost/core/explicit_operator_bool.hpp:
-
-/usr/include/boost/parameter/value_type.hpp:
-
-/usr/include/c++/13/bits/locale_classes.tcc:
-
-/usr/include/boost/preprocessor/tuple/limits/reverse_64.hpp:
-
-/usr/include/boost/format/alt_sstream_impl.hpp:
-
-/usr/include/c++/13/bits/functional_hash.h:
-
-/usr/include/boost/preprocessor/tuple/push_front.hpp:
-
-/usr/include/boost/mpl/limits/vector.hpp:
-
-/usr/include/boost/core/ref.hpp:
-
-/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/ScheduleStatus.h:
-
-/usr/include/boost/move/utility.hpp:
-
-/usr/include/boost/multi_index/tag.hpp:
-
-/usr/include/boost/fusion/sequence/intrinsic/detail/segmented_end_impl.hpp:
-
 /usr/include/boost/fusion/mpl/push_back.hpp:
 
 /usr/include/boost/move/utility_core.hpp:
@@ -4219,17 +4172,65 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: /mnt/c/Users/tutor/MSU
 
 /usr/include/boost/predef/compiler/edg.h:
 
+/usr/include/boost/fusion/sequence/intrinsic/has_key.hpp:
+
+/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/BaseOptimization.h:
+
+/usr/include/linux/close_range.h:
+
+/usr/include/boost/fusion/container/list/detail/equal_to_impl.hpp:
+
+/usr/include/c++/13/any:
+
+/usr/include/boost/mpl/aux_/config/gcc.hpp:
+
+/usr/include/boost/fusion/container/vector/detail/value_at_impl.hpp:
+
+/usr/include/boost/move/detail/to_raw_pointer.hpp:
+
+/usr/include/boost/move/detail/config_begin.hpp:
+
+/usr/include/boost/mpl/long_fwd.hpp:
+
+/usr/include/boost/type_traits/remove_extent.hpp:
+
+/usr/include/boost/core/explicit_operator_bool.hpp:
+
+/usr/include/boost/parameter/value_type.hpp:
+
+/usr/include/c++/13/bits/locale_classes.tcc:
+
+/usr/include/boost/preprocessor/tuple/limits/reverse_64.hpp:
+
+/usr/include/boost/format/alt_sstream_impl.hpp:
+
+/usr/include/c++/13/bits/functional_hash.h:
+
+/usr/include/boost/preprocessor/tuple/push_front.hpp:
+
+/usr/include/boost/mpl/limits/vector.hpp:
+
+/usr/include/boost/core/ref.hpp:
+
+/usr/include/boost/move/utility.hpp:
+
+/usr/include/boost/multi_index/tag.hpp:
+
+/usr/include/boost/fusion/sequence/intrinsic/detail/segmented_end_impl.hpp:
+
+/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/ScheduleStatus.h:
+
 /usr/include/boost/fusion/algorithm/iteration/fold.hpp:
 
 /usr/include/boost/multi_index/detail/serialization_version.hpp:
 
 /usr/include/boost/function_types/detail/pp_tags/cc_tag.hpp:
 
-/usr/include/boost/current_function.hpp:
+/usr/include/boost/fusion/iterator/segmented_iterator.hpp:
 
-/usr/include/boost/preprocessor/variadic/to_seq.hpp:
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:
 
-/usr/include/boost/function_types/is_member_function_pointer.hpp:
+/usr/include/boost/predef/compiler/kai.h:
 
 /usr/include/boost/graph/graph_traits.hpp:
 
@@ -4383,6 +4384,12 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: /mnt/c/Users/tutor/MSU
 
 /usr/include/boost/function_types/detail/pp_loop.hpp:
 
+/usr/include/boost/function_types/detail/components_impl/arity20_1.hpp:
+
+/usr/include/boost/parameter/aux_/preprocessor/impl/function_cast.hpp:
+
+/usr/include/boost/parameter/aux_/preprocessor/impl/no_spec_overloads.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
 /usr/include/boost/config/stdlib/libstdcpp3.hpp:
@@ -4420,12 +4427,6 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: /mnt/c/Users/tutor/MSU
 /usr/include/boost/fusion/support/detail/is_mpl_sequence.hpp:
 
 /usr/include/boost/mpl/vector/aux_/iterator.hpp:
-
-/usr/include/boost/function_types/detail/components_impl/arity20_1.hpp:
-
-/usr/include/boost/parameter/aux_/preprocessor/impl/function_cast.hpp:
-
-/usr/include/boost/parameter/aux_/preprocessor/impl/no_spec_overloads.hpp:
 
 /usr/include/boost/range/detail/has_member_size.hpp:
 
@@ -4563,12 +4564,6 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: /mnt/c/Users/tutor/MSU
 
 /usr/include/boost/fusion/view/single_view/detail/deref_impl.hpp:
 
-/usr/include/boost/fusion/algorithm/iteration/for_each_fwd.hpp:
-
-/usr/include/boost/mpl/bind.hpp:
-
-/usr/include/boost/optional/optional.hpp:
-
 /usr/include/boost/detail/is_incrementable.hpp:
 
 /usr/include/boost/fusion/adapted/boost_tuple/detail/is_sequence_impl.hpp:
@@ -4682,6 +4677,12 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: /mnt/c/Users/tutor/MSU
 /usr/include/boost/fusion/adapted/mpl/detail/size_impl.hpp:
 
 /usr/include/boost/predef/architecture/pyramid.h:
+
+/usr/include/boost/fusion/algorithm/iteration/for_each_fwd.hpp:
+
+/usr/include/boost/mpl/bind.hpp:
+
+/usr/include/boost/optional/optional.hpp:
 
 /usr/include/boost/assert.hpp:
 
@@ -4828,10 +4829,6 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: /mnt/c/Users/tutor/MSU
 /usr/include/boost/parameter/parameters.hpp:
 
 /usr/include/boost/fusion/mpl/detail/clear.hpp:
-
-/usr/include/boost/fusion/view/detail/strictest_traversal.hpp:
-
-/usr/include/boost/mpl/aux_/iter_apply.hpp:
 
 /usr/include/boost/mpl/aux_/iter_fold_if_impl.hpp:
 

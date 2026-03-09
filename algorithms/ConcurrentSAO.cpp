@@ -101,6 +101,16 @@ namespace scheduling_problem::algorithms
                         local_seed,
                         "csao_sao");
 
+                    ParamSet local_params;
+                    auto pit = algo_params_.find("processors");
+                    if (pit != algo_params_.end())
+                        local_params["processors"] = pit->second;
+                    auto mit = algo_params_.find("memory_limit");
+                    if (mit != algo_params_.end())
+                        local_params["memory_limit"] = mit->second;
+                    if (!local_params.empty())
+                        sao.setParams(local_params);
+
                     return sao.schedule(graph, wave_base);
                 }));
             }

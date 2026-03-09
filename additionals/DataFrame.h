@@ -351,6 +351,8 @@ namespace scheduling_problem::additionals
          */
         std::pair<size_t, size_t> shape() const
         {
+            if (columns_.empty())
+                return {0, 0};
             return {columns_.begin()->second.size(), columns_.size()};
         }
 
@@ -405,6 +407,8 @@ namespace scheduling_problem::additionals
         std::vector<IndexT> index() const
         {
             std::vector<IndexT> indices;
+            if (columns_.empty())
+                return indices;
             std::transform(columns_.begin()->second.begin(),
                            columns_.begin()->second.end(),
                            std::back_inserter(indices),
@@ -447,6 +451,8 @@ namespace scheduling_problem::additionals
         static DataFrame<IndexT, ColNameT, ContentT, autoindexing>
         combine(const std::vector<DataFrame<IndexT, ColNameT, ContentT, autoindexing>> &dataframes)
         {
+            if (dataframes.empty())
+                return DataFrame();
             DataFrame result(dataframes[0].colsnames());
             for (auto &df : dataframes)
                 result.append(df);
@@ -482,10 +488,12 @@ namespace scheduling_problem::additionals
                                  const std::vector<ColNameT> &columns,
                                  const std::vector<IndexT> &index)
         {
-            unsigned data_id(0);
-            for (auto &col : columns_)
+            if (columns.size() != data.size())
+                return;
+
+            for (size_t data_id = 0; data_id < columns.size(); ++data_id)
             {
-                columns_.second = Column(data[data_id++], index);
+                columns_[columns[data_id]] = Column(data[data_id], index);
             }
         }
 

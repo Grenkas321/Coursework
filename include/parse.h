@@ -1,6 +1,7 @@
 ﻿#include <vector>
 #include <tuple>
 #include <memory>
+#include <limits>
 #include "SimulatedAnnealing.h"
 #include "AntColonySystem.h"
 #include "SeriesParallel.h"
@@ -53,7 +54,7 @@ namespace parse
     struct ParsedParams
     {
         /** Action to perform. */
-        Command command;
+        Command command = Command::SCHEDULE;
 
         /** Algorithms to run (possibly multiple, in order). */
         Algorithms algorithms;
@@ -65,10 +66,19 @@ namespace parse
         std::string output_path;
 
         /** Number of dataset duplicates to generate or use. */
-        unsigned duplicates;
+        unsigned duplicates = 0;
 
         /** Number of worker threads for parallel experiments. */
-        unsigned n_threads;
+        unsigned n_threads = 1;
+
+        /** Number of processors in multiprocessor scheduling model. */
+        unsigned processors = 1;
+
+        /** Hard memory limit M for scheduling model. */
+        weight_t memory_limit = std::numeric_limits<weight_t>::max();
+
+        /** True when --help was requested and normal execution should be skipped. */
+        bool help_requested = false;
 
         /**
          * Per-duplicate repeat counts: for each duplicate, how many

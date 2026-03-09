@@ -525,21 +525,23 @@ CMakeFiles/application.dir/src/ScheduleStatus.cpp.o: \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
- /usr/include/c++/13/bits/vector.tcc \
+ /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/map \
+ /usr/include/c++/13/bits/stl_tree.h \
+ /usr/include/c++/13/ext/aligned_buffer.h \
+ /usr/include/c++/13/bits/node_handle.h \
+ /usr/include/c++/13/bits/stl_map.h \
+ /usr/include/c++/13/bits/stl_multimap.h \
+ /usr/include/c++/13/bits/erase_if.h \
  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/general_types.h \
  /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/unordered_set.h \
  /usr/include/c++/13/bits/hashtable.h \
  /usr/include/c++/13/bits/hashtable_policy.h \
- /usr/include/c++/13/ext/aligned_buffer.h \
  /usr/include/c++/13/bits/enable_special_members.h \
- /usr/include/c++/13/bits/node_handle.h \
- /usr/include/c++/13/bits/erase_if.h /usr/include/c++/13/unordered_map \
+ /usr/include/c++/13/unordered_map \
  /usr/include/c++/13/bits/unordered_map.h /usr/include/c++/13/set \
- /usr/include/c++/13/bits/stl_tree.h /usr/include/c++/13/bits/stl_set.h \
- /usr/include/c++/13/bits/stl_multiset.h /usr/include/c++/13/map \
- /usr/include/c++/13/bits/stl_map.h \
- /usr/include/c++/13/bits/stl_multimap.h \
+ /usr/include/c++/13/bits/stl_set.h \
+ /usr/include/c++/13/bits/stl_multiset.h \
  /usr/include/boost/graph/reverse_graph.hpp \
  /usr/include/boost/graph/adjacency_iterator.hpp \
  /usr/include/boost/graph/graph_traits.hpp \

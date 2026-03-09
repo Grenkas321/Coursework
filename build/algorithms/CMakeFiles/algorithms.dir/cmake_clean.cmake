@@ -21,6 +21,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.o.d"
   "CMakeFiles/algorithms.dir/IterativeOptimization.cpp.o"
   "CMakeFiles/algorithms.dir/IterativeOptimization.cpp.o.d"
+  "CMakeFiles/algorithms.dir/LayeredSchedule.cpp.o"
+  "CMakeFiles/algorithms.dir/LayeredSchedule.cpp.o.d"
   "CMakeFiles/algorithms.dir/RandomSearch.cpp.o"
   "CMakeFiles/algorithms.dir/RandomSearch.cpp.o.d"
   "CMakeFiles/algorithms.dir/ScheduleCorrector.cpp.o"

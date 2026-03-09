@@ -16,7 +16,6 @@ CMakeFiles/application.dir/main.cpp.o: /mnt/c/Users/tutor/MSU/Nauchka/single-pro
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/GreedyHeuristics.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/IterativeOptimization.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/RandomSearch.h \
-  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/ScheduleCorrector.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/ScheduleSPGraph.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/SeriesParallel.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/SimulatedAnnealing.h \
@@ -7646,7 +7645,6 @@ CMakeFiles/application.dir/src/parse.cpp.o: /mnt/c/Users/tutor/MSU/Nauchka/singl
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/GreedyHeuristics.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/IterativeOptimization.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/RandomSearch.h \
-  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/ScheduleCorrector.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/ScheduleSPGraph.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/SeriesParallel.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/SimulatedAnnealing.h \
@@ -10218,7 +10216,7 @@ CMakeFiles/application.dir/src/parse.cpp.o: /mnt/c/Users/tutor/MSU/Nauchka/singl
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
-/usr/include/x86_64-linux-gnu/bits/stdio2.h:
+/usr/include/boost/parameter/aux_/set.hpp:
 
 /usr/include/boost/parameter/aux_/preprocessor/nullptr.hpp:
 
@@ -11114,6 +11112,10 @@ CMakeFiles/application.dir/src/parse.cpp.o: /mnt/c/Users/tutor/MSU/Nauchka/singl
 
 /usr/include/boost/tti/detail/ddeftype.hpp:
 
+/usr/include/boost/fusion/view/filter_view/detail/size_impl.hpp:
+
+/usr/include/boost/integer_fwd.hpp:
+
 /usr/include/boost/indirect_reference.hpp:
 
 /usr/include/boost/fusion/algorithm/iteration/detail/preprocessed/reverse_fold.hpp:
@@ -11124,19 +11126,19 @@ CMakeFiles/application.dir/src/parse.cpp.o: /mnt/c/Users/tutor/MSU/Nauchka/singl
 
 /usr/include/c++/13/cwchar:
 
-/usr/include/boost/parameter/aux_/always_true_predicate.hpp:
-
-/usr/include/boost/graph/named_function_params.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/plus.hpp:
-
-/usr/include/c++/13/backward/auto_ptr.h:
-
 /usr/include/boost/preprocessor/seq/for_each_product.hpp:
 
 /usr/include/boost/fusion/algorithm/query/detail/segmented_find_if.hpp:
 
 /usr/include/boost/assert.hpp:
+
+/usr/include/boost/optional/optional.hpp:
+
+/usr/include/boost/mpl/bind.hpp:
+
+/usr/include/boost/fusion/view/filter_view/detail/value_of_impl.hpp:
+
+/usr/include/boost/fusion/algorithm/iteration/for_each_fwd.hpp:
 
 /usr/include/boost/fusion/adapted/mpl/detail/size_impl.hpp:
 
@@ -11191,14 +11193,6 @@ CMakeFiles/application.dir/src/parse.cpp.o: /mnt/c/Users/tutor/MSU/Nauchka/singl
 /usr/include/boost/range/size_type.hpp:
 
 /usr/include/boost/fusion/adapted/boost_tuple/detail/is_sequence_impl.hpp:
-
-/usr/include/boost/optional/optional.hpp:
-
-/usr/include/boost/mpl/bind.hpp:
-
-/usr/include/boost/fusion/view/filter_view/detail/value_of_impl.hpp:
-
-/usr/include/boost/fusion/algorithm/iteration/for_each_fwd.hpp:
 
 /usr/include/boost/fusion/adapted/boost_tuple.hpp:
 
@@ -11526,6 +11520,8 @@ CMakeFiles/application.dir/src/parse.cpp.o: /mnt/c/Users/tutor/MSU/Nauchka/singl
 
 /usr/include/boost/any/fwd.hpp:
 
+/usr/include/boost/config.hpp:
+
 /usr/include/boost/function_types/detail/class_transform.hpp:
 
 /usr/include/c++/13/bits/std_thread.h:
@@ -11624,6 +11620,10 @@ CMakeFiles/application.dir/src/parse.cpp.o: /mnt/c/Users/tutor/MSU/Nauchka/singl
 
 /usr/include/boost/fusion/sequence/intrinsic/at_c.hpp:
 
+/usr/include/boost/mp11/set.hpp:
+
+/usr/include/boost/function_types/detail/components_impl/arity10_1.hpp:
+
 /usr/include/boost/xpressive/detail/core/matcher/keeper_matcher.hpp:
 
 /usr/include/boost/fusion/adapted/mpl/detail/begin_impl.hpp:
@@ -11696,6 +11696,14 @@ CMakeFiles/application.dir/src/parse.cpp.o: /mnt/c/Users/tutor/MSU/Nauchka/singl
 
 /usr/include/boost/mpl/has_key_fwd.hpp:
 
+/usr/include/boost/parameter/aux_/always_true_predicate.hpp:
+
+/usr/include/boost/graph/named_function_params.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/plus.hpp:
+
+/usr/include/c++/13/backward/auto_ptr.h:
+
 /usr/include/boost/mp11/detail/mp_list.hpp:
 
 /usr/include/boost/algorithm/string/constants.hpp:
@@ -11732,6 +11740,18 @@ CMakeFiles/application.dir/src/parse.cpp.o: /mnt/c/Users/tutor/MSU/Nauchka/singl
 
 /usr/include/x86_64-linux-gnu/bits/iscanonical.h:
 
+/usr/include/boost/function_types/property_tags.hpp:
+
+/usr/include/boost/proto/detail/preprocessed/make_expr_.hpp:
+
+/usr/include/boost/swap.hpp:
+
+/usr/include/boost/fusion/algorithm/transformation/insert_range.hpp:
+
+/usr/include/boost/range/size.hpp:
+
+/usr/include/boost/core/allocator_access.hpp:
+
 /usr/include/boost/mpl/aux_/advance_backward.hpp:
 
 /usr/include/boost/blank_fwd.hpp:
@@ -11747,28 +11767,6 @@ CMakeFiles/application.dir/src/parse.cpp.o: /mnt/c/Users/tutor/MSU/Nauchka/singl
 /usr/include/boost/xpressive/detail/core/action.hpp:
 
 /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/RandomSearch.h:
-
-/usr/include/boost/parameter/aux_/pack/tag_deduced.hpp:
-
-/usr/include/boost/fusion/algorithm/query/detail/segmented_find.hpp:
-
-/usr/include/boost/smart_ptr/shared_array.hpp:
-
-/usr/include/boost/multi_index_container.hpp:
-
-/usr/include/boost/graph/detail/is_distributed_selector.hpp:
-
-/usr/include/boost/parameter/binding.hpp:
-
-/usr/include/boost/mpl/order_fwd.hpp:
-
-/usr/include/boost/mpl/deref.hpp:
-
-/usr/include/boost/fusion/iterator/key_of.hpp:
-
-/usr/include/boost/mpl/set/set0.hpp:
-
-/usr/include/boost/fusion/view/joint_view/detail/value_of_impl.hpp:
 
 /usr/include/boost/function_types/detail/synthesize_impl/arity20_1.hpp:
 
@@ -11818,21 +11816,13 @@ CMakeFiles/application.dir/src/parse.cpp.o: /mnt/c/Users/tutor/MSU/Nauchka/singl
 
 /usr/include/boost/iterator/advance.hpp:
 
-/usr/include/boost/function_types/detail/components_impl/arity10_1.hpp:
-
-/usr/include/boost/mp11/set.hpp:
-
-/usr/include/boost/fusion/view/filter_view/detail/size_impl.hpp:
-
-/usr/include/boost/integer_fwd.hpp:
-
-/usr/include/boost/config.hpp:
-
-/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/ScheduleCorrector.h:
-
-/usr/include/boost/type_traits/has_nothrow_assign.hpp:
-
 /usr/include/boost/function_types/detail/components_as_mpl_sequence.hpp:
+
+/usr/include/boost/fusion/algorithm/query/find.hpp:
+
+/usr/include/boost/function_types/detail/pp_variate_loop/preprocessed.hpp:
+
+/usr/include/boost/preprocessor/repetition/enum_shifted_params.hpp:
 
 /usr/include/boost/fusion/view/joint_view/detail/end_impl.hpp:
 
@@ -11851,48 +11841,6 @@ CMakeFiles/application.dir/src/parse.cpp.o: /mnt/c/Users/tutor/MSU/Nauchka/singl
 /usr/include/c++/13/debug/debug.h:
 
 /usr/include/boost/xpressive/detail/core/linker.hpp:
-
-/usr/include/boost/function_types/property_tags.hpp:
-
-/usr/include/boost/proto/detail/preprocessed/make_expr_.hpp:
-
-/usr/include/boost/swap.hpp:
-
-/usr/include/boost/fusion/algorithm/transformation/insert_range.hpp:
-
-/usr/include/boost/range/size.hpp:
-
-/usr/include/boost/core/allocator_access.hpp:
-
-/usr/include/boost/core/snprintf.hpp:
-
-/usr/include/boost/algorithm/string/config.hpp:
-
-/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/Schedule.h:
-
-/usr/include/boost/fusion/view/single_view/single_view_iterator.hpp:
-
-/usr/include/boost/type_traits/has_negate.hpp:
-
-/usr/include/boost/preprocessor/seq/push_back.hpp:
-
-/usr/include/boost/function/function1.hpp:
-
-/usr/include/boost/multi_index/detail/index_matcher.hpp:
-
-/usr/include/boost/algorithm/string/detail/util.hpp:
-
-/usr/include/boost/implicit_cast.hpp:
-
-/usr/include/boost/xpressive/detail/static/compile.hpp:
-
-/usr/include/boost/graph/adjacency_list.hpp:
-
-/usr/include/boost/config/detail/select_platform_config.hpp:
-
-/usr/include/boost/multi_index/detail/serialization_version.hpp:
-
-/usr/include/asm-generic/errno.h:
 
 /usr/include/boost/fusion/iterator/advance.hpp:
 
@@ -11961,6 +11909,36 @@ CMakeFiles/application.dir/src/parse.cpp.o: /mnt/c/Users/tutor/MSU/Nauchka/singl
 /usr/include/c++/13/backward/binders.h:
 
 /usr/include/boost/function_types/detail/pp_tags/cc_tag.hpp:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/boost/multi_index/detail/serialization_version.hpp:
+
+/usr/include/boost/core/snprintf.hpp:
+
+/usr/include/boost/algorithm/string/config.hpp:
+
+/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/Schedule.h:
+
+/usr/include/boost/fusion/view/single_view/single_view_iterator.hpp:
+
+/usr/include/boost/type_traits/has_negate.hpp:
+
+/usr/include/boost/preprocessor/seq/push_back.hpp:
+
+/usr/include/boost/function/function1.hpp:
+
+/usr/include/boost/multi_index/detail/index_matcher.hpp:
+
+/usr/include/boost/algorithm/string/detail/util.hpp:
+
+/usr/include/boost/implicit_cast.hpp:
+
+/usr/include/boost/xpressive/detail/static/compile.hpp:
+
+/usr/include/boost/graph/adjacency_list.hpp:
+
+/usr/include/boost/config/detail/select_platform_config.hpp:
 
 /usr/include/boost/fusion/view/transform_view/detail/equal_to_impl.hpp:
 
@@ -12041,6 +12019,28 @@ CMakeFiles/application.dir/src/parse.cpp.o: /mnt/c/Users/tutor/MSU/Nauchka/singl
 /usr/include/boost/preprocessor/debug/error.hpp:
 
 /usr/include/boost/fusion/support/detail/enabler.hpp:
+
+/usr/include/boost/mpl/order_fwd.hpp:
+
+/usr/include/boost/mpl/deref.hpp:
+
+/usr/include/boost/fusion/iterator/key_of.hpp:
+
+/usr/include/boost/mpl/set/set0.hpp:
+
+/usr/include/boost/fusion/view/joint_view/detail/value_of_impl.hpp:
+
+/usr/include/boost/parameter/aux_/pack/tag_deduced.hpp:
+
+/usr/include/boost/fusion/algorithm/query/detail/segmented_find.hpp:
+
+/usr/include/boost/smart_ptr/shared_array.hpp:
+
+/usr/include/boost/multi_index_container.hpp:
+
+/usr/include/boost/graph/detail/is_distributed_selector.hpp:
+
+/usr/include/boost/parameter/binding.hpp:
 
 /usr/include/boost/predef/os/os400.h:
 
@@ -12245,12 +12245,6 @@ CMakeFiles/application.dir/src/parse.cpp.o: /mnt/c/Users/tutor/MSU/Nauchka/singl
 /usr/include/boost/mpl/aux_/O1_size_impl.hpp:
 
 /usr/include/boost/preprocessor/tuple/replace.hpp:
-
-/usr/include/boost/function_types/detail/pp_variate_loop/preprocessed.hpp:
-
-/usr/include/boost/preprocessor/repetition/enum_shifted_params.hpp:
-
-/usr/include/boost/fusion/algorithm/query/find.hpp:
 
 /usr/include/boost/mp11/detail/mp_count.hpp:
 
@@ -12978,8 +12972,6 @@ CMakeFiles/application.dir/src/parse.cpp.o: /mnt/c/Users/tutor/MSU/Nauchka/singl
 
 /usr/include/boost/graph/subgraph.hpp:
 
-/usr/include/boost/parameter/aux_/set.hpp:
-
 /usr/include/boost/parameter/aux_/tag.hpp:
 
 /usr/include/boost/parameter/aux_/tagged_argument_fwd.hpp:
@@ -13143,6 +13135,8 @@ CMakeFiles/application.dir/src/parse.cpp.o: /mnt/c/Users/tutor/MSU/Nauchka/singl
 /usr/include/boost/predef/compiler/iar.h:
 
 /usr/include/boost/predef/compiler/kai.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:
 
 /usr/include/boost/program_options.hpp:
 
@@ -14325,6 +14319,8 @@ CMakeFiles/application.dir/src/parse.cpp.o: /mnt/c/Users/tutor/MSU/Nauchka/singl
 /usr/include/boost/type_traits/has_multiplies_assign.hpp:
 
 /usr/include/boost/type_traits/has_not_equal_to.hpp:
+
+/usr/include/boost/type_traits/has_nothrow_assign.hpp:
 
 /usr/include/boost/type_traits/has_nothrow_destructor.hpp:
 

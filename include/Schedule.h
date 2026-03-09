@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <string>
+#include <map>
 #include "general_types.h"
 #include "json.hpp"
 
@@ -44,6 +45,19 @@ namespace scheduling_problem
     };
 
     /**
+     * Processor-time placement metadata for a job in multiprocessor schedule.
+     */
+    struct JobPlacement
+    {
+        /** Processor index where the job executes. */
+        unsigned processor = 0;
+        /** Job start time. */
+        weight_t start = 0;
+        /** Job finish time. */
+        weight_t finish = 0;
+    };
+
+    /**
      * Sequence of jobs forming a (partial or complete) schedule.
      *
      * The schedule tracks:
@@ -61,6 +75,8 @@ namespace scheduling_problem
         weight_t cost_, target_;
         /** Schedule name (used in JSON I/O). */
         std::string name_;
+        /** Optional per-job placement metadata for multiprocessor schedules. */
+        std::map<size_t, JobPlacement> placement_;
 
     public:
         /**
@@ -107,6 +123,35 @@ namespace scheduling_problem
          * @return Cached peak usage.
          */
         weight_t cost() const;
+
+        /**
+         * Set cached objective/cost explicitly.
+         *
+         * @param value  Objective value to store.
+         */
+        void setCost(weight_t value);
+
+        /**
+         * Set placement metadata for a specific job.
+         *
+         * @param id         Job id (vertex id).
+         * @param processor  Processor index.
+         * @param start      Start time.
+         * @param finish     Finish time.
+         */
+        void setPlacement(size_t id, unsigned processor, weight_t start, weight_t finish);
+
+        /**
+         * Get all stored placement metadata.
+         *
+         * @return Map: job id -> placement.
+         */
+        const std::map<size_t, JobPlacement> &placement() const;
+
+        /**
+         * Remove all placement metadata.
+         */
+        void clearPlacement();
 
         /**
          * Append a job by components and update invariants.

@@ -197,9 +197,9 @@ namespace scheduling_problem
          * Properly destroys the current value and copies the other's value and type.
          *
          * @param other  Source parameter.
-         * @return Newly assigned parameter.
+         * @return Reference to this object.
          */
-        parameter operator=(const parameter &other);
+        parameter &operator=(const parameter &other);
 
         /**
          * Add two numeric parameters and return the result.
@@ -235,7 +235,7 @@ namespace scheduling_problem
          * @param other  RHS parameter.
          * @return *this after modification.
          */
-        parameter operator+=(const parameter &other);
+        parameter &operator+=(const parameter &other);
 
         /**
          * In-place subtraction of a numeric RHS.
@@ -243,7 +243,7 @@ namespace scheduling_problem
          * @param other  RHS parameter.
          * @return *this after modification.
          */
-        parameter operator-=(const parameter &other);
+        parameter &operator-=(const parameter &other);
 
         /**
          * In-place multiplication by a numeric RHS.
@@ -251,7 +251,7 @@ namespace scheduling_problem
          * @param other  RHS parameter.
          * @return *this after modification.
          */
-        parameter operator*=(const parameter &other);
+        parameter &operator*=(const parameter &other);
 
         /**
          * Implicit conversion to unsigned integer.

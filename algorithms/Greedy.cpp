@@ -1,599 +1,511 @@
-﻿#include "Greedy.h"
+#include "Greedy.h"
+
 #include <algorithm>
-#include <boost/range/irange.hpp>
-#include <boost/range/adaptor/reversed.hpp>
-#include "general_types.h"
-
-#include <iostream>
-#include <vector>
-#include <map>
+#include <numeric>
 #include <set>
+#include <stdexcept>
 #include <string>
-#include <sstream>
-#include <climits>
+#include <tuple>
+#include <unordered_map>
+#include <vector>
 
-namespace scheduling_problem::algorithms {
+#include "BufferIndex.h"
 
+namespace scheduling_problem::algorithms
+{
+    namespace
+    {
+        struct ProcSlot
+        {
+            size_t task = 0;
+            weight_t start = 0;
+            weight_t finish = 0;
+        };
 
-using namespace std;
+        struct GroupState
+        {
+            weight_t weight = 0;
+            size_t remaining = 0;
+            weight_t parent_start = 0;
+            weight_t parent_finish = 0;
+            weight_t max_consumer_finish = 0;
+            bool parent_scheduled = false;
+        };
 
+        struct Event
+        {
+            weight_t time = 0;
+            weight_t delta = 0;
+        };
 
-vector<string> graphToContentFormatted(const auto& graph) {
-    vector<string> content;
-    
-    // Структура: vertex -> vector of (buffer_id, weight, targets)
-    map<Vertex, vector<tuple<int, weight_t, vector<Vertex>>>> vertexData;
-    
-    // Собираем информацию о ребрах с учетом buffer_id
-    for (auto e : boost::make_iterator_range(boost::edges(graph))) {
-        Vertex source = boost::source(e, graph);
-        Vertex target = boost::target(e, graph);
-        int buffer_id = boost::get(edge_buffer_id_t(), graph, e);
-        weight_t weight = boost::get(boost::edge_weight, graph, e);
-        
-        // Находим или создаем запись для этого buffer_id
-        auto& buffers = vertexData[source];
-        auto it = find_if(buffers.begin(), buffers.end(), 
-                         [buffer_id](const auto& tuple) { 
-                             return get<0>(tuple) == buffer_id; 
-                         });
-        
-        if (it != buffers.end()) {
-            // Проверяем, что вес совпадает
-            if (get<1>(*it) != weight) {
-                cerr << "Warning: Different weights for same buffer_id " 
-                     << buffer_id << " in vertex " << source << endl;
+        inline bool isUnlimited(weight_t limit)
+        {
+            return limit == std::numeric_limits<weight_t>::max();
+        }
+
+        weight_t durationOf(const Graph &graph, size_t v)
+        {
+            auto exec = boost::get(vertex_exec_time_t(), graph);
+            auto w = boost::get(vertex_weight_t(), graph);
+            const auto d = exec[v];
+            return d > 0 ? d : std::max<weight_t>(1, w[v]);
+        }
+
+        weight_t earliestStartOnProcessor(const std::vector<ProcSlot> &slots,
+                                          weight_t dep_ready,
+                                          weight_t duration)
+        {
+            weight_t t = dep_ready;
+            for (const auto &slot : slots)
+            {
+                if (t + duration <= slot.start)
+                    return t; // Fits in a hole.
+                if (t < slot.finish)
+                    t = slot.finish;
             }
-            get<2>(*it).push_back(target);
-        } else {
-            buffers.push_back({buffer_id, weight, {target}});
+            return t;
+        }
+
+        void appendBaseMemoryEvents(const std::vector<std::unordered_map<int, GroupState>> &groups,
+                                    std::vector<Event> &events)
+        {
+            for (const auto &by_bid : groups)
+            {
+                for (const auto &[bid, gs] : by_bid)
+                {
+                    (void)bid;
+                    if (!gs.parent_scheduled || gs.weight <= 0)
+                        continue;
+
+                    events.push_back({gs.parent_start, gs.weight});
+                    if (gs.remaining == 0)
+                    {
+                        const auto free_time = std::max(gs.parent_finish, gs.max_consumer_finish);
+                        events.push_back({free_time, -gs.weight});
+                    }
+                }
+            }
+        }
+
+        bool feasibleUnderMemory(weight_t memory_limit,
+                                 const std::vector<std::unordered_map<int, GroupState>> &groups,
+                                 size_t candidate,
+                                 weight_t cand_start,
+                                 weight_t cand_finish,
+                                 const std::vector<std::vector<std::pair<size_t, int>>> &incoming_groups)
+        {
+            if (isUnlimited(memory_limit))
+                return true;
+
+            std::vector<Event> events;
+            events.reserve(2 * groups.size() + 16);
+            appendBaseMemoryEvents(groups, events);
+
+            // New allocations produced by candidate buffers.
+            if (candidate < groups.size())
+            {
+                for (const auto &[bid, gs] : groups[candidate])
+                {
+                    (void)bid;
+                    if (gs.weight > 0)
+                        events.push_back({cand_start, gs.weight});
+                }
+            }
+
+            // Releases caused by closing parent buffers on this candidate.
+            if (candidate < incoming_groups.size())
+            {
+                for (const auto &[parent, bid] : incoming_groups[candidate])
+                {
+                    if (parent >= groups.size())
+                        continue;
+                    auto it = groups[parent].find(bid);
+                    if (it == groups[parent].end())
+                        continue;
+                    const auto &gs = it->second;
+                    if (!gs.parent_scheduled || gs.weight <= 0 || gs.remaining == 0)
+                        continue;
+                    if (gs.remaining == 1)
+                    {
+                        const auto free_time = std::max(gs.parent_finish,
+                                                        std::max(gs.max_consumer_finish, cand_finish));
+                        events.push_back({free_time, -gs.weight});
+                    }
+                }
+            }
+
+            std::sort(events.begin(), events.end(),
+                      [](const Event &a, const Event &b)
+                      {
+                          if (a.time != b.time)
+                              return a.time < b.time;
+                          return a.delta < b.delta; // Release before allocate on same timestamp.
+                      });
+
+            weight_t used = 0;
+            for (const auto &ev : events)
+            {
+                used += ev.delta;
+                if (used < 0)
+                    used = 0;
+                if (used > memory_limit)
+                    return false;
+            }
+            return true;
+        }
+
+        weight_t minRequiredMemory(const additionals::BufferIndex &bindex)
+        {
+            weight_t need = 0;
+            for (const auto &by_bid : bindex.groups)
+            {
+                for (const auto &[bid, info] : by_bid)
+                {
+                    (void)bid;
+                    need = std::max(need, info.weight);
+                }
+            }
+            return need;
         }
     }
-    
-    // Сортируем вершины
-    vector<Vertex> vertices;
-    auto vertex_range = boost::vertices(graph);
-    for (auto it = vertex_range.first; it != vertex_range.second; ++it) {
-        vertices.push_back(*it);
+
+    Greedy::Greedy(const std::string &label)
+        : BaseOptimization(label)
+    {
     }
-    sort(vertices.begin(), vertices.end());
-    
-    // Создаем отформатированные строки
-    for (Vertex v : vertices) {
-        stringstream ss;
-        
-        // Номер вершины (выравнивание до 12 символов)
-        ss << v;
-        string vertexStr = ss.str();
-        ss.str("");
-        ss << vertexStr;
-        for (int i = vertexStr.length(); i < 12; ++i) {
-            ss << " ";
+
+    std::unique_ptr<BaseOptimization> Greedy::copy() const
+    {
+        return std::unique_ptr<BaseOptimization>(new Greedy(*this));
+    }
+
+    void Greedy::setParams(const ParamSet &params)
+    {
+        for (const auto &[name, val] : params)
+        {
+            if (name == "processors")
+            {
+                processors_ = std::max(1u, (unsigned)val);
+            }
+            else if (name == "memory_limit")
+            {
+                const auto raw = (double)val;
+                const auto inf_like = static_cast<double>(std::numeric_limits<weight_t>::max() / 2);
+                if (raw >= inf_like)
+                    memory_limit_ = std::numeric_limits<weight_t>::max();
+                else
+                    memory_limit_ = static_cast<weight_t>(raw);
+            }
+            else
+            {
+                BaseOptimization::setParams({{name, val}});
+            }
         }
-        
-        // Добавляем информацию о буферах
-        if (vertexData.find(v) != vertexData.end()) {
-            const auto& buffers = vertexData[v];
-            
-            // Сортируем буферы по buffer_id для единообразия
-            vector<tuple<int, weight_t, vector<Vertex>>> sorted_buffers = buffers;
-            sort(sorted_buffers.begin(), sorted_buffers.end(),
-                [](const auto& a, const auto& b) {
-                    return get<0>(a) < get<0>(b);
+    }
+
+    ParamSet Greedy::getParams() const
+    {
+        auto params = BaseOptimization::getParams();
+        params["processors"] = processors_;
+        params["memory_limit"] = static_cast<double>(memory_limit_);
+        return params;
+    }
+
+    Schedule Greedy::schedule_(const Graph &graph)
+    {
+        const size_t n = boost::num_vertices(graph);
+        if (n == 0)
+            return Schedule(0, graph.name());
+
+        const unsigned pcount = std::max(1u, processors_);
+
+        std::vector<std::vector<size_t>> parents(n), children(n);
+        std::vector<size_t> remaining_parents(n, 0);
+        std::vector<weight_t> duration(n, 1);
+        for (size_t v = 0; v < n; ++v)
+            duration[v] = durationOf(graph, v);
+
+        for (auto e : boost::make_iterator_range(boost::edges(graph)))
+        {
+            if (boost::get(edge_kind_t(), graph, e) != EdgeKind::Real)
+                continue;
+            const auto u = static_cast<size_t>(boost::source(e, graph));
+            const auto v = static_cast<size_t>(boost::target(e, graph));
+            children[u].push_back(v);
+            parents[v].push_back(u);
+            remaining_parents[v]++;
+        }
+
+        const auto bindex = additionals::buildBufferIndex(graph);
+        const auto min_required = minRequiredMemory(bindex);
+        if (!isUnlimited(memory_limit_) && memory_limit_ < min_required)
+        {
+            throw std::invalid_argument(
+                "Memory limit " + std::to_string(memory_limit_) +
+                " is too small for graph '" + graph.name() +
+                "'. Minimal required value is " + std::to_string(min_required) + ".");
+        }
+
+        std::vector<std::unordered_map<int, GroupState>> groups(n);
+        for (size_t parent = 0; parent < bindex.groups.size(); ++parent)
+        {
+            for (const auto &[bid, info] : bindex.groups[parent])
+            {
+                GroupState gs;
+                gs.weight = info.weight;
+                gs.remaining = info.consumers.size();
+                groups[parent][bid] = gs;
+            }
+        }
+
+        std::vector<std::vector<std::pair<size_t, int>>> incoming_groups(n);
+        for (auto e : boost::make_iterator_range(boost::edges(graph)))
+        {
+            if (boost::get(edge_kind_t(), graph, e) != EdgeKind::Real)
+                continue;
+            const auto u = static_cast<size_t>(boost::source(e, graph));
+            const auto v = static_cast<size_t>(boost::target(e, graph));
+            const int bid = boost::get(edge_buffer_id_t(), graph, e);
+            incoming_groups[v].push_back({u, bid});
+        }
+        for (auto &lst : incoming_groups)
+        {
+            std::sort(lst.begin(), lst.end());
+            lst.erase(std::unique(lst.begin(), lst.end()), lst.end());
+        }
+
+        std::vector<std::vector<ProcSlot>> proc_slots(pcount);
+        std::vector<char> scheduled(n, 0);
+        std::vector<weight_t> start_time(n, 0), finish_time(n, 0);
+        std::vector<unsigned> proc_of(n, 0);
+
+        std::set<size_t> ready;
+        for (size_t v = 0; v < n; ++v)
+            if (remaining_parents[v] == 0)
+                ready.insert(v);
+
+        size_t done = 0;
+        while (done < n)
+        {
+            if (ready.empty())
+                throw std::runtime_error("Cannot continue greedy scheduling: graph is not a DAG.");
+
+            bool found = false;
+            size_t best_task = 0;
+            unsigned best_proc = 0;
+            weight_t best_start = 0;
+            weight_t best_finish = 0;
+
+            for (const auto task : ready)
+            {
+                weight_t dep_ready = 0;
+                for (const auto p : parents[task])
+                    dep_ready = std::max(dep_ready, finish_time[p]);
+
+                for (unsigned p = 0; p < pcount; ++p)
+                {
+                    const auto start = earliestStartOnProcessor(proc_slots[p], dep_ready, duration[task]);
+                    const auto finish = start + duration[task];
+
+                    if (!feasibleUnderMemory(memory_limit_, groups, task, start, finish, incoming_groups))
+                        continue;
+
+                    if (!found ||
+                        start < best_start ||
+                        (start == best_start && (task < best_task ||
+                                                 (task == best_task && p < best_proc))))
+                    {
+                        found = true;
+                        best_task = task;
+                        best_proc = p;
+                        best_start = start;
+                        best_finish = finish;
+                    }
+                }
+            }
+
+            if (!found)
+            {
+                throw std::runtime_error(
+                    "No feasible greedy placement under memory limit " +
+                    std::to_string(memory_limit_) +
+                    " for graph '" + graph.name() + "'.");
+            }
+
+            // Commit task placement.
+            auto &slots = proc_slots[best_proc];
+            ProcSlot slot{best_task, best_start, best_finish};
+            auto it = std::lower_bound(
+                slots.begin(), slots.end(), slot,
+                [](const ProcSlot &a, const ProcSlot &b)
+                {
+                    if (a.start != b.start)
+                        return a.start < b.start;
+                    if (a.finish != b.finish)
+                        return a.finish < b.finish;
+                    return a.task < b.task;
                 });
-            
-            for (size_t i = 0; i < sorted_buffers.size(); ++i) {
-                const auto& buffer = sorted_buffers[i];
-                weight_t weight = get<1>(buffer);
-                const auto& targets = get<2>(buffer);
-                
-                ss << weight << ":";
-                
-                // Сортируем потомков для единообразия
-                vector<Vertex> sorted_targets = targets;
-                sort(sorted_targets.begin(), sorted_targets.end());
-                
-                for (size_t j = 0; j < sorted_targets.size(); ++j) {
-                    ss << " " << sorted_targets[j];
-                }
-                
-                // Добавляем запятую и отступ, если это не последний буфер
-                if (i < sorted_buffers.size() - 1) {
-                    ss << ",      ";
+            slots.insert(it, slot);
+
+            scheduled[best_task] = 1;
+            start_time[best_task] = best_start;
+            finish_time[best_task] = best_finish;
+            proc_of[best_task] = best_proc;
+            done++;
+
+            // Parent-side buffer allocations.
+            for (auto &[bid, gs] : groups[best_task])
+            {
+                (void)bid;
+                gs.parent_scheduled = true;
+                gs.parent_start = best_start;
+                gs.parent_finish = best_finish;
+            }
+
+            // Child-side potential closures.
+            for (const auto &[parent, bid] : incoming_groups[best_task])
+            {
+                if (parent >= groups.size())
+                    continue;
+                auto git = groups[parent].find(bid);
+                if (git == groups[parent].end())
+                    continue;
+                auto &gs = git->second;
+                if (gs.remaining > 0)
+                {
+                    gs.remaining--;
+                    gs.max_consumer_finish = std::max(gs.max_consumer_finish, best_finish);
                 }
             }
-        } else {
-            // Если у вершины нет исходящих ребер
-            ss << "0:";
+
+            ready.erase(best_task);
+            for (const auto child : children[best_task])
+            {
+                if (remaining_parents[child] > 0)
+                {
+                    remaining_parents[child]--;
+                    if (remaining_parents[child] == 0)
+                        ready.insert(child);
+                }
+            }
         }
-        
-        content.push_back(ss.str());
+
+        std::vector<size_t> order(n);
+        std::iota(order.begin(), order.end(), 0);
+        std::stable_sort(order.begin(), order.end(),
+                         [&](size_t a, size_t b)
+                         {
+                             if (start_time[a] != start_time[b])
+                                 return start_time[a] < start_time[b];
+                             if (finish_time[a] != finish_time[b])
+                                 return finish_time[a] < finish_time[b];
+                             return a < b;
+                         });
+
+        Schedule out(n, graph.name());
+        weight_t makespan = 0;
+        for (const auto v : order)
+        {
+            out.push(v, duration[v], 0);
+            out.setPlacement(v, proc_of[v], start_time[v], finish_time[v]);
+            makespan = std::max(makespan, finish_time[v]);
+        }
+        out.setCost(makespan);
+        return out;
     }
-    
-    return content;
+
+    size_t Greedy::choice(const Graph &graph,
+                          const ScheduleStatus &schedule,
+                          size_t curr_vid)
+    {
+        auto heu = heuInfo(graph, schedule, curr_vid);
+        return std::max_element(heu.begin(), heu.end(),
+                                [](const auto &a, const auto &b)
+                                { return a.second < b.second; })
+            ->first;
+    }
+
+    std::unordered_map<size_t, double>
+    Greedy::heuInfo(const Graph &graph, const ScheduleStatus &status, size_t curr_vid)
+    {
+        const size_t lower = status.lower(curr_vid, graph);
+        const size_t pos_count = status.size() + 1 - lower;
+
+        std::unordered_map<size_t, double> out;
+        out.reserve(pos_count);
+
+        if (status.size() == 0)
+        {
+            out[0] = 1.0;
+            return out;
+        }
+
+        std::vector<weight_t> targets(pos_count);
+        weight_t stable_cost = 0, stable_target = 0;
+
+        for (size_t pos = 0; pos < lower; ++pos)
+        {
+            stable_target += status[pos].volume;
+            if (stable_target > stable_cost)
+                stable_cost = stable_target;
+            stable_target -= status[pos].release;
+        }
+
+        weight_t target = 0;
+        const weight_t w_curr = boost::get(vertex_weight_t(), graph, curr_vid);
+        for (size_t pos = 0; pos < status.size(); ++pos)
+        {
+            target += status[pos].volume;
+            if (pos >= lower)
+                targets[pos - lower] = target;
+            target -= status[pos].release;
+        }
+        targets[pos_count - 1] = target + w_curr;
+
+        weight_t base_max = std::max(stable_cost, *std::max_element(targets.begin(), targets.end()));
+        out[status.size()] = 1.0 / std::max<weight_t>(1, base_max);
+
+        size_t last_child = 0, child_remain = 0;
+        weight_t curr_release = boost::out_degree(curr_vid, graph) ? 0 : w_curr;
+        std::vector<std::pair<size_t, weight_t>> released;
+        for (auto parent : status.parents(curr_vid, graph))
+        {
+            std::tie(child_remain, last_child) = status.releaseOn(parent, graph);
+            if (child_remain == 1)
+            {
+                const auto pw = boost::get(vertex_weight_t(), graph, parent);
+                released.emplace_back(last_child, pw);
+                curr_release += pw;
+            }
+        }
+        std::sort(released.begin(), released.end(),
+                  [](const auto &a, const auto &b)
+                  { return a.first < b.first; });
+
+        weight_t right_max = 0, left_max = 0;
+        for (size_t curr_pos = status.size(); curr_pos-- > lower;)
+        {
+            for (const auto &rel : released)
+            {
+                if (rel.first == curr_pos)
+                    curr_release -= rel.second;
+                else if (rel.first > curr_pos)
+                    break;
+            }
+            const size_t idx = curr_pos - lower;
+            const size_t next = idx + 1;
+
+            targets[idx] = targets[idx] - status[curr_pos].volume + w_curr;
+            targets[next] = targets[idx] - curr_release + status[curr_pos].volume;
+
+            if (targets[next] > right_max)
+                right_max = targets[next];
+            left_max = *std::max_element(targets.begin(), targets.begin() + next);
+
+            const weight_t cost_max = std::max(left_max, right_max);
+            out[curr_pos] = 1.0 / std::max<weight_t>(1, cost_max);
+        }
+
+        return out;
+    }
 }
-
-// Глобальная структура данных для хранения информации о вершинах
-// dct[vertex] = vector<pair<int, set<int>>> где:
-// - первый элемент пары - вес буфера
-// - второй элемент - множество потомков
-map<int, vector<pair<int, set<int>>>> dct;
-
-// Вспомогательная функция для разделения строки
-vector<string> split(const string& s, char delimiter) {
-    vector<string> tokens;
-    string token;
-    istringstream tokenStream(s);
-    while (getline(tokenStream, token, delimiter)) {
-        tokens.push_back(token);
-    }
-    return tokens;
-}
-
-// Функция для удаления пробелов в начале и конце строки
-string trim(const string& str) {
-    size_t start = str.find_first_not_of(" \t\n\r");
-    size_t end = str.find_last_not_of(" \t\n\r");
-    if (start == string::npos || end == string::npos) {
-        return "";
-    }
-    return str.substr(start, end - start + 1);
-}
-
-// Функция целевой функции
-long long goal_function(const std::vector<int>& part_sched, int kk = -1) {
-    long long f_hp = 0, f_hp_kk = 0;
-    // kk = -1;
-    for (size_t k = 0; k < part_sched.size(); k++) {
-        long long f_hp_k = 0;
-        
-        // Первая сумма
-        for (size_t i = 0; i <= k; i++) {
-            int vertex = part_sched[i];
-            for (const auto& buf : dct[vertex]) {
-                f_hp_k += buf.first;
-            }
-        }
-        
-        // Вторая сумма (вычитание)
-        for (size_t i = 0; i < k; i++) {
-            int vertex = part_sched[i];
-            const auto& cur_list = dct[vertex];
-            for (const auto& buf : cur_list) {
-                bool all_in_schedule = true;
-                for (int desc : buf.second) {
-                    bool found = false;
-                    for (size_t idx = 0; idx < k; idx++) {
-                        if (part_sched[idx] == desc) {
-                            found = true;
-                            break;
-                        }
-                    }
-                    if (!found) {
-                        all_in_schedule = false;
-                        break;
-                    }
-                }
-                if (all_in_schedule) {
-                    f_hp_k -= buf.first;
-                }
-            }
-        }
-        if (k >= kk and kk != -1) {
-            f_hp_kk = std::max(f_hp_kk, f_hp_k);
-        }
-        f_hp = std::max(f_hp, f_hp_k);
-    }
-    if (kk != -1) {
-        return f_hp_kk;
-    }
-    return f_hp;
-}
-
-bool allElementsInVector(const set<int>& elements, const vector<int>& vec, int k) {
-    for (int elem : elements) {
-        bool found = false;
-        for (int i = 0; i < k; i++) {
-            if (vec[i] == elem) {
-                found = true;
-                break;
-            }
-        }
-        if (!found) {
-            return false;
-        }
-    }
-    return true;
-}
-
-Greedy::Greedy(const std::string& label)
-    : BaseOptimization(label) {}
-
-std::unique_ptr<BaseOptimization> Greedy::copy() const {
-    return std::unique_ptr<BaseOptimization>(new Greedy(*this));
-}
-
-// ВАЖНО: без дефолтного ctor ScheduleStatus. Используем локальный scope,
-// чтобы рабочий буфер был уничтожен ДО возврата (срез пика памяти).
-Schedule Greedy::schedule_(const Graph &graph) {
-    
-    // std::cout << "Greedy::schedule_" << std::endl;
-    /*
-    auto vertex_range = boost::vertices(graph);
-    for (auto it = vertex_range.first; it != vertex_range.second; ++it) {
-        Vertex v = *it;
-        std::cout << "Vertex: " << v << std::endl;
-    }
-    auto edge_range = boost::edges(graph);
-    for (auto it = edge_range.first; it != edge_range.second; ++it) {
-        auto e = *it;
-        Vertex source = boost::source(e, graph);
-        Vertex target = boost::target(e, graph);
-        
-        std::cout << "Edge: " << source << " -> " << target << std::endl;
-    }
-    for (auto e : boost::make_iterator_range(boost::edges(graph))) {
-        Vertex source = boost::source(e, graph);
-        Vertex target = boost::target(e, graph);
-        
-        int buffer_id = boost::get(edge_buffer_id_t(), graph, e);
-        weight_t weight = boost::get(boost::edge_weight, graph, e);
-        EdgeKind kind = boost::get(edge_kind_t(), graph, e);
-        size_t edge_index = boost::get(boost::edge_index_t(), graph, e);
-        
-        std::cout << "Edge " << source << " -> " << target 
-                  << ": buffer_id=" << buffer_id 
-                  << ", weight=" << weight 
-                  << ", kind=" << (kind == EdgeKind::Real ? "Real" : "Imaginary")
-                  << ", index=" << edge_index << std::endl;
-    }
-    */
-    
-    
-    // Имитация содержимого файла (аналог content из Python)
-    /*
-    vector<string> content = {
-        "0            10: 1      3,      15: 2",
-        "1             6: 4",
-        "2             7: 4", 
-        "3             9: 4",
-        "4             0:"
-    };
-    */
-    
-    vector<string> content = graphToContentFormatted(graph);
-    /*
-    for (const string& line : content) {
-        cout << line << endl;
-    }
-    */
-    
-    // Тип как требуется - vector пар
-    std::vector<std::pair<int, std::set<int>>> vertexes_with_ancestors;
-    dct.clear();
-
-    // Парсинг данных
-    for (size_t i = 0; i < content.size(); i++) {
-        std::stringstream ss(content[i]);
-        int cur_v;
-        ss >> cur_v;
-        
-        // Проверяем, есть ли уже такая вершина в vertexes_with_ancestors
-        bool vertex_exists = false;
-        for (auto& pair : vertexes_with_ancestors) {
-            if (pair.first == cur_v) {
-                vertex_exists = true;
-                break;
-            }
-        }
-        if (!vertex_exists) {
-            vertexes_with_ancestors.push_back({cur_v, std::set<int>()});
-        }
-        
-        // Остальная часть строки
-        std::string rest;
-        std::getline(ss, rest);
-        rest = rest.substr(rest.find_first_not_of(" "));
-        
-        std::vector<std::string> lst;
-        size_t pos = 0;
-        while ((pos = rest.find(',')) != std::string::npos) {
-            lst.push_back(rest.substr(0, pos));
-            rest = rest.substr(pos + 1);
-        }
-        lst.push_back(rest);
-        
-        std::vector<std::pair<int, std::set<int>>> buffers;
-        
-        for (const auto& buf_str : lst) {
-            std::stringstream buf_ss(buf_str);
-            std::string token;
-            std::vector<std::string> buf_v;
-            
-            while (buf_ss >> token) {
-                buf_v.push_back(token);
-            }
-            
-            if (buf_v.empty()) continue;
-            
-            // Извлекаем число (убираем двоеточие)
-            std::string num_str = buf_v[0];
-            if (num_str.back() == ':') {
-                num_str.pop_back();
-            }
-            int num = std::stoi(num_str);
-            
-            std::set<int> descendants;
-            for (size_t j = 1; j < buf_v.size(); j++) {
-                int vert = std::stoi(buf_v[j]);
-                descendants.insert(vert);
-                
-                // Обновляем vertexes_with_ancestors
-                bool desc_exists = false;
-                for (auto& pair : vertexes_with_ancestors) {
-                    if (pair.first == vert) {
-                        pair.second.insert(cur_v);
-                        desc_exists = true;
-                        break;
-                    }
-                }
-                if (!desc_exists) {
-                    vertexes_with_ancestors.push_back({vert, {cur_v}});
-                }
-            }
-            
-            buffers.push_back({num, descendants});
-        }
-        
-        dct[cur_v] = buffers;
-    }
-    /*
-    // Вывод словаря для проверки
-    std::cout << "vertexes_with_ancestors: " << std::endl;
-    for (auto& [key, value] : vertexes_with_ancestors) {
-        std::cout << key << ": {";
-        bool first = true;
-        for (int val : value) {
-            if (!first) std::cout << ", ";
-            std::cout << val;
-            first = false;
-        }
-        std::cout << "}" << std::endl;
-    }
-    */
-    // Копируем для использования позже
-    auto dct2 = vertexes_with_ancestors;
-
-    // Топологическая сортировка
-    std::vector<int> topo_sort;
-    auto temp_ancestors = vertexes_with_ancestors;
-    
-    while (topo_sort.size() < content.size()) {
-        bool found = false;
-        for (auto it = temp_ancestors.begin(); it != temp_ancestors.end(); ) {
-            if (it->second.empty()) {
-                int vertex = it->first;
-                topo_sort.push_back(vertex);
-                
-                // Удаляем вершину из временного контейнера
-                it = temp_ancestors.erase(it);
-                found = true;
-                
-                // Удаляем эту вершину из множеств предков всех остальных вершин
-                for (auto& pair : temp_ancestors) {
-                    pair.second.erase(vertex);
-                }
-                break;
-            } else {
-                ++it;
-            }
-        }
-        
-        if (!found) {
-            std::cout << "Цикл обнаружен!" << std::endl;
-            break;
-        }
-    }
-    /*
-    for (int cur_v : topo_sort) {
-        std::cout << cur_v << ' ';
-    }
-    std::cout << std::endl;
-    */
-    // Построение расписания
-    std::vector<int> schedule;
-    long long min_f = 0;
-
-    for (int cur_v : topo_sort) {
-        // Находим l_k
-        int l_k = 0;
-        for (int i = schedule.size() - 1; i >= 0; i--) {
-            bool is_ancestor = false;
-            for (const auto& pair : dct2) {
-                if (pair.first == cur_v) {
-                    if (pair.second.find(schedule[i]) != pair.second.end()) {
-                        is_ancestor = true;
-                        break;
-                    }
-                }
-            }
-            if (is_ancestor) {
-                l_k = i + 1;
-                break;
-            }
-        }
-
-        std::vector<int> best_schedule;
-        min_f = 0;
-
-        for (size_t d = l_k; d <= schedule.size(); d++) {
-            std::vector<int> test_schedule = schedule;
-            test_schedule.insert(test_schedule.begin() + d, cur_v);
-            long long f_value;
-            if (d < schedule.size()) {
-                f_value = goal_function(test_schedule, l_k);
-            }
-            else {
-                f_value = goal_function(test_schedule);
-            }
-            
-            if (best_schedule.empty()) {
-                best_schedule = test_schedule;
-                min_f = f_value;
-            } else if (f_value < min_f) {
-                best_schedule = test_schedule;
-                min_f = f_value;
-            }
-        }
-        
-        schedule = best_schedule;
-    }
-    /*
-    // Вывод результата
-    std::cout << "Schedule: ";
-    for (int v : schedule) {
-        std::cout << v << " ";
-    }
-    std::cout << "with cost: " << min_f << std::endl;
-    */
-    // Дополнительные вычисления
-    std::vector<long long> incr_mas = {0};
-    std::vector<long long> decr_mas;
-    std::vector<int> part_sched = schedule;
-    
-    for (size_t k = 0; k < part_sched.size(); k++) {
-        long long f_hp_k = 0;
-        
-        for (size_t i = 0; i <= k; i++) {
-            int vertex = part_sched[i];
-            for (const auto& buf : dct[vertex]) {
-                f_hp_k += buf.first;
-            }
-        }
-        incr_mas.push_back(f_hp_k);
-        
-        long long decr = 0;
-        for (size_t i = 0; i < k; i++) {
-            int vertex = part_sched[i];
-            const auto& cur_list = dct[vertex];
-            for (const auto& buf : cur_list) {
-                bool all_in_schedule = true;
-                for (int desc : buf.second) {
-                    bool found = false;
-                    for (size_t idx = 0; idx < k; idx++) {
-                        if (part_sched[idx] == desc) {
-                            found = true;
-                            break;
-                        }
-                    }
-                    if (!found) {
-                        all_in_schedule = false;
-                        break;
-                    }
-                }
-                if (all_in_schedule) {
-                    decr += buf.first;
-                }
-            }
-        }
-        decr_mas.push_back(decr);
-    }
-    
-    decr_mas.push_back(incr_mas.back());
-    /*
-    for (size_t i = 0; i < schedule.size(); i++) {
-        std::cout << schedule[i] << " " 
-                  << incr_mas[i + 1] - incr_mas[i] << " " 
-                  << decr_mas[i + 1] - decr_mas[i] << std::endl;
-    }
-    */
-    Schedule out(0, graph.name());
-    for (int i = 0; i < schedule.size(); i++) {
-        out.push(schedule[i], incr_mas[i + 1] - incr_mas[i], decr_mas[i + 1] - decr_mas[i]);
-    }
-    out.cost(true);
-    return out;
-}
-
-size_t Greedy::choice(const Graph &graph,
-                      const ScheduleStatus &schedule,
-                      size_t curr_vid)
-{
-    auto heu = heuInfo(graph, schedule, curr_vid);
-    return std::max_element(heu.begin(), heu.end(),
-                            [](const auto& a, const auto& b){
-                                return a.second < b.second;
-                            })->first;
-}
-
-// Heuristic: 1 / max_target после «вставки»
-std::unordered_map<size_t,double>
-Greedy::heuInfo(const Graph& graph, const ScheduleStatus& status, size_t curr_vid)
-{
-    const size_t lower = status.lower(curr_vid, graph);
-    const size_t pos_count = status.size() + 1 - lower;
-
-    std::unordered_map<size_t,double> out;
-    out.reserve(pos_count);
-
-    if (status.size() == 0) { out[0] = 1.0; return out; }
-
-    std::vector<weight_t> targets(pos_count);
-    weight_t stable_cost = 0, stable_target = 0;
-
-    for (size_t pos = 0; pos < lower; ++pos) {
-        stable_target += status[pos].volume;
-        if (stable_target > stable_cost) stable_cost = stable_target;
-        stable_target -= status[pos].release;
-    }
-
-    weight_t target = 0;
-    const weight_t w_curr = boost::get(vertex_weight_t(), graph, curr_vid);
-    for (size_t pos = 0; pos < status.size(); ++pos) {
-        target += status[pos].volume;
-        if (pos >= lower) targets[pos - lower] = target;
-        target -= status[pos].release;
-    }
-    targets[pos_count - 1] = target + w_curr;
-
-    weight_t base_max = std::max(stable_cost,
-        *std::max_element(targets.begin(), targets.end()));
-    out[status.size()] = 1.0 / std::max<weight_t>(1, base_max);
-
-    size_t last_child = 0, child_remain = 0;
-    weight_t curr_release = boost::out_degree(curr_vid, graph) ? 0 : w_curr;
-    std::vector<std::pair<size_t, weight_t>> released;
-    for (auto parent : status.parents(curr_vid, graph)) {
-        std::tie(child_remain, last_child) = status.releaseOn(parent, graph);
-        if (child_remain == 1) {
-            const auto pw = boost::get(vertex_weight_t(), graph, parent);
-            released.emplace_back(last_child, pw);
-            curr_release += pw;
-        }
-    }
-    std::sort(released.begin(), released.end(),
-              [](const auto& a, const auto& b){ return a.first < b.first; });
-
-    weight_t right_max = 0, left_max = 0;
-    for (size_t curr_pos = status.size(); curr_pos-- > lower; ) {
-        for (const auto& rel : released) {
-            if (rel.first == curr_pos) curr_release -= rel.second;
-            else if (rel.first > curr_pos) break;
-        }
-        const size_t idx = curr_pos - lower;
-        const size_t next = idx + 1;
-
-        targets[idx]  = targets[idx]  - status[curr_pos].volume + w_curr;
-        targets[next] = targets[idx]  - curr_release + status[curr_pos].volume;
-
-        if (targets[next] > right_max) right_max = targets[next];
-        left_max = *std::max_element(targets.begin(), targets.begin() + next);
-
-        const weight_t cost_max = std::max(left_max, right_max);
-        out[curr_pos] = 1.0 / std::max<weight_t>(1, cost_max);
-    }
-
-    return out;
-}
-
-} // namespace scheduling_problem::algorithms

@@ -91,38 +91,54 @@ namespace scheduling_problem::additionals
                              const std::string &name,
                              std::mt19937 &rng)
     {
-        if (n_vertex <= n_edges - 1)
+        if (n_vertex <= 0 || n_edges < n_vertex - 1)
+            return Graph();
+        if (static_cast<size_t>(n_vertex) != weights.size())
+            return Graph();
+
+        const auto max_edges = n_vertex * (n_vertex - 1) / 2;
+        if (n_edges > max_edges)
+            return Graph();
+
+        Adjacencies adjacencies(n_edges);
+        std::unordered_set<weight_t> connections;
+
+        makeConnectedComponent(n_vertex, adjacencies, connections, rng);
+
+        weight_t current_edges_count = n_vertex - 1;
+        while (current_edges_count < n_edges)
         {
-            Adjacencies adjacencies(n_edges);
-            std::unordered_set<weight_t> connections;
-
-            makeConnectedComponent(n_vertex, adjacencies, connections, rng);
-
-            weight_t current_edges_count = n_vertex - 1;
-            while (current_edges_count < n_edges)
+            auto source = uniform_weight_t(0, n_vertex - 2)(rng);
+            auto target = uniform_weight_t(source + 1, n_vertex - 1)(rng);
+            if (!connections.count(source * n_vertex + target))
             {
-                auto source = uniform_weight_t(0, n_vertex - 2)(rng);
-                auto target = uniform_weight_t(source + 1, n_vertex - 1)(rng);
-                if (!connections.count(source * n_vertex + target))
-                {
-                    adjacencies[current_edges_count++] = {source, target};
-                    connections.insert(source * n_vertex + target);
-                }
+                adjacencies[current_edges_count++] = {source, target};
+                connections.insert(source * n_vertex + target);
             }
-
-            Graph graph(n_vertex, name);
-
-            std::sort(adjacencies.begin(), adjacencies.end());
-            for (auto &edge : adjacencies)
-                boost::add_edge(edge.first, edge.second, graph);
-
-            auto weight_map = boost::get(vertex_weight_t(), graph);
-            for (weight_t vertex_id(0); vertex_id < n_vertex; vertex_id++)
-                weight_map[vertex_id] = weights[vertex_id];
-
-            return graph;
         }
-        return Graph();
+
+        Graph graph(n_vertex, name);
+        auto weight_map = boost::get(vertex_weight_t(), graph);
+        auto exec_map = boost::get(vertex_exec_time_t(), graph);
+        for (weight_t vertex_id(0); vertex_id < n_vertex; vertex_id++)
+        {
+            weight_map[vertex_id] = weights[vertex_id];
+            exec_map[vertex_id] = weights[vertex_id];
+        }
+
+        std::vector<int> next_buffer_id(static_cast<size_t>(n_vertex), 0);
+        std::sort(adjacencies.begin(), adjacencies.end());
+        for (auto &edge : adjacencies)
+        {
+            auto [e, ok] = boost::add_edge(edge.first, edge.second, graph);
+            if (!ok)
+                continue;
+            boost::put(edge_buffer_id_t(), graph, e, next_buffer_id[static_cast<size_t>(edge.first)]++);
+            boost::put(boost::edge_weight, graph, e, weight_map[edge.first]);
+            boost::put(edge_kind_t(), graph, e, EdgeKind::Real);
+        }
+
+        return graph;
     }
 
     /**

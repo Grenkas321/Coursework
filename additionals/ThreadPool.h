@@ -121,7 +121,14 @@ namespace scheduling_problem::additionals
         template <class TReturnType, class TCallBack>
         static void execute(std::promise<TReturnType> &promise, TCallBack &task)
         {
-            promise.set_value(task());
+            try
+            {
+                promise.set_value(task());
+            }
+            catch (...)
+            {
+                promise.set_exception(std::current_exception());
+            }
         }
 
         /**
@@ -133,8 +140,15 @@ namespace scheduling_problem::additionals
         template <class TCallBack>
         static void execute(std::promise<void> &promise, TCallBack &task)
         {
-            task();
-            promise.set_value();
+            try
+            {
+                task();
+                promise.set_value();
+            }
+            catch (...)
+            {
+                promise.set_exception(std::current_exception());
+            }
         }
 
         /**

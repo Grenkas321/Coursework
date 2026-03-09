@@ -2,8 +2,7 @@ algorithms/CMakeFiles/algorithms.dir/Baseline.cpp.o: \
  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/Baseline.cpp \
  /usr/include/stdc-predef.h \
  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/Greedy.h \
- /usr/include/c++/13/unordered_map \
- /usr/include/c++/13/bits/requires_hosted.h \
+ /usr/include/c++/13/limits \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -14,7 +13,8 @@ algorithms/CMakeFiles/algorithms.dir/Baseline.cpp.o: \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
- /usr/include/c++/13/pstl/pstl_config.h \
+ /usr/include/c++/13/pstl/pstl_config.h /usr/include/c++/13/unordered_map \
+ /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/c++/13/initializer_list \
  /usr/include/c++/13/bits/unordered_map.h \
  /usr/include/c++/13/bits/hashtable.h \
@@ -73,7 +73,7 @@ algorithms/CMakeFiles/algorithms.dir/Baseline.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /usr/include/c++/13/limits /usr/include/c++/13/ctime /usr/include/time.h \
+ /usr/include/c++/13/ctime /usr/include/time.h \
  /usr/include/x86_64-linux-gnu/bits/time.h \
  /usr/include/x86_64-linux-gnu/bits/timex.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \

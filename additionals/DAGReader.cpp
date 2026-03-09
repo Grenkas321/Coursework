@@ -15,6 +15,7 @@ namespace scheduling_problem::additionals
     using scheduling_problem::edge_buffer_id_t;
     using scheduling_problem::edge_kind_t;
     using scheduling_problem::EdgeKind;
+    using scheduling_problem::vertex_exec_time_t;
     using scheduling_problem::vertex_weight_t;
     using scheduling_problem::weight_t;
 
@@ -65,7 +66,9 @@ namespace {
         : DAGPool(n_samples, batch_size), directory_(std::move(directory))
     {
         std::filesystem::recursive_directory_iterator it(directory_), end;
-        for (; it != end; ++it) paths_.push_back(it->path());
+        for (; it != end; ++it)
+            if (it->is_regular_file() && it->path().extension() == ".txt")
+                paths_.push_back(it->path());
         std::sort(paths_.begin(), paths_.end());
         if (paths_.size() < n_samples_ || !n_samples_) n_samples_ = paths_.size();
     }
@@ -82,16 +85,16 @@ namespace {
     {
         Batch graphs(batch_id_++);
         unsigned sample = 0;
-        while (current_sample_ < n_samples_ && sample < batch_size_)
+        while (current_sample_ < paths_.size() && emitted_samples_ < n_samples_ && sample < batch_size_)
         {
-            if (paths_[current_sample_].extension() == ".txt")
+            std::string filename = paths_[current_sample_].string();
+            if (isDAG(filename))
             {
-                std::string filename = paths_[current_sample_].string();
-                if (isDAG(filename))
-                    graphs.push_back(make(filename));
+                graphs.push_back(make(filename));
+                ++sample;
+                ++emitted_samples_;
             }
             ++current_sample_;
-            ++sample;
         }
         return graphs;
     }
@@ -246,8 +249,13 @@ namespace {
         Graph graph(n_vertex, graph_name);
 
         auto vweights = boost::get(vertex_weight_t(), graph);
+        auto vexec = boost::get(vertex_exec_time_t(), graph);
         for (auto &kv : weights)
-            vweights[ vertex_map[ static_cast<long long>(kv.first) ] ] = kv.second;
+        {
+            auto vid = vertex_map[ static_cast<long long>(kv.first) ];
+            vweights[vid] = kv.second;
+            vexec[vid] = kv.second;
+        }
 
         for (auto &kv : adjacencies)
         {
@@ -370,6 +378,7 @@ namespace {
         Graph graph(n_vertex, graph_name);
 
         auto vweights = boost::get(vertex_weight_t(), graph);
+        auto vexec = boost::get(vertex_exec_time_t(), graph);
         for (auto &kv : per_node)
         {
             long long raw = kv.first;
@@ -377,6 +386,7 @@ namespace {
             weight_t sum = 0;
             for (auto &bg : kv.second) sum += bg.w;
             vweights[v] = sum;
+            vexec[v] = sum;
         }
 
         for (auto &kv : per_node)

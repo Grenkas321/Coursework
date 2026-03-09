@@ -394,6 +394,30 @@ IterativeOptimization.cpp.s:
 	cd /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/build && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/algorithms.dir/build.make algorithms/CMakeFiles/algorithms.dir/IterativeOptimization.cpp.s
 .PHONY : IterativeOptimization.cpp.s
 
+LayeredSchedule.o: LayeredSchedule.cpp.o
+.PHONY : LayeredSchedule.o
+
+# target to build an object file
+LayeredSchedule.cpp.o:
+	cd /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/build && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/algorithms.dir/build.make algorithms/CMakeFiles/algorithms.dir/LayeredSchedule.cpp.o
+.PHONY : LayeredSchedule.cpp.o
+
+LayeredSchedule.i: LayeredSchedule.cpp.i
+.PHONY : LayeredSchedule.i
+
+# target to preprocess a source file
+LayeredSchedule.cpp.i:
+	cd /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/build && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/algorithms.dir/build.make algorithms/CMakeFiles/algorithms.dir/LayeredSchedule.cpp.i
+.PHONY : LayeredSchedule.cpp.i
+
+LayeredSchedule.s: LayeredSchedule.cpp.s
+.PHONY : LayeredSchedule.s
+
+# target to generate assembly for a file
+LayeredSchedule.cpp.s:
+	cd /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/build && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/algorithms.dir/build.make algorithms/CMakeFiles/algorithms.dir/LayeredSchedule.cpp.s
+.PHONY : LayeredSchedule.cpp.s
+
 RandomSearch.o: RandomSearch.cpp.o
 .PHONY : RandomSearch.o
 
@@ -628,6 +652,9 @@ help:
 	@echo "... IterativeOptimization.o"
 	@echo "... IterativeOptimization.i"
 	@echo "... IterativeOptimization.s"
+	@echo "... LayeredSchedule.o"
+	@echo "... LayeredSchedule.i"
+	@echo "... LayeredSchedule.s"
 	@echo "... RandomSearch.o"
 	@echo "... RandomSearch.i"
 	@echo "... RandomSearch.s"

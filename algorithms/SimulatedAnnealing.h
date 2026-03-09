@@ -1,6 +1,7 @@
 ﻿#pragma once
 
-#include "ScheduleCorrector.h"
+#include <limits>
+
 #include "IterativeOptimization.h"
 
 namespace scheduling_problem::algorithms
@@ -55,6 +56,16 @@ namespace scheduling_problem::algorithms
 
         std::unique_ptr<BaseOptimization> copy() const override;
 
+        /**
+         * Set SAO + layered scheduling parameters.
+         */
+        void setParams(const ParamSet &params) override;
+
+        /**
+         * Get SAO + layered scheduling parameters.
+         */
+        ParamSet getParams() const override;
+
 
         /**
          * Decide whether to accept a transition with the given energy delta at a temperature.
@@ -74,8 +85,12 @@ namespace scheduling_problem::algorithms
         ReductionRules reduction_rule_;
         /** @brief Function implementing the selected cooling schedule. */
         std::function<double(double, size_t)> reduceTemperature_;
-        /** @brief Local schedule transformer used to explore neighbors. */
-        ScheduleCorrector rebuilder_;
+        /** Number of processors in layered representation. */
+        unsigned processors_ = 1;
+        /** Memory limit used by layered evaluator (LLONG_MAX = unlimited). */
+        weight_t memory_limit_ = std::numeric_limits<weight_t>::max();
+        /** Penalty multiplier for memory overflow while searching. */
+        double overflow_penalty_ = 1e6;
 
         /**
          * @brief Main SAO loop (override from IterativeOptimization).

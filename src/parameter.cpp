@@ -217,8 +217,11 @@ namespace scheduling_problem
      * @details Destroys current heap-managed state if necessary, then deep/shallow copies
      *          the new value based on @p other.type().
      */
-    parameter parameter::operator=(const parameter &other)
+    parameter &parameter::operator=(const parameter &other)
     {
+        if (this == &other)
+            return *this;
+
         value_.destroy(type_);
         type_ = other.type();
         switch (other.type())
@@ -337,7 +340,7 @@ namespace scheduling_problem
      * @param other Right-hand operand.
      * @return Reference to this parameter after addition.
      */
-    parameter parameter::operator+=(const parameter &other)
+    parameter &parameter::operator+=(const parameter &other)
     {
         *this = *this + other;
         return *this;
@@ -348,7 +351,7 @@ namespace scheduling_problem
      * @param other Right-hand operand.
      * @return Reference to this parameter after subtraction.
      */
-    parameter parameter::operator-=(const parameter &other)
+    parameter &parameter::operator-=(const parameter &other)
     {
         *this = *this - other;
         return *this;
@@ -359,7 +362,7 @@ namespace scheduling_problem
      * @param other Right-hand operand.
      * @return Reference to this parameter after multiplication.
      */
-    parameter parameter::operator*=(const parameter &other)
+    parameter &parameter::operator*=(const parameter &other)
     {
         *this = *this * other;
         return *this;
@@ -512,10 +515,10 @@ namespace scheduling_problem
         switch (param.type())
         {
         case value_t::number_integer_unsigned:
-            out << param.value_.number;
+            out << param.value_.u_number;
             break;
         case value_t::number_integer:
-            out << param.value_.u_number;
+            out << param.value_.number;
             break;
         case value_t::number_float:
             out << param.value_.number_float;

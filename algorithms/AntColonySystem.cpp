@@ -61,16 +61,16 @@ size_t AntColonySystem::ArtificialAnt::choice(
 {
     auto desirability = heuInfo(graph, status, curr_vid);
     const size_t lower = status.lower(curr_vid, graph);
-    size_t upper = status.upper(curr_vid, graph);
-    if (upper < lower) upper = lower; // защитный случай
+    const size_t upper = status.upper(curr_vid, graph); // exclusive
 
     for (auto it = desirability.begin(); it != desirability.end(); ) {
-        if (it->first < lower || it->first > upper) it = desirability.erase(it);
+        if (it->first < lower || it->first >= upper) it = desirability.erase(it);
         else ++it;
     }
     if (desirability.empty())
         return lower;
 
+    constexpr double kEps = 1e-12;
     for (auto &[pos, heu_val] : desirability)
     {
         double phe_val = 1.0;
@@ -82,7 +82,9 @@ size_t AntColonySystem::ArtificialAnt::choice(
             else
                 phe_val *= matrix[prev_vid][curr_vid];
         }
-
+        phe_val = std::max(phe_val, kEps);
+        heu_val = std::max(heu_val, kEps);
+        heu_val = std::pow(phe_val, phe_influence) * std::pow(heu_val, heu_influence);
     }
 
     std::uniform_real_distribution<double> uid(0, 1);

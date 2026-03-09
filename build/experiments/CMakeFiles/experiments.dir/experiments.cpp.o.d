@@ -1529,7 +1529,6 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: \
  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/parameter.h \
  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/Greedy.h \
  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/ScheduleStatus.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/ConcurrentSAO.h \
  /usr/include/c++/13/future /usr/include/c++/13/condition_variable \
  /usr/include/c++/13/stop_token /usr/include/c++/13/atomic \
  /usr/include/c++/13/bits/std_thread.h /usr/include/c++/13/semaphore \
@@ -1538,9 +1537,10 @@ experiments/CMakeFiles/experiments.dir/experiments.cpp.o: \
  /usr/include/c++/13/bits/this_thread_sleep.h \
  /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/semaphore.h \
  /usr/include/x86_64-linux-gnu/bits/semaphore.h \
- /usr/include/c++/13/bits/atomic_futex.h /usr/include/c++/13/thread \
+ /usr/include/c++/13/bits/atomic_futex.h \
+ /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/ConcurrentSAO.h \
+ /usr/include/c++/13/thread \
  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/SimulatedAnnealing.h \
- /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/ScheduleCorrector.h \
  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/additionals/ThreadPool.h \
  /usr/include/c++/13/queue /usr/include/c++/13/bits/stl_queue.h \
  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/additionals/DataFrame.h \

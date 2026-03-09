@@ -1,6 +1,7 @@
 ﻿#include "experiments.h"
 
 #include <filesystem>
+#include <future>
 
 #include "ConcurrentSAO.h"
 #include "ThreadPool.h"
@@ -208,6 +209,7 @@ namespace scheduling_problem::experiments
     {
         additionals::DAGPool::Batch graphs;
         additionals::ThreadPool thread_pool(n_threads);
+        std::vector<std::future<void>> jobs;
         unsigned common_iters = dag_pool.samplesNum() * duplicates * algorithms.size();
         additionals::ProgressBar progress(STANDARD_BAR_LEN, common_iters);
         std::mutex threads_sync;
@@ -233,10 +235,18 @@ namespace scheduling_problem::experiments
                 if (dynamic_cast<algorithms::ConcurrentSAO*>(alg.get())) {
                     std::filesystem::create_directories(alg_output_path + "/conveyor/best");
                 }
-                        runOnBatch(graphs, alg->copy(), alg_output_path,
-                            duplicates, progress, threads_sync,save_params);
+                BaseOptimization *alg_ptr = alg.get();
+                jobs.push_back(thread_pool.enqueue(
+                    [graphs, alg_output_path, duplicates, save_params, &progress, &threads_sync, alg_ptr]()
+                    {
+                        runOnBatch(graphs, alg_ptr->copy(), alg_output_path,
+                                   duplicates, progress, threads_sync, save_params);
+                    }));
             }
         }
+
+        for (auto &job : jobs)
+            job.get();
     }
 
     /**
@@ -257,6 +267,7 @@ namespace scheduling_problem::experiments
     {
         additionals::DAGPool::Batch batch;
         additionals::ThreadPool thread_pool(n_threads);
+        std::vector<std::future<void>> jobs;
         std::mutex thread_sync;
         unsigned common_dups = std::accumulate(dup_set.begin(), dup_set.end(), 0);
         unsigned common_iters = dag_pool.samplesNum() * common_dups * algorithms.size();
@@ -264,20 +275,24 @@ namespace scheduling_problem::experiments
         SaveParams config;
         while ((batch = dag_pool.nextBatch()))
             for (auto& alg : algorithms) {
+                BaseOptimization *alg_ptr = alg.get();
                 std::string alg_output_path(output_path + "/" + alg->label());
                 std::filesystem::create_directory(alg_output_path);
 
                 for (auto duplicates : dup_set) {
                     auto alg_dup_output(alg_output_path + "/dups_" + std::to_string(duplicates));
                     std::filesystem::create_directories(alg_dup_output + "/table_data");
-                    thread_pool.enqueue([batch, alg_dup_output, &alg, &thread_sync, &progress, duplicates, config]
+                    jobs.push_back(thread_pool.enqueue([batch, alg_dup_output, alg_ptr, &thread_sync, &progress, duplicates, config]
                         {
-                            runOnBatch(batch, alg->copy(), alg_dup_output,
+                            runOnBatch(batch, alg_ptr->copy(), alg_dup_output,
                                 duplicates, progress, thread_sync, config);
                         }
-                    );
+                    ));
                 }
             }
+
+        for (auto &job : jobs)
+            job.get();
     }
 
     /**

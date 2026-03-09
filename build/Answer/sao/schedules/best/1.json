@@ -1,1 +1,0 @@
-{"1":{"cost":28,"size":6,"schedule":{"0":[5,0],"2":[9,0],"1":[15,0],"5":[1,0],"3":[6,0],"4":[2,0]},"placement":{"0":{"processor":1,"start":0,"finish":5},"1":{"processor":0,"start":5,"finish":20},"2":{"processor":1,"start":5,"finish":14},"3":{"processor":0,"start":20,"finish":26},"4":{"processor":0,"start":26,"finish":28},"5":{"processor":1,"start":20,"finish":21}}}}

@@ -1,64 +1,59 @@
-﻿#pragma once
+#pragma once
+
+#include <limits>
 
 #include <unordered_map>
+
 #include "BaseOptimization.h"
 #include "ScheduleStatus.h"
 
 namespace scheduling_problem::algorithms
 {
     /**
-     * @brief Implements %greedy scheduling algorithm
-     *
-     * Makes a schedule, at each step choosing the task to insert
-     * in such a way that the value of the goal function is the minimum
-     * possible. The input graph must be
-     * sorted topologically.
+     * Deterministic greedy list scheduler:
+     * - chooses the next task by earliest feasible start time,
+     * - places into the earliest processor hole that fits dependencies,
+     * - enforces a hard memory limit.
      */
     class Greedy : public virtual BaseOptimization
     {
+    private:
+        /** Number of processors for placement. */
+        unsigned processors_ = 1;
+        /** Memory limit (LLONG_MAX means unlimited). */
+        weight_t memory_limit_ = std::numeric_limits<weight_t>::max();
 
     public:
-        /**
-         * @param label Algorithm name
-         */
-        Greedy(const std::string &label = "greedy");
-        /**
-         * Copy constructor
-         */
+        explicit Greedy(const std::string &label = "greedy");
         Greedy(const Greedy &other) = default;
 
+        std::unique_ptr<BaseOptimization> copy() const override;
+
         /**
-         * @return Pointer to the object
+         * Recognized params:
+         * - processors (unsigned)
+         * - memory_limit (number)
          */
-        virtual std::unique_ptr<BaseOptimization> copy() const override;
+        void setParams(const ParamSet &params) override;
+
+        ParamSet getParams() const override;
 
     protected:
-        /**
-         * Constructs a schedule for a given graph
-         * @param graph Input graph
-         * @return Constructed schedule
-         */
-        virtual Schedule schedule_(const Graph &graph);
+        Schedule schedule_(const Graph &graph) override;
 
         /**
-         * @param graph Topologically sorted graph
-         * @param schedule %Schedule for inserting the task
-         * @param curr_vid Task node number
-         * @return Possible positions for task
+         * Backward-compatible heuristic API used by ACO ants.
+         * Returns desirability (higher is better) for each insertion position.
          */
         std::unordered_map<size_t, double> heuInfo(const Graph &graph,
                                                    const ScheduleStatus &schedule,
                                                    size_t curr_vid);
 
         /**
-         * @param graph Topologically sorted graph
-         * @param schedule %Schedule for inserting the task
-         * @param curr_vid Task node number
-         * @return Chosen  insert position
+         * Choose insertion position by maximal desirability.
          */
         size_t choice(const Graph &graph,
                       const ScheduleStatus &schedule,
                       size_t curr_vid);
     };
-
 }
