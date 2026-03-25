@@ -1,5 +1,6 @@
 ﻿#include "experiments.h"
 
+#include <chrono>
 #include <filesystem>
 #include <future>
 
@@ -77,6 +78,7 @@ namespace scheduling_problem::experiments
         additionals::DataFrame<std::string, std::string, size_t> dataframe(columns);
         bool is_iterative = dynamic_cast<IterativeOptimization*>(optimizer.get()) ? 1 : 0;
         for (auto& graph : batch) {
+            const auto graph_start = std::chrono::steady_clock::now();
             Schedule best_solution;
             std::vector<weight_t> best_dynamics;
             std::vector<double> best_temp_dynamic, best_probs_dynamic, best_lambda_dynamic;
@@ -97,6 +99,7 @@ namespace scheduling_problem::experiments
 
             for (unsigned step(1); step <= duplicates; step++) {
                 auto solution = optimizer->schedule(graph);
+                solution.setRuntimeUs(optimizer->duration());
                 if (!best_solution.size() || best_solution.cost() > solution.cost()) {
                     best_solution = solution;
                     if (is_iterative) {
@@ -149,8 +152,11 @@ namespace scheduling_problem::experiments
                 if (save_params.make_tables)
                     dataframe.append({ graph.name(), row });
 
-                if (save_params.schedules != SaveParams::Mode::NONE)
-                    best_solution.dump(output_path + "/schedules/best/" + graph.name() + ".json");
+                std::string best_schedule_path;
+                if (save_params.schedules != SaveParams::Mode::NONE) {
+                    best_schedule_path = output_path + "/schedules/best/" + graph.name() + ".json";
+                    best_solution.dump(best_schedule_path);
+                }
 
                 if (is_iterative && save_params.dynamics != SaveParams::Mode::NONE) {
                     std::ofstream file(output_path + "/dynamics/best/" + graph.name() + ".txt");
@@ -179,6 +185,15 @@ namespace scheduling_problem::experiments
                         file << std::endl;
                     }
                 }
+
+                const auto graph_stop = std::chrono::steady_clock::now();
+                const auto total_runtime_us =
+                    std::chrono::duration_cast<std::chrono::microseconds>(graph_stop - graph_start).count();
+                best_solution.setRuntimeUs(total_runtime_us);
+
+                // Rewrite the final best schedule with end-to-end graph runtime metadata.
+                if (!best_schedule_path.empty())
+                    best_solution.dump(best_schedule_path);
             }
         }
 

@@ -146,6 +146,8 @@ namespace parse
                     optimizer = std::unique_ptr<AntColonySystem>(new AntColonySystem());
                 else if (alg == "sao")
                     optimizer = std::unique_ptr<SimulatedAnnealing>(new SimulatedAnnealing());
+                else if (alg == "csao")
+                    optimizer = std::unique_ptr<ConcurrentSAO>(new ConcurrentSAO());
                 else if (alg == "greedy")
                     optimizer = std::unique_ptr<Greedy>(new Greedy());
                 else if (alg == "sp")

@@ -73,6 +73,8 @@ namespace scheduling_problem
     protected:
         /** Peak usage (objective) and current usage while replaying. */
         weight_t cost_, target_;
+        /** Wall-clock runtime of the algorithm that produced this schedule, in microseconds. */
+        long long runtime_us_ = 0;
         /** Schedule name (used in JSON I/O). */
         std::string name_;
         /** Optional per-job placement metadata for multiprocessor schedules. */
@@ -130,6 +132,20 @@ namespace scheduling_problem
          * @param value  Objective value to store.
          */
         void setCost(weight_t value);
+
+        /**
+         * Set runtime of the algorithm that produced this schedule.
+         *
+         * @param value  Runtime in microseconds.
+         */
+        void setRuntimeUs(long long value);
+
+        /**
+         * Get stored runtime of the algorithm that produced this schedule.
+         *
+         * @return Runtime in microseconds.
+         */
+        long long runtimeUs() const;
 
         /**
          * Set placement metadata for a specific job.

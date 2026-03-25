@@ -1,10 +1,26 @@
 ﻿#include "Schedule.h"
 #include <fstream>
 #include <algorithm>
+#include <cmath>
 #include <unordered_map>
 
 namespace scheduling_problem
 {
+    namespace
+    {
+        constexpr double kMicrosecondsPerSecond = 1000000.0;
+
+        double runtimeSeconds(long long runtime_us)
+        {
+            return static_cast<double>(runtime_us) / kMicrosecondsPerSecond;
+        }
+
+        long long runtimeMicroseconds(double runtime_sec)
+        {
+            return static_cast<long long>(std::llround(runtime_sec * kMicrosecondsPerSecond));
+        }
+    }
+
     /**
      * Construct an empty schedule with reserved capacity and a human-readable name.
      *
@@ -12,7 +28,7 @@ namespace scheduling_problem
      * @param name  Schedule identifier (also used as the JSON object key).
      */
     Schedule::Schedule(size_t size, const std::string &name)
-        : std::vector<Job>(), cost_(0), target_(0), name_(name)
+        : std::vector<Job>(), cost_(0), target_(0), runtime_us_(0), name_(name)
     {
         reserve(size);
     }
@@ -27,6 +43,7 @@ namespace scheduling_problem
         : std::vector<Job>(other),
           cost_(other.cost_),
           target_(other.target_),
+          runtime_us_(other.runtime_us_),
           name_(other.name_),
           placement_(other.placement_)
     {
@@ -42,11 +59,13 @@ namespace scheduling_problem
         : std::vector<Job>(std::move(other)),
           cost_(other.cost_),
           target_(other.target_),
+          runtime_us_(other.runtime_us_),
           name_(std::move(other.name_)),
           placement_(std::move(other.placement_))
     {
         other.cost_ = 0;
         other.target_ = 0;
+        other.runtime_us_ = 0;
     }
 
     /**
@@ -153,6 +172,22 @@ namespace scheduling_problem
     }
 
     /**
+     * Store runtime metadata for this schedule.
+     */
+    void Schedule::setRuntimeUs(long long value)
+    {
+        runtime_us_ = value;
+    }
+
+    /**
+     * Get runtime metadata for this schedule.
+     */
+    long long Schedule::runtimeUs() const
+    {
+        return runtime_us_;
+    }
+
+    /**
      * Save processor-time placement metadata for one job.
      */
     void Schedule::setPlacement(size_t id, unsigned processor, weight_t start, weight_t finish)
@@ -219,9 +254,12 @@ namespace scheduling_problem
      * Structure:
      * {
      *   "<name>": {
-     *     "cost": <number>,
+     *     "makespan": <number>,
      *     "size": <number>,
-     *     "schedule": { "<job_id>": [volume, release], ... }
+     *     "schedule": {
+     *       "<job_id>": { "processor": <p>, "start": <s>, "finish": <f> },
+     *       ...
+     *     }
      *   }
      * }
      *
@@ -230,15 +268,24 @@ namespace scheduling_problem
     nlohmann::ordered_json Schedule::json() const
     {
         nlohmann::ordered_json j;
-        j[name_]["cost"] = cost_;
+        j[name_]["makespan"] = cost_;
+        j[name_]["runtime_sec"] = runtimeSeconds(runtime_us_);
         j[name_]["size"] = size();
+        j[name_]["schedule"] = nlohmann::ordered_json::object();
         for (auto &job : *this)
         {
-            j[name_]["schedule"][std::to_string(job.id)] = {job.volume, job.release};
             auto pit = placement_.find(job.id);
-            if (pit != placement_.end())
+            if (pit == placement_.end())
             {
-                j[name_]["placement"][std::to_string(job.id)] = {
+                j[name_]["schedule"][std::to_string(job.id)] = {
+                    {"processor", 0u},
+                    {"start", 0},
+                    {"finish", 0}
+                };
+            }
+            else
+            {
+                j[name_]["schedule"][std::to_string(job.id)] = {
                     {"processor", pit->second.processor},
                     {"start", pit->second.start},
                     {"finish", pit->second.finish}
@@ -280,6 +327,7 @@ namespace scheduling_problem
             std::vector<Job>::operator=(other);
             cost_ = other.cost_;
             target_ = other.target_;
+            runtime_us_ = other.runtime_us_;
             name_ = other.name_;
             placement_ = other.placement_;
         }
@@ -300,10 +348,12 @@ namespace scheduling_problem
             std::vector<Job>::operator=(std::move(other));
             cost_   = other.cost_;
             target_ = other.target_;
+            runtime_us_ = other.runtime_us_;
             name_   = std::move(other.name_);
             placement_ = std::move(other.placement_);
             other.cost_ = 0;
             other.target_ = 0;
+            other.runtime_us_ = 0;
         }
         return *this;
     }
@@ -333,17 +383,40 @@ namespace scheduling_problem
         std::string name = j.items().begin().key().c_str();
         size_t sz = j[name]["size"];
         Schedule s(sz, name);
+        const bool has_new_format =
+            j[name].contains("schedule") &&
+            j[name]["schedule"].is_object() &&
+            !j[name]["schedule"].empty() &&
+            j[name]["schedule"].items().begin().value().is_object();
+
         for (auto &elem : j[name]["schedule"].items())
         {
             size_t job_id;
             std::stringstream ss(elem.key());
             ss >> job_id;
-            weight_t volume = elem.value()[0];
-            weight_t release = elem.value()[1];
-            s.push(job_id, volume, release);
+
+            if (elem.value().is_array() && elem.value().size() >= 2)
+            {
+                // Legacy format: "<job_id>": [volume, release]
+                weight_t volume = elem.value()[0];
+                weight_t release = elem.value()[1];
+                s.push(job_id, volume, release);
+            }
+            else
+            {
+                // New format stores timing/processor placement per job.
+                s.push(job_id, 0, 0);
+                if (elem.value().is_object())
+                {
+                    unsigned processor = elem.value().value("processor", 0u);
+                    weight_t start = elem.value().value("start", 0LL);
+                    weight_t finish = elem.value().value("finish", start);
+                    s.setPlacement(job_id, processor, start, finish);
+                }
+            }
         }
 
-        if (j[name].contains("placement") && j[name]["placement"].is_object())
+        if (!has_new_format && j[name].contains("placement") && j[name]["placement"].is_object())
         {
             for (auto &elem : j[name]["placement"].items())
             {
@@ -359,6 +432,15 @@ namespace scheduling_problem
             }
         }
 
+        if (j[name].contains("makespan"))
+            s.setCost(j[name]["makespan"]);
+        else if (j[name].contains("cost"))
+            s.setCost(j[name]["cost"]);
+        if (j[name].contains("runtime_sec"))
+            s.setRuntimeUs(runtimeMicroseconds(j[name]["runtime_sec"]));
+        else if (j[name].contains("runtime_us"))
+            s.setRuntimeUs(j[name]["runtime_us"]);
+
         return s;
     }
 
@@ -370,6 +452,7 @@ namespace scheduling_problem
         nlohmann::ordered_json j;
         j["name"] = name_;
         j["cost"] = cost_;
+        j["runtime_sec"] = runtimeSeconds(runtime_us_);
         j["size"] = size();
 
         if (with_schedule)

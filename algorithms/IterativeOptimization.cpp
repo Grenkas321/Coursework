@@ -65,9 +65,9 @@ namespace scheduling_problem::algorithms
     }
 
     /**
-     * Get the recorded cost dynamics (best cost per iteration/epoch).
+     * Get the recorded objective dynamics for the last run.
      *
-     * @return Vector of cost values collected during the last run.
+     * @return Vector of objective values collected during the last run.
      */
     std::vector<scheduling_problem::weight_t> IterativeOptimization::costDynamics() const
     {

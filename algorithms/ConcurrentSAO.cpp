@@ -63,6 +63,15 @@ namespace scheduling_problem::algorithms
 
         // 1) Стартовое решение: Greedy
         Greedy greedy;
+        ParamSet greedy_params;
+        auto pit = algo_params_.find("processors");
+        if (pit != algo_params_.end())
+            greedy_params["processors"] = pit->second;
+        auto mit = algo_params_.find("memory_limit");
+        if (mit != algo_params_.end())
+            greedy_params["memory_limit"] = mit->second;
+        if (!greedy_params.empty())
+            greedy.setParams(greedy_params);
         Schedule bestOverall = greedy.schedule(graph);
 
         unsigned noImprove = 0;

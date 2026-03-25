@@ -6,7 +6,7 @@ algorithms/CMakeFiles/algorithms.dir/AntColonySystem.cpp.o: /mnt/c/Users/tutor/M
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/BaseOptimization.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/Greedy.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/IterativeOptimization.h \
-  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/RandomSearch.h \
+  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/LayeredSchedule.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/TopologicalSort.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/Schedule.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/ScheduleStatus.h \
@@ -27161,8 +27161,10 @@ algorithms/CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.o: /mnt/c/Users/tuto
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/IterativeOptimization.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/LayeredSchedule.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/SimulatedAnnealing.h \
+  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/TopologicalSort.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/Schedule.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/ScheduleStatus.h \
+  /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/additionals.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/general_types.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/parameter.h \
   /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/json/json.hpp \
@@ -28547,6 +28549,7 @@ algorithms/CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.o: /mnt/c/Users/tuto
   /usr/include/c++/13/bits/stl_multiset.h \
   /usr/include/c++/13/bits/stl_numeric.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_queue.h \
   /usr/include/c++/13/bits/stl_raw_storage_iter.h \
   /usr/include/c++/13/bits/stl_relops.h \
   /usr/include/c++/13/bits/stl_set.h \
@@ -28628,6 +28631,7 @@ algorithms/CMakeFiles/algorithms.dir/SimulatedAnnealing.cpp.o: /mnt/c/Users/tuto
   /usr/include/c++/13/pstl/glue_memory_defs.h \
   /usr/include/c++/13/pstl/glue_numeric_defs.h \
   /usr/include/c++/13/pstl/pstl_config.h \
+  /usr/include/c++/13/queue \
   /usr/include/c++/13/random \
   /usr/include/c++/13/ratio \
   /usr/include/c++/13/set \
@@ -35075,6 +35079,14 @@ algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.o: /mnt/c/Users/tutor/M
 
 /usr/include/boost/mpl/aux_/lambda_arity_param.hpp:
 
+/usr/include/boost/mpl/aux_/reverse_iter_fold_impl.hpp:
+
+/usr/include/boost/multi_index/detail/hash_index_node.hpp:
+
+/usr/include/sched.h:
+
+/usr/include/boost/mpl/times.hpp:
+
 /usr/include/boost/mpl/apply_fwd.hpp:
 
 /usr/include/boost/parameter/aux_/preprocessor/impl/argument_specs.hpp:
@@ -35369,20 +35381,6 @@ algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.o: /mnt/c/Users/tutor/M
 
 /usr/include/boost/mpl/bool_fwd.hpp:
 
-/usr/include/boost/mpl/remove.hpp:
-
-/usr/include/boost/function_types/detail/encoding/aliases_def.hpp:
-
-/usr/include/boost/smart_ptr/bad_weak_ptr.hpp:
-
-/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/ScheduleStatus.h:
-
-/usr/include/boost/core/noncopyable.hpp:
-
-/usr/include/boost/type_traits/add_cv.hpp:
-
-/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/BaseOptimization.h:
-
 /usr/include/boost/parameter/required.hpp:
 
 /usr/include/boost/mpl/integral_c.hpp:
@@ -35421,18 +35419,6 @@ algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.o: /mnt/c/Users/tutor/M
 
 /usr/include/boost/multi_index/detail/index_node_base.hpp:
 
-/usr/include/boost/preprocessor/logical.hpp:
-
-/usr/include/boost/xpressive/detail/core/matchers.hpp:
-
-/usr/include/boost/fusion/view/single_view/detail/advance_impl.hpp:
-
-/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/general_types.h:
-
-/usr/include/boost/parameter/optional.hpp:
-
-/usr/include/boost/cstdint.hpp:
-
 /usr/include/boost/indirect_reference.hpp:
 
 /usr/include/boost/fusion/algorithm/iteration/detail/preprocessed/reverse_fold.hpp:
@@ -35447,45 +35433,33 @@ algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.o: /mnt/c/Users/tutor/M
 
 /usr/include/boost/config/detail/suffix.hpp:
 
-/usr/include/boost/mpl/contains.hpp:
+/usr/include/boost/parameter/optional.hpp:
 
-/usr/include/boost/config/detail/select_stdlib_config.hpp:
+/usr/include/boost/cstdint.hpp:
 
-/usr/include/boost/proto/detail/and_n.hpp:
+/usr/include/boost/preprocessor/logical.hpp:
 
-/usr/include/boost/mpl/set/aux_/size_impl.hpp:
+/usr/include/boost/xpressive/detail/core/matchers.hpp:
 
-/usr/include/boost/preprocessor/repetition/limits/for_256.hpp:
+/usr/include/boost/fusion/view/single_view/detail/advance_impl.hpp:
 
-/usr/include/boost/mpl/aux_/config/typeof.hpp:
+/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/general_types.h:
 
-/usr/include/boost/predef/architecture/x86/64.h:
+/usr/include/boost/mpl/remove.hpp:
 
-/usr/include/boost/proto/transform/detail/pass_through_impl.hpp:
+/usr/include/boost/function_types/detail/encoding/aliases_def.hpp:
 
-/usr/include/boost/preprocessor/facilities/is_empty.hpp:
+/usr/include/boost/smart_ptr/bad_weak_ptr.hpp:
 
-/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/Greedy.h:
+/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/ScheduleStatus.h:
 
-/usr/include/boost/fusion/view/transform_view/detail/begin_impl.hpp:
+/usr/include/boost/core/noncopyable.hpp:
 
-/usr/include/boost/parameter/aux_/pack/tag_deduced.hpp:
+/usr/include/boost/type_traits/add_cv.hpp:
 
-/usr/include/boost/type_traits/is_same.hpp:
+/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/BaseOptimization.h:
 
-/usr/include/boost/multi_index/detail/undef_if_constexpr_macro.hpp:
-
-/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/parameter.h:
-
-/usr/include/boost/preprocessor/list/adt.hpp:
-
-/usr/include/boost/mpl/apply.hpp:
-
-/usr/include/boost/config/detail/select_compiler_config.hpp:
-
-/usr/include/boost/fusion/container/vector/convert.hpp:
-
-/usr/include/boost/detail/select_type.hpp:
+/usr/include/boost/mpl/aux_/config/overload_resolution.hpp:
 
 /usr/include/boost/multi_index_container_fwd.hpp:
 
@@ -35506,6 +35480,18 @@ algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.o: /mnt/c/Users/tutor/M
 /usr/include/boost/fusion/view/zip_view/zip_view.hpp:
 
 /usr/include/c++/13/cstdint:
+
+/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/include/parameter.h:
+
+/usr/include/boost/preprocessor/list/adt.hpp:
+
+/usr/include/boost/mpl/apply.hpp:
+
+/usr/include/boost/config/detail/select_compiler_config.hpp:
+
+/usr/include/boost/fusion/container/vector/convert.hpp:
+
+/usr/include/boost/detail/select_type.hpp:
 
 /usr/include/boost/graph/detail/adjacency_list.hpp:
 
@@ -35567,27 +35553,51 @@ algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.o: /mnt/c/Users/tutor/M
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
+/usr/include/boost/function_types/detail/class_transform.hpp:
+
+/usr/include/boost/core/use_default.hpp:
+
+/usr/include/boost/fusion/algorithm/query/detail/any.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/stdint-least.h:
 
 /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/AntColonySystem.cpp:
 
 /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/ConcurrentSAO.h:
 
-/usr/include/boost/mpl/aux_/advance_backward.hpp:
+/usr/include/boost/mpl/contains.hpp:
+
+/usr/include/boost/config/detail/select_stdlib_config.hpp:
+
+/usr/include/boost/proto/detail/and_n.hpp:
+
+/usr/include/boost/mpl/set/aux_/size_impl.hpp:
 
 /usr/include/boost/blank_fwd.hpp:
 
+/usr/include/boost/mpl/aux_/advance_backward.hpp:
+
+/usr/include/boost/preprocessor/repetition/limits/for_256.hpp:
+
+/usr/include/boost/mpl/aux_/config/typeof.hpp:
+
+/usr/include/boost/predef/architecture/x86/64.h:
+
+/usr/include/boost/proto/transform/detail/pass_through_impl.hpp:
+
+/usr/include/boost/preprocessor/facilities/is_empty.hpp:
+
+/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/Greedy.h:
+
+/usr/include/boost/fusion/view/transform_view/detail/begin_impl.hpp:
+
+/usr/include/boost/parameter/aux_/pack/tag_deduced.hpp:
+
+/usr/include/boost/type_traits/is_same.hpp:
+
+/usr/include/boost/multi_index/detail/undef_if_constexpr_macro.hpp:
+
 /usr/include/boost/tti/gen/namespace_gen.hpp:
-
-/usr/include/boost/mpl/aux_/reverse_iter_fold_impl.hpp:
-
-/usr/include/boost/multi_index/detail/hash_index_node.hpp:
-
-/usr/include/sched.h:
-
-/usr/include/boost/mpl/times.hpp:
-
-/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/RandomSearch.h:
 
 /usr/include/boost/concept/assert.hpp:
 
@@ -35677,14 +35687,6 @@ algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.o: /mnt/c/Users/tutor/M
 
 /usr/include/string.h:
 
-/usr/include/boost/function_types/detail/class_transform.hpp:
-
-/usr/include/boost/core/use_default.hpp:
-
-/usr/include/boost/fusion/algorithm/query/detail/any.hpp:
-
-/usr/include/boost/mpl/aux_/config/overload_resolution.hpp:
-
 /usr/include/boost/predef/library/std/stdcpp3.h:
 
 /usr/include/boost/type_traits/integral_constant.hpp:
@@ -35694,6 +35696,8 @@ algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.o: /mnt/c/Users/tutor/M
 /usr/include/boost/graph/detail/adj_list_edge_iterator.hpp:
 
 /usr/include/boost/graph/adjacency_iterator.hpp:
+
+/usr/include/boost/type_traits/has_bit_and.hpp:
 
 /usr/include/c++/13/bits/locale_conv.h:
 
@@ -36702,8 +36706,6 @@ algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.o: /mnt/c/Users/tutor/M
 /usr/include/boost/type_traits/extent.hpp:
 
 /usr/include/boost/type_traits/function_traits.hpp:
-
-/usr/include/boost/type_traits/has_bit_and.hpp:
 
 /usr/include/boost/type_traits/has_bit_or.hpp:
 
@@ -37755,6 +37757,8 @@ algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.o: /mnt/c/Users/tutor/M
 
 /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/RandomSearch.cpp:
 
+/mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/RandomSearch.h:
+
 /usr/include/boost/xpressive/detail/core/matcher/repeat_begin_matcher.hpp:
 
 /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/ScheduleSPGraph.h:
@@ -37763,9 +37767,9 @@ algorithms/CMakeFiles/algorithms.dir/TopologicalSort.cpp.o: /mnt/c/Users/tutor/M
 
 /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/additionals/ScheduleChecker.h:
 
-/usr/include/boost/parameter/template_keyword.hpp:
-
 /usr/include/c++/13/bits/fs_path.h:
+
+/usr/include/boost/parameter/template_keyword.hpp:
 
 /mnt/c/Users/tutor/MSU/Nauchka/single-proc-alg/Coursework_mod/algorithms/ToOneSourceTarget.h:
 

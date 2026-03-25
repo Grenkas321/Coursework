@@ -101,12 +101,80 @@ namespace scheduling_problem::algorithms
             return makeListState(graph, processors);
 
         LayeredState state;
-        state.processors.assign(std::max(1u, processors), {});
+        const unsigned pcount = std::max(1u, processors);
+        state.processors.assign(pcount, {});
         state.proc_of.assign(n, 0);
         state.tier_of.assign(n, 0);
 
-        std::vector<weight_t> proc_load(state.processors.size(), 0);
         std::vector<char> placed(n, 0);
+        const auto &placement = schedule.placement();
+
+        // Warm-start: preserve processor/timing assignment when placement exists.
+        if (!placement.empty())
+        {
+            struct PlacedItem
+            {
+                size_t id = 0;
+                weight_t start = 0;
+                weight_t finish = 0;
+            };
+
+            std::vector<std::vector<PlacedItem>> per_proc(pcount);
+
+            for (const auto &job : schedule)
+            {
+                if (job.id >= n || placed[job.id])
+                    continue;
+                auto pit = placement.find(job.id);
+                if (pit == placement.end())
+                    continue;
+
+                unsigned p = pit->second.processor;
+                if (p >= pcount)
+                    p %= pcount;
+                per_proc[p].push_back({job.id, pit->second.start, pit->second.finish});
+                placed[job.id] = 1;
+            }
+
+            for (const auto &[id, plc] : placement)
+            {
+                if (id >= n || placed[id])
+                    continue;
+                unsigned p = plc.processor;
+                if (p >= pcount)
+                    p %= pcount;
+                per_proc[p].push_back({id, plc.start, plc.finish});
+                placed[id] = 1;
+            }
+
+            for (unsigned p = 0; p < pcount; ++p)
+            {
+                auto &chain = per_proc[p];
+                std::stable_sort(chain.begin(), chain.end(),
+                                 [](const PlacedItem &a, const PlacedItem &b)
+                                 {
+                                     if (a.start != b.start)
+                                         return a.start < b.start;
+                                     if (a.finish != b.finish)
+                                         return a.finish < b.finish;
+                                     return a.id < b.id;
+                                 });
+
+                for (const auto &item : chain)
+                {
+                    state.proc_of[item.id] = p;
+                    state.tier_of[item.id] = state.processors[p].size();
+                    state.processors[p].push_back(item.id);
+                }
+            }
+        }
+
+        std::vector<weight_t> proc_load(state.processors.size(), 0);
+        for (unsigned p = 0; p < state.processors.size(); ++p)
+        {
+            for (const auto task : state.processors[p])
+                proc_load[p] += durationOf(graph, task);
+        }
 
         for (const auto &job : schedule)
         {

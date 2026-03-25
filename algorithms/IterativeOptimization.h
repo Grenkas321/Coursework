@@ -78,7 +78,7 @@ namespace scheduling_problem::algorithms
          */
         unsigned itersCount() const;
         /**
-         * Get the vector of cost on each algorithm step
+         * Get the vector of recorded objective values on each algorithm step.
          */
         std::vector<scheduling_problem::weight_t> costDynamics() const;
 

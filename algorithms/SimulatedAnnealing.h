@@ -91,6 +91,18 @@ namespace scheduling_problem::algorithms
         weight_t memory_limit_ = std::numeric_limits<weight_t>::max();
         /** Penalty multiplier for memory overflow while searching. */
         double overflow_penalty_ = 1e6;
+        /** Number of random neighbors sampled each SA step (best-of-k proposal). */
+        unsigned neighbor_trials_ = 8;
+        /** Number of random O1/O2 operations applied per sampled neighbor. */
+        unsigned perturbation_depth_ = 1;
+        /** Optional restart-to-best period by stagnation counter (0 disables). */
+        unsigned restart_period_ = 0;
+        /** Hard cap for total SA iterations (0 disables cap). */
+        unsigned max_iters_ = 1200;
+        /** Number of SA restarts from shaken best state. */
+        unsigned restarts_ = 3;
+        /** Number of random moves used for restart shake. */
+        unsigned kick_moves_ = 8;
 
         /**
          * @brief Main SAO loop (override from IterativeOptimization).
