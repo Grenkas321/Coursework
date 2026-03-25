@@ -19,6 +19,12 @@ namespace scheduling_problem
         {
             return static_cast<long long>(std::llround(runtime_sec * kMicrosecondsPerSecond));
         }
+
+        size_t effectiveDisplayId(const std::map<size_t, size_t> &display_ids, size_t internal_id)
+        {
+            auto it = display_ids.find(internal_id);
+            return it == display_ids.end() ? internal_id : it->second;
+        }
     }
 
     /**
@@ -45,7 +51,8 @@ namespace scheduling_problem
           target_(other.target_),
           runtime_us_(other.runtime_us_),
           name_(other.name_),
-          placement_(other.placement_)
+          placement_(other.placement_),
+          display_ids_(other.display_ids_)
     {
     }
 
@@ -61,7 +68,8 @@ namespace scheduling_problem
           target_(other.target_),
           runtime_us_(other.runtime_us_),
           name_(std::move(other.name_)),
-          placement_(std::move(other.placement_))
+          placement_(std::move(other.placement_)),
+          display_ids_(std::move(other.display_ids_))
     {
         other.cost_ = 0;
         other.target_ = 0;
@@ -212,6 +220,14 @@ namespace scheduling_problem
     }
 
     /**
+     * Store a human-readable id for JSON serialization.
+     */
+    void Schedule::setDisplayId(size_t id, size_t display_id)
+    {
+        display_ids_[id] = display_id;
+    }
+
+    /**
      * Append a job by its components.
      * Updates internal invariants (cost_/target_) as if the job were executed next.
      *
@@ -232,7 +248,10 @@ namespace scheduling_problem
     void Schedule::push(const Graph &graph, size_t id)
     {
         auto w = boost::get(vertex_weight_t(), graph, id);
+        auto nums = boost::get(vertex_num_t(), graph);
         auto rel = (boost::out_degree(id, graph) == 0) ? w : 0;
+        const auto raw_id = nums[id] == 0 && id != 0 ? id : static_cast<size_t>(nums[id]);
+        setDisplayId(id, raw_id);
         push(Job(id, w, rel));
     }
 
@@ -274,10 +293,11 @@ namespace scheduling_problem
         j[name_]["schedule"] = nlohmann::ordered_json::object();
         for (auto &job : *this)
         {
+            const auto display_id = effectiveDisplayId(display_ids_, job.id);
             auto pit = placement_.find(job.id);
             if (pit == placement_.end())
             {
-                j[name_]["schedule"][std::to_string(job.id)] = {
+                j[name_]["schedule"][std::to_string(display_id)] = {
                     {"processor", 0u},
                     {"start", 0},
                     {"finish", 0}
@@ -285,7 +305,7 @@ namespace scheduling_problem
             }
             else
             {
-                j[name_]["schedule"][std::to_string(job.id)] = {
+                j[name_]["schedule"][std::to_string(display_id)] = {
                     {"processor", pit->second.processor},
                     {"start", pit->second.start},
                     {"finish", pit->second.finish}
@@ -330,6 +350,7 @@ namespace scheduling_problem
             runtime_us_ = other.runtime_us_;
             name_ = other.name_;
             placement_ = other.placement_;
+            display_ids_ = other.display_ids_;
         }
         return *this;
     }
@@ -351,6 +372,7 @@ namespace scheduling_problem
             runtime_us_ = other.runtime_us_;
             name_   = std::move(other.name_);
             placement_ = std::move(other.placement_);
+            display_ids_ = std::move(other.display_ids_);
             other.cost_ = 0;
             other.target_ = 0;
             other.runtime_us_ = 0;
@@ -400,11 +422,13 @@ namespace scheduling_problem
                 // Legacy format: "<job_id>": [volume, release]
                 weight_t volume = elem.value()[0];
                 weight_t release = elem.value()[1];
+                s.setDisplayId(job_id, job_id);
                 s.push(job_id, volume, release);
             }
             else
             {
                 // New format stores timing/processor placement per job.
+                s.setDisplayId(job_id, job_id);
                 s.push(job_id, 0, 0);
                 if (elem.value().is_object())
                 {
@@ -460,7 +484,7 @@ namespace scheduling_problem
             for (const auto &job : *this)
             {
                 nlohmann::ordered_json item;
-                item["id"] = job.id;
+                item["id"] = effectiveDisplayId(display_ids_, job.id);
                 item["volume"] = job.volume;
                 item["release"] = job.release;
 
@@ -479,7 +503,8 @@ namespace scheduling_problem
         {
             for (const auto &[id, plc] : placement_)
             {
-                j["placement"][std::to_string(id)] = {
+                const auto display_id = effectiveDisplayId(display_ids_, id);
+                j["placement"][std::to_string(display_id)] = {
                     {"processor", plc.processor},
                     {"start", plc.start},
                     {"finish", plc.finish}

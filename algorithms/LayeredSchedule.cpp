@@ -340,8 +340,10 @@ namespace scheduling_problem::algorithms
                          });
 
         Schedule out(order.size(), graph.name());
+        auto nums = boost::get(vertex_num_t(), graph);
         for (const auto v : order)
         {
+            out.setDisplayId(v, static_cast<size_t>(nums[v]));
             out.push(v, durationOf(graph, v), 0);
             const auto proc = (v < state.proc_of.size()) ? state.proc_of[v] : 0u;
             const auto start = (v < eval.start.size()) ? eval.start[v] : 0;

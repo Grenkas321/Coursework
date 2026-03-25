@@ -79,6 +79,8 @@ namespace scheduling_problem
         std::string name_;
         /** Optional per-job placement metadata for multiprocessor schedules. */
         std::map<size_t, JobPlacement> placement_;
+        /** Optional mapping from internal vertex ids to original graph ids. */
+        std::map<size_t, size_t> display_ids_;
 
     public:
         /**
@@ -168,6 +170,14 @@ namespace scheduling_problem
          * Remove all placement metadata.
          */
         void clearPlacement();
+
+        /**
+         * Override the user-facing id used during JSON serialization.
+         *
+         * @param id          Internal vertex id.
+         * @param display_id  Original graph id to print in JSON.
+         */
+        void setDisplayId(size_t id, size_t display_id);
 
         /**
          * Append a job by components and update invariants.

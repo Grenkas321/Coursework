@@ -403,9 +403,11 @@ namespace scheduling_problem::algorithms
                          });
 
         Schedule out(n, graph.name());
+        auto nums = boost::get(vertex_num_t(), graph);
         weight_t makespan = 0;
         for (const auto v : order)
         {
+            out.setDisplayId(v, static_cast<size_t>(nums[v]));
             out.push(v, duration[v], 0);
             out.setPlacement(v, proc_of[v], start_time[v], finish_time[v]);
             makespan = std::max(makespan, finish_time[v]);

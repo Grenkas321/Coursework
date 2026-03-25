@@ -16,6 +16,7 @@ namespace scheduling_problem::additionals
     using scheduling_problem::edge_kind_t;
     using scheduling_problem::EdgeKind;
     using scheduling_problem::vertex_exec_time_t;
+    using scheduling_problem::vertex_num_t;
     using scheduling_problem::vertex_weight_t;
     using scheduling_problem::weight_t;
 
@@ -47,6 +48,20 @@ namespace {
                 std::tolower(static_cast<unsigned char>(prefix[i])))
                 return false;
         return std::strlen(prefix) <= t.size();
+    }
+
+    /**
+     * @brief Parse all signed integers from a whitespace-separated fragment.
+     * @param s Input text fragment.
+     * @return Parsed integer list in encounter order.
+     */
+    inline std::vector<long long> parseIntegers(const std::string& s)
+    {
+        std::vector<long long> values;
+        std::istringstream iss(s);
+        long long value = 0;
+        while (iss >> value) values.push_back(value);
+        return values;
     }
 } // anonymous namespace
 
@@ -250,11 +265,13 @@ namespace {
 
         auto vweights = boost::get(vertex_weight_t(), graph);
         auto vexec = boost::get(vertex_exec_time_t(), graph);
+        auto vnum = boost::get(vertex_num_t(), graph);
         for (auto &kv : weights)
         {
             auto vid = vertex_map[ static_cast<long long>(kv.first) ];
             vweights[vid] = kv.second;
             vexec[vid] = kv.second;
+            vnum[vid] = kv.first;
         }
 
         for (auto &kv : adjacencies)
@@ -278,11 +295,13 @@ namespace {
     /**
      * @brief Parse new format with optional header and buffer groups.
      *
-     * Each non-empty line begins with a raw node id, followed by one or more
-     * buffer groups separated by commas. Each group is either
+     * Each non-empty line begins with a raw node id, optionally followed by
+     * an execution time, and then one or more buffer groups separated by commas.
+     * Each group is either
      * "weight: child1 child2 ..." or legacy-like "weight child1 child2 ...".
      * Vertex weights are the sum of group weights per vertex; each group defines
      * edges with the same buffer_id and edge_weight equal to the group's weight.
+     * If execution time is absent, it falls back to the sum of group weights.
      *
      * @param file      Open input stream positioned at beginning.
      * @param filename  Full path for naming purposes.
@@ -294,14 +313,29 @@ namespace {
             weight_t w{};
             std::vector<long long> children;
         };
-        std::unordered_map<long long, std::vector<BufferGroup>> per_node;
+        struct NodeInfo {
+            weight_t exec_time = 0;
+            bool has_exec_time = false;
+            std::vector<BufferGroup> groups;
+        };
+        std::unordered_map<long long, NodeInfo> per_node;
         std::set<long long> vertices;
+        bool header_declares_exec_time = false;
 
         std::string line;
         while (std::getline(file, line))
         {
             line = trim(line);
             if (line.empty()) continue;
+
+            if (starts_with_case(line, "prog_id"))
+            {
+                std::string lower = line;
+                std::transform(lower.begin(), lower.end(), lower.begin(),
+                               [](unsigned char ch) { return static_cast<char>(std::tolower(ch)); });
+                header_declares_exec_time = lower.find("prog_time") != std::string::npos;
+                continue;
+            }
 
             std::istringstream iss(line);
 
@@ -329,7 +363,8 @@ namespace {
                 }
             }
 
-            int buf_id = 0;
+            auto &node_info = per_node[raw_node];
+            bool first_group = true;
             for (auto &g : groups)
             {
                 if (g.empty()) continue;
@@ -337,23 +372,43 @@ namespace {
                 auto colon = g.find(':');
                 if (colon == std::string::npos)
                 {
-                    std::istringstream gg(g);
-                    weight_t w = 0; gg >> w;
+                    const auto nums = parseIntegers(g);
+                    if (nums.empty()) continue;
 
-                    BufferGroup bg; bg.w = w;
-                    long long child;
-                    while (gg >> child) { bg.children.push_back(child); vertices.insert(child); }
+                    size_t cursor = 0;
+                    if (first_group && header_declares_exec_time && nums.size() >= 2 && !node_info.has_exec_time)
+                    {
+                        node_info.exec_time = static_cast<weight_t>(nums[cursor++]);
+                        node_info.has_exec_time = true;
+                    }
 
-                    per_node[raw_node].push_back(std::move(bg));
-                    ++buf_id;
+                    if (cursor >= nums.size()) continue;
+
+                    BufferGroup bg;
+                    bg.w = static_cast<weight_t>(nums[cursor++]);
+                    for (; cursor < nums.size(); ++cursor)
+                    {
+                        bg.children.push_back(nums[cursor]);
+                        vertices.insert(nums[cursor]);
+                    }
+
+                    node_info.groups.push_back(std::move(bg));
+                    first_group = false;
                     continue;
                 }
 
                 weight_t w = 0;
+                const auto lhs = parseIntegers(trim(g.substr(0, colon)));
+                if (lhs.empty()) continue;
+                if (first_group && lhs.size() >= 2 && !node_info.has_exec_time)
                 {
-                    auto lw = trim(g.substr(0, colon));
-                    std::istringstream bw(lw);
-                    bw >> w;
+                    node_info.exec_time = static_cast<weight_t>(lhs.front());
+                    node_info.has_exec_time = true;
+                    w = static_cast<weight_t>(lhs[1]);
+                }
+                else
+                {
+                    w = static_cast<weight_t>(lhs.front());
                 }
 
                 std::string rhs = trim(g.substr(colon + 1));
@@ -363,8 +418,8 @@ namespace {
                 long long child;
                 while (cr >> child) { bg.children.push_back(child); vertices.insert(child); }
 
-                per_node[raw_node].push_back(std::move(bg));
-                ++buf_id;
+                node_info.groups.push_back(std::move(bg));
+                first_group = false;
             }
         }
 
@@ -379,21 +434,23 @@ namespace {
 
         auto vweights = boost::get(vertex_weight_t(), graph);
         auto vexec = boost::get(vertex_exec_time_t(), graph);
+        auto vnum = boost::get(vertex_num_t(), graph);
         for (auto &kv : per_node)
         {
             long long raw = kv.first;
             size_t v = vertex_map[raw];
             weight_t sum = 0;
-            for (auto &bg : kv.second) sum += bg.w;
+            for (auto &bg : kv.second.groups) sum += bg.w;
             vweights[v] = sum;
-            vexec[v] = sum;
+            vexec[v] = kv.second.has_exec_time ? kv.second.exec_time : sum;
+            vnum[v] = static_cast<size_t>(raw);
         }
 
         for (auto &kv : per_node)
         {
             size_t parent = vertex_map[kv.first];
             int buffer_id = 0;
-            for (auto &bg : kv.second)
+            for (auto &bg : kv.second.groups)
             {
                 for (auto child_raw : bg.children)
                 {
