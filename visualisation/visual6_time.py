@@ -191,7 +191,7 @@ with open('/Users/maxbig/ASVK/coursework/big_sp_graphs_new/' + graph_name + '.tx
 '''
 
 graph_name = 'sp_26_buf_times_P4_M10000'
-with open('/Users/maxbig/ASVK/coursework/LP/P4_M10000/sp_26_buf_times_P4_M10000.txt', "r", encoding="utf-8") as f:
+with open('/Users/maxbig/Coursework_multiprocessing/Coursework/LP/P4_M10000/sp_26_buf_times_P4_M10000.txt', "r", encoding="utf-8") as f:
     lines = f.readlines()
 
 lines = lines[1:]

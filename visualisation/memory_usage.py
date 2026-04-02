@@ -102,7 +102,7 @@ viz = ResourceVisualizer()
 
 file_name = 'layered_12_2_buf_times_P2_M8500'
 
-with open(f'/Users/maxbig/SCIP/SCIPOptSuite-9.2.1-Linux/translator_inputs/{file_name}.txt') as f:
+with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/translator_inputs/{file_name}.txt') as f:
     bfrs, times = {}, {}
     nodes = []
     sizes = {}
