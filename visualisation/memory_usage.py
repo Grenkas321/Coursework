@@ -17,7 +17,25 @@ class ResourceVisualizer:
         if not self.data:
             print("Нет данных для отображения")
             return
-            
+        
+        data2 = {}
+        j = 1
+        i0 = 0
+        for i in range(len(self.data) - 1):
+            if self.data[i] == self.data[i + 1]:
+                j += 1
+            else:
+                data2[(i0, j)] = self.data[i]
+                i0 = i + 1
+                j = 1
+        data2[(i0, j)] = self.data[i + 1]
+        '''
+        print(self.data)
+        print(data2)
+        '''
+        self.data = data2
+
+        
         # Сортируем моменты времени
         times = sorted(self.data.keys())
         
@@ -33,8 +51,8 @@ class ResourceVisualizer:
             for resource, value in resources:
                 # Создаем прямоугольник
                 rect = patches.Rectangle(
-                    (i, bottom),  # x, y (ширина столбца 0.8)
-                    1,                 # ширина
+                    (time[0], bottom),  # x, y (ширина столбца 0.8)
+                    time[1],                 # ширина
                     value,               # высота
                     linewidth=1,
                     edgecolor='black',
@@ -45,7 +63,7 @@ class ResourceVisualizer:
                 
                 # Добавляем подпись, если прямоугольник достаточно высокий
                 ax.text(
-                        i + 0.5, bottom + value/2, 
+                        time[0] + 0.5 * time[1], bottom + value/2, 
                         f"{resource}",
                         ha='center', va='center',
                         fontsize=6,
@@ -78,7 +96,7 @@ class ResourceVisualizer:
         ax.grid(True, axis='y', alpha=0.3, linestyle='--')
         ax.set_axisbelow(True)
         
-        ax.set_xlim(0, len(times))
+        ax.set_xlim(0, times[-1][0] + times[-1][1])
         
         plt.tight_layout()
         plt.show()

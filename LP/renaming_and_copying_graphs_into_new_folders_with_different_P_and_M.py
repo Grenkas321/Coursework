@@ -10,7 +10,8 @@ if '.DS_Store' in files:
 l1 = ['P2', 'P3', 'P4']
 # l2 = ['M2600', 'M4000', 'M10000']
 # l2 = ['M8500', 'M11000', 'M13500']
-l2 = ['M1050', 'M1350', 'M2550']
+# l2 = ['M1050', 'M1350', 'M2550']
+l2 = ['M2500', 'M3500', 'M6000']
 for i in l1:
     for j in l2:
         directory2 = f"/Users/maxbig/Coursework_multiprocessing/Coursework/LP/{i}_{j}"

@@ -7,9 +7,10 @@ l1 = ['2', '3', '4']
 # l2 = ['2600', '4000', '10000']
 # l2 = ['8500', '11000', '13500']
 # l2 = ['10000']
-l2 = ['1050', '1350', '2550']
+# l2 = ['1050', '1350', '2550']
+l2 = ['2500', '3500', '6000']
 prev_p = 'P = 4'
-prev_m = 'M = 13500'
+prev_m = 'M = 2550'
 for i in l1:
     for j in l2:
         f = open("/Users/maxbig/Coursework_multiprocessing/Coursework/LP/make_input_times_step2.py", 'r')
