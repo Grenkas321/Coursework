@@ -100,7 +100,7 @@ class ResourceVisualizer:
 
 viz = ResourceVisualizer()
 
-file_name = 'layered_12_2_buf_times_P2_M8500'
+file_name = 'layered_15_buf_times_P4_M1350'
 
 with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/translator_inputs/{file_name}.txt') as f:
     bfrs, times = {}, {}
@@ -135,7 +135,7 @@ with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuit
     root_parents = list(set(nodes) - nodes_with_par)
     # print(nodes, sizes, children, root_parents, times, bfrs, sep='\n\n')
 
-with open(f'/Users/maxbig/Courseworw_multiprocessing/Coursework/build/Answer/greedy/schedules/best/{file_name}.json') as f:
+with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/build/Answer/greedy/schedules/best/{file_name}.json') as f:
     text = f.readline()
     dct = eval(text)
     name = list(dct.keys())[0]

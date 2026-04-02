@@ -3,7 +3,7 @@ import random
 
 fig, ax = plt.subplots(figsize=(10, 5))
 
-with open('/Users/maxbig/Courseworw_multiprocessing/Coursework/build/Answer/lp/schedules/best/layered_15_buf_times_P4_M1350.json') as f:
+with open('/Users/maxbig/Coursework_multiprocessing/Coursework/build/Answer/lp/schedules/best/layered_15_buf_times_P4_M1350.json') as f:
     text = f.readline()
     dct = eval(text)
     name = list(dct.keys())[0]
