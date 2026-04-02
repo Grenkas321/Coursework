@@ -50,7 +50,7 @@ namespace scheduling_problem::algorithms
             const auto d = exec[v];
             return d > 0 ? d : std::max<weight_t>(1, w[v]);
         }
-
+        
         weight_t earliestStartOnProcessor(const std::vector<ProcSlot> &slots,
                                           weight_t dep_ready,
                                           weight_t duration)
@@ -58,8 +58,23 @@ namespace scheduling_problem::algorithms
             weight_t t = dep_ready;
             for (const auto &slot : slots)
             {
+                if (t < slot.finish)
+                    t = slot.finish;
+            }
+            return t;
+        }
+    
+        weight_t earliestStartOnProcessor2(const std::vector<ProcSlot> &slots,
+                                          weight_t dep_ready,
+                                          weight_t duration)
+        {
+            weight_t t = dep_ready;
+            for (const auto &slot : slots)
+            {
+                /*
                 if (t + duration <= slot.start)
                     return t; // Fits in a hole.
+                */
                 if (t < slot.finish)
                     t = slot.finish;
             }
@@ -285,6 +300,10 @@ namespace scheduling_problem::algorithms
                 ready.insert(v);
 
         size_t done = 0;
+        
+        // weight_t max_finish = 0;
+        std::set<weight_t> finishes;
+        
         while (done < n)
         {
             if (ready.empty())
@@ -301,14 +320,43 @@ namespace scheduling_problem::algorithms
                 weight_t dep_ready = 0;
                 for (const auto p : parents[task])
                     dep_ready = std::max(dep_ready, finish_time[p]);
-
+                /*
+                std::cout << "\n  Considering task " << task
+                              << " (ready at " << dep_ready << ")" << std::endl;
+                */
                 for (unsigned p = 0; p < pcount; ++p)
                 {
-                    const auto start = earliestStartOnProcessor(proc_slots[p], dep_ready, duration[task]);
-                    const auto finish = start + duration[task];
-
+                    auto start = earliestStartOnProcessor2(proc_slots[p], dep_ready, duration[task]);
+                    auto finish = start + duration[task];
+                    
+                    if (!feasibleUnderMemory(memory_limit_, groups, task, start, finish, incoming_groups)) {
+                        for (weight_t fin : finishes) {
+                            if (fin <= start) {
+                                continue;
+                            }
+                            start = fin;
+                            finish = start + duration[task];
+                            if (feasibleUnderMemory(memory_limit_, groups, task, start, finish, incoming_groups)) {
+                                break;
+                            }
+                        }
+                    }
+                    /*
+                    while (!feasibleUnderMemory(memory_limit_, groups, task, start, finish, incoming_groups)) {
+                        start++;
+                        finish++;
+                        if (start > max_finish) {
+                            break;
+                        }
+                    }
+                    */
                     if (!feasibleUnderMemory(memory_limit_, groups, task, start, finish, incoming_groups))
                         continue;
+                    /*
+                    std::cout << "    Processor " << p
+                                      << ": start=" << start
+                                      << ", finish=" << finish;
+                    */
 
                     if (!found ||
                         start < best_start ||
@@ -323,6 +371,8 @@ namespace scheduling_problem::algorithms
                     }
                 }
             }
+            
+            // std::cout << std::endl;
 
             if (!found)
             {
@@ -331,7 +381,16 @@ namespace scheduling_problem::algorithms
                     std::to_string(memory_limit_) +
                     " for graph '" + graph.name() + "'.");
             }
-
+            /*
+            std::cout << "Selected task " << best_task
+                      << " on processor " << best_proc
+                      << " from " << best_start << " to " << best_finish
+                      << " (duration: " << duration[best_task] << ")"
+                      << std::endl;
+            */
+            // max_finish = std::max(max_finish, best_finish);
+            finishes.insert(best_finish);
+            
             // Commit task placement.
             auto &slots = proc_slots[best_proc];
             ProcSlot slot{best_task, best_start, best_finish};
@@ -346,7 +405,25 @@ namespace scheduling_problem::algorithms
                     return a.task < b.task;
                 });
             slots.insert(it, slot);
+            /*
+            std::cout << "\n=== Iteration " << done << "/" << n << " ===" << std::endl;
+            std::cout << "Scheduled task " << best_task << std::endl;
+            std::cout << "  Processor: " << best_proc << std::endl;
+            std::cout << "  Start time: " << best_start << std::endl;
+            std::cout << "  Finish time: " << best_finish << std::endl;
+            std::cout << "  Duration: " << duration[best_task] << std::endl;
+            std::cout << "  Ready tasks left: " << ready.size() << std::endl;
 
+            // Вывод информации о буферах
+            std::cout << "  Buffer allocations:" << std::endl;
+            for (const auto &[bid, gs] : groups[best_task])
+            {
+                if (gs.weight > 0)
+                    std::cout << "    Buffer " << bid
+                              << " (weight=" << gs.weight
+                              << ", remaining=" << gs.remaining << ")" << std::endl;
+            }
+            */
             scheduled[best_task] = 1;
             start_time[best_task] = best_start;
             finish_time[best_task] = best_finish;
