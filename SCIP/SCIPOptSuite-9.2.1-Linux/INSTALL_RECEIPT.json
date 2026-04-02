@@ -1,0 +1,184 @@
+{
+  "homebrew_version": "5.0.4-21-gca53c10",
+  "used_options": [],
+  "unused_options": [],
+  "built_as_bottle": true,
+  "poured_from_bottle": true,
+  "loaded_from_api": true,
+  "installed_as_dependency": false,
+  "installed_on_request": true,
+  "changed_files": [
+    "lib/cmake/scip/scip-targets.cmake"
+  ],
+  "time": 1770145271,
+  "source_modified_time": 1763901465,
+  "compiler": "clang",
+  "aliases": [],
+  "runtime_dependencies": [
+    {
+      "full_name": "cppad",
+      "version": "20260000.0",
+      "revision": 0,
+      "bottle_rebuild": 0,
+      "pkg_version": "20260000.0",
+      "declared_directly": true
+    },
+    {
+      "full_name": "gmp",
+      "version": "6.3.0",
+      "revision": 0,
+      "bottle_rebuild": 0,
+      "pkg_version": "6.3.0",
+      "declared_directly": true
+    },
+    {
+      "full_name": "isl",
+      "version": "0.27",
+      "revision": 0,
+      "bottle_rebuild": 0,
+      "pkg_version": "0.27",
+      "declared_directly": false
+    },
+    {
+      "full_name": "mpfr",
+      "version": "4.2.2",
+      "revision": 0,
+      "bottle_rebuild": 0,
+      "pkg_version": "4.2.2",
+      "declared_directly": true
+    },
+    {
+      "full_name": "libmpc",
+      "version": "1.3.1",
+      "revision": 0,
+      "bottle_rebuild": 0,
+      "pkg_version": "1.3.1",
+      "declared_directly": false
+    },
+    {
+      "full_name": "lz4",
+      "version": "1.10.0",
+      "revision": 0,
+      "bottle_rebuild": 1,
+      "pkg_version": "1.10.0",
+      "declared_directly": false
+    },
+    {
+      "full_name": "xz",
+      "version": "5.8.2",
+      "revision": 0,
+      "bottle_rebuild": 0,
+      "pkg_version": "5.8.2",
+      "declared_directly": false
+    },
+    {
+      "full_name": "zstd",
+      "version": "1.5.7",
+      "revision": 0,
+      "bottle_rebuild": 1,
+      "pkg_version": "1.5.7",
+      "declared_directly": false
+    },
+    {
+      "full_name": "gcc",
+      "version": "15.2.0",
+      "revision": 0,
+      "bottle_rebuild": 1,
+      "pkg_version": "15.2.0",
+      "declared_directly": true
+    },
+    {
+      "full_name": "ampl-asl",
+      "version": "1.0.1",
+      "revision": 0,
+      "bottle_rebuild": 0,
+      "pkg_version": "1.0.1",
+      "declared_directly": false
+    },
+    {
+      "full_name": "libomp",
+      "version": "21.1.8",
+      "revision": 0,
+      "bottle_rebuild": 0,
+      "pkg_version": "21.1.8",
+      "declared_directly": false
+    },
+    {
+      "full_name": "openblas",
+      "version": "0.3.31",
+      "revision": 1,
+      "bottle_rebuild": 0,
+      "pkg_version": "0.3.31_1",
+      "declared_directly": true
+    },
+    {
+      "full_name": "ipopt",
+      "version": "3.14.19",
+      "revision": 0,
+      "bottle_rebuild": 0,
+      "pkg_version": "3.14.19",
+      "declared_directly": true
+    },
+    {
+      "full_name": "readline",
+      "version": "8.3.3",
+      "revision": 0,
+      "bottle_rebuild": 0,
+      "pkg_version": "8.3.3",
+      "declared_directly": true
+    },
+    {
+      "full_name": "hwloc",
+      "version": "2.12.2",
+      "revision": 1,
+      "bottle_rebuild": 0,
+      "pkg_version": "2.12.2_1",
+      "declared_directly": false
+    },
+    {
+      "full_name": "tbb",
+      "version": "2022.3.0",
+      "revision": 0,
+      "bottle_rebuild": 0,
+      "pkg_version": "2022.3.0",
+      "declared_directly": true
+    },
+    {
+      "full_name": "icu4c@78",
+      "version": "78.2",
+      "revision": 0,
+      "bottle_rebuild": 0,
+      "pkg_version": "78.2",
+      "declared_directly": false
+    },
+    {
+      "full_name": "boost",
+      "version": "1.90.0",
+      "revision": 0,
+      "bottle_rebuild": 0,
+      "pkg_version": "1.90.0",
+      "declared_directly": true
+    }
+  ],
+  "source": {
+    "spec": "stable",
+    "versions": {
+      "stable": "10.0.0",
+      "head": null,
+      "version_scheme": 0,
+      "compatibility_version": null
+    },
+    "path": "/Users/maxbig/Library/Caches/Homebrew/api/formula.jws.json",
+    "tap_git_head": null,
+    "tap": "homebrew/core"
+  },
+  "arch": "arm64",
+  "built_on": {
+    "os": "Macintosh",
+    "os_version": "macOS 14.8",
+    "cpu_family": "dunno",
+    "xcode": "16.2",
+    "clt": "16.2.0.0.1.1733547573",
+    "preferred_perl": "5.34"
+  }
+}

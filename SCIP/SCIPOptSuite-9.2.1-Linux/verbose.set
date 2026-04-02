@@ -1,0 +1,28 @@
+# Уровень детализации
+display/verblevel = 5
+display/freq = 1
+
+# Параметры конфликта (правильные имена)
+conflict/enable = TRUE
+constraints/linear/conflict/enable = TRUE
+conflict/analysis/enable = TRUE
+
+# Параметры LP
+lp/display/iter = 1
+lp/display/row = TRUE
+lp/display/column = TRUE
+
+# Отключить пресолвинг для чистой задачи
+presolving/maxrounds = 0
+propagating/maxroundsroot = 0
+propagating/maxrounds = 0
+separating/maxrounds = 0
+separating/maxroundsroot = 0
+
+# Отключить эвристики
+heuristics/rounding/enable = FALSE
+heuristics/shifting/enable = FALSE
+heuristics/trivial/enable = FALSE
+
+# Сохранять информацию о конфликте
+constraints/linear/conflict/write = conflict.log
