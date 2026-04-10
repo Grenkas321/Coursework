@@ -69,7 +69,8 @@ pp = ['P2', 'P3', 'P4']
 # mm = ['M10000']
 # mm = ['M8500', 'M11000', 'M13500']
 # mm = ['M1050', 'M1350', 'M2550']
-mm = ['M2500', 'M3500', 'M6000']
+mm = ['M1100', 'M1350', 'M2200']
+# mm = ['M2500', 'M3500', 'M6000']
 # dirr = '/Users/maxbig/ASVK/coursework/LP/noP'
 directory = "/Users/maxbig/Coursework_multiprocessing/Coursework/LP/G"
 files = os.listdir(directory)
@@ -171,7 +172,7 @@ for file_n in files:
             
             makespan = 0
             m = {}
-            vertexes = [i for i in range(10)]
+            vertexes = [i for i in range(14)]
             for line in lines:
                 if line[:2] == 's_':
                     m[round(float(line.split()[0][2:]))] = int(line.split()[1])
@@ -190,7 +191,7 @@ for file_n in files:
             m_p = m
             # print(m_d, m_s, m_p, makespan)
             
-            vertexes = [i for i in range(10)]
+            vertexes = [i for i in range(14)]
             strk = '{"' + file + '":{"makespan":' + str(makespan) + ',"runtime_sec":' + str(fin_time) + ',"size":' + str(len(vertexes)) + ',"schedule":{'
             lst = []
             for v in vertexes:
