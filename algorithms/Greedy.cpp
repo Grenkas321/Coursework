@@ -359,8 +359,8 @@ namespace scheduling_problem::algorithms
                     */
 
                     if (!found ||
-                        start < best_start ||
-                        (start == best_start && (task < best_task ||
+                        finish < best_finish ||
+                        (finish == best_finish && (task < best_task ||
                                                  (task == best_task && p < best_proc))))
                     {
                         found = true;
