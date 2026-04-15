@@ -9,15 +9,20 @@
 #include <future>
 #include <chrono>
 #include <cstddef>
+#include <limits>
 
 namespace {
 
-    // Всегда получаем новый seed для каждого запуска (и для каждой волны SAO внутри CSAO).
-    static unsigned runtime_seed(unsigned salt = 0u)
+    static unsigned mixSeed(unsigned base, unsigned salt = 0u)
     {
-        std::random_device rd;
-        const unsigned t = (unsigned)std::chrono::high_resolution_clock::now().time_since_epoch().count();
-        return rd() ^ (t + 0x9e3779b9u + (salt << 6) + (salt >> 2));
+        uint64_t x = static_cast<uint64_t>(base) ^ 0x9e3779b97f4a7c15ULL;
+        x ^= static_cast<uint64_t>(salt) + 0x9e3779b97f4a7c15ULL + (x << 6) + (x >> 2);
+        x ^= x >> 30;
+        x *= 0xbf58476d1ce4e5b9ULL;
+        x ^= x >> 27;
+        x *= 0x94d049bb133111ebULL;
+        x ^= x >> 31;
+        return static_cast<unsigned>(x);
     }
 
 }
@@ -56,10 +61,9 @@ namespace scheduling_problem::algorithms
     {
         conveyor.clear();
 
-        // RNG CSAO: каждый запуск CSAO должен быть стохастическим.
-        const unsigned csao_seed = runtime_seed();
+        const unsigned csao_seed =
+            algo_params_.count("seed") ? static_cast<unsigned>(algo_params_["seed"]) : 42u;
         rng_.seed(csao_seed);
-        algo_params_["seed"] = csao_seed;
 
         // 1) Стартовое решение: Greedy
         Greedy greedy;
@@ -72,10 +76,17 @@ namespace scheduling_problem::algorithms
             greedy_params["memory_limit"] = mit->second;
         if (!greedy_params.empty())
             greedy.setParams(greedy_params);
-        Schedule bestOverall = greedy.schedule(graph);
+        const Schedule greedy_start = greedy.schedule(graph);
+        Schedule bestOverall = greedy_start;
 
         unsigned noImprove = 0;
-        const unsigned saturation = (unsigned)algo_params_["saturation"];
+        const unsigned saturation =
+            algo_params_.count("saturation") ? static_cast<unsigned>(algo_params_["saturation"]) : 0u;
+        const unsigned wave_width = std::max(1u, partitions_count_ > 0 ? partitions_count_ : 6u);
+        const unsigned max_waves =
+            (rsearch_iters_ > 0)
+                ? rsearch_iters_
+                : (saturation > 0 ? std::numeric_limits<unsigned>::max() : 1u);
 
         // Снимем параметры SAO в локальные значения (чтобы не читать map из потоков).
         const double min_temp = (double)algo_params_["min_temp"];
@@ -84,21 +95,35 @@ namespace scheduling_problem::algorithms
         const unsigned sao_saturation = (unsigned)algo_params_["saturation"];
         const double improvement = (double)algo_params_["improvement"];
 
-        // 2) Конвейер: волны из 6 параллельных SAO, каждый стартует с лучшего прошлого результата.
-        while (noImprove < saturation)
+        static const std::vector<std::string> forwarded_sao_params = {
+            "processors",
+            "memory_limit",
+            "overflow_penalty",
+            "neighbor_trials",
+            "perturbation_depth",
+            "restart_period",
+            "max_iters",
+            "restarts",
+            "kick_moves",
+            "fedorenko_idle_prob"};
+
+        // 2) Конвейер: волны из параллельных SAO.
+        for (unsigned wave = 0; wave < max_waves; ++wave)
         {
-            const Schedule wave_base = bestOverall; // фиксируем старт волны
+            if (saturation && noImprove >= saturation)
+                break;
+
+            const Schedule wave_base = warm_start_ ? bestOverall : greedy_start;
 
             std::vector<std::future<Schedule>> futs;
-            futs.reserve(6);
+            futs.reserve(wave_width);
 
-            for (unsigned i = 0; i < 6; ++i)
+            for (unsigned i = 0; i < wave_width; ++i)
             {
-                // у каждого SAO свой seed (дополнительно солим номером i)
-                const unsigned local_seed = runtime_seed(i + 1);
+                const unsigned local_seed = mixSeed(mixSeed(csao_seed, wave + 1), i + 1);
 
                 futs.emplace_back(std::async(std::launch::async,
-                                             [&, local_seed, wave_base, min_temp, max_temp, rule, sao_saturation, improvement]() -> Schedule
+                                             [&, local_seed, wave_base, min_temp, max_temp, rule, sao_saturation, improvement, i]() -> Schedule
                 {
                     SimulatedAnnealing sao(
                         BASELINE,
@@ -110,13 +135,28 @@ namespace scheduling_problem::algorithms
                         local_seed,
                         "csao_sao");
 
-                    ParamSet local_params;
-                    auto pit = algo_params_.find("processors");
-                    if (pit != algo_params_.end())
-                        local_params["processors"] = pit->second;
-                    auto mit = algo_params_.find("memory_limit");
-                    if (mit != algo_params_.end())
-                        local_params["memory_limit"] = mit->second;
+                    ParamSet local_params{};
+                    for (const auto &name : forwarded_sao_params)
+                    {
+                        auto it = algo_params_.find(name);
+                        if (it != algo_params_.end())
+                            local_params[name] = it->second;
+                    }
+
+                    if (subareas_)
+                    {
+                        const unsigned base_kicks =
+                            local_params.count("kick_moves")
+                                ? static_cast<unsigned>(local_params["kick_moves"])
+                                : 8u;
+                        const unsigned base_depth =
+                            local_params.count("perturbation_depth")
+                                ? static_cast<unsigned>(local_params["perturbation_depth"])
+                                : 1u;
+                        local_params["kick_moves"] = base_kicks + i;
+                        local_params["perturbation_depth"] = std::max(1u, base_depth + (i % 2));
+                    }
+
                     if (!local_params.empty())
                         sao.setParams(local_params);
 
@@ -125,7 +165,7 @@ namespace scheduling_problem::algorithms
             }
 
             std::vector<Schedule> results;
-            results.reserve(6);
+            results.reserve(wave_width);
             for (auto &f : futs)
                 results.push_back(f.get());
 

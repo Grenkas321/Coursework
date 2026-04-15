@@ -7,15 +7,22 @@
 #include <numeric>
 #include <random>
 #include <stdexcept>
+#include <unordered_map>
 
+#include "MemoryFeasibleTiming.h"
 #include "TopologicalSort.h"
 
 namespace {
-    static unsigned runtime_seed(unsigned salt = 0u)
+    static unsigned mixSeed(unsigned base, unsigned salt = 0u)
     {
-        std::random_device rd;
-        const unsigned t = (unsigned)std::chrono::high_resolution_clock::now().time_since_epoch().count();
-        return rd() ^ (t + 0x9e3779b9u + (salt << 6) + (salt >> 2));
+        uint64_t x = static_cast<uint64_t>(base) ^ 0x9e3779b97f4a7c15ULL;
+        x ^= static_cast<uint64_t>(salt) + 0x9e3779b97f4a7c15ULL + (x << 6) + (x >> 2);
+        x ^= x >> 30;
+        x *= 0xbf58476d1ce4e5b9ULL;
+        x ^= x >> 27;
+        x *= 0x94d049bb133111ebULL;
+        x ^= x >> 31;
+        return static_cast<unsigned>(x);
     }
 
     using Route = scheduling_problem::algorithms::AntColonySystem::Route;
@@ -37,6 +44,64 @@ namespace {
         for (auto v : boost::make_iterator_range(boost::vertices(graph)))
             total += durationOf(graph, v);
         return std::max<scheduling_problem::weight_t>(1, total);
+    }
+
+    scheduling_problem::algorithms::AntColonySystem::GraphContext
+    makeGraphContext(const scheduling_problem::Graph &graph,
+                     const std::vector<scheduling_problem::weight_t> &bottom_levels,
+                     unsigned processors,
+                     scheduling_problem::weight_t memory_limit)
+    {
+        scheduling_problem::algorithms::AntColonySystem::GraphContext context;
+        context.graph = &graph;
+        context.processors = std::max(1u, processors);
+        context.memory_limit = memory_limit;
+
+        const size_t n = boost::num_vertices(graph);
+        context.children.assign(n, {});
+        context.indeg_template.assign(n, 0);
+        context.durations.assign(n, 0);
+        context.vertex_weights.assign(n, 0);
+        context.criticality.assign(n, 1.0);
+        context.memory_bias.assign(n, 1.0);
+
+        auto vertex_weight = boost::get(scheduling_problem::vertex_weight_t(), graph);
+        const auto max_bottom = bottom_levels.empty()
+            ? 1
+            : std::max<scheduling_problem::weight_t>(1, *std::max_element(bottom_levels.begin(), bottom_levels.end()));
+
+        for (size_t v = 0; v < n; ++v)
+        {
+            context.durations[v] = durationOf(graph, v);
+            context.vertex_weights[v] = vertex_weight[v];
+            context.criticality[v] =
+                1.0 + static_cast<double>(bottom_levels[v]) / static_cast<double>(max_bottom);
+            if (memory_limit != std::numeric_limits<scheduling_problem::weight_t>::max() && memory_limit > 0)
+            {
+                context.memory_bias[v] =
+                    1.0 / (1.0 + static_cast<double>(std::max<scheduling_problem::weight_t>(0, context.vertex_weights[v])) /
+                                     static_cast<double>(memory_limit));
+            }
+        }
+
+        for (auto e : boost::make_iterator_range(boost::edges(graph)))
+        {
+            if (boost::get(scheduling_problem::edge_kind_t(), graph, e) != scheduling_problem::EdgeKind::Real)
+                continue;
+            const auto u = static_cast<size_t>(boost::source(e, graph));
+            const auto v = static_cast<size_t>(boost::target(e, graph));
+            context.children[u].push_back(v);
+            context.indeg_template[v]++;
+        }
+
+        context.buffer_index = scheduling_problem::additionals::buildBufferIndex(graph);
+        context.memory_constrained =
+            !scheduling_problem::algorithms::isUnlimitedMemory(memory_limit) &&
+            memory_limit < scheduling_problem::algorithms::totalProducedWeight(context.buffer_index);
+        if (context.memory_constrained)
+            context.incoming_groups = scheduling_problem::algorithms::buildIncomingGroups(graph);
+
+        return context;
     }
 
     std::vector<scheduling_problem::weight_t> bottomLevels(const scheduling_problem::Graph &graph)
@@ -109,10 +174,7 @@ namespace {
 namespace scheduling_problem::algorithms {
 
 AntColonySystem::Route AntColonySystem::ArtificialAnt::makeRoute(
-    const Graph &graph,
-    const std::vector<weight_t> &bottom_levels,
-    unsigned processors,
-    weight_t memory_limit,
+    const GraphContext &context,
     double overflow_penalty,
     const Matrix &proc_matrix,
     const Matrix &order_matrix,
@@ -131,11 +193,9 @@ AntColonySystem::Route AntColonySystem::ArtificialAnt::makeRoute(
         double desirability = 0.0;
     };
 
-    const size_t n = boost::num_vertices(graph);
-    const unsigned pcount = std::max(1u, processors);
-    const weight_t max_bottom = bottom_levels.empty()
-        ? 1
-        : std::max<weight_t>(1, *std::max_element(bottom_levels.begin(), bottom_levels.end()));
+    const auto &graph = *context.graph;
+    const size_t n = context.durations.size();
+    const unsigned pcount = context.processors;
 
     Route route;
     route.state.processors.assign(pcount, {});
@@ -144,17 +204,8 @@ AntColonySystem::Route AntColonySystem::ArtificialAnt::makeRoute(
     route.proc_choice.assign(n, 0);
     route.prev_on_proc.assign(n, n);
 
-    std::vector<std::vector<size_t>> children(n);
-    std::vector<unsigned> indeg(n, 0);
-    for (auto e : boost::make_iterator_range(boost::edges(graph)))
-    {
-        if (boost::get(edge_kind_t(), graph, e) != EdgeKind::Real)
-            continue;
-        const auto u = static_cast<size_t>(boost::source(e, graph));
-        const auto v = static_cast<size_t>(boost::target(e, graph));
-        children[u].push_back(v);
-        indeg[v]++;
-    }
+    const auto &children = context.children;
+    auto indeg = context.indeg_template;
 
     std::vector<size_t> ready;
     ready.reserve(n);
@@ -167,29 +218,40 @@ AntColonySystem::Route AntColonySystem::ArtificialAnt::makeRoute(
     std::vector<weight_t> pred_ready(n, 0);
     std::vector<weight_t> finish_est(n, 0);
     std::vector<size_t> last_task(pcount, n);
-    auto vertex_weight = boost::get(vertex_weight_t(), graph);
+    const bool memory_constrained = context.memory_constrained;
+    auto groups = memory_constrained ? makeMemoryGroups(context.buffer_index)
+                                     : std::vector<std::unordered_map<int, MemoryGroupState>>{};
+    const auto &incoming_groups = context.incoming_groups;
 
     while (!ready.empty())
     {
-        std::vector<Action> actions;
-        actions.reserve(ready.size() * pcount);
+        const auto base_memory = memory_constrained
+            ? buildMemoryBaseContext(groups)
+            : MemoryBaseContext{};
+        std::vector<Action> feasible_actions;
+        feasible_actions.reserve(ready.size() * pcount);
 
         for (const auto task : ready)
         {
-            const auto dur = durationOf(graph, task);
-            const double criticality =
-                1.0 + static_cast<double>(bottom_levels[task]) / static_cast<double>(max_bottom);
-            double memory_bias = 1.0;
-            if (memory_limit != std::numeric_limits<weight_t>::max() && memory_limit > 0)
-            {
-                memory_bias =
-                    1.0 / (1.0 + static_cast<double>(std::max<weight_t>(0, vertex_weight[task])) /
-                                     static_cast<double>(memory_limit));
-            }
+            const auto dur = context.durations[task];
+            const double criticality = context.criticality[task];
+            const double memory_bias = context.memory_bias[task];
 
             for (unsigned p = 0; p < pcount; ++p)
             {
-                const auto start = std::max(pred_ready[task], proc_free[p]);
+                weight_t start = std::max(pred_ready[task], proc_free[p]);
+                if (memory_constrained &&
+                    !earliestFeasibleStart(start,
+                                           dur,
+                                           context.memory_limit,
+                                           base_memory,
+                                           groups,
+                                           task,
+                                           incoming_groups,
+                                           start))
+                {
+                    continue;
+                }
                 const auto finish = start + dur;
                 const double eta =
                     std::max(kEps,
@@ -204,12 +266,21 @@ AntColonySystem::Route AntColonySystem::ArtificialAnt::makeRoute(
                 const double desirability =
                     std::pow(tau, phe_influence) * std::pow(eta, heu_influence);
 
-                actions.push_back({task, p, prev, start, finish, desirability});
+                const Action action{task, p, prev, start, finish, desirability};
+                feasible_actions.push_back(action);
             }
         }
 
+        if (feasible_actions.empty())
+        {
+            route.eval.acyclic = true;
+            route.eval.overflow = std::numeric_limits<weight_t>::max() / 4;
+            route.score = route.eval.score(overflow_penalty);
+            return route;
+        }
+
         auto best_it = std::max_element(
-            actions.begin(), actions.end(),
+            feasible_actions.begin(), feasible_actions.end(),
             [](const Action &lhs, const Action &rhs)
             {
                 if (std::fabs(lhs.desirability - rhs.desirability) > kEps)
@@ -228,14 +299,14 @@ AntColonySystem::Route AntColonySystem::ArtificialAnt::makeRoute(
         if (uid(rng) > threshold)
         {
             double sum = 0.0;
-            for (const auto &action : actions)
+            for (const auto &action : feasible_actions)
                 sum += action.desirability;
             if (sum > kEps)
             {
                 std::uniform_real_distribution<double> roulette(0.0, sum);
                 const double pick = roulette(rng);
                 double acc = 0.0;
-                for (const auto &action : actions)
+                for (const auto &action : feasible_actions)
                 {
                     acc += action.desirability;
                     if (acc >= pick)
@@ -259,6 +330,32 @@ AntColonySystem::Route AntColonySystem::ArtificialAnt::makeRoute(
         proc_free[p] = chosen.finish;
         finish_est[task] = chosen.finish;
 
+        if (memory_constrained)
+        {
+            for (auto &[bid, gs] : groups[task])
+            {
+                (void)bid;
+                gs.parent_scheduled = true;
+                gs.parent_start = chosen.start;
+                gs.parent_finish = chosen.finish;
+            }
+
+            for (const auto &[parent, bid] : incoming_groups[task])
+            {
+                if (parent >= groups.size())
+                    continue;
+                auto git = groups[parent].find(bid);
+                if (git == groups[parent].end())
+                    continue;
+                auto &gs = git->second;
+                if (gs.remaining > 0)
+                {
+                    gs.remaining--;
+                    gs.max_consumer_finish = std::max(gs.max_consumer_finish, chosen.finish);
+                }
+            }
+        }
+
         ready.erase(std::remove(ready.begin(), ready.end(), task), ready.end());
         for (const auto child : children[task])
         {
@@ -269,7 +366,7 @@ AntColonySystem::Route AntColonySystem::ArtificialAnt::makeRoute(
         std::sort(ready.begin(), ready.end());
     }
 
-    route.eval = evaluateLayeredState(graph, route.state, memory_limit);
+    route.eval = evaluateLayeredState(graph, route.state, context.memory_limit);
     route.score = route.eval.score(overflow_penalty);
     return route;
 }
@@ -306,13 +403,14 @@ Schedule AntColonySystem::schedule_(const Graph &graph, const Schedule &base_sch
     cost_dynamics_.clear();
     iters_count_ = 0;
     ants_.assign(std::max(1u, ants_count_), ArtificialAnt{});
-    rng_.seed(runtime_seed(seed_));
+    rng_.seed(mixSeed(seed_, static_cast<unsigned>(boost::num_vertices(graph))));
 
     const size_t n = boost::num_vertices(graph);
     if (n == 0)
         return Schedule(0, graph.name());
 
     const auto bottom_levels = ::bottomLevels(graph);
+    const auto context = makeGraphContext(graph, bottom_levels, processors_, memory_limit_);
     const double init_trail = 1.0;
     const double reward_scale =
         std::max<double>(1.0, static_cast<double>(totalDuration(graph)) / static_cast<double>(std::max(1u, processors_)));
@@ -322,15 +420,18 @@ Schedule AntColonySystem::schedule_(const Graph &graph, const Schedule &base_sch
 
     Route best_route = routeFromSchedule(graph, base_schedule, processors_, memory_limit_, overflow_penalty_);
     bool have_feasible = best_route.eval.feasible();
-    std::vector<Route> elite_routes{best_route};
+    // Keep the baseline as an incumbent for safety, but do not reinforce it
+    // immediately: otherwise the colony collapses to the greedy warm start
+    // before it has a chance to explore alternative processor orders.
+    std::vector<Route> elite_routes;
+    elite_routes.reserve(best_count_);
     unsigned stagnations = 0;
 
     for (unsigned epoch = 0; epoch < epochs_count_; ++epoch)
     {
         globalPheUpdate(elite_routes, proc_matrix, order_matrix, reward_scale);
 
-        auto epoch_routes = completeEpoch(graph,
-                                          bottom_levels,
+        auto epoch_routes = completeEpoch(context,
                                           proc_matrix,
                                           order_matrix,
                                           init_trail,
@@ -381,8 +482,7 @@ Schedule AntColonySystem::schedule_(const Graph &graph, const Schedule &base_sch
 }
 
 std::vector<AntColonySystem::Route> AntColonySystem::completeEpoch(
-    const Graph &graph,
-    const std::vector<weight_t> &bottom_levels,
+    const GraphContext &context,
     Matrix &proc_matrix,
     Matrix &order_matrix,
     double init_trail,
@@ -393,10 +493,7 @@ std::vector<AntColonySystem::Route> AntColonySystem::completeEpoch(
 
     for (unsigned i = 0; i < ants_count_; ++i)
     {
-        auto route = ants_[i].makeRoute(graph,
-                                        bottom_levels,
-                                        processors_,
-                                        memory_limit_,
+        auto route = ants_[i].makeRoute(context,
                                         overflow_penalty_,
                                         proc_matrix,
                                         order_matrix,

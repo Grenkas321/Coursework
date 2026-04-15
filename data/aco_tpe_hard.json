@@ -1,0 +1,16 @@
+{
+  "aco_tpe_hard": {
+    "baseline": "greedy",
+    "evaporation": 0.1,
+    "phe_decay": 0.2,
+    "phe_influence": 0.3,
+    "heu_influence": 1.6,
+    "epochs_count": 320,
+    "ants_count": 10,
+    "best_count": 3,
+    "threshold": 0.91,
+    "improvement": 0.5,
+    "saturation": 300,
+    "label": "aco_tpe_hard"
+  }
+}

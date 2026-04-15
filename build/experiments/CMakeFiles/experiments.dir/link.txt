@@ -1,2 +1,0 @@
-/usr/bin/ar qc libexperiments.a CMakeFiles/experiments.dir/experiments.cpp.o
-/usr/bin/ranlib libexperiments.a

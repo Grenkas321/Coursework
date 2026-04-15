@@ -1,0 +1,5 @@
+{
+  "ants_count": [10, 20],
+  "best_count": [3, 5],
+  "epochs_count": [600, 1200]
+}

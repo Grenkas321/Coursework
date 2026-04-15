@@ -1,5 +1,6 @@
 ﻿#pragma once
 
+#include <cstddef>
 #include <limits>
 
 #include "IterativeOptimization.h"
@@ -15,6 +16,17 @@ namespace scheduling_problem::algorithms
     class SimulatedAnnealing : public IterativeOptimization
     {
     public:
+        struct FedorenkoDiagnostics
+        {
+            size_t neighbor_trials_with_attempt = 0;
+            size_t neighbor_trials_with_success = 0;
+            size_t best_candidate_hits = 0;
+            size_t accepted_transitions_total = 0;
+            size_t accepted_transition_hits = 0;
+            size_t repair_attempts = 0;
+            size_t repair_improvements = 0;
+        };
+
         /**
          * @brief Temperature reduction laws.
          */
@@ -37,7 +49,7 @@ namespace scheduling_problem::algorithms
          * @param reduction_rule  Temperature reduction rule.
          * @param saturation      Optional early-stop limit on stagnating iterations (0 disables).
          * @param improvement     Improvement threshold for resetting stagnations.
-         * @param seed            RNG seed (может быть игнорирован, если seed переопределяется в schedule_).
+         * @param seed            RNG seed used for reproducible SA runs.
          * @param label           Algorithm label for output.
          */
         SimulatedAnnealing(const BaseOptimization &baseline = BASELINE,
@@ -78,6 +90,8 @@ namespace scheduling_problem::algorithms
         std::vector<double> improvement_dynamic;
         std::vector<double> lambda_dynamic;
 
+        const FedorenkoDiagnostics &fedorenkoDiagnostics() const;
+
     protected:
         /** @brief Lower/upper temperature bounds. */
         double min_temp_, max_temp_;
@@ -103,6 +117,10 @@ namespace scheduling_problem::algorithms
         unsigned restarts_ = 3;
         /** Number of random moves used for restart shake. */
         unsigned kick_moves_ = 8;
+        /** Probability of trying the Fedorenko idle-reduction move before random local moves. */
+        double fedorenko_idle_prob_ = 0.30;
+        /** Runtime counters for Fedorenko-specific diagnostics. */
+        FedorenkoDiagnostics fedorenko_diag_{};
 
         /**
          * @brief Main SAO loop (override from IterativeOptimization).

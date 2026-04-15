@@ -2,6 +2,7 @@
 
 #include "IterativeOptimization.h"
 #include "LayeredSchedule.h"
+#include "BufferIndex.h"
 
 #include <limits>
 #include <vector>
@@ -19,6 +20,22 @@ class AntColonySystem : public IterativeOptimization
 public:
     using Matrix = std::vector<std::vector<double>>;
 
+    struct GraphContext
+    {
+        const Graph *graph = nullptr;
+        unsigned processors = 1;
+        weight_t memory_limit = std::numeric_limits<weight_t>::max();
+        std::vector<std::vector<size_t>> children;
+        std::vector<unsigned> indeg_template;
+        std::vector<weight_t> durations;
+        std::vector<weight_t> vertex_weights;
+        std::vector<double> criticality;
+        std::vector<double> memory_bias;
+        additionals::BufferIndex buffer_index;
+        std::vector<std::vector<std::pair<size_t, int>>> incoming_groups;
+        bool memory_constrained = false;
+    };
+
     struct Route
     {
         LayeredState state;
@@ -33,10 +50,7 @@ public:
      */
     struct ArtificialAnt
     {
-        Route makeRoute(const Graph &graph,
-                        const std::vector<weight_t> &bottom_levels,
-                        unsigned processors,
-                        weight_t memory_limit,
+        Route makeRoute(const GraphContext &context,
                         double overflow_penalty,
                         const Matrix &proc_matrix,
                         const Matrix &order_matrix,
@@ -48,15 +62,15 @@ public:
 
     AntColonySystem(BaseOptimization &baseline = BASELINE,
                     double evaporation = 0.1,
-                    double phe_decay = 0.4,
-                    double phe_influence = 0.4,
-                    double heu_influence = 0.6,
-                    double threshold = 0.9,
-                    unsigned epochs_count = 1000,
-                    unsigned ants_count = 10,
-                    unsigned best_count = 3,
-                    unsigned saturation = 0,
-                    double improvement = 0.0,
+                    double phe_decay = 0.2,
+                    double phe_influence = 0.6902652173894501,
+                    double heu_influence = 1.1372818452511648,
+                    double threshold = 0.9859816765342961,
+                    unsigned epochs_count = 240,
+                    unsigned ants_count = 6,
+                    unsigned best_count = 2,
+                    unsigned saturation = 300,
+                    double improvement = 0.5,
                     unsigned seed = 42,
                     const std::string &label = "aco");
 
@@ -67,8 +81,7 @@ protected:
     Schedule schedule_(const Graph &graph, const Schedule &base_schedule) override;
 
 private:
-    std::vector<Route> completeEpoch(const Graph &graph,
-                                     const std::vector<weight_t> &bottom_levels,
+    std::vector<Route> completeEpoch(const GraphContext &context,
                                      Matrix &proc_matrix,
                                      Matrix &order_matrix,
                                      double init_trail,
@@ -92,19 +105,19 @@ private:
     /** Pheromone evaporation factor rho. */
     double evaporation_ = 0.1;
     /** Local decay factor phi. */
-    double phe_decay_ = 0.4;
+    double phe_decay_ = 0.2;
     /** Pheromone influence alpha. */
-    double phe_influence_ = 0.4;
+    double phe_influence_ = 0.6902652173894501;
     /** Heuristic influence beta. */
-    double heu_influence_ = 0.6;
+    double heu_influence_ = 1.1372818452511648;
     /** Greedy threshold q0. */
-    double threshold_ = 0.9;
+    double threshold_ = 0.9859816765342961;
     /** Number of epochs to run. */
-    unsigned epochs_count_ = 1000;
+    unsigned epochs_count_ = 240;
     /** Number of ants per epoch. */
-    unsigned ants_count_ = 10;
+    unsigned ants_count_ = 6;
     /** Elite pool size. */
-    unsigned best_count_ = 3;
+    unsigned best_count_ = 2;
     /** Number of processors in layered schedule model. */
     unsigned processors_ = 1;
     /** Hard memory limit for layered evaluation. */

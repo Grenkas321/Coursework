@@ -89,16 +89,22 @@ namespace scheduling_problem::algorithms
         for (const auto &param : params)
         {
             if (param.first == "saturation")
+            {
                 saturation_ = (unsigned)param.second;
-            if (param.first == "improvement")
+            }
+            else if (param.first == "improvement")
+            {
                 improvement_ = param.second;
-            if (param.first == "seed")
+            }
+            else if (param.first == "seed")
             {
                 seed_ = param.second;
                 rng_ = randgen(seed_);
             }
             else
+            {
                 BaseOptimization::setParams({param});
+            }
         }
     }
 

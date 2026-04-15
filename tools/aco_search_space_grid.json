@@ -1,0 +1,5 @@
+{
+  "phe_influence": [0.2, 0.6, 1.0],
+  "heu_influence": [0.6, 1.0, 1.4],
+  "threshold": [0.7, 0.85, 0.95]
+}

@@ -1,0 +1,81 @@
+# Build directories and generated CMake files
+/build/
+/cmake-build-*/
+CMakeUserPresets.json
+compile_commands.json
+
+# Experiment outputs and generated datasets
+/Answer/
+/Graphs/
+/data/Answer/
+/data/Graphs/
+
+# Python cache, virtualenvs, and local tooling outputs
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+ENV/
+
+# Editor / IDE
+.vscode/
+.idea/
+.vs/
+*.suo
+*.user
+*.userossc
+*.sln.docstates
+*.code-workspace
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+*.log
+*.out
+*.pid
+*~
+*.swp
+*.swo
+
+# Native build artifacts
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+
+# Databases used by local experiments
+*.db
+*.sqlite
+*.sqlite3
+
+# macOS
+.DS_Store
+**/.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux / generic filesystem metadata
+.directory

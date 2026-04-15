@@ -82,6 +82,8 @@ namespace scheduling_problem::experiments
             Schedule best_solution;
             std::vector<weight_t> best_dynamics;
             std::vector<double> best_temp_dynamic, best_probs_dynamic, best_lambda_dynamic;
+            algorithms::SimulatedAnnealing::FedorenkoDiagnostics best_fedorenko_diag{};
+            bool have_fedorenko_diag = false;
             std::vector<std::vector<weight_t>> best_conveyor;
             std::string save_schedule_dir, save_dynamics_dir;
             if (save_params.schedules == SaveParams::Mode::ALL) {
@@ -106,9 +108,12 @@ namespace scheduling_problem::experiments
                         auto iterative_opt = dynamic_cast<IterativeOptimization*>(optimizer.get());
                         best_dynamics = iterative_opt->costDynamics();
                         if (dynamic_cast<algorithms::SimulatedAnnealing*>(iterative_opt)) {
-                            best_temp_dynamic = dynamic_cast<algorithms::SimulatedAnnealing*>(iterative_opt)->temps_dynamic;
-                            best_probs_dynamic = dynamic_cast<algorithms::SimulatedAnnealing*>(iterative_opt)->probs_dynamic;
-                            best_lambda_dynamic = dynamic_cast<algorithms::SimulatedAnnealing*>(iterative_opt)->lambda_dynamic;
+                            auto *sao = dynamic_cast<algorithms::SimulatedAnnealing*>(iterative_opt);
+                            best_temp_dynamic = sao->temps_dynamic;
+                            best_probs_dynamic = sao->probs_dynamic;
+                            best_lambda_dynamic = sao->lambda_dynamic;
+                            best_fedorenko_diag = sao->fedorenkoDiagnostics();
+                            have_fedorenko_diag = true;
                         }
                     }
                     if (dynamic_cast<algorithms::ConcurrentSAO*>(optimizer.get())) {
@@ -176,6 +181,20 @@ namespace scheduling_problem::experiments
                         std::ofstream file(output_path + "/lambda_dynamics/best/" + graph.name() + ".txt");
                         std::copy(best_lambda_dynamic.begin(), best_lambda_dynamic.end(), std::ostream_iterator<double>({ file, " " }));
                     }
+                }
+
+                if (have_fedorenko_diag)
+                {
+                    std::ofstream file(output_path + "/fedorenko_diagnostics/best/" + graph.name() + ".json");
+                    file << "{\n"
+                         << "  \"neighbor_trials_with_attempt\": " << best_fedorenko_diag.neighbor_trials_with_attempt << ",\n"
+                         << "  \"neighbor_trials_with_success\": " << best_fedorenko_diag.neighbor_trials_with_success << ",\n"
+                         << "  \"best_candidate_hits\": " << best_fedorenko_diag.best_candidate_hits << ",\n"
+                         << "  \"accepted_transitions_total\": " << best_fedorenko_diag.accepted_transitions_total << ",\n"
+                         << "  \"accepted_transition_hits\": " << best_fedorenko_diag.accepted_transition_hits << ",\n"
+                         << "  \"repair_attempts\": " << best_fedorenko_diag.repair_attempts << ",\n"
+                         << "  \"repair_improvements\": " << best_fedorenko_diag.repair_improvements << "\n"
+                         << "}\n";
                 }
 
                 if (best_conveyor.size()) {
@@ -246,6 +265,7 @@ namespace scheduling_problem::experiments
                     std::filesystem::create_directories(alg_output_path + "/temp_dynamics/best");
                     std::filesystem::create_directories(alg_output_path + "/prob_dynamics/best");
                     std::filesystem::create_directories(alg_output_path + "/lambda_dynamics/best");
+                    std::filesystem::create_directories(alg_output_path + "/fedorenko_diagnostics/best");
                 }
                 if (dynamic_cast<algorithms::ConcurrentSAO*>(alg.get())) {
                     std::filesystem::create_directories(alg_output_path + "/conveyor/best");

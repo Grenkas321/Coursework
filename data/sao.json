@@ -1,17 +1,17 @@
 {
   "sao": {
     "baseline": "greedy",
-    "min_temp": 0.2,
-    "max_temp": 24,
+    "min_temp": 0.5,
+    "max_temp": 12,
     "reduction_rule": 1,
-    "saturation": 7000,
-    "improvement": 0.0005,
-    "neighbor_trials": 10,
+    "saturation": 1200,
+    "improvement": 0.001,
+    "neighbor_trials": 4,
     "perturbation_depth": 1,
-    "restart_period": 80,
-    "max_iters": 900,
-    "restarts": 4,
-    "kick_moves": 6,
-    "label": "sao"
+    "restart_period": 50,
+    "max_iters": 300,
+    "restarts": 2,
+    "kick_moves": 3,
+    "label": "sao_fast"
   }
 }

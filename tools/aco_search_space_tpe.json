@@ -1,0 +1,50 @@
+{
+  "evaporation": {
+    "kind": "float",
+    "low": 0.06,
+    "high": 0.16,
+    "step": 0.05
+  },
+  "phe_decay": {
+    "kind": "float",
+    "low": 0.12,
+    "high": 0.28,
+    "step": 0.05
+  },
+  "phe_influence": {
+    "kind": "float",
+    "low": 0.35,
+    "high": 0.95,
+    "step": 0.15
+  },
+  "heu_influence": {
+    "kind": "float",
+    "low": 0.9,
+    "high": 1.7,
+    "step": 0.2
+  },
+  "threshold": {
+    "kind": "float",
+    "low": 0.88,
+    "high": 0.98,
+    "step": 0.02
+  },
+  "ants_count": {
+    "kind": "int",
+    "low": 4,
+    "high": 9,
+    "step": 2
+  },
+  "best_count": {
+    "kind": "int",
+    "low": 1,
+    "high": 3,
+    "step": 1
+  },
+  "epochs_count": {
+    "kind": "int",
+    "low": 120,
+    "high": 320,
+    "step": 40
+  }
+}

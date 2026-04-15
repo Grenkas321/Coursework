@@ -2,9 +2,9 @@
 
 #include <algorithm>
 #include <numeric>
-#include <queue>
 
 #include "BufferIndex.h"
+#include "MemoryFeasibleTiming.h"
 #include "TopologicalSort.h"
 
 namespace scheduling_problem::algorithms
@@ -219,57 +219,127 @@ namespace scheduling_problem::algorithms
         eval.finish.assign(n, 0);
 
         std::vector<std::vector<size_t>> succ(n);
-        std::vector<unsigned> indeg(n, 0);
-        std::vector<weight_t> max_pred_finish(n, 0);
-
-        auto add_edge = [&](size_t u, size_t v)
-        {
-            succ[u].push_back(v);
-            indeg[v]++;
-        };
-
+        std::vector<unsigned> remaining_graph_parents(n, 0);
+        std::vector<weight_t> graph_ready(n, 0);
         for (auto e : boost::make_iterator_range(boost::edges(graph)))
         {
             if (boost::get(edge_kind_t(), graph, e) != EdgeKind::Real)
                 continue;
-            add_edge(boost::source(e, graph), boost::target(e, graph));
+            const auto u = static_cast<size_t>(boost::source(e, graph));
+            const auto v = static_cast<size_t>(boost::target(e, graph));
+            succ[u].push_back(v);
+            remaining_graph_parents[v]++;
         }
 
-        for (const auto &chain : state.processors)
-        {
-            for (size_t i = 0; i + 1 < chain.size(); ++i)
-                add_edge(chain[i], chain[i + 1]);
-        }
+        const auto bindex = additionals::buildBufferIndex(graph);
+        const bool memory_constrained =
+            !isUnlimitedMemory(memory_limit) && memory_limit < totalProducedWeight(bindex);
+        auto groups = memory_constrained ? makeMemoryGroups(bindex)
+                                         : std::vector<std::unordered_map<int, MemoryGroupState>>{};
+        const auto incoming_groups = memory_constrained
+            ? buildIncomingGroups(graph)
+            : std::vector<std::vector<std::pair<size_t, int>>>{};
 
-        std::queue<size_t> q;
-        for (size_t v = 0; v < n; ++v)
-            if (indeg[v] == 0)
-                q.push(v);
+        std::vector<size_t> next_on_proc(state.processors.size(), 0);
+        std::vector<weight_t> proc_free(state.processors.size(), 0);
 
         size_t visited = 0;
-        while (!q.empty())
+        while (visited < n)
         {
-            auto u = q.front();
-            q.pop();
+            const auto base_memory = memory_constrained
+                ? buildMemoryBaseContext(groups)
+                : MemoryBaseContext{};
+            bool found = false;
+            size_t best_task = 0;
+            unsigned best_proc = 0;
+            weight_t best_start = 0;
+            weight_t best_finish = 0;
+
+            for (unsigned p = 0; p < state.processors.size(); ++p)
+            {
+                if (next_on_proc[p] >= state.processors[p].size())
+                    continue;
+
+                const auto task = state.processors[p][next_on_proc[p]];
+                if (task >= n || remaining_graph_parents[task] != 0)
+                    continue;
+
+                const auto dep_ready = std::max(graph_ready[task], proc_free[p]);
+                const auto dur = durationOf(graph, task);
+                weight_t start = dep_ready;
+                if (memory_constrained &&
+                    !earliestFeasibleStart(dep_ready,
+                                           dur,
+                                           memory_limit,
+                                           base_memory,
+                                           groups,
+                                           task,
+                                           incoming_groups,
+                                           start))
+                {
+                    continue;
+                }
+
+                const auto finish = start + dur;
+                if (!found ||
+                    start < best_start ||
+                    (start == best_start &&
+                     (task < best_task || (task == best_task && p < best_proc))))
+                {
+                    found = true;
+                    best_task = task;
+                    best_proc = p;
+                    best_start = start;
+                    best_finish = finish;
+                }
+            }
+
+            if (!found)
+            {
+                eval.acyclic = false;
+                eval.overflow = std::numeric_limits<weight_t>::max() / 4;
+                return eval;
+            }
+
+            eval.start[best_task] = best_start;
+            eval.finish[best_task] = best_finish;
+            eval.makespan = std::max(eval.makespan, best_finish);
+            proc_free[best_proc] = best_finish;
+            next_on_proc[best_proc]++;
             visited++;
 
-            eval.start[u] = max_pred_finish[u];
-            eval.finish[u] = eval.start[u] + durationOf(graph, u);
-            eval.makespan = std::max(eval.makespan, eval.finish[u]);
-
-            for (const auto v : succ[u])
+            if (memory_constrained)
             {
-                max_pred_finish[v] = std::max(max_pred_finish[v], eval.finish[u]);
-                if (--indeg[v] == 0)
-                    q.push(v);
-            }
-        }
+                for (auto &[bid, gs] : groups[best_task])
+                {
+                    (void)bid;
+                    gs.parent_scheduled = true;
+                    gs.parent_start = best_start;
+                    gs.parent_finish = best_finish;
+                }
 
-        if (visited != n)
-        {
-            eval.acyclic = false;
-            eval.overflow = std::numeric_limits<weight_t>::max() / 4;
-            return eval;
+                for (const auto &[parent, bid] : incoming_groups[best_task])
+                {
+                    if (parent >= groups.size())
+                        continue;
+                    auto it = groups[parent].find(bid);
+                    if (it == groups[parent].end())
+                        continue;
+                    auto &gs = it->second;
+                    if (gs.remaining > 0)
+                    {
+                        gs.remaining--;
+                        gs.max_consumer_finish = std::max(gs.max_consumer_finish, best_finish);
+                    }
+                }
+            }
+
+            for (const auto child : succ[best_task])
+            {
+                graph_ready[child] = std::max(graph_ready[child], best_finish);
+                if (remaining_graph_parents[child] > 0)
+                    remaining_graph_parents[child]--;
+            }
         }
 
         struct Event
@@ -280,7 +350,6 @@ namespace scheduling_problem::algorithms
         std::vector<Event> events;
         events.reserve(2 * boost::num_edges(graph));
 
-        auto bindex = additionals::buildBufferIndex(graph);
         for (size_t parent = 0; parent < bindex.groups.size(); ++parent)
         {
             for (const auto &[bid, bg] : bindex.groups[parent])
@@ -307,7 +376,6 @@ namespace scheduling_problem::algorithms
                   {
                       if (a.t != b.t)
                           return a.t < b.t;
-                      // R(t): [alloc, free), so release at free happens before allocations at same t.
                       return a.delta < b.delta;
                   });
 
@@ -341,15 +409,17 @@ namespace scheduling_problem::algorithms
 
         Schedule out(order.size(), graph.name());
         auto nums = boost::get(vertex_num_t(), graph);
+        auto weights = boost::get(vertex_weight_t(), graph);
         for (const auto v : order)
         {
             out.setDisplayId(v, static_cast<size_t>(nums[v]));
-            out.push(v, durationOf(graph, v), 0);
+            out.push(v, weights[v], 0);
             const auto proc = (v < state.proc_of.size()) ? state.proc_of[v] : 0u;
             const auto start = (v < eval.start.size()) ? eval.start[v] : 0;
             const auto finish = (v < eval.finish.size()) ? eval.finish[v] : start;
             out.setPlacement(v, proc, start, finish);
         }
+        out.cost(graph);
         out.setCost(eval.makespan);
         return out;
     }
