@@ -1,6 +1,6 @@
 CMakeFiles/application.dir/src/parameter.cpp.o: \
-  /Users/maxbig/Courseworw_multiprocessing/Coursework/src/parameter.cpp \
-  /Users/maxbig/Courseworw_multiprocessing/Coursework/include/parameter.h \
+  /Users/maxbig/Coursework_multiprocessing/Coursework/src/parameter.cpp \
+  /Users/maxbig/Coursework_multiprocessing/Coursework/include/parameter.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__assert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \

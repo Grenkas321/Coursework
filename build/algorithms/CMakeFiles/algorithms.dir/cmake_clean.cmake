@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/algorithms.dir/FindSeriesParallel.cpp.o.d"
   "CMakeFiles/algorithms.dir/Greedy.cpp.o"
   "CMakeFiles/algorithms.dir/Greedy.cpp.o.d"
+  "CMakeFiles/algorithms.dir/Greedy2.cpp.o"
+  "CMakeFiles/algorithms.dir/Greedy2.cpp.o.d"
   "CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.o"
   "CMakeFiles/algorithms.dir/GreedyEdgeVertexInsertion.cpp.o.d"
   "CMakeFiles/algorithms.dir/GreedyHeuristics.cpp.o"

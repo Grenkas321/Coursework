@@ -1,0 +1,8 @@
+SCIP/SCIPOptSuite-9.2.1-Linux/inputs/
+SCIP/SCIPOptSuite-9.2.1-Linux/outs/
+SCIP/SCIPOptSuite-9.2.1-Linux/logs/
+build/additionals/
+build/algorithms/
+build/CMakeFiles/
+build/experiments/
+include/boost/

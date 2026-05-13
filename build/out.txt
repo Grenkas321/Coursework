@@ -1,0 +1,9 @@
+Command: run
+Algos:
+	greedy:
+	  memory_limit: 500
+	  processors: 6
+
+Output path: Answer
+Duplicates: 1
+Number of threads: 1

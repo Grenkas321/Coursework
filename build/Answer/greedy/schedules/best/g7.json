@@ -1,0 +1,1 @@
+{"g7":{"makespan":30,"runtime_sec":0.000388,"size":7,"schedule":{"0":{"processor":0,"start":0,"finish":10},"1":{"processor":1,"start":0,"finish":15},"2":{"processor":2,"start":0,"finish":20},"3":{"processor":3,"start":10,"finish":30},"4":{"processor":0,"start":15,"finish":20},"5":{"processor":0,"start":20,"finish":25},"6":{"processor":0,"start":25,"finish":30}}}}

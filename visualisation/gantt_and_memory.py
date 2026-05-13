@@ -10,15 +10,16 @@ from matplotlib.patches import Polygon
 
 def draw_horiz_arrow(ax, from_vertex, to_vertex, schedule, color='blue', style='->'):
     """Прямая линия"""
+    global makespan
     from_coords = get_task_coordinates(schedule, from_vertex)
     to_coords = get_task_coordinates(schedule, to_vertex)
     
     arrow = FancyArrowPatch(
-        (max(from_coords['x_center'], from_coords['x_finish'] - 1), from_coords['y_center'] + 0.1),
-        (min(to_coords['x_center'], to_coords['x_start'] + 1), to_coords['y_center'] + 0.1),
+        (max(from_coords['x_finish'] - makespan * 0.015, from_coords['x_center']), from_coords['y_center'] + 0.1),
+        (min(to_coords['x_start'] + makespan * 0.015, to_coords['x_center']), to_coords['y_center'] + 0.1),
         arrowstyle=style,
         color=color,
-        linewidth=1.3,
+        linewidth=1,
         mutation_scale=11,
         connectionstyle="arc3,rad=0"
     )
@@ -84,7 +85,7 @@ def draw_vertical_arrow(ax, from_vertex, to_vertex, schedule, color='red', style
         (to_coords['x_start'], y2),
         arrowstyle=style,
         color=color,
-        linewidth=1.3,
+        linewidth=1,
         mutation_scale=11,
         connectionstyle="arc3,rad=0"  # rad=0 для прямой
     )
@@ -103,7 +104,7 @@ def draw_diagonal_arrow(ax, from_vertex, to_vertex, schedule, color='blue', styl
         (to_coords['x_start'] + 0.1, y2),
         arrowstyle=style,
         color=color,
-        linewidth=1.3,
+        linewidth=1,
         mutation_scale=11,
         connectionstyle="arc3,rad=0"
     )
@@ -122,7 +123,7 @@ def draw_arc_arrow(ax, from_vertex, to_vertex, schedule, color='green', style='-
         (to_coords['x_start'] + 0.2, to_coords['y_bottom']),
         arrowstyle=style,
         color=color,
-        linewidth=1.3,
+        linewidth=1,
         mutation_scale=11,
         connectionstyle=f"arc3,rad={-curvature * 10 / (length**0.8)}"  # положительное значение = дуга вверх
     )
@@ -139,7 +140,7 @@ def draw_vert_arc_arrow(ax, from_vertex, to_vertex, schedule, color='green', sty
         (to_coords['x_start'], to_coords['y_bottom']),
         arrowstyle=style,
         color=color,
-        linewidth=1.3,
+        linewidth=1,
         mutation_scale=11,
         connectionstyle=f"arc3,rad={-curvature}"  # положительное значение = дуга вверх
     )
@@ -169,7 +170,7 @@ def draw_loop_arrow(ax, from_vertex, to_vertex, schedule, color='purple', style=
             angle=0,
             fill=False,
             edgecolor=color,
-            linewidth=1.3
+            linewidth=1
         )
         ax.add_patch(ellipse)
         
@@ -179,7 +180,7 @@ def draw_loop_arrow(ax, from_vertex, to_vertex, schedule, color='purple', style=
             (x - 0.1, y + 0.05),
             arrowstyle=style,
             color=color,
-            linewidth=1.3,
+            linewidth=1,
             mutation_scale=11,
         )
         ax.add_patch(arrow)
@@ -195,7 +196,7 @@ def draw_loop_arrow(ax, from_vertex, to_vertex, schedule, color='purple', style=
             (to_coords['x_start'], to_coords['y_center']),
             arrowstyle=style,
             color=color,
-            linewidth=1.3,
+            linewidth=1,
             mutation_scale=11,
             connectionstyle=f"arc3,rad=-0.5"  # отрицательное значение = дуга вниз
         )
@@ -326,14 +327,22 @@ class ResourceVisualizer:
 # Создаем фигуру с двумя подграфиками (2 строки, 1 колонка)
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(15, 8))
 
-file_name = 'layered_14_buf_times'
-p_m = '_P4_M2200'
-algo = 'lp'
-title = 'ЛП, много процессоров и памяти => другое оптимальное расписание'
-diag_name = 'lp_14_high_P_and_M.png'
+# file_name = 'layered_14_buf_times'
+# pm = '_P4_M2200'
+file_name = 'triadag10_55_1_11_875_S'
+pm = ''
+# p_m = pm + '_for_kbh'
+p_m = pm
+algo = 'greedy'
+title = 'ЖА, много процессоров и памяти => почти оптимальное расписание'
+diag_name = 'greedy_14_high_P_and_M.png'
 save0 = 0
 
-with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/inputs/new_no_tr/order/{file_name + p_m}_down_left_input.lp') as f:
+P = 11
+M = 1000
+
+'''
+with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/inputs/new_no_tr/order/{file_name + pm}_down_left_input.lp') as f:
     lines = f.readlines()
     prev_line = ''
     q = 0
@@ -344,7 +353,9 @@ with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuit
         elif line == 'Bounds\n':
             M = int(prev_line.split('<=')[1])
         prev_line = line
+'''
 
+makespan = 0
 
 # ==================== ВЕРХНИЙ ГРАФИК (Gantt) ====================
 with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/build/Answer/{algo}/schedules/best/{file_name + p_m}.json') as f:
@@ -442,7 +453,7 @@ with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/build/Answer/{al
 # ==================== НИЖНИЙ ГРАФИК (Memory Usage) ====================
 viz = ResourceVisualizer()
 
-with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/LP/noP/{file_name}.txt') as f:
+with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/LP/G/{file_name}.txt') as f:
     bfrs, times = {}, {}
     nodes = []
     sizes = {}

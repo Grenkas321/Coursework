@@ -1,0 +1,1 @@
+{"random_3_N_uniform":{"makespan":239,"runtime_sec":0.000127,"size":3,"schedule":{"0":{"processor":0,"start":0,"finish":80},"1":{"processor":0,"start":80,"finish":157},"2":{"processor":0,"start":157,"finish":239}}}}

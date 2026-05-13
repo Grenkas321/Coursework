@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/maxbig/Courseworw_multiprocessing/Coursework/include -I/Users/maxbig/Courseworw_multiprocessing/Coursework/algorithms -I/Users/maxbig/Courseworw_multiprocessing/Coursework/additionals -I/Users/maxbig/Courseworw_multiprocessing/Coursework/experiments -I/Users/maxbig/Courseworw_multiprocessing/Coursework/json
+CXX_INCLUDES = -I/Users/maxbig/Coursework_multiprocessing/Coursework/include -I/Users/maxbig/Coursework_multiprocessing/Coursework/algorithms -I/Users/maxbig/Coursework_multiprocessing/Coursework/additionals -I/Users/maxbig/Coursework_multiprocessing/Coursework/experiments -I/Users/maxbig/Coursework_multiprocessing/Coursework/json
 
 CXX_FLAGSarm64 = -Wall -Wextra -O2 -Wno-reorder -std=gnu++20 -arch arm64
 

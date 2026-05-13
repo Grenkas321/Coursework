@@ -1,0 +1,1 @@
+{"layered_6_N_uniform":{"makespan":156,"runtime_sec":0.000124,"size":6,"schedule":{"1":{"processor":0,"start":0,"finish":41},"3":{"processor":0,"start":41,"finish":66},"2":{"processor":1,"start":41,"finish":138},"5":{"processor":0,"start":66,"finish":80},"6":{"processor":0,"start":80,"finish":147},"4":{"processor":1,"start":138,"finish":156}}}}

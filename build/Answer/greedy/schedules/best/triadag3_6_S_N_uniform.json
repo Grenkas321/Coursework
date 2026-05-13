@@ -1,0 +1,1 @@
+{"triadag3_6_S_N_uniform":{"makespan":143,"runtime_sec":0.000158,"size":6,"schedule":{"1":{"processor":0,"start":0,"finish":10},"0":{"processor":1,"start":0,"finish":48},"2":{"processor":2,"start":0,"finish":70},"3":{"processor":1,"start":48,"finish":102},"4":{"processor":0,"start":70,"finish":87},"5":{"processor":0,"start":102,"finish":143}}}}

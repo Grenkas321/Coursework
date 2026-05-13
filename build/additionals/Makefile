@@ -57,10 +57,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/maxbig/Courseworw_multiprocessing/Coursework
+CMAKE_SOURCE_DIR = /Users/maxbig/Coursework_multiprocessing/Coursework
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/maxbig/Courseworw_multiprocessing/Coursework/build
+CMAKE_BINARY_DIR = /Users/maxbig/Coursework_multiprocessing/Coursework/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/maxbig/Courseworw_multiprocessing/Coursework/build/CMakeFiles /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals//CMakeFiles/progress.marks
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 additionals/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/maxbig/Courseworw_multiprocessing/Coursework/build/CMakeFiles 0
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/maxbig/Coursework_multiprocessing/Coursework/build/CMakeFiles /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals//CMakeFiles/progress.marks
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 additionals/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/maxbig/Coursework_multiprocessing/Coursework/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 additionals/clean
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 additionals/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 additionals/preinstall
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 additionals/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 additionals/preinstall
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 additionals/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 additionals/CMakeFiles/additionals.dir/rule:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 additionals/CMakeFiles/additionals.dir/rule
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 additionals/CMakeFiles/additionals.dir/rule
 .PHONY : additionals/CMakeFiles/additionals.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ additionals: additionals/CMakeFiles/additionals.dir/rule
 
 # fast build rule for target.
 additionals/fast:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/build
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/build
 .PHONY : additionals/fast
 
 DAGGenerator.o: DAGGenerator.cpp.o
@@ -135,7 +135,7 @@ DAGGenerator.o: DAGGenerator.cpp.o
 
 # target to build an object file
 DAGGenerator.cpp.o:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o
 .PHONY : DAGGenerator.cpp.o
 
 DAGGenerator.i: DAGGenerator.cpp.i
@@ -143,7 +143,7 @@ DAGGenerator.i: DAGGenerator.cpp.i
 
 # target to preprocess a source file
 DAGGenerator.cpp.i:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.i
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.i
 .PHONY : DAGGenerator.cpp.i
 
 DAGGenerator.s: DAGGenerator.cpp.s
@@ -151,7 +151,7 @@ DAGGenerator.s: DAGGenerator.cpp.s
 
 # target to generate assembly for a file
 DAGGenerator.cpp.s:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.s
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.s
 .PHONY : DAGGenerator.cpp.s
 
 DAGPool.o: DAGPool.cpp.o
@@ -159,7 +159,7 @@ DAGPool.o: DAGPool.cpp.o
 
 # target to build an object file
 DAGPool.cpp.o:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o
 .PHONY : DAGPool.cpp.o
 
 DAGPool.i: DAGPool.cpp.i
@@ -167,7 +167,7 @@ DAGPool.i: DAGPool.cpp.i
 
 # target to preprocess a source file
 DAGPool.cpp.i:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/DAGPool.cpp.i
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/DAGPool.cpp.i
 .PHONY : DAGPool.cpp.i
 
 DAGPool.s: DAGPool.cpp.s
@@ -175,7 +175,7 @@ DAGPool.s: DAGPool.cpp.s
 
 # target to generate assembly for a file
 DAGPool.cpp.s:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/DAGPool.cpp.s
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/DAGPool.cpp.s
 .PHONY : DAGPool.cpp.s
 
 DAGReader.o: DAGReader.cpp.o
@@ -183,7 +183,7 @@ DAGReader.o: DAGReader.cpp.o
 
 # target to build an object file
 DAGReader.cpp.o:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o
 .PHONY : DAGReader.cpp.o
 
 DAGReader.i: DAGReader.cpp.i
@@ -191,7 +191,7 @@ DAGReader.i: DAGReader.cpp.i
 
 # target to preprocess a source file
 DAGReader.cpp.i:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/DAGReader.cpp.i
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/DAGReader.cpp.i
 .PHONY : DAGReader.cpp.i
 
 DAGReader.s: DAGReader.cpp.s
@@ -199,7 +199,7 @@ DAGReader.s: DAGReader.cpp.s
 
 # target to generate assembly for a file
 DAGReader.cpp.s:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/DAGReader.cpp.s
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/DAGReader.cpp.s
 .PHONY : DAGReader.cpp.s
 
 GridDAGGenertor.o: GridDAGGenertor.cpp.o
@@ -207,7 +207,7 @@ GridDAGGenertor.o: GridDAGGenertor.cpp.o
 
 # target to build an object file
 GridDAGGenertor.cpp.o:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o
 .PHONY : GridDAGGenertor.cpp.o
 
 GridDAGGenertor.i: GridDAGGenertor.cpp.i
@@ -215,7 +215,7 @@ GridDAGGenertor.i: GridDAGGenertor.cpp.i
 
 # target to preprocess a source file
 GridDAGGenertor.cpp.i:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.i
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.i
 .PHONY : GridDAGGenertor.cpp.i
 
 GridDAGGenertor.s: GridDAGGenertor.cpp.s
@@ -223,7 +223,7 @@ GridDAGGenertor.s: GridDAGGenertor.cpp.s
 
 # target to generate assembly for a file
 GridDAGGenertor.cpp.s:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.s
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.s
 .PHONY : GridDAGGenertor.cpp.s
 
 ProgressBar.o: ProgressBar.cpp.o
@@ -231,7 +231,7 @@ ProgressBar.o: ProgressBar.cpp.o
 
 # target to build an object file
 ProgressBar.cpp.o:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.o
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.o
 .PHONY : ProgressBar.cpp.o
 
 ProgressBar.i: ProgressBar.cpp.i
@@ -239,7 +239,7 @@ ProgressBar.i: ProgressBar.cpp.i
 
 # target to preprocess a source file
 ProgressBar.cpp.i:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.i
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.i
 .PHONY : ProgressBar.cpp.i
 
 ProgressBar.s: ProgressBar.cpp.s
@@ -247,7 +247,7 @@ ProgressBar.s: ProgressBar.cpp.s
 
 # target to generate assembly for a file
 ProgressBar.cpp.s:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.s
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.s
 .PHONY : ProgressBar.cpp.s
 
 ScheduleChecker.o: ScheduleChecker.cpp.o
@@ -255,7 +255,7 @@ ScheduleChecker.o: ScheduleChecker.cpp.o
 
 # target to build an object file
 ScheduleChecker.cpp.o:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o
 .PHONY : ScheduleChecker.cpp.o
 
 ScheduleChecker.i: ScheduleChecker.cpp.i
@@ -263,7 +263,7 @@ ScheduleChecker.i: ScheduleChecker.cpp.i
 
 # target to preprocess a source file
 ScheduleChecker.cpp.i:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.i
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.i
 .PHONY : ScheduleChecker.cpp.i
 
 ScheduleChecker.s: ScheduleChecker.cpp.s
@@ -271,7 +271,7 @@ ScheduleChecker.s: ScheduleChecker.cpp.s
 
 # target to generate assembly for a file
 ScheduleChecker.cpp.s:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.s
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f additionals/CMakeFiles/additionals.dir/build.make additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.s
 .PHONY : ScheduleChecker.cpp.s
 
 # Help Target
@@ -312,6 +312,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

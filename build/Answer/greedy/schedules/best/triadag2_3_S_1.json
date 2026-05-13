@@ -1,0 +1,1 @@
+{"triadag2_3_S_1":{"makespan":173,"runtime_sec":0.000131,"size":3,"schedule":{"0":{"processor":0,"start":0,"finish":32},"1":{"processor":1,"start":0,"finish":75},"2":{"processor":0,"start":75,"finish":173}}}}

@@ -1,0 +1,1 @@
+{"random_6_1":{"makespan":246,"runtime_sec":0.000132,"size":6,"schedule":{"0":{"processor":0,"start":0,"finish":66},"1":{"processor":1,"start":0,"finish":100},"2":{"processor":0,"start":100,"finish":132},"3":{"processor":0,"start":132,"finish":187},"4":{"processor":0,"start":187,"finish":231},"5":{"processor":0,"start":231,"finish":246}}}}

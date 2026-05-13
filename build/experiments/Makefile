@@ -57,10 +57,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/maxbig/Courseworw_multiprocessing/Coursework
+CMAKE_SOURCE_DIR = /Users/maxbig/Coursework_multiprocessing/Coursework
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/maxbig/Courseworw_multiprocessing/Coursework/build
+CMAKE_BINARY_DIR = /Users/maxbig/Coursework_multiprocessing/Coursework/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/maxbig/Courseworw_multiprocessing/Coursework/build/CMakeFiles /Users/maxbig/Courseworw_multiprocessing/Coursework/build/experiments//CMakeFiles/progress.marks
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 experiments/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/maxbig/Courseworw_multiprocessing/Coursework/build/CMakeFiles 0
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/maxbig/Coursework_multiprocessing/Coursework/build/CMakeFiles /Users/maxbig/Coursework_multiprocessing/Coursework/build/experiments//CMakeFiles/progress.marks
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 experiments/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/maxbig/Coursework_multiprocessing/Coursework/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 experiments/clean
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 experiments/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 experiments/preinstall
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 experiments/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 experiments/preinstall
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 experiments/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 experiments/CMakeFiles/experiments.dir/rule:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 experiments/CMakeFiles/experiments.dir/rule
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 experiments/CMakeFiles/experiments.dir/rule
 .PHONY : experiments/CMakeFiles/experiments.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ experiments: experiments/CMakeFiles/experiments.dir/rule
 
 # fast build rule for target.
 experiments/fast:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f experiments/CMakeFiles/experiments.dir/build.make experiments/CMakeFiles/experiments.dir/build
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f experiments/CMakeFiles/experiments.dir/build.make experiments/CMakeFiles/experiments.dir/build
 .PHONY : experiments/fast
 
 experiments.o: experiments.cpp.o
@@ -135,7 +135,7 @@ experiments.o: experiments.cpp.o
 
 # target to build an object file
 experiments.cpp.o:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f experiments/CMakeFiles/experiments.dir/build.make experiments/CMakeFiles/experiments.dir/experiments.cpp.o
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f experiments/CMakeFiles/experiments.dir/build.make experiments/CMakeFiles/experiments.dir/experiments.cpp.o
 .PHONY : experiments.cpp.o
 
 experiments.i: experiments.cpp.i
@@ -143,7 +143,7 @@ experiments.i: experiments.cpp.i
 
 # target to preprocess a source file
 experiments.cpp.i:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f experiments/CMakeFiles/experiments.dir/build.make experiments/CMakeFiles/experiments.dir/experiments.cpp.i
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f experiments/CMakeFiles/experiments.dir/build.make experiments/CMakeFiles/experiments.dir/experiments.cpp.i
 .PHONY : experiments.cpp.i
 
 experiments.s: experiments.cpp.s
@@ -151,7 +151,7 @@ experiments.s: experiments.cpp.s
 
 # target to generate assembly for a file
 experiments.cpp.s:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f experiments/CMakeFiles/experiments.dir/build.make experiments/CMakeFiles/experiments.dir/experiments.cpp.s
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(MAKE) $(MAKESILENT) -f experiments/CMakeFiles/experiments.dir/build.make experiments/CMakeFiles/experiments.dir/experiments.cpp.s
 .PHONY : experiments.cpp.s
 
 # Help Target
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

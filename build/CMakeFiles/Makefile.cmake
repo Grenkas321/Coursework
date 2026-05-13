@@ -7,13 +7,13 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/Users/maxbig/Courseworw_multiprocessing/Coursework/CMakeLists.txt"
-  "/Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/CMakeLists.txt"
-  "/Users/maxbig/Courseworw_multiprocessing/Coursework/algorithms/CMakeLists.txt"
+  "/Users/maxbig/Coursework_multiprocessing/Coursework/CMakeLists.txt"
+  "/Users/maxbig/Coursework_multiprocessing/Coursework/additionals/CMakeLists.txt"
+  "/Users/maxbig/Coursework_multiprocessing/Coursework/algorithms/CMakeLists.txt"
   "CMakeFiles/4.1.1/CMakeCCompiler.cmake"
   "CMakeFiles/4.1.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.1.1/CMakeSystem.cmake"
-  "/Users/maxbig/Courseworw_multiprocessing/Coursework/experiments/CMakeLists.txt"
+  "/Users/maxbig/Coursework_multiprocessing/Coursework/experiments/CMakeLists.txt"
   "/Users/maxbig/anaconda/anaconda3/lib/cmake/Boost-1.82.0/BoostConfig.cmake"
   "/Users/maxbig/anaconda/anaconda3/lib/cmake/Boost-1.82.0/BoostConfigVersion.cmake"
   "/Users/maxbig/anaconda/anaconda3/lib/cmake/BoostDetectToolset-1.82.0.cmake"

@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/maxbig/Courseworw_multiprocessing/Coursework
+CMAKE_SOURCE_DIR = /Users/maxbig/Coursework_multiprocessing/Coursework
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/maxbig/Courseworw_multiprocessing/Coursework/build
+CMAKE_BINARY_DIR = /Users/maxbig/Coursework_multiprocessing/Coursework/build
 
 # Include any dependencies generated for this target.
 include additionals/CMakeFiles/additionals.dir/depend.make
@@ -73,88 +73,88 @@ additionals/CMakeFiles/additionals.dir/codegen:
 .PHONY : additionals/CMakeFiles/additionals.dir/codegen
 
 additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o: additionals/CMakeFiles/additionals.dir/flags.make
-additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o: /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/DAGGenerator.cpp
+additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o: /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/DAGGenerator.cpp
 additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o: additionals/CMakeFiles/additionals.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Courseworw_multiprocessing/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o"
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o -MF CMakeFiles/additionals.dir/DAGGenerator.cpp.o.d -o CMakeFiles/additionals.dir/DAGGenerator.cpp.o -c /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/DAGGenerator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Coursework_multiprocessing/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o"
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.o -MF CMakeFiles/additionals.dir/DAGGenerator.cpp.o.d -o CMakeFiles/additionals.dir/DAGGenerator.cpp.o -c /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/DAGGenerator.cpp
 
 additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/additionals.dir/DAGGenerator.cpp.i"
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/DAGGenerator.cpp > CMakeFiles/additionals.dir/DAGGenerator.cpp.i
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/DAGGenerator.cpp > CMakeFiles/additionals.dir/DAGGenerator.cpp.i
 
 additionals/CMakeFiles/additionals.dir/DAGGenerator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/additionals.dir/DAGGenerator.cpp.s"
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/DAGGenerator.cpp -o CMakeFiles/additionals.dir/DAGGenerator.cpp.s
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/DAGGenerator.cpp -o CMakeFiles/additionals.dir/DAGGenerator.cpp.s
 
 additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o: additionals/CMakeFiles/additionals.dir/flags.make
-additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o: /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/DAGPool.cpp
+additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o: /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/DAGPool.cpp
 additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o: additionals/CMakeFiles/additionals.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Courseworw_multiprocessing/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o"
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o -MF CMakeFiles/additionals.dir/DAGPool.cpp.o.d -o CMakeFiles/additionals.dir/DAGPool.cpp.o -c /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/DAGPool.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Coursework_multiprocessing/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o"
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/DAGPool.cpp.o -MF CMakeFiles/additionals.dir/DAGPool.cpp.o.d -o CMakeFiles/additionals.dir/DAGPool.cpp.o -c /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/DAGPool.cpp
 
 additionals/CMakeFiles/additionals.dir/DAGPool.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/additionals.dir/DAGPool.cpp.i"
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/DAGPool.cpp > CMakeFiles/additionals.dir/DAGPool.cpp.i
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/DAGPool.cpp > CMakeFiles/additionals.dir/DAGPool.cpp.i
 
 additionals/CMakeFiles/additionals.dir/DAGPool.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/additionals.dir/DAGPool.cpp.s"
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/DAGPool.cpp -o CMakeFiles/additionals.dir/DAGPool.cpp.s
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/DAGPool.cpp -o CMakeFiles/additionals.dir/DAGPool.cpp.s
 
 additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o: additionals/CMakeFiles/additionals.dir/flags.make
-additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o: /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/DAGReader.cpp
+additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o: /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/DAGReader.cpp
 additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o: additionals/CMakeFiles/additionals.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Courseworw_multiprocessing/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o"
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o -MF CMakeFiles/additionals.dir/DAGReader.cpp.o.d -o CMakeFiles/additionals.dir/DAGReader.cpp.o -c /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/DAGReader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Coursework_multiprocessing/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o"
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/DAGReader.cpp.o -MF CMakeFiles/additionals.dir/DAGReader.cpp.o.d -o CMakeFiles/additionals.dir/DAGReader.cpp.o -c /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/DAGReader.cpp
 
 additionals/CMakeFiles/additionals.dir/DAGReader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/additionals.dir/DAGReader.cpp.i"
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/DAGReader.cpp > CMakeFiles/additionals.dir/DAGReader.cpp.i
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/DAGReader.cpp > CMakeFiles/additionals.dir/DAGReader.cpp.i
 
 additionals/CMakeFiles/additionals.dir/DAGReader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/additionals.dir/DAGReader.cpp.s"
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/DAGReader.cpp -o CMakeFiles/additionals.dir/DAGReader.cpp.s
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/DAGReader.cpp -o CMakeFiles/additionals.dir/DAGReader.cpp.s
 
 additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o: additionals/CMakeFiles/additionals.dir/flags.make
-additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o: /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/GridDAGGenertor.cpp
+additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o: /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/GridDAGGenertor.cpp
 additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o: additionals/CMakeFiles/additionals.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Courseworw_multiprocessing/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o"
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o -MF CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o.d -o CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o -c /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/GridDAGGenertor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Coursework_multiprocessing/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o"
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o -MF CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o.d -o CMakeFiles/additionals.dir/GridDAGGenertor.cpp.o -c /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/GridDAGGenertor.cpp
 
 additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/additionals.dir/GridDAGGenertor.cpp.i"
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/GridDAGGenertor.cpp > CMakeFiles/additionals.dir/GridDAGGenertor.cpp.i
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/GridDAGGenertor.cpp > CMakeFiles/additionals.dir/GridDAGGenertor.cpp.i
 
 additionals/CMakeFiles/additionals.dir/GridDAGGenertor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/additionals.dir/GridDAGGenertor.cpp.s"
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/GridDAGGenertor.cpp -o CMakeFiles/additionals.dir/GridDAGGenertor.cpp.s
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/GridDAGGenertor.cpp -o CMakeFiles/additionals.dir/GridDAGGenertor.cpp.s
 
 additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.o: additionals/CMakeFiles/additionals.dir/flags.make
-additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.o: /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/ProgressBar.cpp
+additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.o: /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/ProgressBar.cpp
 additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.o: additionals/CMakeFiles/additionals.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Courseworw_multiprocessing/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.o"
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.o -MF CMakeFiles/additionals.dir/ProgressBar.cpp.o.d -o CMakeFiles/additionals.dir/ProgressBar.cpp.o -c /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/ProgressBar.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Coursework_multiprocessing/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.o"
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.o -MF CMakeFiles/additionals.dir/ProgressBar.cpp.o.d -o CMakeFiles/additionals.dir/ProgressBar.cpp.o -c /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/ProgressBar.cpp
 
 additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/additionals.dir/ProgressBar.cpp.i"
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/ProgressBar.cpp > CMakeFiles/additionals.dir/ProgressBar.cpp.i
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/ProgressBar.cpp > CMakeFiles/additionals.dir/ProgressBar.cpp.i
 
 additionals/CMakeFiles/additionals.dir/ProgressBar.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/additionals.dir/ProgressBar.cpp.s"
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/ProgressBar.cpp -o CMakeFiles/additionals.dir/ProgressBar.cpp.s
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/ProgressBar.cpp -o CMakeFiles/additionals.dir/ProgressBar.cpp.s
 
 additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o: additionals/CMakeFiles/additionals.dir/flags.make
-additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o: /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/ScheduleChecker.cpp
+additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o: /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/ScheduleChecker.cpp
 additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o: additionals/CMakeFiles/additionals.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Courseworw_multiprocessing/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o"
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o -MF CMakeFiles/additionals.dir/ScheduleChecker.cpp.o.d -o CMakeFiles/additionals.dir/ScheduleChecker.cpp.o -c /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/ScheduleChecker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/maxbig/Coursework_multiprocessing/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o"
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o -MF CMakeFiles/additionals.dir/ScheduleChecker.cpp.o.d -o CMakeFiles/additionals.dir/ScheduleChecker.cpp.o -c /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/ScheduleChecker.cpp
 
 additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/additionals.dir/ScheduleChecker.cpp.i"
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/ScheduleChecker.cpp > CMakeFiles/additionals.dir/ScheduleChecker.cpp.i
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/ScheduleChecker.cpp > CMakeFiles/additionals.dir/ScheduleChecker.cpp.i
 
 additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/additionals.dir/ScheduleChecker.cpp.s"
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals/ScheduleChecker.cpp -o CMakeFiles/additionals.dir/ScheduleChecker.cpp.s
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maxbig/Coursework_multiprocessing/Coursework/additionals/ScheduleChecker.cpp -o CMakeFiles/additionals.dir/ScheduleChecker.cpp.s
 
 # Object files for target additionals
 additionals_OBJECTS = \
@@ -176,19 +176,19 @@ additionals/libadditionals.a: additionals/CMakeFiles/additionals.dir/ProgressBar
 additionals/libadditionals.a: additionals/CMakeFiles/additionals.dir/ScheduleChecker.cpp.o
 additionals/libadditionals.a: additionals/CMakeFiles/additionals.dir/build.make
 additionals/libadditionals.a: additionals/CMakeFiles/additionals.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/maxbig/Courseworw_multiprocessing/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libadditionals.a"
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals && $(CMAKE_COMMAND) -P CMakeFiles/additionals.dir/cmake_clean_target.cmake
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/additionals.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/maxbig/Coursework_multiprocessing/Coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libadditionals.a"
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals && $(CMAKE_COMMAND) -P CMakeFiles/additionals.dir/cmake_clean_target.cmake
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/additionals.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 additionals/CMakeFiles/additionals.dir/build: additionals/libadditionals.a
 .PHONY : additionals/CMakeFiles/additionals.dir/build
 
 additionals/CMakeFiles/additionals.dir/clean:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals && $(CMAKE_COMMAND) -P CMakeFiles/additionals.dir/cmake_clean.cmake
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals && $(CMAKE_COMMAND) -P CMakeFiles/additionals.dir/cmake_clean.cmake
 .PHONY : additionals/CMakeFiles/additionals.dir/clean
 
 additionals/CMakeFiles/additionals.dir/depend:
-	cd /Users/maxbig/Courseworw_multiprocessing/Coursework/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/maxbig/Courseworw_multiprocessing/Coursework /Users/maxbig/Courseworw_multiprocessing/Coursework/additionals /Users/maxbig/Courseworw_multiprocessing/Coursework/build /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals /Users/maxbig/Courseworw_multiprocessing/Coursework/build/additionals/CMakeFiles/additionals.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/maxbig/Coursework_multiprocessing/Coursework/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/maxbig/Coursework_multiprocessing/Coursework /Users/maxbig/Coursework_multiprocessing/Coursework/additionals /Users/maxbig/Coursework_multiprocessing/Coursework/build /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals /Users/maxbig/Coursework_multiprocessing/Coursework/build/additionals/CMakeFiles/additionals.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : additionals/CMakeFiles/additionals.dir/depend
 

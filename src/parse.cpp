@@ -150,6 +150,8 @@ namespace parse
                     optimizer = std::unique_ptr<ConcurrentSAO>(new ConcurrentSAO());
                 else if (alg == "greedy")
                     optimizer = std::unique_ptr<Greedy>(new Greedy());
+                else if (alg == "greedy2")
+                    optimizer = std::unique_ptr<Greedy2>(new Greedy2());
                 else if (alg == "sp")
                     optimizer = std::unique_ptr<SeriesParallel>(new SeriesParallel("sp"));
                 else if (alg == "sp0")

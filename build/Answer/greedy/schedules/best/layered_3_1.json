@@ -1,0 +1,1 @@
+{"layered_3_1":{"makespan":186,"runtime_sec":0.000117,"size":3,"schedule":{"1":{"processor":0,"start":0,"finish":72},"2":{"processor":0,"start":72,"finish":122},"3":{"processor":0,"start":122,"finish":186}}}}
