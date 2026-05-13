@@ -1,0 +1,90 @@
+\documentclass[oneside,senior,etd]{BYUPhysForDegree}
+
+\usepackage[utf8]{inputenc}
+\usepackage{rotating} 
+\usepackage{caption}
+
+\usepackage[russian]{babel}
+\usepackage{amsfonts} % Пакеты для математических символов и теорем
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} % Пакеты для вставки графики
+\usepackage{subfig}
+\usepackage{color}
+\usepackage[unicode]{hyperref}
+\usepackage[nottoc]{tocbibind} % Для того, чтобы список литературы отображался в оглавлении
+\usepackage{algorithmic} % Для записи алгоритмов в псевдокоде
+\usepackage{algorithm}
+\usepackage{verbatim} % Для вставок заранее подготовленного текста в режиме as-is
+\usepackage{listings}
+\usepackage{array}
+\usepackage[numbers]{natbib}
+\newcommand{\citeappendix}[2]{[\citenum{#1}, #2]}
+
+
+\usepackage{commath}
+\newcommand\Tau{\mathcal{T}}
+\newcommand{\R}{\mathbb{R}}
+\usepackage{color}
+\usepackage[colorinlistoftodos, prependcaption]{todonotes}
+\usepackage{multirow}
+\newcommand*{\MyIndent}{\hspace*{0.2cm}}%
+
+\Chair{Кафедра автоматизации систем вычислительных комплексов}
+\Lab{~}
+\Year{2026}
+  \Month{Май}
+  \City{Москва}
+  \AuthorText{Автор}
+  \Author{Гоцкало Максим Олегович}
+  \AuthorEng{}
+  \AcadGroup{321}
+
+  \TitleTop{Детерминированные алгоритмы построения}
+  \TitleMiddle{многопроцессорного расписания}
+  \TitleBottom{с ограничением на объем памяти} % leave empty if you don't need it
+  \TitleTopEng{}
+  \TitleBottomEng{} % leave empty if you don't need it  
+  %\docname{Курсовая работа}
+  \docname{Курсовая работа}
+  %\docname{Магистерская диссертация}
+  \Advisor{Балашов Василий Викторович}
+  \AdvisorDegree{к.ф.-м.н., с.н.с.}
+
+\Abstract{Здесь будет аннотация}
+
+
+
+%%%% DON'T change this. It is here because .sty does not support cyrillic cp properly %%%%
+\University{Московский государственный университет имени М.В.Ломоносова}
+\Faculty{Факультет вычислительной математики и кибернетики}
+\GrText{гр.}
+\AdvisorText{Научный руководитель}
+\AbstractText{Аннотация}
+
+
+\begin{document}
+\fixmargins
+\makepreliminarypages
+
+\oneandhalfspace
+
+\tableofcontents
+
+
+\include{template-cmc/0_vvedenie}
+\include{template-cmc/1_cel_zadachi} 
+\include{template-cmc/2_problem_statement} 
+\include{template-cmc/3_greedy_algos} 
+\include{template-cmc/4_reduce_description} 
+\include{template-cmc/5_experiments} 
+\include{template-cmc/6_programs} 
+\include{template-cmc/7_zakluch} 
+% \bibliographystyle{gost71u}
+% \bibliography{references}
+
+
+% \include{Appendix} 
+
+\end{document}
