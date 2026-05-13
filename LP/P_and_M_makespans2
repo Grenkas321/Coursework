@@ -1,0 +1,837 @@
+Last login: Wed Apr 29 23:36:16 on ttys005
+/var/folders/k3/j69524991wbcptc8l20v3g9m0000gn/T/geany_run_script_20RJO3.sh ; exit;
+(base) maxbig@MacBook-Air-Max ~ % /var/folders/k3/j69524991wbcptc8l20v3g9m0000gn/T/geany_run_script_20RJO3.sh ; exit;
+triadag10_55_1.txt
+makespan on extreme big P and M: 715
+Failed to build schedule: No feasible greedy placement under memory limit 365 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 380 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 395 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 410 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 425 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 440 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 455 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 470 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 485 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 6, 11] [500, 687, 875]
+makespan on extreme big P and low M: 1787
+
+
+triadag10_55_N_uniform.txt
+makespan on extreme big P and M: 715
+Failed to build schedule: No feasible greedy placement under memory limit 484 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 504 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 524 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 544 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 564 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 584 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 604 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 624 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 644 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 664 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 684 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 704 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 724 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 744 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 764 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 784 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 804 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 824 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 6, 11] [844, 1002, 1161]
+makespan on extreme big P and low M: 1805
+
+
+triadag14_105_N_uniform.txt
+makespan on extreme big P and M: 1085
+Failed to build schedule: No feasible greedy placement under memory limit 665 for graph 'triadag14_105_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 704 for graph 'triadag14_105_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 743 for graph 'triadag14_105_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 782 for graph 'triadag14_105_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 821 for graph 'triadag14_105_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 860 for graph 'triadag14_105_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 899 for graph 'triadag14_105_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 9, 17] [938, 1252, 1566]
+makespan on extreme big P and low M: 3264
+
+
+triadag14_105_1.txt
+makespan on extreme big P and M: 1085
+Failed to build schedule: No feasible greedy placement under memory limit 556 for graph 'triadag14_105_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 588 for graph 'triadag14_105_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 620 for graph 'triadag14_105_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 652 for graph 'triadag14_105_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 684 for graph 'triadag14_105_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 716 for graph 'triadag14_105_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 748 for graph 'triadag14_105_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 9, 17] [780, 1046, 1312]
+makespan on extreme big P and low M: 3316
+
+
+triadag20_210_N_uniform.txt
+makespan on extreme big P and M: 1506
+Failed to build schedule: No feasible greedy placement under memory limit 1102 for graph 'triadag20_210_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1190 for graph 'triadag20_210_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1278 for graph 'triadag20_210_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1366 for graph 'triadag20_210_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 13, 24] [1454, 1995, 2536]
+makespan on extreme big P and low M: 6171
+
+
+triadag20_210_1.txt
+makespan on extreme big P and M: 1506
+Failed to build schedule: No feasible greedy placement under memory limit 839 for graph 'triadag20_210_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 906 for graph 'triadag20_210_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 973 for graph 'triadag20_210_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1040 for graph 'triadag20_210_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1107 for graph 'triadag20_210_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1174 for graph 'triadag20_210_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 13, 24] [1241, 1586, 1932]
+makespan on extreme big P and low M: 6173
+
+
+triadag24_300_N_uniform.txt
+makespan on extreme big P and M: 1895
+Failed to build schedule: No feasible greedy placement under memory limit 1375 for graph 'triadag24_300_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1507 for graph 'triadag24_300_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1639 for graph 'triadag24_300_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 14, 26] [1771, 2440, 3109]
+makespan on extreme big P and low M: 9151
+
+
+triadag24_300_1.txt
+makespan on extreme big P and M: 1895
+Failed to build schedule: No feasible greedy placement under memory limit 1199 for graph 'triadag24_300_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1314 for graph 'triadag24_300_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1429 for graph 'triadag24_300_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 14, 26] [1544, 2127, 2710]
+makespan on extreme big P and low M: 9353
+
+
+triadag31_496_N_uniform.txt
+makespan on extreme big P and M: 2346
+Failed to build schedule: No feasible greedy placement under memory limit 1840 for graph 'triadag31_496_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2062 for graph 'triadag31_496_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 18, 35] [2284, 3164, 4045]
+makespan on extreme big P and low M: 14723
+
+
+triadag31_496_1.txt
+makespan on extreme big P and M: 2346
+Failed to build schedule: No feasible greedy placement under memory limit 1566 for graph 'triadag31_496_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1755 for graph 'triadag31_496_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 18, 35] [1944, 2693, 3443]
+makespan on extreme big P and low M: 14616
+
+
+triadag44_990_N_uniform.txt
+makespan on extreme big P and M: 3413
+Failed to build schedule: No feasible greedy placement under memory limit 2589 for graph 'triadag44_990_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 3009 for graph 'triadag44_990_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 3429 for graph 'triadag44_990_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[4, 27, 51] [3849, 4636, 5423]
+makespan on extreme big P and low M: 28808
+
+
+triadag44_990_1.txt
+makespan on extreme big P and M: 3413
+Failed to build schedule: No feasible greedy placement under memory limit 2048 for graph 'triadag44_990_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2380 for graph 'triadag44_990_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[4, 27, 51] [2712, 3501, 4290]
+makespan on extreme big P and low M: 28808
+
+
+triadag63_2016_N_uniform.txt
+makespan on extreme big P and M: 4700
+Failed to build schedule: No feasible greedy placement under memory limit 3983 for graph 'triadag63_2016_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 4842 for graph 'triadag63_2016_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[4, 38, 72] [5701, 6756, 7812]
+makespan on extreme big P and low M: 58260
+
+
+triadag63_2016_1.txt
+makespan on extreme big P and M: 4700
+Failed to build schedule: No feasible greedy placement under memory limit 3221 for graph 'triadag63_2016_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[4, 38, 72] [3915, 5116, 6318]
+makespan on extreme big P and low M: 58234
+
+
+triadag77_3003_1.txt
+makespan on extreme big P and M: 5725
+[4, 46, 89] [4181, 5998, 7815]
+makespan on extreme big P and low M: 86657
+
+
+triadag77_3003_N_uniform.txt
+makespan on extreme big P and M: 5725
+Failed to build schedule: No feasible greedy placement under memory limit 4819 for graph 'triadag77_3003_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[4, 46, 89] [6035, 7521, 9008]
+makespan on extreme big P and low M: 86554
+
+
+layered_50_N_uniform.txt
+makespan on extreme big P and M: 769
+Failed to build schedule: No feasible greedy placement under memory limit 1004 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1046 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1088 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1130 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1172 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1214 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1256 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1298 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1340 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1382 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1424 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1466 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1508 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1550 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1592 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1634 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1676 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1718 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1760 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1802 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1844 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1886 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1928 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1970 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2012 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2054 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2096 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2138 for graph 'layered_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 4, 6] [2180, 2292, 2405]
+makespan on extreme big P and low M: 1599
+
+
+layered_50_1.txt
+makespan on extreme big P and M: 769
+Failed to build schedule: No feasible greedy placement under memory limit 498 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 518 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 538 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 558 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 578 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 598 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 618 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 638 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 658 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 678 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 698 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 718 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 738 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 758 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 778 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 798 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 818 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 838 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 858 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 878 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 898 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 918 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 938 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 958 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 978 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 998 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1018 for graph 'layered_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 4, 6] [1038, 1117, 1196]
+makespan on extreme big P and low M: 1512
+
+
+layered_250_1.txt
+makespan on extreme big P and M: 2334
+Failed to build schedule: No feasible greedy placement under memory limit 1409 for graph 'layered_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1529 for graph 'layered_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1649 for graph 'layered_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1769 for graph 'layered_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1889 for graph 'layered_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2009 for graph 'layered_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2129 for graph 'layered_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2249 for graph 'layered_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2369 for graph 'layered_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2489 for graph 'layered_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2609 for graph 'layered_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2729 for graph 'layered_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 8, 14] [2849, 3036, 3223]
+makespan on extreme big P and low M: 7218
+
+
+layered_250_N_uniform.txt
+makespan on extreme big P and M: 2334
+Failed to build schedule: No feasible greedy placement under memory limit 2480 for graph 'layered_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2692 for graph 'layered_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2904 for graph 'layered_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 3116 for graph 'layered_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 3328 for graph 'layered_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 3540 for graph 'layered_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 3752 for graph 'layered_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 3964 for graph 'layered_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 4176 for graph 'layered_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 4388 for graph 'layered_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 4600 for graph 'layered_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 8, 14] [4812, 5241, 5671]
+makespan on extreme big P and low M: 7460
+
+
+layered_1000_N_uniform.txt
+makespan on extreme big P and M: 5252
+Failed to build schedule: No feasible greedy placement under memory limit 6422 for graph 'layered_1000_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 7464 for graph 'layered_1000_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 8506 for graph 'layered_1000_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 9548 for graph 'layered_1000_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 10590 for graph 'layered_1000_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 15, 28] [11632, 12541, 13451]
+makespan on extreme big P and low M: 29817
+
+
+layered_1000_1.txt
+makespan on extreme big P and M: 5252
+Failed to build schedule: No feasible greedy placement under memory limit 3380 for graph 'layered_1000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 3928 for graph 'layered_1000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 4476 for graph 'layered_1000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 5024 for graph 'layered_1000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 5572 for graph 'layered_1000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 6120 for graph 'layered_1000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 6668 for graph 'layered_1000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 15, 28] [7216, 7148, 7080]
+makespan on extreme big P and low M: 29637
+
+
+layered_3000_1.txt
+makespan on extreme big P and M: 9101
+Failed to build schedule: No feasible greedy placement under memory limit 8083 for graph 'layered_3000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 10122 for graph 'layered_3000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 12161 for graph 'layered_3000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 14200 for graph 'layered_3000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[4, 40, 77] [16239, 15674, 15110]
+makespan on extreme big P and low M: 86976
+
+
+layered_3000_N_uniform.txt
+makespan on extreme big P and M: 9101
+Failed to build schedule: No feasible greedy placement under memory limit 14849 for graph 'layered_3000_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 18596 for graph 'layered_3000_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 22343 for graph 'layered_3000_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[4, 40, 77] [26090, 26923, 27756]
+makespan on extreme big P and low M: 86976
+
+
+random_50_1.txt
+makespan on extreme big P and M: 716
+Failed to build schedule: No feasible greedy placement under memory limit 263 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 274 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 285 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 296 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 307 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 318 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 329 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 340 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 351 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 362 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 373 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 384 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 395 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 406 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 417 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 428 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 439 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 450 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 461 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 472 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 483 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 494 for graph 'random_50_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 5, 8] [505, 568, 631]
+makespan on extreme big P and low M: 1498
+
+
+random_50_N_uniform.txt
+makespan on extreme big P and M: 716
+Failed to build schedule: No feasible greedy placement under memory limit 445 for graph 'random_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 463 for graph 'random_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 481 for graph 'random_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 499 for graph 'random_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 517 for graph 'random_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 535 for graph 'random_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 553 for graph 'random_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 571 for graph 'random_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 589 for graph 'random_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 607 for graph 'random_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 625 for graph 'random_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 643 for graph 'random_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 661 for graph 'random_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 679 for graph 'random_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 697 for graph 'random_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 715 for graph 'random_50_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 5, 8] [733, 900, 1068]
+makespan on extreme big P and low M: 1635
+
+
+random_250_N_uniform.txt
+makespan on extreme big P and M: 3240
+Failed to build schedule: No feasible greedy placement under memory limit 1360 for graph 'random_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1476 for graph 'random_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1592 for graph 'random_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1708 for graph 'random_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1824 for graph 'random_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1940 for graph 'random_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2056 for graph 'random_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2172 for graph 'random_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2288 for graph 'random_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2404 for graph 'random_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2520 for graph 'random_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2636 for graph 'random_250_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 11, 20] [2752, 2932, 3112]
+makespan on extreme big P and low M: 7674
+
+
+random_250_1.txt
+makespan on extreme big P and M: 3240
+Failed to build schedule: No feasible greedy placement under memory limit 1272 for graph 'random_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1381 for graph 'random_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1490 for graph 'random_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1599 for graph 'random_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1708 for graph 'random_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1817 for graph 'random_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1926 for graph 'random_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2035 for graph 'random_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2144 for graph 'random_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2253 for graph 'random_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2362 for graph 'random_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2471 for graph 'random_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 2580 for graph 'random_250_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 11, 20] [2689, 2799, 2909]
+makespan on extreme big P and low M: 7621
+
+
+random_1000_1.txt
+makespan on extreme big P and M: 10284
+Failed to build schedule: No feasible greedy placement under memory limit 4272 for graph 'random_1000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 4965 for graph 'random_1000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 5658 for graph 'random_1000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 6351 for graph 'random_1000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 7044 for graph 'random_1000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 7737 for graph 'random_1000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 8430 for graph 'random_1000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 17, 32] [9123, 9035, 8948]
+makespan on extreme big P and low M: 29227
+
+
+random_1000_N_uniform.txt
+makespan on extreme big P and M: 10284
+Failed to build schedule: No feasible greedy placement under memory limit 4293 for graph 'random_1000_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 4989 for graph 'random_1000_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 5685 for graph 'random_1000_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 6381 for graph 'random_1000_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 7077 for graph 'random_1000_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 7773 for graph 'random_1000_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 8469 for graph 'random_1000_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 17, 32] [9165, 9079, 8993]
+makespan on extreme big P and low M: 29227
+
+
+random_3000_N_uniform.txt
+makespan on extreme big P and M: 29605
+Failed to build schedule: No feasible greedy placement under memory limit 14807 for graph 'random_3000_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 18543 for graph 'random_3000_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 22279 for graph 'random_3000_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 26015 for graph 'random_3000_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[4, 29, 54] [29751, 28714, 27678]
+makespan on extreme big P and low M: 87124
+
+
+random_3000_1.txt
+makespan on extreme big P and M: 29605
+Failed to build schedule: No feasible greedy placement under memory limit 14514 for graph 'random_3000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 18176 for graph 'random_3000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 21838 for graph 'random_3000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 25500 for graph 'random_3000_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[4, 29, 54] [29162, 28146, 27130]
+makespan on extreme big P and low M: 87124
+
+
+triadag10_55_1.txt
+makespan on extreme big P and M: 779
+Failed to build schedule: No feasible greedy placement under memory limit 404 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 420 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 436 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 452 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 468 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 484 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 500 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 516 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 532 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 548 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 564 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 580 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 596 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 612 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 628 for graph 'triadag10_55_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 6, 11] [644, 807, 971]
+makespan on extreme big P and low M: 1838
+
+
+triadag10_55_N_uniform.txt
+makespan on extreme big P and M: 779
+Failed to build schedule: No feasible greedy placement under memory limit 460 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 479 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 498 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 517 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 536 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 555 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 574 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 593 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 612 for graph 'triadag10_55_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 6, 11] [631, 867, 1104]
+makespan on extreme big P and low M: 2048
+
+
+triadag22_253_1.txt
+makespan on extreme big P and M: 1633
+Failed to build schedule: No feasible greedy placement under memory limit 934 for graph 'triadag22_253_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1014 for graph 'triadag22_253_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1094 for graph 'triadag22_253_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1174 for graph 'triadag22_253_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1254 for graph 'triadag22_253_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 14, 27] [1334, 1734, 2135]
+makespan on extreme big P and low M: 7487
+
+
+triadag22_253_N_uniform.txt
+makespan on extreme big P and M: 1633
+Failed to build schedule: No feasible greedy placement under memory limit 1193 for graph 'triadag22_253_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1295 for graph 'triadag22_253_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 1397 for graph 'triadag22_253_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[2, 14, 27] [1499, 2113, 2728]
+makespan on extreme big P and low M: 7647
+
+
+triadag44_990_N_uniform.txt
+makespan on extreme big P and M: 3273
+Failed to build schedule: No feasible greedy placement under memory limit 2486 for graph 'triadag44_990_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[4, 27, 50] [2889, 4049, 5209]
+makespan on extreme big P and low M: 29282
+
+
+triadag44_990_1.txt
+makespan on extreme big P and M: 3273
+Failed to build schedule: No feasible greedy placement under memory limit 2202 for graph 'triadag44_990_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[4, 27, 50] [2559, 3586, 4613]
+makespan on extreme big P and low M: 29398
+
+
+triadag77_3003_1.txt
+makespan on extreme big P and M: 5536
+Failed to build schedule: No feasible greedy placement under memory limit 4310 for graph 'triadag77_3003_1'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[4, 46, 89] [5397, 6728, 8059]
+makespan on extreme big P and low M: 85570
+
+
+triadag77_3003_N_uniform.txt
+makespan on extreme big P and M: 5536
+Failed to build schedule: No feasible greedy placement under memory limit 4900 for graph 'triadag77_3003_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 6136 for graph 'triadag77_3003_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+Failed to build schedule: No feasible greedy placement under memory limit 7372 for graph 'triadag77_3003_N_uniform'.
+Невозможно построить расписание, удовлетворяющее заданному ограничению по памяти.
+[4, 46, 89] [8608, 8884, 9161]
+makespan on extreme big P and low M: 85627
+
+
+
+
+------------------
+(program exited with code: 0)
+Press return to continue
+
+
+Saving session...
+...copying shared history...
+...saving history...truncating history files...
+...completed.
+
+[Процесс завершен]
+

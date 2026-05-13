@@ -5,8 +5,8 @@ import numpy as np
 import shutil
  
 # Указываем путь к директории
-# directory = "/Users/maxbig/ASVK/coursework/LP/old_tests_sp_buf_times/mix"
-directory = "/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/translator_inputs"
+directory = "/Users/maxbig/Coursework_multiprocessing/Coursework/LP/experiments/data_lp/mix2"
+# directory = "/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/translator_inputs"
 
 '''
 l1 = ['P2', 'P3', 'P4']
@@ -22,12 +22,20 @@ for i in l1:
 '''
 
 
-directory3 = "/Users/maxbig/Coursework_multiprocessing/Coursework/LP/G"
-
+# directory3 = "/Users/maxbig/Coursework_multiprocessing/Coursework/LP/G"
+'''
 files = sorted(os.listdir(directory3))
 if '.DS_Store' in files:
     files.remove('.DS_Store')
+'''
 
+files = sorted(os.listdir(directory))
+if '.DS_Store' in files:
+    files.remove('.DS_Store')
+
+files.sort(key=lambda x: (int(x.split('_')[1]), x.split('_')[0], x.split('_')[2], x.split('_')[3], int(x.split('_')[-2]), int(x.split('_')[-1][:-4])))
+
+'''
 l1 = ['P2', 'P3', 'P4']
 # l2 = ['M2600', 'M4000', 'M10000']
 # l2 = ['M8500', 'M11000', 'M13500']
@@ -48,6 +56,7 @@ files = sorted(files, key=lambda x: (int(x.split('_P')[1][0]), int(x.split('_M')
 
 # Выводим список файлов
 # print(files)
+'''
 
 data_names = []
 data_sp = []
@@ -55,18 +64,23 @@ data_lp = []
 data_greedy = []
 
 for file_name in files:
+    if int(file_name.split('_')[1]) > 21:
+        break
     graph_name = file_name[:-4]
     # f_sp = open("/Users/maxbig/Coursework/build/Answer/sp0/schedules/best/" + file_name[:-4] + '.json', 'r')
     # f_greedy = open("/Users/maxbig/Coursework/build/Answer/greedy/schedules/best/" + file_name[:-4] + '.json', 'r')
-    f_lp_new_tr_default = open("/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/logs/new_tr/" + file_name[:-4] + '_default_input.log', 'r')
-    f_lp_new_tr_up_right = open("/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/logs/new_tr/" + file_name[:-4] + '_up_right_input.log', 'r')
-    f_lp_new_tr_down_left = open("/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/logs/new_tr/" + file_name[:-4] + '_down_left_input.log', 'r')
-    f_lp_new_tr_tiers = open("/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/logs/new_tr/" + file_name[:-4] + '_tiers_input.log', 'r')
-    # f_lp_new_tr_reverse_tiers = open("/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/logs/new_tr/" + file_name[:-4] + '_reverse_tiers_input.log', 'r')
-    f_lp_new_no_tr_default = open("/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/logs/new_no_tr/" + file_name[:-4] + '_default_input.log', 'r')
-    f_lp_new_no_tr_up_right = open("/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/logs/new_no_tr/" + file_name[:-4] + '_up_right_input.log', 'r')
-    f_lp_new_no_tr_down_left = open("/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/logs/new_no_tr/" + file_name[:-4] + '_down_left_input.log', 'r')
-    f_lp_new_no_tr_tiers = open("/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/logs/new_no_tr/" + file_name[:-4] + '_tiers_input.log', 'r')
+    try:
+        f_lp_new_tr_default = open("/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/logs/new_tr/" + file_name[:-4] + '_default_input.log', 'r')
+        f_lp_new_tr_up_right = open("/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/logs/new_tr/" + file_name[:-4] + '_up_right_input.log', 'r')
+        f_lp_new_tr_down_left = open("/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/logs/new_tr/" + file_name[:-4] + '_down_left_input.log', 'r')
+        f_lp_new_tr_tiers = open("/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/logs/new_tr/" + file_name[:-4] + '_tiers_input.log', 'r')
+        # f_lp_new_tr_reverse_tiers = open("/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/logs/new_tr/" + file_name[:-4] + '_reverse_tiers_input.log', 'r')
+        f_lp_new_no_tr_default = open("/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/logs/new_no_tr/" + file_name[:-4] + '_default_input.log', 'r')
+        f_lp_new_no_tr_up_right = open("/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/logs/new_no_tr/" + file_name[:-4] + '_up_right_input.log', 'r')
+        f_lp_new_no_tr_down_left = open("/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/logs/new_no_tr/" + file_name[:-4] + '_down_left_input.log', 'r')
+        f_lp_new_no_tr_tiers = open("/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/logs/new_no_tr/" + file_name[:-4] + '_tiers_input.log', 'r')
+    except Exception:
+        continue
     # f_lp_new_no_tr_reverse_tiers = open("/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/logs/new_no_tr/" + file_name[:-4] + '_reverse_tiers_input.log', 'r')
     # lst_greedy = f_greedy.readline().split(':')
     # graph_name = lst_greedy[0][2:-1][6:11]
@@ -156,6 +170,9 @@ for file_name in files:
     f_lp_new_no_tr_down_left.close()
     f_lp_new_no_tr_tiers.close()
     # f_lp_new_no_tr_reverse_tiers.close()
+
+
+
 
 """
 # задаем размеры
