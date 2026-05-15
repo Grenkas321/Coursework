@@ -10,10 +10,10 @@ l1 = ['2', '3', '4']
 # l2 = ['1050', '1350', '2550']
 # l2 = ['2500', '3500', '6000']
 l2 = ['1100', '1350', '2200']
-prev_p = 'P = 2'
-prev_m = 'M = 1500'
+prev_p = 'P = 6'
+prev_m = 'M = 968'
 
-directory = '/Users/maxbig/Coursework_multiprocessing/Coursework/LP/experiments/data_lp/mix2'
+directory = '/Users/maxbig/Coursework_multiprocessing/Coursework/LP/experiments/data_lp/mix22'
 
 files = sorted(os.listdir(directory))
 if '.DS_Store' in files:

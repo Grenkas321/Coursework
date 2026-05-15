@@ -6,3 +6,4 @@ build/algorithms/
 build/CMakeFiles/
 build/experiments/
 include/boost/
+.DS_Store

@@ -3,7 +3,7 @@ import shutil
 import time
 
 
-directory = '/Users/maxbig/Coursework_multiprocessing/Coursework/LP/experiments/data_lp/mix2'
+directory = '/Users/maxbig/Coursework_multiprocessing/Coursework/LP/experiments/data_lp/mix22'
 directory2 = '/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/translator_inputs'
 
 files = sorted(os.listdir(directory))
@@ -13,11 +13,11 @@ if '.DS_Store' in files:
 files.sort(key=lambda x: (int(x.split('_')[1]), x.split('_')[0], x.split('_')[2], x.split('_')[3], int(x.split('_')[-2]), int(x.split('_')[-1][:-4])))
 
 ii = 1
-jj = 1
+jj = 10
 
 for graph_name in files:
     
-    if int(graph_name.split('_')[1]) < 17:
+    if int(graph_name.split('_')[1]) < 16:
         continue
     if int(graph_name.split('_')[1]) == 17 and graph_name.split('_')[0] == 'layered' and int(graph_name.split('_')[-2]) == 2:
         continue
