@@ -125,7 +125,7 @@ def draw_arc_arrow(ax, from_vertex, to_vertex, schedule, color='green', style='-
         color=color,
         linewidth=1,
         mutation_scale=11,
-        connectionstyle=f"arc3,rad={-curvature * 10 / (length**0.8)}"  # положительное значение = дуга вверх
+        connectionstyle=f"arc3,rad={-curvature * 100 / (length**1.2)}"  # положительное значение = дуга вверх
     )
     ax.add_patch(arrow)
 
@@ -317,7 +317,8 @@ class ResourceVisualizer:
         ax.grid(True, axis='y', alpha=0.3, linestyle='--')
         ax.set_axisbelow(True)
         
-        ax.set_xlim(0, times[-1][0] + times[-1][1])
+        # ax.set_xlim(0, times[-1][0] + times[-1][1])
+        ax.set_xlim(0, makespan_limit)
     
     def add_horizontal_line(self, y_position, 
                            linestyle='--', color='red', linewidth=2):
@@ -329,17 +330,18 @@ fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(15, 8))
 
 # file_name = 'layered_14_buf_times'
 # pm = '_P4_M2200'
-file_name = 'triadag10_55_1_11_875_S'
+file_name = 'layered_20_N_uniform_lp2_6_464'
 pm = ''
 # p_m = pm + '_for_kbh'
 p_m = pm
-algo = 'greedy'
-title = 'ЖА, много процессоров и памяти => почти оптимальное расписание'
-diag_name = 'greedy_14_high_P_and_M.png'
-save0 = 0
+algo = 'lp'
+title = 'ЛП, используются все процессоры => оптимальное расписание'
+diag_name = 'lp_layered_20_N_uniform_lp2_6_464.png'
+save0 = 1
+makespan_limit = 781
 
-P = 11
-M = 1000
+P = 6
+M = 464
 
 '''
 with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/inputs/new_no_tr/order/{file_name + pm}_down_left_input.lp') as f:
@@ -412,7 +414,7 @@ with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/build/Answer/{al
         task = sorted(task0)
         c = [random_colors[int(tasks_v[(prc, strt, dur)])] for strt, dur in task]
         ax1.broken_barh(sorted(task), (Y, H), facecolors=c)
-        white_bars = [(tsk[0] - 0.05, 0.1) for tsk in task]
+        white_bars = [(tsk[0] - 0.05, 0.5) for tsk in task]
         ax1.broken_barh(white_bars, (Y, H), facecolors=['white'] * len(white_bars))
         Y += 1
     
@@ -435,12 +437,13 @@ with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/build/Answer/{al
     ax1.set_title(title, fontsize=14, fontweight='bold')
     # ax1.invert_yaxis()
     ax1.grid(True, axis='x', linestyle='--', alpha=0.6)
-    ax1.set_xlim(0, makespan)
+    ax1.set_xlim(0, makespan_limit)
     ax1.set_ylim(0, 0.75 + P - 1 + 0.75)
     ax1.invert_yaxis()
+
     ax1.text(
-        x=makespan - 0.5,  # позиция по X (в долях от ширины графика, 0.02 = 2% от левого края)
-        y=(0.75 + P - 1 + 0.75) * 1.029,     # позиция по Y (на уровне линии)
+        x=makespan - 4,  # позиция по X (в долях от ширины графика, 0.02 = 2% от левого края)
+        y=(0.75 + P - 1 + 0.75) * 1.07,     # позиция по Y (на уровне линии)
         s=f'{makespan}',  # текст подписи
         color='black',
         fontsize=10,
@@ -450,10 +453,11 @@ with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/build/Answer/{al
     )
 
 
+
 # ==================== НИЖНИЙ ГРАФИК (Memory Usage) ====================
 viz = ResourceVisualizer()
 
-with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/LP/G/{file_name}.txt') as f:
+with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/LP/experiments/data_lp/mix2/{file_name}.txt') as f:
     bfrs, times = {}, {}
     nodes = []
     sizes = {}
@@ -490,8 +494,8 @@ with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/LP/G/{file_name}
 for root_v in root_parents:
     crds = get_task_coordinates(schedule, root_v)
     
-    width = min(0.007 * makespan, 1)
-    height = min(0.05 * (0.75 + P - 1 + 0.75), 0.5)
+    width = max(0.01 * makespan, 1)
+    height = max(0.05 * (0.75 + P - 1 + 0.75), 0.15)
     
     pts = [[crds['x_center'] - width / 2, crds['y_bottom'] - height], [crds['x_center'] + width / 2, crds['y_bottom'] - height], [crds['x_center'], crds['y_bottom']]]
     triangle = Polygon(pts, closed=True, color='black', alpha=0.5)
@@ -514,7 +518,7 @@ for v1, v2 in list(sizes.keys()):
                 draw_vert_arc_arrow(ax1, v1, v2, schedule, color='black', curvature=0.2, style='->')
 
     elif coords1['y_center'] == coords2['y_center']:
-        draw_arc_arrow(ax1, v1, v2, schedule, color='black', curvature=0.2, style='->')
+        draw_arc_arrow(ax1, v1, v2, schedule, color='black', curvature=0.5, style='->')
     else:
         draw_diagonal_arrow(ax1, v1, v2, schedule, color='black')
 
@@ -583,8 +587,8 @@ ax2.text(
 )
 
 ax2.text(
-    x=makespan - 0.5,  # позиция по X (в долях от ширины графика, 0.02 = 2% от левого края)
-    y=-M*0.03,     # позиция по Y (на уровне линии)
+    x=makespan - 4,  # позиция по X (в долях от ширины графика, 0.02 = 2% от левого края)
+    y=-M*0.08,     # позиция по Y (на уровне линии)
     s=f'{makespan}',  # текст подписи
     color='black',
     fontsize=10,
