@@ -132,46 +132,143 @@
 
 \subsubsection*{Исследование масштабируемости}
 
-\begin{center}
-	\includegraphics[width=1\textwidth]{pictures/lowPM_1_S.png}
-	\captionof{figure}{описание 1}
-	\label{fig:scal1}
-\end{center}
+При исследовании масштабируемости целью является построить график зависимости времени работы алгоритмов от размера графов. Для этого необходимо зафиксировать остальные параметры графов, такие как класс, неоднородность буферов, значения P и M. Но при этом P и M различаются у каждого графа, поэтому решено было фиксировать порядок этих параметров: так как их всегда по 3 варианта для каждого графа - малое, среднее и большое - то можно для всех рассматриваемых графов выбрать один из 9 типов этих параметров, например, малое P средний M. Также было решено добавить график целевой функции для дополнительного сравнения. На рисунке 4 видно, что ЛП завершается на всех размерах графов, так же, как и ЖА с EFT. На рисунке 5 видно, что ЛП не завершается на графах начиная с 16 вершин при таких параметрах P и M, при этом уже на 14-15 вершинах время работы около 1000 секунд, то есть уже близко к установленному лимиту времени выполнения. На всех графиках видно, что ЛП работает заметно дольше обоих ЖА, но при этом везде выдает расписание не хуже, а зачастую лучше по makespan.
 
 \begin{center}
-	\includegraphics[width=1\textwidth]{pictures/highPlowM_1_S.png}
-	\captionof{figure}{описание 2}
+	\includegraphics[width=1\textwidth]{pictures/mid_P_high_M_1.png}
+	\captionof{figure}{}
 	\label{fig:scal2}
 \end{center}
 
 \begin{center}
-	\includegraphics[width=1\textwidth]{pictures/lowPhighM_N_S.png}
-	\captionof{figure}{описание 3}
+	\includegraphics[width=1\textwidth]{pictures/low_P_high_M_N_uni.png}
+	\captionof{figure}{}
 	\label{fig:scal3}
 \end{center}
 
 \subsubsection*{Исследование качества решения}
 
+При исследовании качества решения необходимо сравнить значения целевой функции разных алгоритмов на одних и тех же графах на одних и тех же параметрах. На этот раз на одной диаграмме решено было зафиксировать класс графа, его размер и тип буферов, и строить столбчаные диаграммы значения ЦФ для каждой пары параметров P и M. Снизу дополнительно добавили график времени выполнения. На рисунке 6 видно, как все алгоритмы завершаются на всех параметрах, можно заметить, что ЛП всегда не хуже обоих ЖА, что есть параметры, при которых один ЖА может быть лучше другого и наоборот, а также уже можно наблюдать снижение значения ЦФ при росте числа процессоров и лимита памяти. На рисунке 7 видно, как на случайном графе размера 17 ЛП еще работает на всех параметрах, в отличие от ЖА с STS, но время выполнения уже близко к лимиту. И на рисунке 8 видно, что уже на 18 вершинах случайного графа ЛП не завершается на 2 процессорах. В целом на всех диаграммах можно заметить, что ЛП всегда не хуже обоих ЖА, при этом работает сильно дольше них, также заметно, что ЖА с STS не всегда завершается на параметрах, которые были подобраны для ЖА с EFT.
+
 \begin{center}
 	\includegraphics[width=1\textwidth]{pictures/layered_12_1.png}
-	\captionof{figure}{описание 4}
-	\label{fig:scal3}
+	\captionof{figure}{}
+	\label{fig:scal5}
 \end{center}
 
 \begin{center}
-	\includegraphics[width=1\textwidth]{pictures/layered_14_N.png}
-	\captionof{figure}{описание 5}
-	\label{fig:scal3}
+	\includegraphics[width=1\textwidth]{pictures/random_17_1.png}
+	\captionof{figure}{}
+	\label{fig:scal10}
 \end{center}
 
 \begin{center}
-	\includegraphics[width=1\textwidth]{pictures/layered_16_1.png}
-	\captionof{figure}{описание 6}
-	\label{fig:scal3}
+	\includegraphics[width=1\textwidth]{pictures/random_18_1.png}
+	\captionof{figure}{}
+	\label{fig:scal11}
+\end{center}
+
+\subsubsection*{Характерные случаи}
+
+На рисунках 9-10 видно, как ЛП может быть лучше ЖА, граф - layered\_20\_N\_uniform\_6\_464.
+
+\begin{center}
+	\includegraphics[width=1.018\textwidth]{pictures/greedy_EFT_layered_20_N_uniform_lp2_6_464.png}
+	\captionof{figure}{}
+	\label{fig:EFT_20}
 \end{center}
 
 \begin{center}
-	\includegraphics[width=1\textwidth]{pictures/random_16_N.png}
-	\captionof{figure}{описание 7}
-	\label{fig:scal3}
+	\includegraphics[width=1\textwidth]{pictures/lp_layered_20_N_uniform_lp2_6_464.png}
+	\captionof{figure}{}
+	\label{fig:lp_20}
 \end{center}
+
+Для обобщения результатов для каждой комбинации (тип графа, размер, вариант буферизации, P, M) вычисляется относительное отклонение makespan жадных алгоритмов от оптимального значения, полученного ЦЛП:
+
+\[
+\delta_{\text{EFT}} = \frac{\text{makespan}_{\text{EFT}} - \text{makespan}_{\text{opt}}}{\text{makespan}_{\text{opt}}} \cdot 100\%.
+\]
+
+\[
+\delta_{\text{STS}} = \frac{\text{makespan}_{\text{STS}} - \text{makespan}_{\text{opt}}}{\text{makespan}_{\text{opt}}} \cdot 100\%.
+\]
+
+Таблица средних и максимальных отклонений для каждого класса графов и каждого варианта буферизации:
+
+\begin{table}[h]
+	\centering
+	\small % или \footnotesize
+	\caption{Средние и максимальные отклонения}
+	\label{tab:deviations}
+	\begin{tabular}{|l|l|c|c|c|c|}
+		\hline
+		\textbf{Тип графа} & \textbf{Тип буферов} & \textbf{Ср. $\delta_{EFT}$, \%} & \textbf{Макс. $\delta_{EFT}$, \%} & \textbf{Ср. $\delta_{STS}$, \%} & \textbf{Макс. $\delta_{STS}$, \%} \\
+		\hline
+		Слоистый & 1 буфер & 13.09 & 33.85 & 13.37 & 37.43 \\
+		Слоистый & корневое & 13.19 & 35.82 & 13.84 & 39.63 \\
+		Случайный & 1 буфер & 9.51 & 32.48 & 9.56 & 39.42 \\
+		Случайный & корневое & 7.98 & 32.98 & 9.12 & 32.2 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\subsubsection{Большие графы}
+
+\subsubsection*{Исследование масштабируемости}
+
+\begin{center}
+	\includegraphics[width=1\textwidth]{pictures/mid_P_low_M_1_big.png}
+	\captionof{figure}{}
+	\label{fig:big_1}
+\end{center}
+
+\begin{center}
+	\includegraphics[width=1\textwidth]{pictures/high_P_mid_M_1_big.png}
+	\captionof{figure}{}
+	\label{fig:big_2}
+\end{center}
+
+\begin{center}
+	\includegraphics[width=1\textwidth]{pictures/low_P_high_M_N_uni_big.png}
+	\captionof{figure}{}
+	\label{fig:big_3}
+\end{center}
+
+\subsubsection*{Исследование качества решения}
+
+\begin{center}
+	\includegraphics[width=1\textwidth]{pictures/layered_55_1.png}
+	\captionof{figure}{}
+	\label{fig:lay_55}
+\end{center}
+
+\begin{center}
+	\includegraphics[width=1\textwidth]{pictures/random_210_1.png}
+	\captionof{figure}{}
+	\label{fig:rand_210}
+\end{center}
+
+\begin{center}
+	\includegraphics[width=1\textwidth]{pictures/triadag_990_N_uni.png}
+	\captionof{figure}{}
+	\label{fig:tri_990}
+\end{center}
+
+Поскольку для больших графов оптимальное решение неизвестно, сравнение проводится непосредственно между EFT и STS. Для каждого графа, набора $(P,M)$ и варианта буферизации вычисляется относительное улучшение STS относительно EFT:
+
+\[
+\Delta = \frac{\text{makespan}_{\text{EFT}} - \text{makespan}_{\text{STS}}}{\text{makespan}_{\text{EFT}}} \cdot 100\%.
+\]
+
+Положительное значение означает, что STS лучше EFT.
+
+Результаты обобщаются тепловой картой (heatmap) для фиксированного класса графов и типа буферов, по осям: размер графа и пары параметров P, M (малые, средние, большие) – цветом показывается $\Delta$.
+
+\begin{center}
+	\includegraphics[width=1\textwidth]{pictures/heat_layered_1.png}
+	\captionof{figure}{}
+	\label{fig:heat_lay}
+\end{center}
+
+\subsection{Выводы}
