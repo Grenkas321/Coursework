@@ -439,7 +439,9 @@ std::shared_ptr<SPGraph> Linearize(std::shared_ptr<SPGraph> G, const std::vector
     return G;
 }
 
-std::vector<std::string> Tree_Schedule(std::shared_ptr<SPGraph> G, const std::vector<std::string>& S, const std::vector<std::string>& T) {
+std::vector<std::string> Tree_Schedule(std::shared_ptr<SPGraph> G,
+                                       const std::vector<std::string>& /*S*/,
+                                       const std::vector<std::string>& /*T*/) {
     auto V = G->V;
     auto E = G->E;
     auto dct = G->omega;
@@ -1002,7 +1004,6 @@ namespace scheduling_problem::algorithms
         }
         
         // Вызов goal_function и вывод результата
-        int result2 = goal_function(schedule, old_dct);
         /*
         std::cout << "[";
         for (size_t i = 0; i < schedule.size(); i++) {
@@ -1011,7 +1012,7 @@ namespace scheduling_problem::algorithms
                 std::cout << " ";
             }
         }
-        std::cout << "] " << result2 << std::endl;
+        std::cout << "] " << goal_function(schedule, old_dct) << std::endl;
         */
         // Вторая часть кода
         std::vector<int> incr_mas = {0};

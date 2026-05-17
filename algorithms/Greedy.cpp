@@ -51,22 +51,8 @@ namespace scheduling_problem::algorithms
             return d > 0 ? d : std::max<weight_t>(1, w[v]);
         }
         
-        weight_t earliestStartOnProcessor(const std::vector<ProcSlot> &slots,
-                                          weight_t dep_ready,
-                                          weight_t duration)
-        {
-            weight_t t = dep_ready;
-            for (const auto &slot : slots)
-            {
-                if (t < slot.finish)
-                    t = slot.finish;
-            }
-            return t;
-        }
-    
         weight_t earliestStartOnProcessor2(const std::vector<ProcSlot> &slots,
-                                          weight_t dep_ready,
-                                          weight_t duration)
+                                          weight_t dep_ready)
         {
             weight_t t = dep_ready;
             for (const auto &slot : slots)
@@ -326,7 +312,7 @@ namespace scheduling_problem::algorithms
                 */
                 for (unsigned p = 0; p < pcount; ++p)
                 {
-                    auto start = earliestStartOnProcessor2(proc_slots[p], dep_ready, duration[task]);
+                    auto start = earliestStartOnProcessor2(proc_slots[p], dep_ready);
                     auto finish = start + duration[task];
                     
                     if (!feasibleUnderMemory(memory_limit_, groups, task, start, finish, incoming_groups)) {

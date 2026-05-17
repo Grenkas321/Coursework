@@ -3,6 +3,7 @@
     "baseline": "greedy",
     "min_temp": 0.5,
     "max_temp": 12,
+    "fedorenko_idle_prob": 0.33,
     "reduction_rule": 1,
     "saturation": 1200,
     "improvement": 0.001,
@@ -12,6 +13,6 @@
     "max_iters": 300,
     "restarts": 2,
     "kick_moves": 3,
-    "label": "sao_fast"
+    "label": "sao_0.0"
   }
 }

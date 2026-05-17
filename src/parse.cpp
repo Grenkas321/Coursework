@@ -306,7 +306,7 @@ namespace parse
              "Specify batch size, each batch results are recorded to separate table; default is 5") //
             ("algo,a", bpo::value<std::vector<std::string>>()->required(),
              "Specify algorithms for experiment; you may use algorithms with default parameters "
-             "(specify 'aco', 'sao', 'base', 'greedy') or specify algorithm and parameters in the json file"
+             "(specify 'aco', 'sao', 'csao', 'greedy', 'sp', 'sp0') or specify algorithm and parameters in the json file"
              "(see examples of json files in /data)") //
             ("processors,p", bpo::value<unsigned>(&params.processors)->default_value(1),
              "Specify number of processors in multiprocessor model; default is 1") //

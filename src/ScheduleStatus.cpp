@@ -314,10 +314,10 @@ ScheduleStatus::prevReleasePosition(size_t curr_vid,
 // lmove / rmove  (unchanged, but safe now)
 // =========================================================
 
-inline void ScheduleStatus::lmove(size_t curr_vid,
+inline void ScheduleStatus::lmove(size_t /*curr_vid*/,
                                   size_t curr_pos,
                                   size_t target_pos,
-                                  const Graph &graph)
+                                  const Graph & /*graph*/)
 {
     size_t rcurr = size() - curr_pos - 1;
     size_t rtarg = size() - target_pos - 1;
@@ -325,10 +325,10 @@ inline void ScheduleStatus::lmove(size_t curr_vid,
     updatePositions(target_pos, curr_pos);
 }
 
-inline void ScheduleStatus::rmove(size_t curr_vid,
+inline void ScheduleStatus::rmove(size_t /*curr_vid*/,
                                   size_t curr_pos,
                                   size_t target_pos,
-                                  const Graph &graph)
+                                  const Graph & /*graph*/)
 {
     std::rotate(begin() + curr_pos, begin() + curr_pos + 1, begin() + target_pos + 1);
     updatePositions(curr_pos, target_pos);

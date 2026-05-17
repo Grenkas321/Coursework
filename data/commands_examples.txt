@@ -1,4 +1,81 @@
-./application --command run --algo greedy --algo ../data/aco.json --input <input_path> --output <output_path> --threads 23 --dups 10 --sample 10 --batch 5
-./application --command run --algo ../data/sao.json --input <input_path> --output <output_path> --threads 4
-py -3 ../tools/tune_aco.py   --build-dir .   --input-dir Graphs/   --space ../tools/aco_search_space_tpe.json   --work-root aco_runs_two_stage   --summary-json aco_runs_two_stage/summary.json   --processors 4   --memory 10000   --sample 1 --batch 1   --mode two_stage   --sampler tpe   --trials 10   --coarse-fraction 0.75   --refine-step-divisor 10   --refine-radius-steps 1   --startup-trials 8   --refine-startup-trials 3   --optuna-seed 42   --repeats 2   --runtime-weight 0   --study-storage sqlite:///aco_runs_two_stage/aco_two_stage.db   --study-name aco_two_stage_big
-py -3 ../tools/plot_aco_tuning.py --summary aco_runs_two_stage/summary.json --out-dir aco_runs_two_stage/plots --metric objective --format svg --px-per-trial 4 --group phe_influence heu_influence threshold --group ants_count best_count --group epochs_count --group phe_decay evaporation
+# Build directory examples. Run from Coursework_mod/ unless noted otherwise.
+
+# Show CLI help.
+./build/application --help
+
+# Build one schedule and dump it to Answer/.
+./build/application \
+  --command schedule \
+  --algo data/sao.json \
+  --input Graphs \
+  --output Answer \
+  --processors 4 \
+  --memory 10000 \
+  --samples 1 \
+  --batch 1
+
+# Compare several algorithms on a graph directory.
+./build/application \
+  --command run \
+  --algo greedy \
+  --algo data/aco_best.json \
+  --algo data/sao.json \
+  --input Graphs \
+  --output Answer \
+  --processors 4 \
+  --memory 10000 \
+  --threads 4 \
+  --dups 10 \
+  --samples 10 \
+  --batch 5
+
+# Stability by duplicate counts.
+./build/application \
+  --command stability \
+  --algo data/sao.json \
+  --input Graphs \
+  --output Stability \
+  --processors 4 \
+  --memory 10000 \
+  --threads 4 \
+  --dups 1 3 5 10 \
+  --samples 10 \
+  --batch 5
+
+# Tune ACO from build/:
+# cd build
+py -3 ../tools/tune_aco.py \
+  --build-dir . \
+  --input-dir Graphs/ \
+  --space ../tools/aco_search_space_tpe.json \
+  --work-root aco_runs_two_stage \
+  --summary-json aco_runs_two_stage/summary.json \
+  --processors 4 \
+  --memory 10000 \
+  --sample 1 \
+  --batch 1 \
+  --mode two_stage \
+  --sampler tpe \
+  --trials 10 \
+  --coarse-fraction 0.75 \
+  --refine-step-divisor 10 \
+  --refine-radius-steps 1 \
+  --startup-trials 8 \
+  --refine-startup-trials 3 \
+  --optuna-seed 42 \
+  --repeats 2 \
+  --runtime-weight 0 \
+  --study-storage sqlite:///aco_runs_two_stage/aco_two_stage.db \
+  --study-name aco_two_stage_big
+
+# Plot ACO tuning results from build/:
+py -3 ../tools/plot_aco_tuning.py \
+  --summary aco_runs_two_stage/summary.json \
+  --out-dir aco_runs_two_stage/plots \
+  --metric objective \
+  --format svg \
+  --px-per-trial 4 \
+  --group phe_influence heu_influence threshold \
+  --group ants_count best_count \
+  --group epochs_count \
+  --group phe_decay evaporation

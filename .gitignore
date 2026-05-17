@@ -9,6 +9,9 @@ compile_commands.json
 /Graphs/
 /data/Answer/
 /data/Graphs/
+tmp_*/
+aco_runs*/
+plots/
 
 # Python cache, virtualenvs, and local tooling outputs
 __pycache__/
@@ -19,7 +22,6 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 .ipynb_checkpoints/
-.gitignore
 .venv/
 venv/
 env/
