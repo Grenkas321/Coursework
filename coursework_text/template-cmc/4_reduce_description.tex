@@ -1,6 +1,8 @@
 \section{Сведение к задаче целочисленного линейного программирования}
 \label{sec:4_reduce_description} \index{4_reduce_description}
 
+Основы линейного программирования содержатся в статье~\cite{ShevchenkoZolotykh2004}. Также за основу бралось сведение однопроцессорного варианта задачи к ЦЛП из работы~\cite{ShevchenkoZolotykh2004}.
+
 \subsection*{Входные данные}
 Каждая работа $i$ ($i=1,\dots,n$) характеризуется длительностью $d_i>0$ и набором буферов, которые она создаёт:
 \[
@@ -129,15 +131,19 @@ D = \sum_{i=1}^{n} d_i,
 
 \subsection*{Итоговая задача}
 
-\[
-\begin{array}{ll}
-	\text{Минимизировать} & l \\
-	\text{при ограничениях} & (\ref{eq:m_diag})—(\ref{eq:m_le}),\; (\ref{eq:p_sum}),\; (\ref{eq:t_ge})—(\ref{eq:t_le}),\; (\ref{eq:prec}),\; (\ref{eq:start_def}),\; (\ref{eq:max_end_def}),\\
-	& (\ref{eq:no_conflict1})—(\ref{eq:no_conflict2}),\; (\ref{eq:z_start})—(\ref{eq:aa_end}),\; (\ref{eq:mem_start})—(\ref{eq:mem_end}),\; (\ref{eq:l_bound}),\\
-	& \text{переменные } s_i,\text{start}_{ij},\text{max\_end}_{ij},l\in\mathbb{Z}_{\ge0},\; 
-	m_{ij},p_{ri},t_{ij},z_{ij}^{pq},zz_{ij}^{pq},a_{ij}^{pq},aa_{ij}^{pq}\in\{0,1\}.
-\end{array}
-\]
+Минимизировать \( l \) при ограничениях 
+\eqref{eq:m_diag}--\eqref{eq:m_le}, 
+\eqref{eq:p_sum}, 
+\eqref{eq:t_ge}--\eqref{eq:t_le}, 
+\eqref{eq:prec}, 
+\eqref{eq:start_def}, 
+\eqref{eq:max_end_def}, 
+\eqref{eq:no_conflict1}--\eqref{eq:no_conflict2}, 
+\eqref{eq:z_start}--\eqref{eq:aa_end}, 
+\eqref{eq:mem_start}--\eqref{eq:mem_end}, 
+\eqref{eq:l_bound};
+переменные \( s_i,\text{start}_{ij},\text{max\_end}_{ij},l\in\mathbb{Z}_{\ge0} \), 
+\( m_{ij},p_{ri},t_{ij},z_{ij}^{pq},zz_{ij}^{pq},a_{ij}^{pq},aa_{ij}^{pq}\in\{0,1\} \).
 
 \subsection*{Число переменных и ограничений}
 
@@ -151,4 +157,4 @@ D = \sum_{i=1}^{n} d_i,
 	\item $z_{ij}^{pq}, zz_{ij}^{pq}, a_{ij}^{pq}, aa_{ij}^{pq}$: $4B^2$ бинарных.
 	\item $l$: одна целая.
 \end{itemize}
-Количество ограничений составляет $O(n^2 + P n + |E| + B^2)$.
+Количество ограничений составляет $O(n^2 + P n + B^2)$.
