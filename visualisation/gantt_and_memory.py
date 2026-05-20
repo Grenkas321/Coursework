@@ -125,7 +125,7 @@ def draw_arc_arrow(ax, from_vertex, to_vertex, schedule, color='green', style='-
         color=color,
         linewidth=1,
         mutation_scale=11,
-        connectionstyle=f"arc3,rad={-curvature * 100 / (length**1.2)}"  # положительное значение = дуга вверх
+        connectionstyle=f"arc3,rad={-curvature * 10 / (length**1.2)}"  # положительное значение = дуга вверх
     )
     ax.add_patch(arrow)
 
@@ -330,18 +330,22 @@ fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(15, 8))
 
 # file_name = 'layered_14_buf_times'
 # pm = '_P4_M2200'
-file_name = 'layered_20_N_uniform_lp2_6_464'
+file_name = 'g6'
 pm = ''
 # p_m = pm + '_for_kbh'
 p_m = pm
-algo = 'lp'
-title = 'ЛП, используются все процессоры => оптимальное расписание'
-diag_name = 'lp_layered_20_N_uniform_lp2_6_464.png'
+algo = 'greedy'
+# title = 'ЛП, используются все процессоры => оптимальное расписание'
+title = ''
+diag_name = 'g6_greedy.png'
 save0 = 1
-makespan_limit = 781
+makespan_limit = 65
 
-P = 6
-M = 464
+# graphs_dir = f'/Users/maxbig/Coursework_multiprocessing/Coursework/LP/experiments/data_lp/mix2/{file_name}.txt'
+graphs_dir = f'/Users/maxbig/Coursework_multiprocessing/Coursework/LP/G/{file_name}.txt'
+
+P = 2
+M = 1500
 
 '''
 with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/inputs/new_no_tr/order/{file_name + pm}_down_left_input.lp') as f:
@@ -414,7 +418,7 @@ with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/build/Answer/{al
         task = sorted(task0)
         c = [random_colors[int(tasks_v[(prc, strt, dur)])] for strt, dur in task]
         ax1.broken_barh(sorted(task), (Y, H), facecolors=c)
-        white_bars = [(tsk[0] - 0.05, 0.5) for tsk in task]
+        white_bars = [(tsk[0] - 0.05, 0.1) for tsk in task]
         ax1.broken_barh(white_bars, (Y, H), facecolors=['white'] * len(white_bars))
         Y += 1
     
@@ -442,7 +446,7 @@ with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/build/Answer/{al
     ax1.invert_yaxis()
 
     ax1.text(
-        x=makespan - 4,  # позиция по X (в долях от ширины графика, 0.02 = 2% от левого края)
+        x=makespan - 0.5,  # позиция по X (в долях от ширины графика, 0.02 = 2% от левого края)
         y=(0.75 + P - 1 + 0.75) * 1.07,     # позиция по Y (на уровне линии)
         s=f'{makespan}',  # текст подписи
         color='black',
@@ -457,7 +461,7 @@ with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/build/Answer/{al
 # ==================== НИЖНИЙ ГРАФИК (Memory Usage) ====================
 viz = ResourceVisualizer()
 
-with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/LP/experiments/data_lp/mix2/{file_name}.txt') as f:
+with open(graphs_dir) as f:
     bfrs, times = {}, {}
     nodes = []
     sizes = {}
@@ -587,7 +591,7 @@ ax2.text(
 )
 
 ax2.text(
-    x=makespan - 4,  # позиция по X (в долях от ширины графика, 0.02 = 2% от левого края)
+    x=makespan - 0.5,  # позиция по X (в долях от ширины графика, 0.02 = 2% от левого края)
     y=-M*0.08,     # позиция по Y (на уровне линии)
     s=f'{makespan}',  # текст подписи
     color='black',

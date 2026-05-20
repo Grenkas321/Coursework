@@ -492,8 +492,8 @@ def parse(sort: str):
 
 if __name__ == "__main__":
     # 2600 - 10400/7300
-    M = 711
-    P = 5
+    M = 1500
+    P = 2
     bfrs = {}
     times = {}
     """

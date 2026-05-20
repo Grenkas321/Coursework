@@ -209,16 +209,19 @@ for file_n in files:
             fff.close()
 """
 
-directory = "/Users/maxbig/Coursework_multiprocessing/Coursework/LP/experiments/data_lp/mix2"
+# directory = "/Users/maxbig/Coursework_multiprocessing/Coursework/LP/experiments/data_lp/mix2"
+directory = "/Users/maxbig/Coursework_multiprocessing/Coursework/LP/G"
+
 files = os.listdir(directory)
 if '.DS_Store' in files:
     files.remove('.DS_Store')
-files.sort(key=lambda x: (int(x.split('_')[1]), x.split('_')[0], x.split('_')[2], x.split('_')[3], int(x.split('_')[-2]), int(x.split('_')[-1][:-4])))
+# files.sort(key=lambda x: (int(x.split('_')[1]), x.split('_')[0], x.split('_')[2], x.split('_')[3], int(x.split('_')[-2]), int(x.split('_')[-1][:-4])))
 
 for file_n in files:
+    '''
     if int(file_n.split('_')[1]) > 21:
         break
-    
+    '''
     file = file_n[:-4]
     try:
         f_lp = open(f"/Users/maxbig/Coursework_multiprocessing/Coursework/SCIP/SCIPOptSuite-9.2.1-Linux/logs/new_tr/{file}_default_input.log", 'r')
