@@ -1,7 +1,7 @@
 \section{Сведение к задаче целочисленного линейного программирования}
-\label{sec:4_reduce_description} \index{4_reduce_description}
+\label{sec:4_reduce_description}
 
-Основы линейного программирования содержатся в статье~\cite{ShevchenkoZolotykh2004}. Также за основу бралось сведение однопроцессорного варианта задачи к ЦЛП из работы~\cite{ShevchenkoZolotykh2004}.
+Основы линейного программирования содержатся в работе~\cite{ShevchenkoZolotykh2004}. За основу также бралось сведение однопроцессорного варианта задачи к ЦЛП из работы~\cite{Senyushkina2025}.
 
 \subsection*{Входные данные}
 Каждая работа $i$ ($i=1,\dots,n$) характеризуется длительностью $d_i>0$ и набором буферов, которые она создаёт:
@@ -45,13 +45,13 @@ D = \sum_{i=1}^{n} d_i,
 
 \subsection*{Ограничения, связывающие $m_{ij}$ и $s_i$}
 
-Для всех $i,j$:
+Для всех $i,j$ (при $i=j$ полагаем $m_{ii}=1$):
 \begin{align}
-	m_{ii} &= 1, \label{eq:m_diag}\\
-	D\,m_{ij} - s_j + s_i &\ge 0, \label{eq:m_ge}\\
-	s_j - s_i - D\,m_{ij} &\ge 1 - D. \label{eq:m_le}
+	m_{ij} &\ge \frac{s_j - s_i}{D}, \quad \forall i\neq j, \label{eq:m_ge_frac}\\
+	1 - m_{ij} &\ge \frac{s_i - s_j + 1}{D}, \quad \forall i\neq j, \label{eq:m_le_frac}\\
+	m_{ii} &= 1. \label{eq:m_diag}
 \end{align}
-Эти условия эквивалентны: $m_{ij}=1 \Leftrightarrow s_i \le s_j$.
+Неравенство \eqref{eq:m_ge_frac} гарантирует, что если $s_i \le s_j$, то $m_{ij}=1$ (при выполнении \eqref{eq:m_le_frac} обратное). Константа $D$ выбрана так, что $|s_j-s_i| < D$.
 
 \subsection*{Назначение на процессоры}
 
@@ -60,6 +60,7 @@ D = \sum_{i=1}^{n} d_i,
 	\sum_{r=1}^{P} p_{ri} &= 1, \label{eq:p_sum}\\
 	p_{ri} &\in \{0,1\}. \nonumber
 \end{align}
+Каждая работа назначается ровно на один процессор.
 
 \subsection*{Переменные $t_{ij}$ (один процессор)}
 
@@ -73,7 +74,7 @@ D = \sum_{i=1}^{n} d_i,
 
 \subsection*{Зависимости по графу}
 
-Для каждой дуги $(i,k,j)\in E$ (т.е. $j$-й буфер работы $i$ потребляется работой $k$):
+Для каждой дуги $(i,k,j)\in E$ (работа $k$ потребляет $j$-й буфер работы $i$):
 \begin{align}
 	s_k \ge s_i + d_i. \label{eq:prec}
 \end{align}
@@ -98,17 +99,21 @@ D = \sum_{i=1}^{n} d_i,
 
 \subsection*{Учёт пересечений буферов (для ограничения памяти)}
 
-Для каждой пары буферов $(i,j)$ и $(p,q)$ введём вспомогательные бинарные переменные $z_{ij}^{pq}$, $zz_{ij}^{pq}$, $a_{ij}^{pq}$, $aa_{ij}^{pq}$, связанные следующими линейными ограничениями:
+Для каждой пары буферов \((i,j)\) и \((p,q)\) введём вспомогательные бинарные переменные \(z_{ij}^{pq}\), \(zz_{ij}^{pq}\), \(a_{ij}^{pq}\), \(aa_{ij}^{pq}\). Они связаны следующими линейными ограничениями:
+
 \begin{align}
-	\text{start}_{pq} - \text{start}_{ij} - (D+1)\,z_{ij}^{pq} &\ge -D, \label{eq:z_start}\\
-	(D+1)\,a_{ij}^{pq} + (D+1)\,z_{ij}^{pq} + \text{start}_{ij} - \text{max\_end}_{pq} &\ge 0, \label{eq:a_start}\\
-	\text{start}_{pq} - \text{max\_end}_{ij} - (D+1)\,zz_{ij}^{pq} &\ge -D, \label{eq:zz_end}\\
-	(D+1)\,aa_{ij}^{pq} + (D+1)\,zz_{ij}^{pq} + \text{max\_end}_{ij} - \text{max\_end}_{pq} &\ge 0. \label{eq:aa_end}
+	z_{ij}^{pq} &\le \frac{\text{start}_{pq} - \text{start}_{ij}}{D+1} + \frac{D}{D+1}, \label{eq:z_start_new}\\
+	a_{ij}^{pq} &\ge \frac{\text{max\_end}_{pq} - \text{start}_{ij}}{D+1} - z_{ij}^{pq}, \label{eq:a_start_new}\\
+	zz_{ij}^{pq} &\le \frac{\text{start}_{pq} - \text{max\_end}_{ij}}{D+1} + \frac{D}{D+1}, \label{eq:zz_end_new}\\
+	aa_{ij}^{pq} &\ge \frac{\text{max\_end}_{pq} - \text{max\_end}_{ij}}{D+1} - zz_{ij}^{pq}. \label{eq:aa_end_new}
 \end{align}
-Переменные $a_{ij}^{pq}$ и $aa_{ij}^{pq}$ интерпретируются следующим образом:
+
+Пояснение:
 \begin{itemize}
-	\item $a_{ij}^{pq}=1$, если буфер $(p,q)$ активен в момент старта буфера $(i,j)$ (т.е. $\text{start}_{ij}$ лежит внутри интервала активности $(p,q)$);
-	\item $aa_{ij}^{pq}=1$, если буфер $(p,q)$ активен в момент завершения буфера $(i,j)$ (т.е. $\text{max\_end}_{ij}$ лежит внутри интервала активности $(p,q)$).
+	\item \eqref{eq:z_start_new} гарантирует, что если $\text{start}_{pq} \le \text{start}_{ij}$, то $z_{ij}^{pq}=0$; в противном случае $z_{ij}^{pq}$ может быть $1$.
+	\item \eqref{eq:a_start_new} совместно с \eqref{eq:z_start_new} обеспечивает $a_{ij}^{pq}=1$, когда интервал активности $(p,q)$ покрывает момент $\text{start}_{ij}$.
+	\item \eqref{eq:zz_end_new} аналогично \eqref{eq:z_start_new}, но для момента $\text{max\_end}_{ij}$.
+	\item \eqref{eq:aa_end_new} аналогично \eqref{eq:a_start_new}, но для момента $\text{max\_end}_{ij}$.
 \end{itemize}
 Интервал активности буфера $(p,q)$ — это $[\text{start}_{pq},\; \text{max\_end}_{pq})$.
 
@@ -119,31 +124,20 @@ D = \sum_{i=1}^{n} d_i,
 	\sum_{(p,q)} r_{pq}\, a_{ij}^{pq} &\le M, \label{eq:mem_start}\\
 	\sum_{(p,q)} r_{pq}\, aa_{ij}^{pq} &\le M, \label{eq:mem_end}
 \end{align}
-где сумма берётся по всем буферам, присутствующим в графе. Благодаря определению $a_{ij}^{pq}$ и $aa_{ij}^{pq}$, эти ограничения гарантируют, что пиковое потребление памяти в любой момент (все точки вида $\text{start}_{ij}$ или $\text{max\_end}_{ij}$) не превышает $M$.
+где сумма берётся по всем буферам, присутствующим в графе. Эти ограничения гарантируют, что пиковое потребление памяти в любой момент (все точки вида $\text{start}_{ij}$ или $\text{max\_end}_{ij}$) не превышает $M$.
 
-\subsection*{Целевая функция}
+\subsection*{Целевая переменная}
 
 Минимизируем общую длительность расписания:
 \begin{align}
-	\min \; l,\\
 	l \ge s_i + d_i \quad \forall i. \label{eq:l_bound}
 \end{align}
 
 \subsection*{Итоговая задача}
 
-Минимизировать \( l \) при ограничениях 
-\eqref{eq:m_diag}--\eqref{eq:m_le}, 
-\eqref{eq:p_sum}, 
-\eqref{eq:t_ge}--\eqref{eq:t_le}, 
-\eqref{eq:prec}, 
-\eqref{eq:start_def}, 
-\eqref{eq:max_end_def}, 
-\eqref{eq:no_conflict1}--\eqref{eq:no_conflict2}, 
-\eqref{eq:z_start}--\eqref{eq:aa_end}, 
-\eqref{eq:mem_start}--\eqref{eq:mem_end}, 
-\eqref{eq:l_bound};
-переменные \( s_i,\text{start}_{ij},\text{max\_end}_{ij},l\in\mathbb{Z}_{\ge0} \), 
-\( m_{ij},p_{ri},t_{ij},z_{ij}^{pq},zz_{ij}^{pq},a_{ij}^{pq},aa_{ij}^{pq}\in\{0,1\} \).
+Минимизировать $l$ при ограничениях \eqref{eq:m_ge_frac}--\eqref{eq:l_bound}.  
+Переменные $s_i,\text{start}_{ij},\text{max\_end}_{ij},l\in\mathbb{Z}_{\ge0}$,  
+$m_{ij},p_{ri},t_{ij},z_{ij}^{pq},zz_{ij}^{pq},a_{ij}^{pq},aa_{ij}^{pq}\in\{0,1\}$.
 
 \subsection*{Число переменных и ограничений}
 
