@@ -1,41 +1,40 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{Введение}{5}{section*.2}%
-\contentsline {section}{\numberline {1}Цель работы}{8}{section.1}%
-\contentsline {section}{\numberline {2}Формальная постановка задачи}{9}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Модель прикладной программы}{9}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Модель вычислительной системы}{9}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Модель использования памяти}{10}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Модель расписания}{10}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Минимизируемая целевая функция}{11}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Жадный алгоритм построения многопроцессорного расписания с ограничением на память}{12}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Формальное описание алгоритма}{12}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Эвристики выбора работы}{14}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Сведение к задаче целочисленного линейного программирования}{16}{section.4}%
-\contentsline {section}{\numberline {5}Экспериментальное исследование}{21}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Предмет и цели исследования}{21}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Классы графов работ}{21}{subsection.5.2}%
+\contentsline {section}{Введение}{4}{section*.1}%
+\contentsline {section}{\numberline {1}Цель работы}{7}{section.1}%
+\contentsline {section}{\numberline {2}Формальная постановка задачи}{8}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Модель прикладной программы}{8}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Модель вычислительной системы}{8}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Модель использования памяти}{9}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Модель расписания}{9}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Минимизируемая целевая функция}{10}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Жадный алгоритм построения многопроцессорного расписания с ограничением на память}{11}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Формальное описание алгоритма}{11}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Эвристики выбора работы}{13}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Сведение к задаче целочисленного линейного программирования}{15}{section.4}%
+\contentsline {section}{\numberline {5}Экспериментальное исследование}{20}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Предмет и цели исследования}{20}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Классы графов работ}{20}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Наборы входных данных}{22}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}Результаты экспериментов}{24}{subsection.5.4}%
-\contentsline {paragraph}{Выбор решателя и схема параллельного запуска}{24}{section*.31}%
-\contentsline {subsection}{\numberline {5.5}Выводы}{37}{subsection.5.5}%
-\contentsline {paragraph}{Сравнение ЦЛП с жадными алгоритмами.}{37}{section*.40}%
-\contentsline {paragraph}{Сравнение эвристик EFT и STS.}{37}{section*.41}%
-\contentsline {paragraph}{Влияние параметров $P$ и $M$ на качество и время работы.}{38}{section*.42}%
-\contentsline {paragraph}{Рекомендации.}{38}{section*.43}%
-\contentsline {section}{\numberline {6}Описание программной реализации}{39}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Реализация жадного алгоритма}{39}{subsection.6.1}%
-\contentsline {paragraph}{Базовый класс \texttt {BaseOptimization}}{39}{section*.45}%
-\contentsline {paragraph}{Класс \texttt {Greedy} (EFT)}{39}{section*.46}%
-\contentsline {paragraph}{Класс \texttt {Greedy2} (STS)}{39}{section*.47}%
-\contentsline {paragraph}{Вспомогательные структуры}{39}{section*.48}%
-\contentsline {paragraph}{Учёт ограничения памяти}{41}{section*.49}%
-\contentsline {paragraph}{Особенности реализации}{41}{section*.50}%
-\contentsline {subsection}{\numberline {6.2}Реализация подхода на базе ЦЛП}{42}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Визуализатор временной диаграммы расписания}{44}{subsection.6.3}%
-\contentsline {paragraph}{Входные данные:}{44}{section*.52}%
-\contentsline {paragraph}{Ключевые компоненты реализации:}{44}{section*.53}%
-\contentsline {paragraph}{Выходные данные:}{45}{section*.54}%
-\contentsline {subsection}{\numberline {6.4}Структура входного и выходного файлов}{45}{subsection.6.4}%
-\contentsline {section}{Заключение}{48}{section*.57}%
-\contentsline {section}{{\cyrillictext \CYRS \cyrp \cyri \cyrs \cyro \cyrk \ \cyrl \cyri \cyrt \cyre \cyrr \cyra \cyrt \cyru \cyrr \cyrery }}{49}{section*.58}%
-\contentsline {section}{Приложение}{51}{section*.59}%
+\contentsline {paragraph}{Выбор решателя и схема параллельного запуска}{24}{section*.30}%
+\contentsline {subsection}{\numberline {5.5}Выводы}{36}{subsection.5.5}%
+\contentsline {paragraph}{Сравнение ЦЛП с жадными алгоритмами.}{36}{section*.39}%
+\contentsline {paragraph}{Сравнение эвристик EFT и STS.}{36}{section*.40}%
+\contentsline {paragraph}{Влияние параметров $P$ и $M$ на качество и время работы.}{37}{section*.41}%
+\contentsline {paragraph}{Рекомендации.}{37}{section*.42}%
+\contentsline {section}{\numberline {6}Описание программной реализации}{38}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Реализация жадного алгоритма}{38}{subsection.6.1}%
+\contentsline {paragraph}{Базовый класс \texttt {BaseOptimization}}{38}{section*.44}%
+\contentsline {paragraph}{Класс \texttt {Greedy} (EFT)}{38}{section*.45}%
+\contentsline {paragraph}{Класс \texttt {Greedy2} (STS)}{38}{section*.46}%
+\contentsline {paragraph}{Вспомогательные структуры}{38}{section*.47}%
+\contentsline {paragraph}{Особенности реализации}{40}{section*.48}%
+\contentsline {subsection}{\numberline {6.2}Реализация подхода на базе ЦЛП}{40}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Визуализатор временной диаграммы расписания}{42}{subsection.6.3}%
+\contentsline {paragraph}{Входные данные:}{43}{section*.50}%
+\contentsline {paragraph}{Ключевые компоненты реализации:}{43}{section*.51}%
+\contentsline {paragraph}{Выходные данные:}{43}{section*.52}%
+\contentsline {subsection}{\numberline {6.4}Структура входного и выходного файлов}{44}{subsection.6.4}%
+\contentsline {section}{Заключение}{46}{section*.55}%
+\contentsline {section}{{\cyrillictext \CYRS \cyrp \cyri \cyrs \cyro \cyrk \ \cyrl \cyri \cyrt \cyre \cyrr \cyra \cyrt \cyru \cyrr \cyrery }}{47}{section*.56}%
+\contentsline {section}{Приложение}{48}{section*.57}%

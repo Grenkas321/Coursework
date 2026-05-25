@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.29)  25 MAY 2026 02:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.29)  25 MAY 2026 12:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1013,7 +1013,70 @@ Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@dima=\skip75
 \bigstrutjot=\dimen288
 )
-(/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 51.
+\cftparskip=\skip76
+\cftbeforetoctitleskip=\skip77
+\cftaftertoctitleskip=\skip78
+\cftbeforepartskip=\skip79
+\cftpartnumwidth=\skip80
+\cftpartindent=\skip81
+\cftbeforesecskip=\skip82
+\cftsecindent=\skip83
+\cftsecnumwidth=\skip84
+\cftbeforesubsecskip=\skip85
+\cftsubsecindent=\skip86
+\cftsubsecnumwidth=\skip87
+\cftbeforesubsubsecskip=\skip88
+\cftsubsubsecindent=\skip89
+\cftsubsubsecnumwidth=\skip90
+\cftbeforeparaskip=\skip91
+\cftparaindent=\skip92
+\cftparanumwidth=\skip93
+\cftbeforesubparaskip=\skip94
+\cftsubparaindent=\skip95
+\cftsubparanumwidth=\skip96
+\cftbeforeloftitleskip=\skip97
+\cftafterloftitleskip=\skip98
+\cftbeforefigskip=\skip99
+\cftfigindent=\skip100
+\cftfignumwidth=\skip101
+
+
+! LaTeX Error: Command \c@lofdepth already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.623   \newcounter{lofdepth}
+                             \setcounter{lofdepth}{1}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \c@lotdepth already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.624   \newcounter{lotdepth}
+                             \setcounter{lotdepth}{1}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+\cftbeforelottitleskip=\skip102
+\cftafterlottitleskip=\skip103
+\cftbeforetabskip=\skip104
+\cfttabindent=\skip105
+\cfttabnumwidth=\skip106
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count361
 )
@@ -1037,26 +1100,26 @@ Package babel Info: 'russian' activates 'russian' shorthands.
 (./template-cmc/bibliography.aux) (./template-cmc/appendix.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
 
 (/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1086,8 +1149,8 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \th on input line 68.
-Package hyperref Info: Link coloring OFF on input line 68.
+LaTeX Info: Redefining \th on input line 86.
+Package hyperref Info: Link coloring OFF on input line 86.
 
 (./main.out) (./main.out)
 \@outlinefile=\write4
@@ -1099,12 +1162,12 @@ Package hyperref Info: Link coloring OFF on input line 68.
 Package todonotes Warning: The length marginparwidth is less than 2cm and will 
 most likely cause issues with the appearance of inserted todonotes. The issue c
 an be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to 
-loading the todonotes package. on input line 68.
+loading the todonotes package. on input line 86.
 
 <./gzlogo.png, id=119, 1335.99126pt x 569.12625pt>
 File: ./gzlogo.png Graphic file (type png)
 <use ./gzlogo.png>
-Package pdftex.def Info: ./gzlogo.png  used on input line 70.
+Package pdftex.def Info: ./gzlogo.png  used on input line 88.
 (pdftex.def)             Requested size: 267.15274pt x 113.81102pt.
 [1
 
@@ -1113,46 +1176,48 @@ al/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc} <./gzlogo
 .png>] [2
 
 ] (./main.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+)
+Overfull \hbox (8.03242pt too wide) in paragraph at lines 10--10
+ [][] [][]\T2A/cmr/bx/n/12 Жадный ал-го-ритм по-стро-е-ния мно-го-про-цес-сор-н
+о-го рас-пи-са-ния с огра- 
+ []
+
+)
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
  [3
 
-] [4]
+]
 \openout2 = `template-cmc/0_vvedenie.aux'.
 
-
-(./template-cmc/0_vvedenie.tex [5
+ (./template-cmc/0_vvedenie.tex [4
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
-
- []
-
-<pictures/g6-1.png, id=190, 382.91055pt x 152.85104pt>
+<pictures/g6-1.png, id=185, 382.91055pt x 152.85104pt>
 File: pictures/g6-1.png Graphic file (type png)
 <use pictures/g6-1.png>
 Package pdftex.def Info: pictures/g6-1.png  used on input line 18.
 (pdftex.def)             Requested size: 328.82706pt x 131.26274pt.
-<pictures/g6_greedy.png, id=191, 1075.6185pt x 569.9694pt>
+<pictures/g6_greedy.png, id=186, 1075.6185pt x 569.9694pt>
 File: pictures/g6_greedy.png Graphic file (type png)
 <use pictures/g6_greedy.png>
 Package pdftex.def Info: pictures/g6_greedy.png  used on input line 25.
 (pdftex.def)             Requested size: 469.75499pt x 248.92615pt.
 
+
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<pictures/g6_lp.png, id=193, 1076.5821pt x 569.9694pt>
+<pictures/g6_lp.png, id=188, 1076.5821pt x 569.9694pt>
 File: pictures/g6_lp.png Graphic file (type png)
 <use pictures/g6_lp.png>
 Package pdftex.def Info: pictures/g6_lp.png  used on input line 32.
@@ -1160,7 +1225,7 @@ Package pdftex.def Info: pictures/g6_lp.png  used on input line 32.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [6 <./pictures/g6-1.png>] [7 <./pictures/g6_greedy.png> <./pictures/g6_lp.png
+) [5 <./pictures/g6-1.png>] [6 <./pictures/g6_greedy.png> <./pictures/g6_lp.png
 >]
 \openout2 = `template-cmc/1_cel_zadachi.aux'.
 
@@ -1170,22 +1235,56 @@ Overfull \hbox (2.74081pt too wide) in paragraph at lines 6--7
 ных ал-го-рит-мов по-стро-е-ния мно-
  []
 
-) [8
+) [7
 
 
 
 ]
 \openout2 = `template-cmc/2_problem_statement.aux'.
 
- (./template-cmc/2_problem_statement.tex [9
+ (./template-cmc/2_problem_statement.tex [8
 
 
 
-] [10]) [11]
+]
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+
+ []
+
+[9]) [10]
 \openout2 = `template-cmc/3_greedy_algos.aux'.
 
+ (./template-cmc/3_greedy_algos.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
-(./template-cmc/3_greedy_algos.tex [12
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+[11
 
 
 
@@ -1195,7 +1294,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
-<pictures/gred3.png, id=260, 530.98375pt x 595.22375pt>
+<pictures/gred3.png, id=254, 530.98375pt x 595.22375pt>
 File: pictures/gred3.png Graphic file (type png)
 <use pictures/gred3.png>
 Package pdftex.def Info: pictures/gred3.png  used on input line 42.
@@ -1205,14 +1304,14 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 43.
 See the caption package documentation for explanation.
 
-[13] [14 <./pictures/gred3.png>]) [15]
+[12] [13 <./pictures/gred3.png>]) [14]
 \openout2 = `template-cmc/4_reduce_description.aux'.
 
- (./template-cmc/4_reduce_description.tex [16
+ (./template-cmc/4_reduce_description.tex [15
 
 
 
-] [17] [18] [19]) [20]
+] [16] [17] [18]) [19]
 \openout2 = `template-cmc/5_experiments.aux'.
 
  (./template-cmc/5_experiments.tex
@@ -1227,7 +1326,7 @@ d-to.pdf>
 eme-eps-converted-to.pdf pictures/layered_graph_scheme.eps>
 (epstopdf)             \includegraphics on input line 24.
 Package epstopdf Info: Output file is already uptodate.
-<pictures/layered_graph_scheme-eps-converted-to.pdf, id=358, 1000.73875pt x 411
+<pictures/layered_graph_scheme-eps-converted-to.pdf, id=353, 1000.73875pt x 411
 .5375pt>
 File: pictures/layered_graph_scheme-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -1246,7 +1345,7 @@ Package epstopdf Info: Source file: <pictures/random_graph_scheme.eps>
 me-eps-converted-to.pdf pictures/random_graph_scheme.eps>
 (epstopdf)             \includegraphics on input line 34.
 Package epstopdf Info: Output file is already uptodate.
-<pictures/random_graph_scheme-eps-converted-to.pdf, id=360, 976.64874pt x 487.8
+<pictures/random_graph_scheme-eps-converted-to.pdf, id=355, 976.64874pt x 487.8
 225pt>
 File: pictures/random_graph_scheme-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -1258,7 +1357,22 @@ d on input line 34.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[21
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--42
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--42
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--42
+
+ []
+
+[20
 
 
 
@@ -1274,7 +1388,7 @@ Package epstopdf Info: Source file: <pictures/triang_graph_scheme.eps>
 me-eps-converted-to.pdf pictures/triang_graph_scheme.eps>
 (epstopdf)             \includegraphics on input line 45.
 Package epstopdf Info: Output file is already uptodate.
-<pictures/triang_graph_scheme-eps-converted-to.pdf, id=372, 191.71625pt x 150.5
+<pictures/triang_graph_scheme-eps-converted-to.pdf, id=367, 191.71625pt x 150.5
 625pt>
 File: pictures/triang_graph_scheme-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -1282,18 +1396,12 @@ File: pictures/triang_graph_scheme-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: pictures/triang_graph_scheme-eps-converted-to.pdf  use
 d on input line 45.
 (pdftex.def)             Requested size: 234.87749pt x 184.46938pt.
- [22 <./pictures/random_graph_scheme-eps-converted-to.pdf> <./pictures/triang_g
+ [21 <./pictures/random_graph_scheme-eps-converted-to.pdf> <./pictures/triang_g
 raph_scheme-eps-converted-to.pdf>]
 Overfull \hbox (6.22314pt too wide) in paragraph at lines 58--59
 []\T2A/cmr/m/n/12 Вес каж-до-го бу-фе-ра ^^V це-лое чис-ло, рав-но-мер-но рас-п
 ре-де-лјн-ное в диа-па-зоне $\OT1/cmr/m/n/12 [1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/
 12 100]$\T2A/cmr/m/n/12 . 
- []
-
-
-Overfull \hbox (24.70438pt too wide) in paragraph at lines 62--63
-[]\T2A/cmr/bx/n/12 Корневое рав-но-мер-ное рас-пре-де-ле-ние\T2A/cmr/m/n/12 : к
-о-ли-че-ство бу-фе-ров рав-но $\OMS/cmsy/m/n/12 d[]e$\T2A/cmr/m/n/12 ,
  []
 
 
@@ -1304,254 +1412,226 @@ Overfull \hbox (2.67769pt too wide) in paragraph at lines 77--78
 m/m/it/12 ; \OT1/cmr/m/n/12 990\OMS/cmsy/m/n/12 g$\T2A/cmr/m/n/12 . 
  []
 
-
-Overfull \hbox (23.59045pt too wide) in paragraph at lines 80--81
-[]\T2A/cmr/m/n/12 Для оцен-ки ка-че-ства: по од-но-му гра-фу для каж-до-го раз-
-ме-ра $\OML/cmm/m/it/12 n \OMS/cmsy/m/n/12 2 f\OT1/cmr/m/n/12 55\OML/cmm/m/it/1
-2 ; \OT1/cmr/m/n/12 210\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 496\OML/cmm/m/it/12 ;
- \OT1/cmr/m/n/12 990\OMS/cmsy/m/n/12 g$ 
- []
-
-[23]
+[22] [23]
 LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 
-123.
+125.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
 File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
 [24]
-<pictures/mid_P_high_M_1.png, id=401, 1040.688pt x 553.5882pt>
+<pictures/mid_P_high_M_1.png, id=400, 1040.688pt x 553.5882pt>
 File: pictures/mid_P_high_M_1.png Graphic file (type png)
 <use pictures/mid_P_high_M_1.png>
-Package pdftex.def Info: pictures/mid_P_high_M_1.png  used on input line 139.
+Package pdftex.def Info: pictures/mid_P_high_M_1.png  used on input line 141.
 (pdftex.def)             Requested size: 469.75499pt x 249.88951pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 140.
+(caption)                particular \caption on input line 142.
 See the caption package documentation for explanation.
 
-[25]
-<pictures/low_P_high_M_N_uni.png, id=411, 1040.688pt x 553.5882pt>
+<pictures/low_P_high_M_N_uni.png, id=401, 1040.688pt x 553.5882pt>
 File: pictures/low_P_high_M_N_uni.png Graphic file (type png)
 <use pictures/low_P_high_M_N_uni.png>
 Package pdftex.def Info: pictures/low_P_high_M_N_uni.png  used on input line 14
-5.
-(pdftex.def)             Requested size: 469.75499pt x 249.88951pt.
-
+7.
+(pdftex.def)             Requested size: 460.35788pt x 244.88885pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 146.
+(caption)                particular \caption on input line 148.
 See the caption package documentation for explanation.
 
-[26 <./pictures/mid_P_high_M_1.png> <./pictures/low_P_high_M_N_uni.png>]
-<pictures/layered_12_1.png, id=421, 1040.688pt x 552.8655pt>
+[25 <./pictures/mid_P_high_M_1.png>]
+<pictures/layered_12_1.png, id=415, 1040.688pt x 552.8655pt>
 File: pictures/layered_12_1.png Graphic file (type png)
 <use pictures/layered_12_1.png>
-Package pdftex.def Info: pictures/layered_12_1.png  used on input line 155.
+Package pdftex.def Info: pictures/layered_12_1.png  used on input line 157.
 (pdftex.def)             Requested size: 469.75499pt x 249.56328pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 156.
+(caption)                particular \caption on input line 158.
 See the caption package documentation for explanation.
 
-<pictures/random_17_1.png, id=422, 1040.688pt x 552.8655pt>
+[26 <./pictures/low_P_high_M_N_uni.png>]
+<pictures/random_17_1.png, id=425, 1040.688pt x 552.8655pt>
 File: pictures/random_17_1.png Graphic file (type png)
 <use pictures/random_17_1.png>
-Package pdftex.def Info: pictures/random_17_1.png  used on input line 161.
+Package pdftex.def Info: pictures/random_17_1.png  used on input line 163.
 (pdftex.def)             Requested size: 474.44995pt x 252.05191pt.
 
+
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 162.
+(caption)                particular \caption on input line 164.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (4.69496pt too wide) in paragraph at lines 161--162
+Overfull \hbox (4.69496pt too wide) in paragraph at lines 163--164
  [] 
  []
 
-[27 <./pictures/layered_12_1.png>]
-<pictures/random_18_1.png, id=432, 1040.688pt x 552.8655pt>
+<pictures/random_18_1.png, id=426, 1040.688pt x 552.8655pt>
 File: pictures/random_18_1.png Graphic file (type png)
 <use pictures/random_18_1.png>
-Package pdftex.def Info: pictures/random_18_1.png  used on input line 167.
-(pdftex.def)             Requested size: 474.44995pt x 252.05191pt.
-
+Package pdftex.def Info: pictures/random_18_1.png  used on input line 169.
+(pdftex.def)             Requested size: 455.6629pt x 242.07208pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 168.
+(caption)                particular \caption on input line 170.
 See the caption package documentation for explanation.
 
-
-Overfull \hbox (4.69496pt too wide) in paragraph at lines 167--168
- [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 172--173
-
- []
-
-[28 <./pictures/random_17_1.png> <./pictures/random_18_1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 176--177
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 176--177
-
- []
-
-<pictures/greedy_EFT_layered_20_N_uniform_lp2_6_464.png, id=442, 1075.8594pt x 
+[27 <./pictures/layered_12_1.png> <./pictures/random_17_1.png>]
+<pictures/greedy_EFT_layered_20_N_uniform_lp2_6_464.png, id=435, 1075.8594pt x 
 569.9694pt>
 File: pictures/greedy_EFT_layered_20_N_uniform_lp2_6_464.png Graphic file (type
  png)
 <use pictures/greedy_EFT_layered_20_N_uniform_lp2_6_464.png>
 Package pdftex.def Info: pictures/greedy_EFT_layered_20_N_uniform_lp2_6_464.png
-  used on input line 179.
-(pdftex.def)             Requested size: 483.84706pt x 256.32732pt.
+  used on input line 181.
+(pdftex.def)             Requested size: 493.24417pt x 261.31071pt.
+
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 180.
+(caption)                particular \caption on input line 182.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (14.09207pt too wide) in paragraph at lines 179--180
+Overfull \hbox (23.48918pt too wide) in paragraph at lines 181--182
  [] 
  []
 
-[29]
-<pictures/lp_layered_20_N_uniform_lp2_6_464.png, id=450, 1076.823pt x 569.9694p
+[28 <./pictures/random_18_1.png>]
+<pictures/lp_layered_20_N_uniform_lp2_6_464.png, id=445, 1076.823pt x 569.9694p
 t>
 File: pictures/lp_layered_20_N_uniform_lp2_6_464.png Graphic file (type png)
 <use pictures/lp_layered_20_N_uniform_lp2_6_464.png>
 Package pdftex.def Info: pictures/lp_layered_20_N_uniform_lp2_6_464.png  used o
-n input line 185.
-(pdftex.def)             Requested size: 474.44995pt x 251.1265pt.
+n input line 187.
+(pdftex.def)             Requested size: 483.84706pt x 256.1012pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 186.
+(caption)                particular \caption on input line 188.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (4.69496pt too wide) in paragraph at lines 185--186
+Overfull \hbox (14.09207pt too wide) in paragraph at lines 187--188
  [] 
  []
 
-[30 <./pictures/greedy_EFT_layered_20_N_uniform_lp2_6_464.png> <./pictures/lp_l
-ayered_20_N_uniform_lp2_6_464.png>] [31]
-<pictures/mid_P_low_M_1_big.png, id=475, 1040.688pt x 549.252pt>
+[29 <./pictures/greedy_EFT_layered_20_N_uniform_lp2_6_464.png> <./pictures/lp_l
+ayered_20_N_uniform_lp2_6_464.png>] [30]
+<pictures/mid_P_low_M_1_big.png, id=469, 1040.688pt x 549.252pt>
 File: pictures/mid_P_low_M_1_big.png Graphic file (type png)
 <use pictures/mid_P_low_M_1_big.png>
-Package pdftex.def Info: pictures/mid_P_low_M_1_big.png  used on input line 230
+Package pdftex.def Info: pictures/mid_P_low_M_1_big.png  used on input line 232
 .
 (pdftex.def)             Requested size: 469.75499pt x 247.93216pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 231.
+(caption)                particular \caption on input line 233.
 See the caption package documentation for explanation.
 
-<pictures/high_P_mid_M_1_big.png, id=476, 1040.688pt x 549.252pt>
+<pictures/high_P_mid_M_1_big.png, id=470, 1040.688pt x 549.252pt>
 File: pictures/high_P_mid_M_1_big.png Graphic file (type png)
 <use pictures/high_P_mid_M_1_big.png>
 Package pdftex.def Info: pictures/high_P_mid_M_1_big.png  used on input line 23
-6.
+8.
 (pdftex.def)             Requested size: 469.75499pt x 247.93216pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 237.
+(caption)                particular \caption on input line 239.
 See the caption package documentation for explanation.
 
-<pictures/low_P_high_M_N_uni_big.png, id=477, 1040.688pt x 549.252pt>
+<pictures/low_P_high_M_N_uni_big.png, id=471, 1040.688pt x 549.252pt>
 File: pictures/low_P_high_M_N_uni_big.png Graphic file (type png)
 <use pictures/low_P_high_M_N_uni_big.png>
 Package pdftex.def Info: pictures/low_P_high_M_N_uni_big.png  used on input lin
-e 242.
+e 244.
 (pdftex.def)             Requested size: 469.75499pt x 247.93216pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 243.
+(caption)                particular \caption on input line 245.
 See the caption package documentation for explanation.
 
-[32 <./pictures/mid_P_low_M_1_big.png> <./pictures/high_P_mid_M_1_big.png>]
-<pictures/layered_55_1.png, id=488, 1040.688pt x 553.5882pt>
+[31 <./pictures/mid_P_low_M_1_big.png> <./pictures/high_P_mid_M_1_big.png>]
+<pictures/layered_55_1.png, id=483, 1040.688pt x 553.5882pt>
 File: pictures/layered_55_1.png Graphic file (type png)
 <use pictures/layered_55_1.png>
-Package pdftex.def Info: pictures/layered_55_1.png  used on input line 252.
+Package pdftex.def Info: pictures/layered_55_1.png  used on input line 254.
 (pdftex.def)             Requested size: 469.75499pt x 249.88951pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 253.
+(caption)                particular \caption on input line 255.
 See the caption package documentation for explanation.
 
-[33 <./pictures/low_P_high_M_N_uni_big.png>]
-<pictures/random_210_1.png, id=498, 1040.688pt x 553.5882pt>
+[32 <./pictures/low_P_high_M_N_uni_big.png>]
+<pictures/random_210_1.png, id=493, 1040.688pt x 553.5882pt>
 File: pictures/random_210_1.png Graphic file (type png)
 <use pictures/random_210_1.png>
-Package pdftex.def Info: pictures/random_210_1.png  used on input line 258.
+Package pdftex.def Info: pictures/random_210_1.png  used on input line 260.
 (pdftex.def)             Requested size: 469.75499pt x 249.88951pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 259.
+(caption)                particular \caption on input line 261.
 See the caption package documentation for explanation.
 
-<pictures/triadag_990_N_uni.png, id=499, 1040.688pt x 553.5882pt>
+<pictures/triadag_990_N_uni.png, id=494, 1040.688pt x 553.5882pt>
 File: pictures/triadag_990_N_uni.png Graphic file (type png)
 <use pictures/triadag_990_N_uni.png>
-Package pdftex.def Info: pictures/triadag_990_N_uni.png  used on input line 264
+Package pdftex.def Info: pictures/triadag_990_N_uni.png  used on input line 266
 .
 (pdftex.def)             Requested size: 469.75499pt x 249.88951pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 265.
+(caption)                particular \caption on input line 267.
 See the caption package documentation for explanation.
 
-[34 <./pictures/layered_55_1.png> <./pictures/random_210_1.png>]
-<pictures/heat_layered_1.png, id=507, 867.24pt x 433.62pt>
+[33 <./pictures/layered_55_1.png> <./pictures/random_210_1.png>]
+<pictures/heat_layered_1.png, id=502, 867.24pt x 433.62pt>
 File: pictures/heat_layered_1.png Graphic file (type png)
 <use pictures/heat_layered_1.png>
-Package pdftex.def Info: pictures/heat_layered_1.png  used on input line 283.
+Package pdftex.def Info: pictures/heat_layered_1.png  used on input line 285.
 (pdftex.def)             Requested size: 469.75499pt x 234.87912pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 284.
+(caption)                particular \caption on input line 286.
 See the caption package documentation for explanation.
 
-[35 <./pictures/triadag_990_N_uni.png>]
-<pictures/heat_random_1.png, id=516, 867.24pt x 433.62pt>
+[34 <./pictures/triadag_990_N_uni.png>]
+<pictures/heat_random_1.png, id=511, 867.24pt x 433.62pt>
 File: pictures/heat_random_1.png Graphic file (type png)
 <use pictures/heat_random_1.png>
-Package pdftex.def Info: pictures/heat_random_1.png  used on input line 292.
+Package pdftex.def Info: pictures/heat_random_1.png  used on input line 294.
 (pdftex.def)             Requested size: 469.75499pt x 234.87912pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 293.
+(caption)                particular \caption on input line 295.
 See the caption package documentation for explanation.
 
-[36 <./pictures/heat_layered_1.png> <./pictures/heat_random_1.png>]
-<pictures/heat_triadags_N_uni.png, id=525, 867.24pt x 433.62pt>
+[35 <./pictures/heat_layered_1.png> <./pictures/heat_random_1.png>]
+<pictures/heat_triadags_N_uni.png, id=520, 867.24pt x 433.62pt>
 File: pictures/heat_triadags_N_uni.png Graphic file (type png)
 <use pictures/heat_triadags_N_uni.png>
-Package pdftex.def Info: pictures/heat_triadags_N_uni.png  used on input line 2
-98.
+Package pdftex.def Info: pictures/heat_triadags_N_uni.png  used on input line 3
+00.
 (pdftex.def)             Requested size: 469.75499pt x 234.87912pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 299.
+(caption)                particular \caption on input line 301.
 See the caption package documentation for explanation.
 
-[37 <./pictures/heat_triadags_N_uni.png>]) [38]
+[36 <./pictures/heat_triadags_N_uni.png>]) [37]
 \openout2 = `template-cmc/6_programs.aux'.
 
  (./template-cmc/6_programs.tex
-<pictures/greedy_class_diagram.png, id=543, 3353.52875pt x 2550.52875pt>
+<pictures/greedy_class_diagram.png, id=538, 3353.52875pt x 2550.52875pt>
 File: pictures/greedy_class_diagram.png Graphic file (type png)
 <use pictures/greedy_class_diagram.png>
 Package pdftex.def Info: pictures/greedy_class_diagram.png  used on input line 
@@ -1577,53 +1657,66 @@ Overfull \hbox (1.96228pt too wide) in paragraph at lines 21--22
 A/cmr/bx/n/12 Earliest
  []
 
-[39
+[38
 
 
 
-] [40 <./pictures/greedy_class_diagram.png>]
-Overfull \hbox (1.88205pt too wide) in paragraph at lines 48--49
+]
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+
+ []
+
+[39 <./pictures/greedy_class_diagram.png>]
+Overfull \hbox (1.88205pt too wide) in paragraph at lines 36--37
 []\T2A/cmr/m/n/12 Все вре-ме-на и объ-ј-мы па-мя-ти пред-став-ле-ны це-ло-чис-л
 ен-ным ти-пом \T2A/cmtt/m/n/12 weight_t \T2A/cmr/m/n/12 (псев-
  []
 
-[41]
-Underfull \hbox (badness 10000) in paragraph at lines 90--90
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--78
 []|$\OML/cmm/m/it/10.95 l$\T2A/cmr/m/n/10.95 , $\OML/cmm/m/it/10.95 s[]$\T2A/cm
 r/m/n/10.95 , $[][]$,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
 []|\T2A/cmr/m/n/10.95 Целевая пе-ре-мен-ная, вре-ме-на
  []
 
 
-Underfull \hbox (badness 5533) in paragraph at lines 90--91
+Underfull \hbox (badness 5533) in paragraph at lines 78--79
 \T2A/cmr/m/n/10.95 стар-та ра-бот, на-ча-ла и макс.
  []
 
 
-Underfull \hbox (badness 7888) in paragraph at lines 96--96
+Underfull \hbox (badness 7888) in paragraph at lines 84--84
 \T2A/cmr/m/n/10.95 (вклю-чая тран-
  []
 
 
-Underfull \hbox (badness 6001) in paragraph at lines 96--97
+Underfull \hbox (badness 6001) in paragraph at lines 84--85
 []|\T2A/cmr/m/n/10.95 Фиксированные зна-че-ния пе-ре-
  []
 
-[42] [43]
-Overfull \hbox (35.2305pt too wide) in paragraph at lines 129--130
-[]\T2A/cmr/m/n/12 Функции ри-со-ва-ния стре-лок (\T2A/cmtt/m/n/12 draw_horiz_ar
-row\T2A/cmr/m/n/12 , \T2A/cmtt/m/n/12 draw_vertical_arrow\T2A/cmr/m/n/12 , \T2A
-/cmtt/m/n/12 draw_arc_arrow\T2A/cmr/m/n/12 ,
- []
-
-[44] [45] [46]) [47]
+[41] [42] [43] [44]) [45]
 \openout2 = `template-cmc/7_zakluch.aux'.
 
- (./template-cmc/7_zakluch.tex) [48
+ (./template-cmc/7_zakluch.tex) [46
 
 
 
@@ -1631,172 +1724,167 @@ row\T2A/cmr/m/n/12 , \T2A/cmtt/m/n/12 draw_vertical_arrow\T2A/cmr/m/n/12 , \T2A
 \openout2 = `template-cmc/bibliography.aux'.
 
 
-(./template-cmc/bibliography.tex
-Underfull \hbox (badness 5374) in paragraph at lines 22--26
-[]\T2A/cmr/m/n/12 Y. Wang, D. Liu, Z. Qin, Z. Shao.  Memory-aware optimal sched
-uling
- []
-
-
-Underfull \hbox (badness 1859) in paragraph at lines 22--26
-\T2A/cmr/m/n/12 with communication overhead minimization for streaming applicat
-ions on chip
- []
-
-[49
+(./template-cmc/bibliography.tex) [47
 
 
 
-]) [50]
+]
 \openout2 = `template-cmc/appendix.aux'.
 
  (./template-cmc/appendix.tex
-<pictures/low_P_and_M_1.png, id=642, 1040.688pt x 552.8655pt>
+<pictures/low_P_and_M_1.png, id=624, 1040.688pt x 552.8655pt>
 File: pictures/low_P_and_M_1.png Graphic file (type png)
 <use pictures/low_P_and_M_1.png>
-Package pdftex.def Info: pictures/low_P_and_M_1.png  used on input line 7.
-(pdftex.def)             Requested size: 422.77661pt x 224.60104pt.
+Package pdftex.def Info: pictures/low_P_and_M_1.png  used on input line 10.
+(pdftex.def)             Requested size: 469.75499pt x 249.56328pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 8.
+(caption)                particular \caption on input line 11.
 See the caption package documentation for explanation.
 
-<pictures/high_P_mid_M_N_uni.png, id=643, 1040.688pt x 548.5293pt>
+<pictures/high_P_mid_M_N_uni.png, id=625, 1040.688pt x 548.5293pt>
 File: pictures/high_P_mid_M_N_uni.png Graphic file (type png)
 <use pictures/high_P_mid_M_N_uni.png>
-Package pdftex.def Info: pictures/high_P_mid_M_N_uni.png  used on input line 13
+Package pdftex.def Info: pictures/high_P_mid_M_N_uni.png  used on input line 16
 .
-(pdftex.def)             Requested size: 422.77661pt x 222.83948pt.
+(pdftex.def)             Requested size: 469.75499pt x 247.60593pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 14.
+(caption)                particular \caption on input line 17.
 See the caption package documentation for explanation.
 
-[51
+[48
 
 
 
- <./pictures/low_P_and_M_1.png> <./pictures/high_P_mid_M_N_uni.png>]
-<pictures/layered_13_N_uni.png, id=657, 1040.688pt x 552.8655pt>
+ <./pictures/low_P_and_M_1.png>]
+<pictures/layered_13_N_uni.png, id=638, 1040.688pt x 552.8655pt>
 File: pictures/layered_13_N_uni.png Graphic file (type png)
 <use pictures/layered_13_N_uni.png>
-Package pdftex.def Info: pictures/layered_13_N_uni.png  used on input line 21.
+Package pdftex.def Info: pictures/layered_13_N_uni.png  used on input line 24.
 (pdftex.def)             Requested size: 469.75499pt x 249.56328pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 22.
+(caption)                particular \caption on input line 25.
 See the caption package documentation for explanation.
 
-<pictures/random_15_1.png, id=658, 1040.688pt x 552.8655pt>
+[49 <./pictures/high_P_mid_M_N_uni.png>]
+<pictures/random_15_1.png, id=650, 1040.688pt x 552.8655pt>
 File: pictures/random_15_1.png Graphic file (type png)
 <use pictures/random_15_1.png>
-Package pdftex.def Info: pictures/random_15_1.png  used on input line 27.
+Package pdftex.def Info: pictures/random_15_1.png  used on input line 30.
 (pdftex.def)             Requested size: 469.75499pt x 249.56328pt.
 
+
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 28.
+(caption)                particular \caption on input line 31.
 See the caption package documentation for explanation.
 
-[52 <./pictures/layered_13_N_uni.png>]
-<pictures/layered_15_N_uni.png, id=669, 1040.688pt x 552.8655pt>
+<pictures/layered_15_N_uni.png, id=651, 1040.688pt x 552.8655pt>
 File: pictures/layered_15_N_uni.png Graphic file (type png)
 <use pictures/layered_15_N_uni.png>
-Package pdftex.def Info: pictures/layered_15_N_uni.png  used on input line 33.
+Package pdftex.def Info: pictures/layered_15_N_uni.png  used on input line 36.
 (pdftex.def)             Requested size: 469.75499pt x 249.56328pt.
 
-
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 34.
+(caption)                particular \caption on input line 37.
 See the caption package documentation for explanation.
 
-<pictures/layered_16_1.png, id=670, 1040.688pt x 552.8655pt>
+[50 <./pictures/layered_13_N_uni.png> <./pictures/random_15_1.png>]
+<pictures/layered_16_1.png, id=658, 1040.688pt x 552.8655pt>
 File: pictures/layered_16_1.png Graphic file (type png)
 <use pictures/layered_16_1.png>
-Package pdftex.def Info: pictures/layered_16_1.png  used on input line 39.
+Package pdftex.def Info: pictures/layered_16_1.png  used on input line 42.
 (pdftex.def)             Requested size: 469.75499pt x 249.56328pt.
 
+
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 40.
+(caption)                particular \caption on input line 43.
 See the caption package documentation for explanation.
 
-[53 <./pictures/random_15_1.png> <./pictures/layered_15_N_uni.png>]
-<pictures/layered_20_N_uni.png, id=677, 1040.688pt x 549.252pt>
+<pictures/layered_20_N_uni.png, id=659, 1040.688pt x 549.252pt>
 File: pictures/layered_20_N_uni.png Graphic file (type png)
 <use pictures/layered_20_N_uni.png>
-Package pdftex.def Info: pictures/layered_20_N_uni.png  used on input line 45.
+Package pdftex.def Info: pictures/layered_20_N_uni.png  used on input line 48.
 (pdftex.def)             Requested size: 469.75499pt x 247.93216pt.
 
-
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 46.
+(caption)                particular \caption on input line 49.
 See the caption package documentation for explanation.
 
-<pictures/greedy_EFT_layered_12_1_lp2_2_321.png, id=682, 3364.31906pt x 1781.90
+[51 <./pictures/layered_15_N_uni.png> <./pictures/layered_16_1.png>]
+<pictures/greedy_EFT_layered_12_1_lp2_2_321.png, id=670, 3364.31906pt x 1781.90
 718pt>
 File: pictures/greedy_EFT_layered_12_1_lp2_2_321.png Graphic file (type png)
 <use pictures/greedy_EFT_layered_12_1_lp2_2_321.png>
 Package pdftex.def Info: pictures/greedy_EFT_layered_12_1_lp2_2_321.png  used o
-n input line 54.
-(pdftex.def)             Requested size: 469.75499pt x 248.78557pt.
+n input line 57.
+(pdftex.def)             Requested size: 474.44995pt x 251.28702pt.
+
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 55.
+(caption)                particular \caption on input line 58.
 See the caption package documentation for explanation.
 
-[54 <./pictures/layered_16_1.png> <./pictures/layered_20_N_uni.png>]
-<pictures/greedy_STS_layered_12_1_lp2_2_321.png, id=693, 3361.30782pt x 1781.15
+
+Overfull \hbox (4.69496pt too wide) in paragraph at lines 57--58
+ [] 
+ []
+
+[52 <./pictures/layered_20_N_uni.png>]
+<pictures/greedy_STS_layered_12_1_lp2_2_321.png, id=680, 3361.30782pt x 1781.15
 437pt>
 File: pictures/greedy_STS_layered_12_1_lp2_2_321.png Graphic file (type png)
 <use pictures/greedy_STS_layered_12_1_lp2_2_321.png>
 Package pdftex.def Info: pictures/greedy_STS_layered_12_1_lp2_2_321.png  used o
-n input line 60.
+n input line 63.
 (pdftex.def)             Requested size: 478.21309pt x 253.38228pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 61.
+(caption)                particular \caption on input line 64.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (8.4581pt too wide) in paragraph at lines 60--61
+Overfull \hbox (8.4581pt too wide) in paragraph at lines 63--64
  [] 
  []
 
-<pictures/greedy_EFT_layered_16_1_lp2_2_274.png, id=694, 3361.30782pt x 1781.15
+<pictures/greedy_EFT_layered_16_1_lp2_2_274.png, id=681, 3361.30782pt x 1781.15
 437pt>
 File: pictures/greedy_EFT_layered_16_1_lp2_2_274.png Graphic file (type png)
 <use pictures/greedy_EFT_layered_16_1_lp2_2_274.png>
 Package pdftex.def Info: pictures/greedy_EFT_layered_16_1_lp2_2_274.png  used o
-n input line 66.
+n input line 69.
 (pdftex.def)             Requested size: 478.21309pt x 253.38228pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 67.
+(caption)                particular \caption on input line 70.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (8.4581pt too wide) in paragraph at lines 66--67
+Overfull \hbox (8.4581pt too wide) in paragraph at lines 69--70
  [] 
  []
 
-[55 <./pictures/greedy_EFT_layered_12_1_lp2_2_321.png> <./pictures/greedy_STS_l
+[53 <./pictures/greedy_EFT_layered_12_1_lp2_2_321.png> <./pictures/greedy_STS_l
 ayered_12_1_lp2_2_321.png>]
-<pictures/greedy_STS_layered_16_1_lp2_2_274.png, id=702, 3365.07187pt x 1781.15
+<pictures/greedy_STS_layered_16_1_lp2_2_274.png, id=688, 3365.07187pt x 1781.15
 437pt>
 File: pictures/greedy_STS_layered_16_1_lp2_2_274.png Graphic file (type png)
 <use pictures/greedy_STS_layered_16_1_lp2_2_274.png>
 Package pdftex.def Info: pictures/greedy_STS_layered_16_1_lp2_2_274.png  used o
-n input line 72.
+n input line 75.
 (pdftex.def)             Requested size: 469.75499pt x 248.6261pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 73.
+(caption)                particular \caption on input line 76.
 See the caption package documentation for explanation.
 
-) [56 <./pictures/greedy_EFT_layered_16_1_lp2_2_274.png> <./pictures/greedy_STS
+) [54 <./pictures/greedy_EFT_layered_16_1_lp2_2_274.png> <./pictures/greedy_STS
 _layered_16_1_lp2_2_274.png>] (./main.aux (./template-cmc/0_vvedenie.aux)
 (./template-cmc/1_cel_zadachi.aux) (./template-cmc/2_problem_statement.aux)
 (./template-cmc/3_greedy_algos.aux) (./template-cmc/4_reduce_description.aux)
@@ -1808,16 +1896,16 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9B30587926295401061DDB39731DD4EF;7168.
+(rerunfilecheck)             Checksum: 6A18F4DAF8BD33A43EAD48740357090F;7168.
  ) 
 Here is how much of TeX's memory you used:
- 27761 strings out of 467525
- 506049 string characters out of 5418982
- 899954 words of memory out of 5000000
- 55918 multiletter control sequences out of 15000+600000
- 653435 words of font info for 105 fonts, out of 8000000 for 9000
+ 28020 strings out of 467525
+ 510198 string characters out of 5418982
+ 904942 words of memory out of 5000000
+ 56179 multiletter control sequences out of 15000+600000
+ 654653 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,14n,108p,2148b,734s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,14n,108p,2334b,738s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
@@ -1844,14 +1932,14 @@ ist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2026/texmf-dis
 t/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2026/texmf-dist/
 fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2026/texmf-dist/fo
 nts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2026/texmf-dist/font
-s/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/
+s/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/
 type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/ty
 pe1/public/cm-super/sftt1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type
 1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (56 pages, 4394567 bytes).
+Output written on main.pdf (54 pages, 4417953 bytes).
 PDF statistics:
- 890 PDF objects out of 1000 (max. 8388607)
- 694 compressed objects within 7 object streams
- 223 named destinations out of 1000 (max. 500000)
+ 873 PDF objects out of 1000 (max. 8388607)
+ 678 compressed objects within 7 object streams
+ 215 named destinations out of 1000 (max. 500000)
  417 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -30,7 +30,25 @@
 \usepackage[colorinlistoftodos, prependcaption]{todonotes}
 \usepackage{multirow}
 \newcommand*{\MyIndent}{\hspace*{0.2cm}}%
+\usepackage{tocloft}
+\setlength{\cftbeforesecskip}{8pt}   % по умолчанию 10pt
 
+\makeatletter
+\renewcommand{\abstractpage}{%
+	\thispagestyle{plain}%  <-- добавляем номер страницы
+	\begin{abstractenv}
+		\begin{center}
+			\providecommand\pdfbookmark[3][]{} \pdfbookmark[1]{Abstract}{bm:Abstract}    
+			\vspace*{0.375in}
+			{\bf \@AbstractText}\\[1\baselineskip]
+		\end{center}   
+		\renewcommand{\baselinestretch}{1.33}\small\normalsize
+		\@Abstract
+		\vfill	
+	\end{abstractenv}
+	\clearemptydoublepage
+}
+\makeatother
 
 \Chair{Кафедра автоматизации систем вычислительных комплексов}
 \Lab{~}
@@ -68,6 +86,7 @@
 \begin{document}
 \fixmargins
 \makepreliminarypages
+\thispagestyle{plain}
 
 \oneandhalfspace
 
