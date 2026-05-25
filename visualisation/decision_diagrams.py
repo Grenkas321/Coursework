@@ -79,9 +79,11 @@ for directory in dirs:
         for k in range(3):
             ids[k] = [x_names[0].index(obj) + 1 for obj in x_names[k]]
 
-        ax1.bar([i - width for i in ids[0]], data_makespan[0], width, label='ЖА с EFT')
-        ax1.bar(ids[1], data_makespan[1], width, label='ЖА с STS')
-        ax1.bar([i + width for i in ids[2]], data_makespan[2], width, label='ЛП')
+        # ax1.bar([i - width for i in ids[0]], data_makespan[0], width, label='ЖА с EFT')
+        # ax1.bar(ids[1], data_makespan[1], width, label='ЖА с STS')
+        # ax1.bar([i + width for i in ids[2]], data_makespan[2], width, label='ЛП')
+        ax1.bar([i - width / 2 for i in ids[0]], data_makespan[0], width, label='ЖА с EFT')
+        ax1.bar([i + width / 2 for i in ids[1]], data_makespan[1], width, label='ЖА с STS')
 
         ax1.set_xticks(ids[0])
         ax1.set_xticklabels(x_names[0])
