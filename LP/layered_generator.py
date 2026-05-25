@@ -22,27 +22,6 @@ for num_of_v in range(10, 22):
 
     print(layers)
 
-    '''
-    roots = set(V)
-    input_bufs = [0] * num_of_v
-    available_v = set()
-    for layer in list(reversed(layers)):
-        enough = set()
-        for v in list(reversed(layer)):
-            if available_v == []:
-                lst.append(f"{v}\t{random.randint(1, 100)}")
-            else:
-                num_of_b = min(random.randint(1, 3), len(available_v))
-                children = random.sample(list(available_v), num_of_b)
-                roots -= set(children)
-                for child in children:
-                    input_bufs[child] += 1
-                    if input_bufs[child] == 3:
-                        enough.add(child)
-                lst.append(f"{v}\t{random.randint(1, 100)}\t{'\t'.join([str(i) for i in sorted(children)])}")
-        available_v |= set(layer)
-        available_v -= enough
-    '''
     graph = {}
     available_v = set(V)
     for layer in list(reversed(layers))[:-1]:

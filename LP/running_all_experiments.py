@@ -59,9 +59,4 @@ for directory in dirs:
             print(file_name, '!!!')
             print()
             print()
-        """
-        output = subprocess.check_output('/Users/maxbig/Coursework_multiprocessing/Coursework/build/application ' \
-        '--command run --algo greedy2 --input /Users/maxbig/Coursework_multiprocessing/Coursework/build/Graphs ' \
-        '--output /Users/maxbig/Coursework_multiprocessing/Coursework/build/Answer --threads 1 --dups 1 --sample 1 ' \
-        f'--batch 1 --processors {P} --memory {M}', shell=True, text=True)
-        """
+        

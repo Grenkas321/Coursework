@@ -299,39 +299,6 @@ for directory in dirs:
         if len(set(PP)) < 3:
             PP = [2, 3, 4]
         
-        """
-        l_M = 0
-        r_M = max_M_usage
-        while r_M - l_M > max_M_usage / 100:
-            mid_M = (l_M + r_M) // 2
-            try:
-                output = subprocess.check_output('/Users/maxbig/Coursework_multiprocessing/Coursework/build/application ' \
-                    '--command run --algo greedy --input /Users/maxbig/Coursework_multiprocessing/Coursework/build/Graphs ' \
-                    '--output /Users/maxbig/Coursework_multiprocessing/Coursework/build/Answer --threads 1 --dups 1 --sample 1 ' \
-                    f'--batch 1 --processors {99} --memory {mid_M}', shell=True, text=True)
-                r_M = mid_M
-            except Exception:
-                l_M = mid_M
-        min_M_usage = r_M
-        """
-        
-        """
-        l_M = max_M_usage * 4 // 10
-        gap = max_M_usage * int(len(nodes) ** 0.5) // 400
-        flag0 = 0
-        while not flag0:
-            l_M += gap
-            try:
-                output = subprocess.check_output('/Users/maxbig/Coursework_multiprocessing/Coursework/build/application ' \
-                    '--command run --algo greedy --input /Users/maxbig/Coursework_multiprocessing/Coursework/build/Graphs ' \
-                    '--output /Users/maxbig/Coursework_multiprocessing/Coursework/build/Answer --threads 1 --dups 1 --sample 1 ' \
-                    f'--batch 1 --processors {2} --memory {l_M}', shell=True, text=True)
-                flag0 = 1
-            except Exception:
-                pass
-        min_M_usage = l_M
-        """
-        
         # min_M_usage = max_M_usage // 10
         # gap = max_M_usage // 100
         min_M_usage = 1
@@ -363,14 +330,3 @@ for directory in dirs:
         
         print(PP, MM)
         
-        '''
-        with open(f'/Users/maxbig/Coursework_multiprocessing/Coursework/build/Answer/greedy/schedules/best/{file_name[:-4]}.json') as f:
-            text = f.readline()
-            dct = eval(text)
-            name = list(dct.keys())[0]
-            dct = dct[name]
-            makespan = dct['makespan']
-            print('makespan on extreme big P and low M:', makespan)
-            print()
-            print()
-        '''
