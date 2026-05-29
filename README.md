@@ -1,3 +1,39 @@
-# Coursework
-Solving the problem of constructing a single-processor schedule with minimization of peak resource usage in the presence of intertask dependencies with different transmitted data using a randomized algorithm
-simple correction
+# Resource-Constrained Scheduling
+
+C++/CMake-проект для задачи построения расписания с ограничениями по ресурсам.
+
+Проект посвящён построению расписания при наличии зависимостей между работами и ограничений на пиковое использование памяти. Для поиска решения используется рандомизированный алгоритм.
+
+## Что реализовано
+
+- представление задачи расписания и входных данных;
+- работа с зависимостями между задачами;
+- построение допустимого расписания с учётом ресурсных ограничений;
+- запуск экспериментов для сравнения результатов;
+- CMake-сборка проекта;
+- подготовка документации через Doxygen.
+
+## Стек
+
+- C++
+- CMake
+- Doxygen
+- Makefile
+
+## Структура проекта
+
+- `src/` — исходный код;
+- `include/` — заголовочные файлы;
+- `algorithms/` — алгоритмы построения расписания;
+- `experiments/` — экспериментальные запуски;
+- `data/` — входные данные;
+- `json/` — данные в JSON-формате;
+- `additionals/` — дополнительные материалы.
+
+## Сборка
+
+```bash
+mkdir build
+cd build
+cmake ..
+cmake --build .
